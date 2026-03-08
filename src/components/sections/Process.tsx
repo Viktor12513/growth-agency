@@ -17,8 +17,7 @@ export default function Process() {
             </div>
             <div className="process-right">
               <p>
-                Vi analyserar nuläge, data och marknad för att identifiera
-                flaskhalsar och möjligheter.
+                Vi kartlägger din startpunkt och identifierar vägen till ditt mål.
               </p>
             </div>
           </div>
@@ -26,12 +25,11 @@ export default function Process() {
           <div className="process-row">
             <div className="process-left">
               <div className="process-number">02</div>
-              <h3>Strategi</h3>
+              <h3>Synlighet</h3>
             </div>
             <div className="process-right">
               <p>
-                En strukturerad tillväxtplan med tydliga KPI:er,
-                prioriteringar och skalbar struktur.
+                Vi stärker din digitala närvaro och positionerar ditt företag där kunderna aktivt söker.
               </p>
             </div>
           </div>
@@ -39,12 +37,11 @@ export default function Process() {
           <div className="process-row">
             <div className="process-left">
               <div className="process-number">03</div>
-              <h3>Optimering</h3>
+              <h3>Affärer</h3>
             </div>
             <div className="process-right">
               <p>
-                Kontinuerlig testning, förbättring och skalning
-                för att maximera lönsamheten över tid.
+                Ökad synlighet som leder till fler kundförfrågningar och nya affärer.
               </p>
             </div>
           </div>

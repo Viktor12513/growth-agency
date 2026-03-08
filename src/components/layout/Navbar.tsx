@@ -29,7 +29,9 @@ export default function Navbar() {
             <li><a href="#om">Om oss</a></li>
           </ul>
 
-          <Button>Boka kostnadsfri konultation</Button>
+          <a href="#contact" className="btn-primary">
+Boka strategimöte
+</a>
         </div>
       </Container>
     </nav>

@@ -13,39 +13,39 @@ import "swiper/css/effect-coverflow";
 export default function Cases() {
   const cases = [
     {
-      image: "/images/case1.jpg",
+      image: "/images/sorangs.png",
       quote:
-        "Digital Growth hjälpte oss skapa ett strukturerat system som ökade våra leads med 240%.",
-      company: "VD, Techbolag",
-      industry: "B2B SaaS",
+        "Nordväxt hjälpte oss skapa en tydlig struktur för vår digitala närvaro och generera fler kvalificerade förfrågningar från rätt kunder.",
+      company: "— Christer Gunnarsson",
+      industry: "VD, Sörängs Glas",
     },
     {
-      image: "/images/case2.jpg",
+      image: "/images/lindsjos.png",
       quote:
-        "Vi gick från sporadiska kampanjer till förutsägbar lönsam tillväxt.",
-      company: "CMO, E-handel",
-      industry: "E-commerce",
+        "Vi fick en tydlig strategi och bättre synlighet online. Det har lett till fler seriösa kundförfrågningar och bättre affärer.",
+      company: "— Pierre Lindsjö",
+      industry: "VD, Lindsjös Måleri & Byggnadsvård",
     },
     {
-      image: "/images/case3.jpg",
+      image: "/images/pvsab.png",
       quote:
-        "Struktur, tydliga KPI:er och kontinuerlig optimering gjorde hela skillnaden.",
-      company: "Marknadschef",
-      industry: "Fintech",
+        "Nordväxt hjälpte oss strukturera vår marknadsföring och skapa ett system för kontinuerlig tillväxt. Vi har sett en markant förbättring i både synlighet och konverteringar.",
+      company: "— Piotr Zgliczynski",
+      industry: "VD, PVS AB",
     },
     {
-      image: "/images/case4.jpg",
+      image: "/images/sorangs.png",
       quote:
-        "Vi tredubblade vår ROAS på mindre än 6 månader.",
-      company: "VD",
-      industry: "Retail",
+        "Nordväxt hjälpte oss skapa en tydlig struktur för vår digitala närvaro och generera fler kvalificerade förfrågningar från rätt kunder.",
+      company: "— Christer Gunnarsson",
+      industry: "VD, Sörängs Glas",
     },
     {
-      image: "/images/case5.jpg",
+      image: "/images/lindsjos.png",
       quote:
-        "Nu vet vi exakt vad som driver vår tillväxt varje månad.",
-      company: "Growth Lead",
-      industry: "SaaS",
+        "Vi fick en tydlig strategi och bättre synlighet online. Det har lett till fler seriösa kundförfrågningar och bättre affärer.",
+      company: "— Pierre Lindsjö",
+      industry: "VD, Lindsjös Måleri & Byggnadsvård",
     },
   ];
 
@@ -59,7 +59,7 @@ export default function Cases() {
           {/* LEFT SIDE – Dynamic Text */}
           <div className="case-text">
             <h2 className="section-title">
-              Vad våra <span>partners säger</span>
+              Vad företag <span>säger om oss</span>
             </h2>
 
             <AnimatePresence mode="wait">
@@ -81,10 +81,7 @@ export default function Cases() {
               </motion.div>
             </AnimatePresence>
 
-            <div className="case-company">
-              <strong>{cases[activeIndex].company}</strong>
-              <p>{cases[activeIndex].industry}</p>
-            </div>
+            
           </div>
 
           {/* RIGHT SIDE – Carousel */}

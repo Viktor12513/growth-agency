@@ -75,9 +75,9 @@ export default function ScalableGrowth() {
     förutsägbar, lönsam och skalbar.
   </p>
 
-  <button className="btn btn-primary">
-    Boka kostnadsfri konultation
-  </button>
+  <a href="#contact" className="btn-primary">
+Boka strategimöte
+</a>
 </div>
         </Reveal>
       </Container>

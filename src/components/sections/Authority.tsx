@@ -11,13 +11,14 @@ export default function Authority() {
           </h2>
 
           <p className="section-intro">
-            Företag med bevisad efterfrågan som vill bygga
-            ett förutsägbart och skalbart tillväxtsystem.
+            Företag med bevisat engagemang som vill bygga ett förutsägbart och skalbart tillväxtsystem.
+Från nystartat till börsnoterat – vi hjälper företag växa.
+
           </p>
 
           <div className="authority-grid">
             <div className="authority-card">
-              <h3>5–200 MSEK</h3>
+              <h3>0–50 MSEK</h3>
               <p>Typiskt omsättningsspann</p>
             </div>
 
@@ -32,13 +33,37 @@ export default function Authority() {
             </div>
           </div>
 
-          <div className="logo-row">
-            <span>EXEMPELBOLAG</span>
-            <span>NORDIC TECH</span>
-            <span>E-COMMERCE CO</span>
-            <span>SAAS GROUP</span>
-            <span>RETAIL GROWTH</span>
-          </div>
+          <div className="authority-logos">
+
+  <div className="partners-section">
+
+  <h3 className="partners-title">
+    Några av våra partners
+  </h3>
+
+  <div className="partner-logos">
+
+    <a href="https://www.pvsab.se/" target="_blank">
+      <img src="/images/pvsab.png" alt="PVS AB" />
+    </a>
+
+    <a href="https://progressum.se/" target="_blank">
+      <img src="/images/progressum.png" alt="Progressum" />
+    </a>
+
+    <a href="https://lindsjos.com/" target="_blank">
+      <img src="/images/lindsjos.png" alt="Lindsjös" />
+    </a>
+
+    <a href="https://sorangs.nu/" target="_blank">
+      <img src="/images/sorangs.png" alt="Sörängs Glas" />
+    </a>
+
+  </div>
+
+</div>
+
+</div>
         </Reveal>
       </Container>
     </section>

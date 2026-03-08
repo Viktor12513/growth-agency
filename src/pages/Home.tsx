@@ -3,7 +3,7 @@ import Footer from "../components/layout/Footer";
 import Metrics from "../components/sections/Metrics";
 import Hero from "../components/sections/Hero";
 import Services from "../components/sections/Services";
-import Process from "../components/sections/Process";
+
 import Cases from "../components/sections/Cases";
 import About from "../components/sections/About";
 import Contact from "../components/sections/Contact";
@@ -19,7 +19,7 @@ export default function Home() {
       <ScalableGrowth />
       <Authority />
       <Services />
-      <Process />
+      
       <Cases />
       <About />
       <Contact />
