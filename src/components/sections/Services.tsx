@@ -7,39 +7,46 @@ export default function Services() {
       <Container>
         <Reveal>
           <h2 className="section-title">
-            Vad vi <span>faktiskt levererar</span>
+           Det här <span>hjälper vi våra kunder med</span>
           </h2>
 
           <p className="section-intro">
-            Vi säljer inte timmar. Vi bygger tillväxtmotorer.
-            Här är vad det innebär i praktiken.
+            Vi bygger inte bara hemsidor — vi hjälper företag skapa en starkare digital närvaro som faktiskt bidrar till fler förfrågningar, bättre synlighet och enklare kundkontakt.
+
           </p>
 
           <div className="services-grid">
             <div className="service-card">
-              <h3>Förutsägbar leadgenerering</h3>
+              <h3>Fler relevanta förfrågningar</h3>
               <p>
-                System för att kontinuerligt generera kvalificerade leads —
-                med tydlig kostnad per kund.
+                Vi hjälper er synas bättre online och göra det enklare för rätt kunder att ta kontakt genom tydlig struktur, smart innehåll och en stark digital närvaro.
               </p>
             </div>
 
             <div className="service-card">
-              <h3>Lönsam kundanskaffning</h3>
+              <h3>En modern och professionell hemsida</h3>
               <p>
-                Annonsering och budstrategier optimerade för marginal —
-                inte bara volym.
+                Snabba, tydliga och mobilanpassade hemsidor som stärker företagets intryck och gör det enkelt för besökare att hitta rätt — oavsett enhet.
               </p>
             </div>
 
             <div className="service-card">
-              <h3>Skalbar digital infrastruktur</h3>
+              <h3>Google-annonsering som når rätt målgrupp</h3>
               <p>
-                SEO, tracking och konverteringsoptimering byggt för att
-                växa utan att kostnaderna skenar.
+                Vi arbetar med Google Ads och lokal sökannonsering för att hjälpa företag synas när potentiella kunder aktivt söker efter deras tjänster eller produkter.
+              </p>
+            </div>
+
+            <div className="service-card">
+              <h3>Sociala medier och digital synlighet</h3>
+              <p>
+                Vi hjälper företag skapa ett mer professionellt och aktivt intryck på sociala medier genom innehåll, struktur och löpande optimering anpassat efter verksamheten.
+
               </p>
             </div>
           </div>
+
+          
         </Reveal>
       </Container>
     </section>
