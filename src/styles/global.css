@@ -24,7 +24,7 @@ body {
   margin: 0;
   font-family: Inter, system-ui, sans-serif;
   color: var(--text);
-  background: #f5f7fb;
+  background: #F9F1DC;
 }
 
 h1, h2, h3, h4, p {
@@ -343,7 +343,7 @@ h1 {
 .navbar {
   position: sticky;
   top: 0;
-  background: white;
+  background: #F9F1DC;
   border-bottom: 1px solid var(--border);
   padding: 20px 0;
   z-index: 1000;
@@ -446,7 +446,7 @@ h1 {
 /* ============================= */
 
 .services {
-  background: white;
+  background: #F9F1DC;
 }
 
 .services-grid {
@@ -466,7 +466,7 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 16px;
   transition: 0.3s ease;
-  background: white;
+  background: #E6D8B5;
 }
 
 .service-card:hover {
@@ -597,7 +597,7 @@ textarea {
 .navbar {
   position: sticky;
   top: 0;
-  background: white;
+  background: #F9F1DC;
   border-bottom: 1px solid var(--border);
   padding: 28px 0;
   transition: all 0.3s ease;

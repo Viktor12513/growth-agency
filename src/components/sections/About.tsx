@@ -4,32 +4,22 @@ export default function About() {
   return (
     <section id="about" className="section about-section">
       <Container>
-        <h3 className="founders-title">Grundarna bakom Digital Growth</h3>
+        <h3 className="founders-title">Vi bakom Nordväxt</h3>
         {/* Founder Cards */}
         <div className="founders">
 
   <div className="founder-card">
     <img src="/images/founder1.jpeg" alt="Albin" />
-    <h4>Albin</h4>
-    <p>CEO & Growth Strategist</p>
+    <h4>Albin Hagman</h4>
+    <p>Strategi & kundrelationer</p>
 
-    <ul className="founder-experience">
-      <li>Founder & Strategist</li>
-      <li>Marketing & Growth Strategist</li>
-      <li>Head of Growth & Strategy</li>
-    </ul>
   </div>
 
   <div className="founder-card">
     <img src="/images/founder2.jpeg" alt="Viktor" />
-    <h4>Viktor</h4>
-    <p>COO & Technical Strategist</p>
+    <h4>Viktor Hagman</h4>
+    <p>Produktion & digital utveckling</p>
 
-    <ul className="founder-experience">
-      <li>Founder & Growth Strategy</li>
-      <li>Technical Director & Product Lead</li>
-      <li>Head of Technology & Solutions</li>
-    </ul>
   </div>
 
 </div>
@@ -39,12 +29,12 @@ export default function About() {
         <div className="about-box">
 
           <h2>Albin & Viktor</h2>
-
+              <center>
           <p className="about-text">
             Nordväxt drivs av ett litet och personligt team där strategi, kommunikation och produktion arbetar nära tillsammans genom hela processen. 
 <br></br><br></br>Vi hjälper företag att synas bättre online genom hemsidor, digital utveckling och löpande optimering. Med fokus på tydlig kommunikation och smarta lösningar bygger vi digitala plattformar som både ser bra ut och skapar resultat över tid. 
 
-          </p>
+          </p></center>
 
     <div className="about-buttons">
   <a href="#contact" className="btn btn-primary">
