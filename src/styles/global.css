@@ -922,7 +922,7 @@ html {
 .founders {
   display: flex;
   justify-content: center;
-  align-items: stretch;
+   align-items: flex-start;
   gap: 40px;
 
   position: relative;

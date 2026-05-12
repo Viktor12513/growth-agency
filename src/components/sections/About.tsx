@@ -14,7 +14,7 @@ export default function About() {
     <p>CEO & Growth Strategist</p>
 
     <ul className="founder-experience">
-      <li>Grundare & Strategi</li>
+      <li>Founder & Strategist</li>
       <li>Marketing & Growth Strategist</li>
       <li>Head of Growth & Strategy</li>
     </ul>
@@ -41,10 +41,9 @@ export default function About() {
           <h2>Albin & Viktor</h2>
 
           <p className="about-text">
-            Tillsammans har vi över 30 års erfarenhet av att arbeta med
-            strategi, analys och tekniska lösningar för företag som vill växa.
-            Vi fokuserar inte på kortsiktiga kampanjer utan bygger system
-            som skapar långsiktig och skalbar tillväxt.
+            Nordväxt drivs av ett litet och personligt team där strategi, kommunikation och produktion arbetar nära tillsammans genom hela processen. 
+<br></br><br></br>Vi hjälper företag att synas bättre online genom hemsidor, digital utveckling och löpande optimering. Med fokus på tydlig kommunikation och smarta lösningar bygger vi digitala plattformar som både ser bra ut och skapar resultat över tid. 
+
           </p>
 
     <div className="about-buttons">
