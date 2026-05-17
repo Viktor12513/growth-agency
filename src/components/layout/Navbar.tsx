@@ -26,7 +26,7 @@ export default function Navbar() {
             <li><a href="#tjanster">Tjänster</a></li>
             <li><a href="#process">Process</a></li>
             <li><a href="#case">Case</a></li>
-            <li><a href="#om">Om oss</a></li>
+            <li><a href="#about">Om oss</a></li>
           </ul>
 
           <a href="#contact" className="btn-primary">

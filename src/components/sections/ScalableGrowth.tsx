@@ -3,17 +3,16 @@ import Reveal from "../ui/Reveal";
 
 export default function ScalableGrowth() {
   return (
-    <section className="section scalable-growth">
+    <section className="section">
       <Container>
         <Reveal>
           <h2 className="section-title">
-            Så skapar vi <span>skalbar tillväxt</span>
+            Såhär<span> jobbar vi</span>
           </h2>
 
           <p className="section-intro">
-            Tillväxt är inte tur. Det är system.
-            Vi bygger strukturer som gör att marknadsföringen
-            kan skala — utan att lönsamheten kollapsar.
+            Vi bygger och förbättrar digitala lösningar steg för steg så att företag kan få fler kunder och bättre resultat över tid — utan onödigt krångel.
+
           </p>
 
           <div className="timeline">
@@ -21,10 +20,10 @@ export default function ScalableGrowth() {
   <div className="timeline-dot" />
               <div className="timeline-number">01</div>
               <div className="timeline-content">
-                <h3>Datadriven analys</h3>
+                <h3>Förståelse & genomgång</h3>
                 <p>
-                  Vi börjar alltid med siffror. Kundresor,
-                  konverteringspunkter, marginaler och flaskhalsar.
+                  Vi går igenom er verksamhet, mål och nuvarande digitala närvaro för att se vad som faktiskt kan förbättras.
+
                 </p>
               </div>
             </div>
@@ -33,10 +32,10 @@ export default function ScalableGrowth() {
   <div className="timeline-dot" />
               <div className="timeline-number">02</div>
               <div className="timeline-content">
-                <h3>Struktur för skalning</h3>
+                <h3>Struktur som fungerar i praktiken</h3>
                 <p>
-                  Kampanj- och SEO-strukturer byggda för att växa
-                  utan exponentiellt ökande kostnad.
+                  Vi bygger hemsida, innehåll och annonser på ett sätt som gör det enkelt för kunder att hitta rätt och ta kontakt.
+
                 </p>
               </div>
             </div>
@@ -45,10 +44,10 @@ export default function ScalableGrowth() {
   <div className="timeline-dot" />
               <div className="timeline-number">03</div>
               <div className="timeline-content">
-                <h3>Test & optimering</h3>
+                <h3>Löpande förbättring
+</h3>
                 <p>
-                  Kontinuerlig A/B-testning och datadriven CRO
-                  för att pressa ner CPA och maximera ROAS.
+                  Vi arbetar kontinuerligt med justeringar och förbättringar baserat på vad som faktiskt ger resultat.
                 </p>
               </div>
             </div>
@@ -57,30 +56,27 @@ export default function ScalableGrowth() {
                 <div className="timeline-dot" />
               <div className="timeline-number">04</div>
               <div className="timeline-content">
-                <h3>Total transparens</h3>
+                <h3>Tydliga resultat och uppföljning</h3>
                 <p>
-                  Inga fluff-rapporter. Bara siffror som påverkar
-                  resultatet på riktigt.
+                  Ni får en enkel överblick över vad som görs och hur det påverkar synlighet, trafik och förfrågningar.
                 </p>
               </div>
             </div>
           </div>
           <div className="growth-cta">
-            <div className="growth-cta-card">
-              <h3>
-                Redo att skala snabbare än konkurrenterna?
-              </h3>
+  <h3>
+    Växer ni så snabbt ni borde?
+  </h3>
 
-              <p>
-                Vi bygger tillväxtsystem som gör marknadsföringen
-                förutsägbar, lönsam och skalbar.
-              </p>
+  <p>
+    Vi bygger tillväxtsystem som gör marknadsföringen
+    förutsägbar, lönsam och skalbar.
+  </p>
 
-              <a href="#contact" className="btn-primary">
-                Boka strategimöte
-              </a>
-            </div>
-          </div>
+  <a href="#contact" className="btn-primary">
+Boka strategimöte
+</a>
+</div>
         </Reveal>
       </Container>
     </section>
