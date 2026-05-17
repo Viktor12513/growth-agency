@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         priser: resolve(__dirname, 'priser/index.html'),
+        blogg: resolve(__dirname, 'blogg/index.html'),
       },
     },
   },
