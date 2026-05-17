@@ -7,59 +7,26 @@ export default function Authority() {
       <Container>
         <Reveal>
           <h2 className="section-title">
-            Vi arbetar med <span>tillväxtambitiösa bolag</span>
+            Vilka vi 
+ <span> arbetar med</span>
           </h2>
 
           <p className="section-intro">
-            Företag med bevisat engagemang som vill bygga ett förutsägbart och skalbart tillväxtsystem.
-Från nystartat till börsnoterat – vi hjälper företag växa.
+            Vi arbetar med företag som vill ha en mer stabil och effektiv digital närvaro som faktiskt leder till fler kunder över tid.
+<br></br><br></br>Vi passar bäst för företag som vill växa långsiktigt och bygga något som fungerar varje månad – inte bara tillfälliga kampanjer.
 
           </p>
 
-          <div className="authority-grid">
-            <div className="authority-card">
-              <h3>0–50 MSEK</h3>
-              <p>Typiskt omsättningsspann</p>
-            </div>
-
-            <div className="authority-card">
-              <h3>B2B & E-handel</h3>
-              <p>Skalbara affärsmodeller</p>
-            </div>
-
-            <div className="authority-card">
-              <h3>Långsiktiga partnerskap</h3>
-              <p>System före kampanjer</p>
-            </div>
-          </div>
+          
+           
 
           <div className="authority-logos">
 
   <div className="partners-section">
 
-  <h3 className="partners-title">
-    Några av våra partners
-  </h3>
+  
 
-  <div className="partner-logos">
-
-    <a href="https://www.pvsab.se/" target="_blank">
-      <img src="/images/pvsab.png" alt="PVS AB" />
-    </a>
-
-    <a href="https://progressum.se/" target="_blank">
-      <img src="/images/progressum.png" alt="Progressum" />
-    </a>
-
-    <a href="https://lindsjos.com/" target="_blank">
-      <img src="/images/lindsjos.png" alt="Lindsjös" />
-    </a>
-
-    <a href="https://sorangs.nu/" target="_blank">
-      <img src="/images/sorangs.png" alt="Sörängs Glas" />
-    </a>
-
-  </div>
+  
 
 </div>
 

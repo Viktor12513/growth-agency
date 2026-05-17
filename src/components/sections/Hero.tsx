@@ -7,7 +7,7 @@ export default function Hero() {
 
       <Container>
         <div className="hero-card">
-          <p className="hero-eyebrow">DIGITAL GROWTH AGENCY</p>
+          <p className="hero-eyebrow">Nordväxt AB</p>
 
           <h1>
             Bygg ett förutsägbart
@@ -16,8 +16,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-description">
-            Vi hjälper B2B- och e-handelsbolag att skala lönsamt
-            genom struktur, data och kontinuerlig optimering.
+            Vi hjälper företag att få fler kunder genom bättre hemsidor, synlighet på Google och löpande digital förbättring.
           </p>
 
           <div className="hero-buttons">
