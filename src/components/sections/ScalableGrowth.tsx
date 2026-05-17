@@ -3,7 +3,7 @@ import Reveal from "../ui/Reveal";
 
 export default function ScalableGrowth() {
   return (
-    <section className="section">
+    <section className="section scalable-growth">
       <Container>
         <Reveal>
           <h2 className="section-title">
@@ -64,6 +64,7 @@ export default function ScalableGrowth() {
             </div>
           </div>
           <div className="growth-cta">
+            <div className="growth-cta-card">
   <h3>
     Växer ni så snabbt ni borde?
   </h3>
@@ -76,7 +77,8 @@ export default function ScalableGrowth() {
   <a href="#contact" className="btn-primary">
 Boka strategimöte
 </a>
-</div>
+            </div>
+          </div>
         </Reveal>
       </Container>
     </section>
