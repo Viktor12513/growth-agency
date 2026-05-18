@@ -7,6 +7,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        seo: resolve(__dirname, 'seo/index.html'),
+        googleAds: resolve(__dirname, 'google-ads/index.html'),
         priser: resolve(__dirname, 'priser/index.html'),
         blogg: resolve(__dirname, 'blogg/index.html'),
       },
