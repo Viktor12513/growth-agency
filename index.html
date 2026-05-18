@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
+<script>
+(function(){
+  var path = window.location.pathname;
+  if (path.indexOf('/blog/') === 0 && path !== '/blog/') {
+    var slug = path.split('/').filter(Boolean).slice(1).join('/');
+    window.location.replace('/blog/?post=' + encodeURIComponent(slug));
+  }
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nordväxt AB – Webbyrå för svenska företag | Hemsida, SEO & Google Ads</title>
@@ -78,7 +87,7 @@
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://nordvaxt.se/blogg?q={search_term_string}"
+      "urlTemplate": "https://nordvaxt.se/blog?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }
@@ -161,12 +170,12 @@
 <nav class="site-nav" aria-label="Huvudnavigation">
   <a href="/" class="nav-logo is-active" aria-current="page" aria-label="Nordväxt AB – startsida">Nord<span>växt</span></a>
   <ul class="nav-links">
-    <li><a href="/hemsida">Hemsidor</a></li>
+    <li><a href="/hemsida/">Hemsidor</a></li>
     <li><a href="/seo/">SEO</a></li>
     <li><a href="/google-ads/">Google Ads</a></li>
     <li><a href="/sociala-medier/">Sociala medier</a></li>
     <li><a href="/priser/">Priser</a></li>
-    <li><a href="/blogg/">Blogg</a></li>
+    <li><a href="/blog/">Blogg</a></li>
     <li><a href="/om-oss/">Om oss</a></li>
   </ul>
   <a href="/kontakt/#contact-form" class="nav-cta">Kontakta oss</a>
@@ -308,7 +317,7 @@
         </div>
         <h3 itemprop="name">Professionella hemsidor</h3>
         <p itemprop="description">Vi designar och bygger hemsidor som ser bra ut på alla enheter, laddar snabbt och är byggda för att konvertera besökare till kunder.</p>
-        <a href="/hemsida" class="service-link">Läs mer →</a>
+        <a href="/hemsida/" class="service-link">Läs mer →</a>
       </article>
 
       <article class="service-card" itemscope itemtype="https://schema.org/Service">
@@ -517,7 +526,7 @@
       <div class="footer-col">
         <h4>Tjänster</h4>
         <ul>
-          <li><a href="/hemsida">Hemsidor</a></li>
+          <li><a href="/hemsida/">Hemsidor</a></li>
           <li><a href="/seo/">SEO</a></li>
           <li><a href="/google-ads/">Google Ads</a></li>
           <li><a href="/sociala-medier/">Sociala medier</a></li>
@@ -529,7 +538,7 @@
         <ul>
           <li><a href="/om-oss/">Om oss</a></li>
           <li><a href="/case">Kundcase</a></li>
-          <li><a href="/blogg/">Blogg</a></li>
+          <li><a href="/blog/">Blogg</a></li>
           <li><a href="/kontakt/#contact-form">Kontakt</a></li>
         </ul>
       </div>
