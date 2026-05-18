@@ -22,6 +22,13 @@
 
 html { scroll-behavior: smooth; }
 
+.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
 body {
   font-family: var(--font-sans);
   color: var(--text-main);
