@@ -13,6 +13,7 @@ export default defineConfig({
         priser: resolve(__dirname, 'priser/index.html'),
         blogg: resolve(__dirname, 'blogg/index.html'),
         omOss: resolve(__dirname, 'om-oss/index.html'),
+        kontakt: resolve(__dirname, 'kontakt/index.html'),
       },
     },
   },

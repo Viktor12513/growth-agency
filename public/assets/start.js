@@ -27,13 +27,13 @@ const needsData = {
     tag: 'Komplett digitalt paket',
     title: 'Hela din digitala marknadsföring – ett enda samarbete',
     body: 'Hemsida, SEO, Google Ads och sociala medier samordnat under ett tak. Du får en dedikerad kontaktperson och slipper hålla koll på flera leverantörer.',
-    link: '/kontakt', linkText: 'Se vad som ingår →'
+    link: '/kontakt/#contact-form', linkText: 'Se vad som ingår →'
   },
   'vet-ej': {
     tag: 'Gratis genomgång',
     title: 'Boka ett kort samtal – vi berättar vad som passar just dig',
     body: 'Ingen säljer in dig på något. Vi ställer några frågor om ditt företag och ger en ärlig bild av vad som skulle göra störst skillnad för dig just nu.',
-    link: '/kontakt', linkText: 'Läs om vad vi går igenom →'
+    link: '/kontakt/#contact-form', linkText: 'Läs om vad vi går igenom →'
   }
 };
 
