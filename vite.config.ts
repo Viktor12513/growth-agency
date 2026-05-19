@@ -17,6 +17,7 @@ export default defineConfig({
         blogg: resolve(__dirname, 'blogg/index.html'),
         omOss: resolve(__dirname, 'om-oss/index.html'),
         kontakt: resolve(__dirname, 'kontakt/index.html'),
+        integritetspolicy: resolve(__dirname, 'integritetspolicy/index.html'),
       },
     },
   },
