@@ -188,3 +188,6 @@
 .not-found-card p { color: var(--ink-mid); max-width: 520px; margin: 0 auto 2rem; }
 @media (max-width: 900px) { .related-grid { grid-template-columns: 1fr; } }
 @media (max-width: 768px) { .article-hero { padding: 3.5rem 5vw; } .article-content { padding-top: 3rem; } }
+
+.post-thumb--strategy { background: linear-gradient(135deg,#1a3a1f,#c4943a); }
+.post-cat--strategy { background:#f5e6c8; color:#8a641f; }

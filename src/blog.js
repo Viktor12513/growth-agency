@@ -49,6 +49,7 @@ function catClass(post) {
     'google-ads': 'post-cat--ads',
     hemsida: 'post-cat--website',
     'sociala-medier': 'post-cat--social',
+    strategi: 'post-cat--strategy',
   };
   return map[post.categoryKey] || '';
 }
@@ -85,6 +86,7 @@ function renderFilters() {
     ['hemsida', 'Hemsidor'],
     ['google-ads', 'Google Ads'],
     ['sociala-medier', 'Sociala medier'],
+    ['strategi', 'Strategi'],
   ];
 
   return `<div class="filter-bar" role="tablist" aria-label="Filtrera artiklar">

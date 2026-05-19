@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         hemsida: resolve(__dirname, 'hemsida/index.html'),
+        kundcases: resolve(__dirname, 'kundcases/index.html'),
         seo: resolve(__dirname, 'seo/index.html'),
         googleAds: resolve(__dirname, 'google-ads/index.html'),
         socialaMedier: resolve(__dirname, 'sociala-medier/index.html'),
