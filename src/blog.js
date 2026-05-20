@@ -30,11 +30,11 @@ function setMeta({ title, description, canonical }) {
 
 function getSlugFromPath(pathname = window.location.pathname) {
   const parts = pathname.split('/').filter(Boolean);
-  if (parts[0] === 'blogg') {
-    window.location.replace('/blog/' + parts.slice(1).join('/'));
+  if (parts[0] === 'blog') {
+    window.location.replace('/blogg/' + parts.slice(1).join('/'));
     return null;
   }
-  if (parts[0] !== 'blog') return '';
+  if (parts[0] !== 'blogg') return '';
 
   const querySlug = new URLSearchParams(window.location.search).get('post');
   return parts[1] || querySlug || '';
@@ -56,7 +56,7 @@ function catClass(post) {
 
 function renderBreadcrumb(currentLabel, includeBlogLink = false) {
   const blogCrumb = includeBlogLink
-    ? '<li><a href="/blog/">Blogg</a></li><li class="sep" aria-hidden="true">&rsaquo;</li>'
+    ? '<li><a href="/blogg/">Blogg</a></li><li class="sep" aria-hidden="true">&rsaquo;</li>'
     : '';
 
   return `<nav class="breadcrumb" aria-label="breadcrumb">
@@ -96,7 +96,7 @@ function renderFilters() {
 
 function renderFeaturedPost(post) {
   return `<article class="post-featured" data-cat="${post.categoryKey}">
-    <a class="post-featured-img post-thumb--${post.coverStyle}" href="/blog/${post.slug}" aria-label="L&auml;s ${post.title}">
+    <a class="post-featured-img post-thumb--${post.coverStyle}" href="/blogg/${post.slug}" aria-label="L&auml;s ${post.title}">
       <div class="featured-icon">${icons[post.icon]}</div>
       <div class="featured-label">Popul&auml;r guide</div>
       <div class="featured-title">${post.title}</div>
@@ -110,23 +110,23 @@ function renderFeaturedPost(post) {
         </div>
         <p class="post-excerpt">${post.excerpt}</p>
       </div>
-      <a href="/blog/${post.slug}" class="post-link">L&auml;s hela artikeln ${arrowIcon()}</a>
+      <a href="/blogg/${post.slug}" class="post-link">L&auml;s hela artikeln ${arrowIcon()}</a>
     </div>
   </article>`;
 }
 
 function renderPostCard(post) {
   return `<article class="post-card" data-cat="${post.categoryKey}">
-    <a class="post-card-thumb post-thumb--${post.coverStyle}" href="/blog/${post.slug}" aria-label="L&auml;s ${post.title}">${icons[post.icon]}</a>
+    <a class="post-card-thumb post-thumb--${post.coverStyle}" href="/blogg/${post.slug}" aria-label="L&auml;s ${post.title}">${icons[post.icon]}</a>
     <div class="post-card-body">
       <div class="post-meta">
         <span class="post-cat ${catClass(post)}">${post.category}</span>
         <span class="post-date">${post.date}</span>
         <span class="post-read">${post.readingTime.replace(' l&auml;sning', '')}</span>
       </div>
-      <h2 class="post-card-title"><a href="/blog/${post.slug}">${post.title}</a></h2>
+      <h2 class="post-card-title"><a href="/blogg/${post.slug}">${post.title}</a></h2>
       <p class="post-card-excerpt">${post.excerpt}</p>
-      <a href="/blog/${post.slug}" class="post-card-link">L&auml;s mer ${arrowIcon()}</a>
+      <a href="/blogg/${post.slug}" class="post-card-link">L&auml;s mer ${arrowIcon()}</a>
     </div>
   </article>`;
 }
@@ -185,7 +185,7 @@ function renderListing() {
   setMeta({
     title: 'Blogg om SEO, hemsidor & digital marknadsf&ouml;ring | Nordv&auml;xt AB',
     description: 'Tips, guider och r&aring;d om SEO, hemsidor, Google Ads och sociala medier f&ouml;r svenska f&ouml;retag.',
-    canonical: `${origin}/blog/`,
+    canonical: `${origin}/blogg/`,
   });
 
   app.innerHTML = `${renderBreadcrumb('Blogg')}${renderHero()}${renderFilters()}
@@ -231,14 +231,14 @@ function renderPost(post) {
   setMeta({
     title: `${post.title} | Nordv&auml;xt AB`,
     description: post.excerpt,
-    canonical: `${origin}/blog/${post.slug}`,
+    canonical: `${origin}/blogg/${post.slug}`,
   });
 
   app.innerHTML = `${renderBreadcrumb(post.title, true)}
     <article class="blog-post">
       <header class="article-hero post-thumb--${post.coverStyle}">
         <div class="article-hero-inner">
-          <a href="/blog/" class="article-back">Tillbaka till bloggen</a>
+          <a href="/blogg/" class="article-back">Tillbaka till bloggen</a>
           <div class="article-icon">${icons[post.icon]}</div>
           <div class="post-meta article-meta">
             <span class="post-cat ${catClass(post)}">${post.category}</span>
@@ -260,7 +260,7 @@ function renderNotFound() {
   setMeta({
     title: '404 - Artikeln hittades inte | Nordv&auml;xt AB',
     description: 'Artikeln du s&ouml;ker finns inte. G&aring; tillbaka till bloggen f&ouml;r att hitta fler guider.',
-    canonical: `${origin}/blog/`,
+    canonical: `${origin}/blogg/`,
   });
 
   app.innerHTML = `${renderBreadcrumb('404', true)}
@@ -269,7 +269,7 @@ function renderNotFound() {
         <span class="section-tag">404</span>
         <h1>Artikeln hittades inte</h1>
         <p>Den h&auml;r bloggartikeln finns inte eller har flyttats. G&aring; tillbaka till bloggen och v&auml;lj en annan guide.</p>
-        <a class="btn-cta" href="/blog/">Till bloggen ${arrowIcon()}</a>
+        <a class="btn-cta" href="/blogg/">Till bloggen ${arrowIcon()}</a>
       </div>
     </section>`;
 }
@@ -285,7 +285,7 @@ function renderRoute(pathname = window.location.pathname) {
   const post = getPostBySlug(slug);
   if (post) {
     if (window.location.search.includes('post=')) {
-      window.history.replaceState({}, '', `/blog/${post.slug}`);
+      window.history.replaceState({}, '', `/blogg/${post.slug}`);
     }
     renderPost(post);
   } else {
@@ -294,7 +294,7 @@ function renderRoute(pathname = window.location.pathname) {
 }
 
 document.addEventListener('click', (event) => {
-  const link = event.target.closest('a[href^="/blog/"]');
+  const link = event.target.closest('a[href^="/blogg/"]');
   if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
   const url = new URL(link.href);

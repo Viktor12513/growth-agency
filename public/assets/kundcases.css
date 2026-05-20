@@ -113,6 +113,13 @@
   .case-card-link { display: inline-flex; align-items: center; gap: 5px; font-size: 0.82rem; font-weight: 600; color: var(--moss); margin-top: auto; }
   .case-card-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; transition: transform 0.2s; }
   .case-card:hover .case-card-link svg { transform: translateX(3px); }
+  .case-read-more { border: 0; background: transparent; cursor: pointer; font-family: 'DM Sans', sans-serif; align-self: flex-start; padding: 0; }
+  .case-read-more.is-open svg { transform: rotate(90deg); }
+  .case-more { margin-top: 1rem; padding: 1rem 1.1rem; background: var(--cream); border: 1px solid var(--mint); border-radius: var(--radius); animation: fadeUp 0.25s ease; }
+  .case-more p { font-size: 0.88rem; color: var(--ink-mid); line-height: 1.65; margin-bottom: 0.8rem; }
+  .case-more ul { list-style: none; display: grid; gap: 0.45rem; }
+  .case-more li { position: relative; padding-left: 1rem; font-size: 0.84rem; color: var(--ink-mid); line-height: 1.55; }
+  .case-more li::before { content: ''; position: absolute; left: 0; top: 0.7em; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
 
   /* SECTION DIVIDER */
   .section-divider { display: flex; align-items: center; gap: 1rem; margin: 3rem 0 2rem; grid-column: 1/-1; }

@@ -5,8 +5,11 @@
 (function(){
   var path = window.location.pathname;
   if (path.indexOf('/blog/') === 0 && path !== '/blog/') {
+    var oldSlug = path.split('/').filter(Boolean).slice(1).join('/');
+    window.location.replace('/blogg/?post=' + encodeURIComponent(oldSlug));
+  } else if (path.indexOf('/blogg/') === 0 && path !== '/blogg/') {
     var slug = path.split('/').filter(Boolean).slice(1).join('/');
-    window.location.replace('/blog/?post=' + encodeURIComponent(slug));
+    window.location.replace('/blogg/?post=' + encodeURIComponent(slug));
   }
 })();
 </script>
@@ -44,7 +47,7 @@
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+46-8-123-456-78",
+    "telephone": "+46768283996",
     "email": "hej@nordvaxt.se",
     "contactType": "customer service",
     "availableLanguage": "Swedish"
@@ -80,7 +83,7 @@
   "name": "Nordväxt AB",
   "image": "https://nordvaxt.se/og-startsida.jpg",
   "url": "https://nordvaxt.se",
-  "telephone": "+46-8-123-456-78",
+  "telephone": "+46768283996",
   "email": "hej@nordvaxt.se",
   "address": {
     "@type": "PostalAddress",
@@ -118,7 +121,7 @@
     <li><a href="/google-ads/">Google Ads</a></li>
     <li><a href="/sociala-medier/">Sociala medier</a></li>
     <li><a href="/kundcases/">Kundcases</a></li>
-    <li><a href="/blog/">Blogg</a></li>
+    <li><a href="/blogg/">Blogg</a></li>
     <li><a href="/om-oss/">Om oss</a></li>
   </ul>
   <div class="nav-right">
@@ -137,7 +140,7 @@
   <a href="/google-ads/">Google Ads</a>
   <a href="/sociala-medier/">Sociala medier</a>
   <a href="/kundcases/">Kundcases</a>
-  <a href="/blog/">Blogg</a>
+  <a href="/blogg/">Blogg</a>
   <a href="/om-oss/">Om oss</a>
   <a href="/priser/">Priser</a>
   <a href="/kontakt/#contact-form" class="mobile-cta">Boka gratis genomgång →</a>
@@ -646,7 +649,7 @@
         <ul>
           <li><a href="/om-oss/">Om oss</a></li>
           <li><a href="/kundcases/">Kundcases</a></li>
-          <li><a href="/blog/">Blogg</a></li>
+          <li><a href="/blogg/">Blogg</a></li>
           <li><a href="/kontakt/#contact-form">Kontakt</a></li>
         </ul>
       </div>
@@ -655,7 +658,7 @@
         <address class="footer-address">
           <ul>
             <li><a href="mailto:hej@nordvaxt.se" itemprop="email">hej@nordvaxt.se</a></li>
-            <li><a href="tel:+46812345678" itemprop="telephone">08-123 456 78</a></li>
+            <li><a href="tel:+46768283996" itemprop="telephone">+46 76 828 39 96</a></li>
             <li><span itemprop="streetAddress">O D Krooks gata 25</span></li>
             <li><span itemprop="postalCode">254 44</span> <span itemprop="addressLocality">Helsingborg</span>, <span itemprop="addressCountry">Sverige</span></li>
           </ul>

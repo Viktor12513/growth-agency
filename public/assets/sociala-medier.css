@@ -772,3 +772,58 @@ footer address { font-style: normal; }
   .intro-boxes { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+/* Social page alignment fix 2026-05 */
+html,
+body {
+  overflow-x: hidden;
+}
+
+@media (max-width: 1100px) {
+  .site-nav {
+    max-width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-inner,
+  .intro-grid {
+    grid-template-columns: 1fr;
+    max-width: 720px;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+}
+
+@media (min-width: 1101px) {
+  .hero-inner,
+  .intro-grid {
+    padding-inline: 24px;
+  }
+}
+
+/* Nav alignment correction 2026-05 */
+.site-nav {
+  max-width: none;
+  margin-inline: 0;
+  padding: 0 5vw;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  margin-right: 0;
+}
+
+.nav-links {
+  gap: 2rem;
+}
+
+@media (max-width: 1100px) {
+  .site-nav {
+    padding: 0 5vw;
+  }
+}

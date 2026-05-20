@@ -21,7 +21,8 @@
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
   }
-  .is-filtered { display: none; }
+  .post-featured.is-filtered,
+  .post-card.is-filtered { display: none; }
 
   /* NAV */
   .site-nav { position:sticky; top:0; z-index:100; background:rgba(253,252,250,0.95); backdrop-filter:blur(8px); border-bottom:1px solid var(--mint); padding:0 5vw; display:flex; align-items:center; justify-content:space-between; height:64px; }

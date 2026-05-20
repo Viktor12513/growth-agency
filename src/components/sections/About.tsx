@@ -41,7 +41,7 @@ export default function About() {
     Boka gratis rådgivning
   </a>
 
-  <a href="tel:+46731234567" className="btn btn-secondary">
+  <a href="tel:+46768283996" className="btn btn-secondary">
     Ring direkt
   </a>
 </div>
