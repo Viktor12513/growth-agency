@@ -9,9 +9,9 @@ const productCatalog = {
   'addon-language': { name: 'Flerspr\u00e5kig sajt', description: 'L\u00e4gg till engelska eller ytterligare ett spr\u00e5k p\u00e5 hela sajten.', priceType: 'one-time', price: 999 },
   'addon-extra-page': { name: 'Extra sidor', description: 'Fler sidor ut\u00f6ver vad hemsidepaketet inkluderar.', priceType: 'one-time', price: 1500, quantity: true },
   'addon-maintenance': { name: 'L\u00f6pande underh\u00e5ll', description: 'Uppdateringar, s\u00e4kerhet och backup. Ing\u00e5r automatiskt i alla SEO-abonnemang.', priceType: 'monthly', monthly: 149 },
-  'seo-local': { name: 'SEO Lokal', description: 'Lokal SEO f\u00f6r f\u00f6retag som vill synas i sin stad eller region.', priceType: 'monthly', monthly: 2995, yearlyMonthly: 2496 },
-  'seo-growth': { name: 'SEO Tillv\u00e4xt', description: 'Nationell SEO f\u00f6r f\u00f6retag som vill synas i hela Sverige.', priceType: 'monthly', monthly: 5995, yearlyMonthly: 4996 },
-  'seo-dominant': { name: 'SEO Dominant', description: 'Avancerad SEO f\u00f6r f\u00f6retag som vill dominera s\u00f6kresultaten i sin bransch.', priceType: 'monthly', monthly: 9995, yearlyMonthly: 8329 },
+  'seo-local': { name: 'SEO Lokal', description: 'Lokal SEO f\u00f6r f\u00f6retag som vill synas i sin stad eller region.', priceType: 'monthly', monthly: 2995, yearlyMonthly: 2746 },
+  'seo-growth': { name: 'SEO Tillv\u00e4xt', description: 'Nationell SEO f\u00f6r f\u00f6retag som vill synas i hela Sverige.', priceType: 'monthly', monthly: 5995, yearlyMonthly: 5496 },
+  'seo-dominant': { name: 'SEO Dominant', description: 'Avancerad SEO f\u00f6r f\u00f6retag som vill dominera s\u00f6kresultaten i sin bransch.', priceType: 'monthly', monthly: 9995, yearlyMonthly: 9162 },
 };
 
 const storageKey = 'nordvaxt-request-cart';
@@ -160,7 +160,7 @@ function renderCart() {
   document.getElementById('cartOneTimeTotal').textContent = formatCurrency(oneTimeTotal);
   document.getElementById('cartMonthlyTotal').textContent = formatCurrency(monthlyTotal) + '/m\u00e5n';
   document.getElementById('cartBillingNote').textContent = isYearly
-    ? 'SEO visas som m\u00e5nadskostnad vid \u00e5rsvis betalning. Exakt uppl\u00e4gg bekr\u00e4ftas innan start.'
+    ? 'SEO visas som ungef\u00e4rlig m\u00e5nadskostnad vid 12 m\u00e5n avtal med 1 m\u00e5nad gratis. Vid 24 m\u00e5n avtal f\u00e5r du 3 m\u00e5nader gratis.'
     : 'Eng\u00e5ngspris och m\u00e5nadskostnad visas separat s\u00e5 du ser vad som startas direkt och vad som \u00e4r l\u00f6pande.';
 
   updateSelectedButtons();

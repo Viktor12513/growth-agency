@@ -97,6 +97,7 @@
   }
   .toggle-btn.yearly .toggle-knob { left: 25px; }
   .save-badge { background: var(--gold-light); color: var(--gold); font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; border: 1px solid #e8c97a; }
+  .billing-offer-note { margin: 0.75rem auto 0; text-align: center; font-size: 0.88rem; color: var(--ink-mid); }
   .yearly-note { color: var(--gold); font-weight: 500; }
 
   /* SECTION SHARED */
