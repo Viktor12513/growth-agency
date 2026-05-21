@@ -1,9 +1,9 @@
 let agreementTerm = 6;
 
 const agreementDiscounts = {
-  6: 1,
-  12: 2,
-  24: 4,
+  6: 0,
+  12: 1,
+  24: 3,
 };
 
 const productCatalog = {
@@ -35,6 +35,12 @@ function getAgreementTotal(monthly) {
 
 function getAgreementMonthly(monthly) {
   return Math.round(getAgreementTotal(monthly) / agreementTerm);
+}
+
+function getAgreementDiscountLabel() {
+  const freeMonths = getAgreementFreeMonths();
+  if (freeMonths === 0) return '0 gratism\u00e5nader. ';
+  return freeMonths + (freeMonths === 1 ? ' m\u00e5nad gratis. ' : ' m\u00e5nader gratis. ');
 }
 
 function getProductPrice(product) {
@@ -73,9 +79,7 @@ function updateAgreementPrices() {
     const price = note.closest('.card-price')?.querySelector('.price-main[data-base-monthly]');
     if (!price) return;
     const monthly = Number(price.dataset.baseMonthly);
-    const freeMonths = getAgreementFreeMonths();
-    note.textContent = agreementTerm + ' m\u00e5n avtal: ' + freeMonths +
-      (freeMonths === 1 ? ' m\u00e5nad gratis. ' : ' m\u00e5nader gratis. ') +
+    note.textContent = agreementTerm + ' m\u00e5n avtal: ' + getAgreementDiscountLabel() +
       'Avtalssumma ' + formatCurrency(getAgreementTotal(monthly)) + '.';
   });
 
@@ -191,7 +195,7 @@ function renderCart() {
   document.getElementById('cartMonthlyTotal').textContent = formatCurrency(monthlyTotal) + '/m\u00e5n';
   document.getElementById('cartBillingNote').textContent = hasAgreementProduct
     ? 'SEO visas som effektiv m\u00e5nadskostnad vid ' + agreementTerm + ' m\u00e5n avtal med ' +
-      getAgreementFreeMonths() + (getAgreementFreeMonths() === 1 ? ' m\u00e5nad gratis. ' : ' m\u00e5nader gratis. ') +
+      getAgreementDiscountLabel() +
       'Avtalssumman bekr\u00e4ftas innan start.'
     : 'Eng\u00e5ngspris och m\u00e5nadskostnad visas separat s\u00e5 du ser vad som startas direkt och vad som \u00e4r l\u00f6pande.';
 

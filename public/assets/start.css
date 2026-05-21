@@ -530,3 +530,100 @@
   margin: 1rem 0 0 auto;
   transform: none;
 }
+/* Shared nav and breadcrumb alignment */
+:root {
+  --site-shell-max: 1200px;
+  --site-shell-gutter: max(24px, calc((100vw - var(--site-shell-max)) / 2));
+}
+
+.site-nav,
+body > nav:not(.breadcrumb) {
+  max-width: none;
+  margin-inline: 0;
+  padding-left: var(--site-shell-gutter);
+  padding-right: var(--site-shell-gutter);
+}
+
+header .site-nav {
+  max-width: none;
+  margin-inline: 0;
+}
+
+.breadcrumb {
+  padding-left: var(--site-shell-gutter);
+  padding-right: var(--site-shell-gutter);
+}
+
+.breadcrumb > .container,
+.breadcrumb ol,
+.breadcrumb-list,
+.breadcrumb-inner {
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Shared breadcrumb typography */
+.breadcrumb,
+.breadcrumb ol,
+.breadcrumb-list,
+.breadcrumb-inner,
+.breadcrumb > .container {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ink-light, var(--text-light, #7a7a72));
+}
+
+.breadcrumb a,
+.breadcrumb-current,
+.breadcrumb [aria-current],
+.breadcrumb li:last-child,
+.breadcrumb > .container > span[aria-current="page"] {
+  font-weight: 500;
+}
+
+.breadcrumb a {
+  color: var(--moss, var(--brand-green, #4a7c59));
+}
+
+.breadcrumb-current,
+.breadcrumb [aria-current],
+.breadcrumb li:last-child,
+.breadcrumb > .container > span[aria-current="page"] {
+  color: var(--ink-mid, var(--text-muted, #3d3d38));
+}
+
+.breadcrumb li + li::before {
+  content: '›';
+  margin-right: 0.5rem;
+  color: var(--sage, var(--brand-green-light, #8ab89a));
+  font-weight: 400;
+}
+
+.breadcrumb .sep,
+.breadcrumb-separator,
+.breadcrumb-sep,
+.breadcrumb > .container > span[aria-hidden="true"] {
+  color: var(--sage, var(--brand-green-light, #8ab89a));
+  font-weight: 400;
+}
+/* Shared breadcrumb dimensions */
+.breadcrumb {
+  width: 100%;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.breadcrumb > nav,
+.breadcrumb > ol,
+.breadcrumb > .container,
+.breadcrumb-list,
+.breadcrumb-inner {
+  width: 100%;
+}

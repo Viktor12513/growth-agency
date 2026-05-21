@@ -23,7 +23,7 @@ function handleNewsletter(event) {
   const button = form.querySelector('button');
   const input = form.querySelector('input');
 
-  button.textContent = '? Tack!';
+  button.textContent = 'Tack!';
   button.classList.add('is-success');
   input.value = '';
 }
