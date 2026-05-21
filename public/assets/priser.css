@@ -82,23 +82,20 @@
   h1.page-title em { color: var(--gold); font-style: italic; }
   .page-lead { font-size: 1.05rem; color: var(--ink-mid); font-weight: 300; max-width: 500px; margin: 0 auto; }
 
-  /* TOGGLE */
-  .toggle-wrap { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 2.5rem; }
-  .toggle-label { font-size: 0.9rem; font-weight: 500; color: var(--ink-mid); }
-  .toggle-label.active { color: var(--forest); font-weight: 600; }
-  .toggle-btn {
-    width: 48px; height: 26px; border-radius: 100px;
-    background: var(--forest); border: none; cursor: pointer;
-    position: relative; transition: background 0.2s;
+  /* AGREEMENT SELECTOR */
+  .agreement-selector { display: flex; justify-content: center; align-items: stretch; gap: 0.6rem; flex-wrap: wrap; margin: -0.5rem auto 0; }
+  .agreement-option {
+    border: 1.5px solid var(--mint); background: white; color: var(--ink-mid);
+    border-radius: var(--radius); padding: 0.65rem 1rem; min-width: 145px;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 700;
+    cursor: pointer; transition: all 0.2s; display: flex; flex-direction: column; gap: 2px;
   }
-  .toggle-knob {
-    width: 20px; height: 20px; border-radius: 50%; background: white;
-    position: absolute; top: 3px; left: 3px; transition: left 0.2s;
-  }
-  .toggle-btn.yearly .toggle-knob { left: 25px; }
-  .save-badge { background: var(--gold-light); color: var(--gold); font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 100px; border: 1px solid #e8c97a; }
-  .billing-offer-note { margin: 0.75rem auto 0; text-align: center; font-size: 0.88rem; color: var(--ink-mid); }
-  .yearly-note { color: var(--gold); font-weight: 500; }
+  .agreement-option span { font-size: 0.72rem; font-weight: 600; color: var(--moss); }
+  .agreement-option:hover { border-color: var(--moss); color: var(--forest); }
+  .agreement-option.active { background: var(--forest); border-color: var(--forest); color: white; box-shadow: 0 10px 30px rgba(26,58,31,0.14); }
+  .agreement-option.active span { color: var(--gold-light); }
+  .billing-offer-note { margin: 0.75rem auto 2.75rem; text-align: center; font-size: 0.88rem; color: var(--ink-mid); }
+  .agreement-note { color: var(--gold); font-weight: 500; }
 
   /* SECTION SHARED */
   section.pricing-section { padding: 5rem 5vw; }

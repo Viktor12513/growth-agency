@@ -158,12 +158,12 @@
     {
       "@type": "Question",
       "name": "Finns det bindningstid?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Du kan välja månadsvis avtal, 12 månaders avtal med 1 månad gratis eller 24 månaders avtal med 3 månader gratis." }
+      "acceptedAnswer": { "@type": "Answer", "text": "SEO-paketen finns med 6, 12 eller 24 månaders avtal. 6 månader ger 1 månad gratis, 12 månader ger 2 månader gratis och 24 månader ger 4 månader gratis." }
     },
     {
       "@type": "Question",
       "name": "Kan jag kombinera hemsida och SEO?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Absolut – och det är faktiskt det vi rekommenderar. Vid 12 månaders avtal får du 1 månad gratis. Vid 24 månaders avtal får du 3 månader gratis." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Absolut – och det är faktiskt det vi rekommenderar. SEO-paketen följer samma avtalsmodell: 6, 12 eller 24 månader med rabatt inräknad." }
     }
   ]
 }
@@ -223,15 +223,6 @@
     <span class="section-tag">Priser & paket</span>
     <h1 class="page-title">Inga överraskningar.<br><em>Bara resultat.</em></h1>
     <p class="page-lead">Transparenta priser utan dolda avgifter. Du vet exakt vad du betalar och vad du får – redan innan du skriver på något.</p>
-    <div class="toggle-wrap">
-      <span class="toggle-label active" id="label-monthly">Månadsvis</span>
-      <button class="toggle-btn" id="billingToggle" type="button" aria-label="Toggle monthly or yearly billing">
-        <div class="toggle-knob"></div>
-      </button>
-      <span class="toggle-label" id="label-yearly">12 mån</span>
-      <span class="save-badge">1 mån gratis</span>
-    </div>
-    <p class="billing-offer-note">Väljer du 24 månaders avtal får du 3 månader gratis.</p>
   </div>
 </div>
 
@@ -411,6 +402,18 @@
       <h2 class="section-title">Syns på Google – varje månad</h2>
       <p class="section-lead">SEO är ett maraton, inte en sprint. Välj nivå efter hur snabbt du vill växa och hur konkurrensutsatt din bransch är.</p>
     </div>
+    <div class="agreement-selector" role="radiogroup" aria-label="Välj avtalstid för SEO-paket">
+      <button class="agreement-option active" type="button" data-agreement-term="6" aria-pressed="true">
+        6 mån <span>1 månad gratis</span>
+      </button>
+      <button class="agreement-option" type="button" data-agreement-term="12" aria-pressed="false">
+        12 mån <span>2 månader gratis</span>
+      </button>
+      <button class="agreement-option" type="button" data-agreement-term="24" aria-pressed="false">
+        24 mån <span>4 månader gratis</span>
+      </button>
+    </div>
+    <p class="billing-offer-note">SEO-paketen tecknas som färdiga avtal på 6, 12 eller 24 månader.</p>
     <div class="seo-grid">
 
       <!-- LITEN -->
@@ -419,9 +422,9 @@
         <div class="card-name">Lokal</div>
         <div class="card-desc">För dig som vill synas i din stad eller region. Perfekt för lokala tjänsteföretag.</div>
         <div class="card-price">
-          <div class="price-main" data-monthly="2 995" data-yearly="2 746">2 995 kr</div>
-          <div class="price-unit">/månad, ex. moms</div>
-          <div class="price-monthly yearly-note is-hidden">12 mån avtal: 1 månad gratis. Faktureras 32 945 kr/år.</div>
+          <div class="price-main" data-base-monthly="2995">2 496 kr</div>
+          <div class="price-unit">effektivt /månad, ex. moms</div>
+          <div class="price-monthly agreement-note">6 mån avtal: 1 månad gratis. Avtalssumma 14 975 kr.</div>
         </div>
         <hr class="card-divider">
         <ul class="card-features">
@@ -447,9 +450,9 @@
         <div class="card-name">Tillväxt</div>
         <div class="card-desc">För företag som vill synas i hela Sverige och slå konkurrenterna på Google.</div>
         <div class="card-price">
-          <div class="price-main" data-monthly="5 995" data-yearly="5 496">5 995 kr</div>
-          <div class="price-unit">/månad, ex. moms</div>
-          <div class="price-monthly yearly-note is-hidden">12 mån avtal: 1 månad gratis. Faktureras 65 945 kr/år.</div>
+          <div class="price-main" data-base-monthly="5995">4 996 kr</div>
+          <div class="price-unit">effektivt /månad, ex. moms</div>
+          <div class="price-monthly agreement-note">6 mån avtal: 1 månad gratis. Avtalssumma 29 975 kr.</div>
         </div>
         <hr class="card-divider">
         <ul class="card-features">
@@ -474,9 +477,9 @@
         <div class="card-name">Dominant</div>
         <div class="card-desc">För dig som vill dominera sökresultaten i din bransch och lämna konkurrenterna bakom dig.</div>
         <div class="card-price">
-          <div class="price-main" data-monthly="9 995" data-yearly="9 162">9 995 kr</div>
-          <div class="price-unit">/månad, ex. moms</div>
-          <div class="price-monthly yearly-note is-hidden">12 mån avtal: 1 månad gratis. Faktureras 109 945 kr/år.</div>
+          <div class="price-main" data-base-monthly="9995">8 329 kr</div>
+          <div class="price-unit">effektivt /månad, ex. moms</div>
+          <div class="price-monthly agreement-note">6 mån avtal: 1 månad gratis. Avtalssumma 49 975 kr.</div>
         </div>
         <hr class="card-divider">
         <ul class="card-features">
@@ -527,7 +530,7 @@
           <tr><td>Strategimöten</td><td><span class="check-add">Kvartalsvis</span></td><td class="col-highlight"><span class="check-add">Kvartalsvis</span></td><td><span class="check-add">Kvartalsvis</span></td></tr>
           <tr><td>Månadsrapport</td><td><span class="check-yes">✓</span></td><td class="col-highlight"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
           <tr><td>Löpande underhåll</td><td><span class="check-yes">✓</span></td><td class="col-highlight"><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td></tr>
-          <tr><td>Avtal</td><td>Månadsvis, 12 eller 24 mån</td><td class="col-highlight">Månadsvis, 12 eller 24 mån</td><td>Månadsvis, 12 eller 24 mån</td></tr>
+          <tr><td>Avtal</td><td>6, 12 eller 24 mån</td><td class="col-highlight">6, 12 eller 24 mån</td><td>6, 12 eller 24 mån</td></tr>
         </tbody>
       </table>
     </div>
@@ -575,14 +578,14 @@
           Finns det bindningstid?
           <div class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div>
         </button>
-        <div class="faq-a">Du kan välja månadsvis avtal, 12 månaders avtal eller 24 månaders avtal. Vid 12 månaders avtal får du 1 månad gratis. Vid 24 månaders avtal får du 3 månader gratis.</div>
+        <div class="faq-a">SEO-paketen finns med 6, 12 eller 24 månaders avtal. Vid 6 månader får du 1 månad gratis, vid 12 månader får du 2 månader gratis och vid 24 månader får du 4 månader gratis.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" type="button">
           Kan jag kombinera hemsida + SEO?
           <div class="faq-icon"><svg viewBox="0 0 12 12"><line x1="6" y1="2" x2="6" y2="10"/><line x1="2" y1="6" x2="10" y2="6"/></svg></div>
         </button>
-        <div class="faq-a">Absolut – och det är faktiskt det vi rekommenderar. Vid 12 månaders avtal får du 1 månad gratis, och vid 24 månaders avtal får du 3 månader gratis.</div>
+        <div class="faq-a">Absolut – och det är faktiskt det vi rekommenderar. SEO-avtalet kan då väljas som 6, 12 eller 24 månader med rabatten inräknad i avtalet.</div>
       </div>
     </div>
   </div>

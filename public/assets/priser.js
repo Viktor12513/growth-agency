@@ -1,4 +1,10 @@
-let isYearly = false;
+let agreementTerm = 6;
+
+const agreementDiscounts = {
+  6: 1,
+  12: 2,
+  24: 4,
+};
 
 const productCatalog = {
   'website-start': { name: 'Hemsida Start', description: 'Upp till 5 sidor med mobilanpassning, SEO-grund och kontaktformul\u00e4r.', priceType: 'one-time', price: 14999 },
@@ -9,9 +15,9 @@ const productCatalog = {
   'addon-language': { name: 'Flerspr\u00e5kig sajt', description: 'L\u00e4gg till engelska eller ytterligare ett spr\u00e5k p\u00e5 hela sajten.', priceType: 'one-time', price: 999 },
   'addon-extra-page': { name: 'Extra sidor', description: 'Fler sidor ut\u00f6ver vad hemsidepaketet inkluderar.', priceType: 'one-time', price: 1500, quantity: true },
   'addon-maintenance': { name: 'L\u00f6pande underh\u00e5ll', description: 'Uppdateringar, s\u00e4kerhet och backup. Ing\u00e5r automatiskt i alla SEO-abonnemang.', priceType: 'monthly', monthly: 149 },
-  'seo-local': { name: 'SEO Lokal', description: 'Lokal SEO f\u00f6r f\u00f6retag som vill synas i sin stad eller region.', priceType: 'monthly', monthly: 2995, yearlyMonthly: 2746 },
-  'seo-growth': { name: 'SEO Tillv\u00e4xt', description: 'Nationell SEO f\u00f6r f\u00f6retag som vill synas i hela Sverige.', priceType: 'monthly', monthly: 5995, yearlyMonthly: 5496 },
-  'seo-dominant': { name: 'SEO Dominant', description: 'Avancerad SEO f\u00f6r f\u00f6retag som vill dominera s\u00f6kresultaten i sin bransch.', priceType: 'monthly', monthly: 9995, yearlyMonthly: 9162 },
+  'seo-local': { name: 'SEO Lokal', description: 'Lokal SEO f\u00f6r f\u00f6retag som vill synas i sin stad eller region.', priceType: 'monthly', monthly: 2995, agreement: true },
+  'seo-growth': { name: 'SEO Tillv\u00e4xt', description: 'Nationell SEO f\u00f6r f\u00f6retag som vill synas i hela Sverige.', priceType: 'monthly', monthly: 5995, agreement: true },
+  'seo-dominant': { name: 'SEO Dominant', description: 'Avancerad SEO f\u00f6r f\u00f6retag som vill dominera s\u00f6kresultaten i sin bransch.', priceType: 'monthly', monthly: 9995, agreement: true },
 };
 
 const storageKey = 'nordvaxt-request-cart';
@@ -19,15 +25,29 @@ let cart = loadCart();
 
 const formatCurrency = (value) => new Intl.NumberFormat('sv-SE').format(value) + ' kr';
 
+function getAgreementFreeMonths() {
+  return agreementDiscounts[agreementTerm] || 0;
+}
+
+function getAgreementTotal(monthly) {
+  return monthly * (agreementTerm - getAgreementFreeMonths());
+}
+
+function getAgreementMonthly(monthly) {
+  return Math.round(getAgreementTotal(monthly) / agreementTerm);
+}
+
 function getProductPrice(product) {
-  if (product.priceType === 'monthly') return isYearly && product.yearlyMonthly ? product.yearlyMonthly : product.monthly;
+  if (product.priceType === 'monthly') return product.agreement ? getAgreementMonthly(product.monthly) : product.monthly;
   return product.price;
 }
 
 function getPriceLabel(product, quantity = 1) {
   const price = getProductPrice(product) * quantity;
   const prefix = product.prefix || '';
-  return product.priceType === 'monthly' ? prefix + formatCurrency(price) + '/m\u00e5n' : prefix + formatCurrency(price);
+  return product.priceType === 'monthly'
+    ? prefix + formatCurrency(price) + '/m\u00e5n' + (product.agreement ? ' effektivt' : '')
+    : prefix + formatCurrency(price);
 }
 
 function loadCart() {
@@ -43,24 +63,33 @@ function saveCart() {
   localStorage.setItem(storageKey, JSON.stringify(cart));
 }
 
-function updateBillingPrices() {
-  document.querySelectorAll('.price-main[data-monthly]').forEach((price) => {
-    price.textContent = (isYearly ? price.dataset.yearly : price.dataset.monthly) + ' kr';
+function updateAgreementPrices() {
+  document.querySelectorAll('.price-main[data-base-monthly]').forEach((price) => {
+    const monthly = Number(price.dataset.baseMonthly);
+    price.textContent = formatCurrency(getAgreementMonthly(monthly));
   });
 
-  document.querySelectorAll('.yearly-note').forEach((note) => {
-    note.classList.toggle('is-hidden', !isYearly);
+  document.querySelectorAll('.agreement-note').forEach((note) => {
+    const price = note.closest('.card-price')?.querySelector('.price-main[data-base-monthly]');
+    if (!price) return;
+    const monthly = Number(price.dataset.baseMonthly);
+    const freeMonths = getAgreementFreeMonths();
+    note.textContent = agreementTerm + ' m\u00e5n avtal: ' + freeMonths +
+      (freeMonths === 1 ? ' m\u00e5nad gratis. ' : ' m\u00e5nader gratis. ') +
+      'Avtalssumma ' + formatCurrency(getAgreementTotal(monthly)) + '.';
   });
 
   renderCart();
 }
 
-function toggleBilling() {
-  isYearly = !isYearly;
-  document.getElementById('billingToggle')?.classList.toggle('yearly', isYearly);
-  document.getElementById('label-monthly')?.classList.toggle('active', !isYearly);
-  document.getElementById('label-yearly')?.classList.toggle('active', isYearly);
-  updateBillingPrices();
+function setAgreementTerm(term) {
+  agreementTerm = term;
+  document.querySelectorAll('.agreement-option').forEach((button) => {
+    const active = Number(button.dataset.agreementTerm) === agreementTerm;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+  updateAgreementPrices();
 }
 
 function toggleFaq(button) {
@@ -156,11 +185,14 @@ function renderCart() {
     const product = productCatalog[item.id];
     return product.priceType === 'monthly' ? sum + getProductPrice(product) * item.quantity : sum;
   }, 0);
+  const hasAgreementProduct = cart.some((item) => productCatalog[item.id]?.agreement);
 
   document.getElementById('cartOneTimeTotal').textContent = formatCurrency(oneTimeTotal);
   document.getElementById('cartMonthlyTotal').textContent = formatCurrency(monthlyTotal) + '/m\u00e5n';
-  document.getElementById('cartBillingNote').textContent = isYearly
-    ? 'SEO visas som ungef\u00e4rlig m\u00e5nadskostnad vid 12 m\u00e5n avtal med 1 m\u00e5nad gratis. Vid 24 m\u00e5n avtal f\u00e5r du 3 m\u00e5nader gratis.'
+  document.getElementById('cartBillingNote').textContent = hasAgreementProduct
+    ? 'SEO visas som effektiv m\u00e5nadskostnad vid ' + agreementTerm + ' m\u00e5n avtal med ' +
+      getAgreementFreeMonths() + (getAgreementFreeMonths() === 1 ? ' m\u00e5nad gratis. ' : ' m\u00e5nader gratis. ') +
+      'Avtalssumman bekr\u00e4ftas innan start.'
     : 'Eng\u00e5ngspris och m\u00e5nadskostnad visas separat s\u00e5 du ser vad som startas direkt och vad som \u00e4r l\u00f6pande.';
 
   updateSelectedButtons();
@@ -184,7 +216,9 @@ function submitRequest() {
   document.getElementById('cartSubmit').disabled = true;
 }
 
-document.getElementById('billingToggle')?.addEventListener('click', toggleBilling);
+document.querySelectorAll('.agreement-option').forEach((button) => {
+  button.addEventListener('click', () => setAgreementTerm(Number(button.dataset.agreementTerm)));
+});
 document.querySelectorAll('.faq-q').forEach((button) => button.addEventListener('click', () => toggleFaq(button)));
 document.querySelectorAll('.product-select').forEach((button) => {
   button.dataset.defaultLabel = button.textContent.trim();
@@ -200,4 +234,4 @@ document.getElementById('cartItems')?.addEventListener('click', (event) => {
   if (quantityButton) changeQuantity(quantityButton.dataset.cartQty, Number(quantityButton.dataset.delta));
 });
 
-renderCart();
+updateAgreementPrices();
