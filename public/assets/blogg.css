@@ -248,3 +248,212 @@ header .site-nav {
 .breadcrumb-inner {
   width: 100%;
 }
+
+/* Rich reusable article layout */
+.blog-post {
+  background: linear-gradient(180deg, var(--warm-white) 0%, #fff 42%, var(--warm-white) 100%);
+}
+
+.article-layout {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 3rem 5vw 5.5rem;
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 760px);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.article-toc {
+  position: sticky;
+  top: 86px;
+  background: var(--cream);
+  border: 1px solid var(--mint);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: 0 12px 34px rgba(26,58,31,0.06);
+}
+
+.article-toc-title {
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forest);
+  margin-bottom: 0.9rem;
+}
+
+.article-toc ol {
+  list-style: none;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.article-toc a {
+  display: grid;
+  grid-template-columns: 1.7rem 1fr;
+  gap: 0.55rem;
+  align-items: start;
+  color: var(--ink-mid);
+  font-size: 0.84rem;
+  line-height: 1.35;
+  padding: 0.45rem 0;
+}
+
+.article-toc a span {
+  width: 1.45rem;
+  height: 1.45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--mint);
+  color: var(--forest);
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.article-toc a:hover {
+  color: var(--forest);
+}
+
+.article-content {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-section {
+  background: #fff;
+  border: 1px solid rgba(200,230,208,0.9);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.45rem, 3vw, 2.35rem);
+  box-shadow: 0 14px 42px rgba(26,58,31,0.055);
+  scroll-margin-top: 92px;
+}
+
+.article-section + .article-section {
+  margin-top: 1.35rem;
+}
+
+.article-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 1.45rem;
+  border-radius: 999px;
+  background: var(--mint);
+  color: var(--forest);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.85rem;
+}
+
+.article-section h2 {
+  font-family: 'DM Serif Display', serif;
+  color: var(--forest);
+  font-size: clamp(1.5rem, 3vw, 2.05rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.article-section p {
+  color: var(--ink-mid);
+  line-height: 1.82;
+  margin-bottom: 1rem;
+}
+
+.article-section p:last-child {
+  margin-bottom: 0;
+}
+
+.article-section a {
+  color: var(--moss);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.article-section--intro {
+  background: linear-gradient(160deg, var(--cream), #fff 72%);
+  border-left: 5px solid var(--gold);
+}
+
+.article-section--intro .article-section-kicker {
+  background: var(--gold-light);
+  color: var(--gold);
+}
+
+.article-section ul {
+  list-style: none;
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+  padding: 1.15rem;
+  border-radius: var(--radius);
+  background: var(--cream);
+  border: 1px solid var(--mint);
+}
+
+.article-section li {
+  position: relative;
+  padding-left: 1.45rem;
+  color: var(--ink-mid);
+  line-height: 1.6;
+}
+
+.article-section li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: var(--moss);
+}
+
+.article-section--faq {
+  background: var(--cream);
+}
+
+.article-section--faq .article-section-body p {
+  background: #fff;
+  border: 1px solid var(--mint);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+}
+
+.article-section--service {
+  background: linear-gradient(135deg, var(--forest), var(--forest-mid));
+  border-color: transparent;
+  color: #fff;
+}
+
+.article-section--service .article-section-kicker {
+  background: rgba(255,255,255,0.12);
+  color: var(--gold-light);
+}
+
+.article-section--service h2,
+.article-section--service p {
+  color: #fff;
+}
+
+.article-section--service a {
+  color: var(--gold-light);
+}
+
+@media (max-width: 980px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+    padding-top: 2rem;
+  }
+
+  .article-toc {
+    position: static;
+  }
+}

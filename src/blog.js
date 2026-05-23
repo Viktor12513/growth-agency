@@ -203,11 +203,59 @@ function renderListing() {
 }
 
 function renderArticleSections(post) {
-  return post.contentSections.map((section) => `<section class="article-section">
+  return post.contentSections.map((section, index) => {
+    const sectionId = sectionIdFor(section, index);
+    const sectionClass = [
+      'article-section',
+      index === 0 ? 'article-section--intro' : '',
+      section.bullets ? 'article-section--with-list' : '',
+      isServiceSection(section) ? 'article-section--service' : '',
+      isFaqSection(section) ? 'article-section--faq' : '',
+    ].filter(Boolean).join(' ');
+
+    return `<section class="${sectionClass}" id="${sectionId}">
+    <span class="article-section-kicker">${String(index + 1).padStart(2, '0')}</span>
     <h2>${section.heading}</h2>
-    ${section.body.map((paragraph) => `<p>${paragraph}</p>`).join('')}
+    <div class="article-section-body">${section.body.map((paragraph) => `<p>${paragraph}</p>`).join('')}</div>
     ${section.bullets ? `<ul>${section.bullets.map((item) => `<li>${item}</li>`).join('')}</ul>` : ''}
-  </section>`).join('');
+  </section>`;
+  }).join('');
+}
+
+function plainText(value) {
+  return String(value || '').replace(/<[^>]+>/g, '').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function sectionIdFor(section, index) {
+  const slug = plainText(section.heading)
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+  return slug || `avsnitt-${index + 1}`;
+}
+
+function isServiceSection(section) {
+  return /relaterad|n&auml;sta steg|vill du/i.test(section.heading);
+}
+
+function isFaqSection(section) {
+  return /vanliga fr/i.test(plainText(section.heading));
+}
+
+function renderArticleToc(post) {
+  const sections = post.contentSections
+    .map((section, index) => ({ section, index, id: sectionIdFor(section, index) }))
+    .filter(({ section }) => !isServiceSection(section))
+    .slice(0, 10);
+
+  return `<aside class="article-toc" aria-label="Inneh&aring;llsf&ouml;rteckning">
+    <p class="article-toc-title">I den h&auml;r guiden</p>
+    <ol>
+      ${sections.map(({ section, index, id }) => `<li><a href="#${id}"><span>${String(index + 1).padStart(2, '0')}</span>${section.heading}</a></li>`).join('')}
+    </ol>
+  </aside>`;
 }
 
 function renderRelatedPosts(post) {
@@ -249,8 +297,11 @@ function renderPost(post) {
           <p>${post.excerpt}</p>
         </div>
       </header>
-      <div class="article-content">
-        ${renderArticleSections(post)}
+      <div class="article-layout">
+        ${renderArticleToc(post)}
+        <div class="article-content">
+          ${renderArticleSections(post)}
+        </div>
       </div>
     </article>
     ${renderRelatedPosts(post)}${renderCta()}`;
