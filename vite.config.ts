@@ -13,6 +13,7 @@ export default defineConfig({
         googleAds: resolve(__dirname, 'google-ads/index.html'),
         socialaMedier: resolve(__dirname, 'sociala-medier/index.html'),
         priser: resolve(__dirname, 'priser/index.html'),
+        quiz: resolve(__dirname, 'quiz/index.html'),
         blog: resolve(__dirname, 'blog/index.html'),
         blogg: resolve(__dirname, 'blogg/index.html'),
         omOss: resolve(__dirname, 'om-oss/index.html'),

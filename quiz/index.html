@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital närvaro-koll | Nordväxt AB</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+  <style>
+    :root {
+      --cream: #F7F3EA;
+      --cream-dark: #EDE5CE;
+      --gold: #C4973A;
+      --gold-deep: #A67D28;
+      --gold-light: #F0E4C4;
+      --gold-pale: #FAF5E8;
+      --ink: #1C1914;
+      --ink-mid: #4A3F2C;
+      --ink-muted: #8A7A60;
+      --danger: #C0392B;
+      --warn: #D4870A;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      min-height: 100vh;
+      background: var(--cream);
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    #quiz-root {
+      width: 100%;
+      max-width: 620px;
+    }
+
+    .wrap {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid var(--cream-dark);
+      padding: 2rem;
+    }
+
+    /* --- Header above card --- */
+    .quiz-intro {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .quiz-intro .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .quiz-intro h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .quiz-intro p {
+      font-size: 14px;
+      color: var(--ink-muted);
+      line-height: 1.6;
+    }
+
+    /* --- Progress & step --- */
+    .top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+    .step-label {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+    }
+    .pts-pill {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gold-deep);
+      background: var(--gold-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--cream-dark);
+    }
+    .prog-track {
+      height: 3px;
+      background: var(--cream-dark);
+      border-radius: 2px;
+      margin-bottom: 2rem;
+    }
+    .prog-fill {
+      height: 100%;
+      background: var(--gold);
+      border-radius: 2px;
+      transition: width 0.45s ease;
+    }
+
+    /* --- Question --- */
+    .q-text {
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.45;
+      margin-bottom: 1.5rem;
+    }
+
+    /* --- Options --- */
+    .opts { display: flex; flex-direction: column; gap: 9px; }
+    .opt {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 13px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--cream-dark);
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-align: left;
+      width: 100%;
+      font-family: inherit;
+    }
+    .opt:hover { border-color: var(--gold); background: var(--gold-pale); }
+    .opt.sel { border: 1.5px solid var(--gold); background: var(--gold-pale); }
+    .radio {
+      width: 17px;
+      height: 17px;
+      min-width: 17px;
+      border-radius: 50%;
+      border: 1.5px solid var(--cream-dark);
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.15s;
+    }
+    .opt:hover .radio { border-color: var(--gold); }
+    .opt.sel .radio { border-color: var(--gold); background: var(--gold); }
+    .opt.sel .radio::after {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: #fff;
+      border-radius: 50%;
+      display: block;
+    }
+    .opt-main { font-size: 14px; color: var(--ink); line-height: 1.4; }
+    .opt-sub { font-size: 12px; color: var(--ink-muted); margin-top: 2px; }
+
+    /* --- Nav buttons --- */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .btn-back {
+      background: none;
+      border: 1px solid var(--cream-dark);
+      color: var(--ink-muted);
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-back:hover { border-color: var(--ink-muted); color: var(--ink); }
+    .btn-next {
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-next:hover:not(:disabled) { background: var(--gold-deep); }
+    .btn-next:disabled {
+      background: var(--cream-dark);
+      color: var(--ink-muted);
+      cursor: not-allowed;
+    }
+
+    /* --- Result: score ring --- */
+    .ring-wrap {
+      position: relative;
+      width: 116px;
+      height: 116px;
+      margin: 0 auto 1rem;
+    }
+    .ring-wrap svg { transform: rotate(-90deg); }
+    .ring-num {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .res-label {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--ink);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .res-sub {
+      font-size: 13px;
+      color: var(--ink-muted);
+      text-align: center;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    /* --- Area bars --- */
+    .bars { margin: 1.25rem 0; }
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 9px;
+    }
+    .bar-lbl { font-size: 12px; color: var(--ink-muted); width: 110px; min-width: 110px; }
+    .bar-track { flex: 1; height: 7px; background: var(--cream-dark); border-radius: 4px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 4px; transition: width 0.7s ease; }
+    .bar-fill.g { background: var(--gold); }
+    .bar-fill.w { background: var(--warn); }
+    .bar-fill.d { background: var(--danger); }
+    .bar-pct { font-size: 12px; font-weight: 500; color: var(--ink); width: 32px; text-align: right; }
+
+    /* --- Recommendations --- */
+    .sec-label {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 10px;
+    }
+    .recs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-bottom: 1.25rem;
+    }
+    .rec {
+      padding: 13px;
+      border-radius: 10px;
+      background: var(--cream);
+      border: 1px solid var(--cream-dark);
+    }
+    .rec-ico { font-size: 18px; color: var(--gold); margin-bottom: 5px; }
+    .rec-t { font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 3px; }
+    .rec-d { font-size: 12px; color: var(--ink-muted); line-height: 1.4; }
+
+    /* --- CTA box --- */
+    .cta-box {
+      background: var(--ink);
+      border-radius: 12px;
+      padding: 1.75rem;
+      text-align: center;
+    }
+    .cta-t { font-size: 16px; font-weight: 500; color: var(--gold-light); margin-bottom: 6px; }
+    .cta-s { font-size: 13px; color: var(--ink-muted); margin-bottom: 1.25rem; line-height: 1.5; }
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-cta:hover { background: var(--gold-deep); }
+
+    .btn-restart {
+      display: block;
+      background: none;
+      border: none;
+      color: var(--ink-muted);
+      font-size: 12px;
+      font-family: inherit;
+      cursor: pointer;
+      margin: 12px auto 0;
+      text-decoration: underline;
+    }
+
+    /* --- Footer --- */
+    .quiz-footer {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 12px;
+      color: var(--ink-muted);
+    }
+    .quiz-footer a { color: var(--gold); text-decoration: none; }
+    .quiz-footer a:hover { text-decoration: underline; }
+
+
+    .quiz-site-header {
+      background: #fff;
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 0 24px;
+    }
+    .quiz-site-nav {
+      max-width: 1200px;
+      height: 64px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .quiz-logo {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #173f22;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .quiz-logo span { color: var(--gold); }
+    .quiz-site-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+    .quiz-site-links a {
+      color: var(--ink-mid);
+      font-size: 14px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .quiz-site-links a:hover,
+    .quiz-site-links a.is-active { color: #173f22; font-weight: 600; }
+    .quiz-site-links .nav-cta {
+      background: #173f22;
+      color: #fff;
+      padding: 11px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+    }
+    .quiz-shell {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 3rem 1rem 4rem;
+    }
+    @media (max-width: 760px) {
+      .quiz-site-nav { height: auto; padding: 16px 0; align-items: flex-start; flex-direction: column; }
+      .quiz-site-links { justify-content: flex-start; gap: 12px 18px; }
+      .quiz-site-links .nav-cta { padding: 9px 14px; }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 1.5rem 1rem 3rem; }
+      .wrap { padding: 1.5rem; }
+      .recs { grid-template-columns: 1fr; }
+      .q-text { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+<header class="quiz-site-header">
+  <nav class="quiz-site-nav" aria-label="Huvudnavigation">
+    <a href="/" class="quiz-logo">Nord<span>växt</span> AB</a>
+    <div class="quiz-site-links">
+      <a href="/hemsida/">Hemsidor</a>
+      <a href="/seo/">SEO</a>
+      <a href="/google-ads/">Google Ads</a>
+      <a href="/sociala-medier/">Sociala medier</a>
+      <a href="/priser/">Priser</a>
+      <a href="/quiz/" class="is-active" aria-current="page">Quiz</a>
+      <a href="/blogg/">Blogg</a>
+      <a href="/om-oss/">Om oss</a>
+      <a href="/kontakt/#contact-form" class="nav-cta">Kontakta oss</a>
+    </div>
+  </nav>
+</header>
+
+<div class="quiz-shell"><div id="quiz-root">
+  <div class="quiz-intro">
+    <div class="eyebrow">Nordväxt AB</div>
+    <h1>Hur stark är din digitala närvaro?</h1>
+    <p>Svara på 6 korta frågor och få ett personligt resultat – helt gratis och utan förpliktelser.</p>
+  </div>
+  <div id="quiz-content"></div>
+  <div class="quiz-footer">
+    <a href="/">nordvaxt.se</a> &nbsp;·&nbsp; hej@nordvaxt.se &nbsp;·&nbsp; 076-828 39 96
+  </div>
+</div>
+</div>
+
+<script>
+  const Qs = [
+    { q: "Har ditt företag en professionell hemsida idag?", area: "Hemsida", opts: [
+      { t: "Ja, modern och uppdaterad", s: "Byggd inom de senaste 2–3 åren", p: 20 },
+      { t: "Ja, men den är gammal eller inaktuell", s: "Ingen har rört den på länge", p: 10 },
+      { t: "Vi har bara en Facebook-sida", s: "Ingen riktig hemsida ännu", p: 4 },
+      { t: "Nej, vi saknar helt digital närvaro", s: "", p: 0 }
+    ]},
+    { q: "Hur syns ditt företag när kunder söker er tjänst på Google?", area: "SEO", opts: [
+      { t: "Vi syns på sida 1 för våra viktigaste sökord", s: "", p: 20 },
+      { t: "Vi syns, men på sida 2–3", s: "De flesta klickar aldrig så långt", p: 12 },
+      { t: "Vi är osäkra – har aldrig kollat", s: "", p: 5 },
+      { t: "Vi syns knappt eller inte alls", s: "", p: 0 }
+    ]},
+    { q: "Hur ser din Google Business-profil ut?", area: "Lokal SEO", opts: [
+      { t: "Komplett med foton, recensioner och öppettider", s: "", p: 20 },
+      { t: "Verifierad men knappt ifylld", s: "", p: 10 },
+      { t: "Inte verifierad – grunduppgifter finns bara", s: "", p: 4 },
+      { t: "Vad är Google Business-profil?", s: "", p: 0 }
+    ]},
+    { q: "Hur får ni de flesta nya kunder idag?", area: "Leadgenerering", opts: [
+      { t: "Via Google – organiskt eller via annonser", s: "", p: 20 },
+      { t: "Blandning av digitalt och mun-till-mun", s: "", p: 14 },
+      { t: "Nästan uteslutande via rekommendationer", s: "Sårbart om marknaden sviker", p: 6 },
+      { t: "Vi vet inte exakt varifrån kunderna kommer", s: "", p: 2 }
+    ]},
+    { q: "Mäter ni hur kunder hittar er digitalt?", area: "Analys", opts: [
+      { t: "Ja, vi använder Google Analytics aktivt", s: "", p: 20 },
+      { t: "Det är installerat men vi kollar sällan", s: "", p: 10 },
+      { t: "Nej – vi har inte satt upp spårning", s: "", p: 3 },
+      { t: "Vi vet inte vad Google Analytics är", s: "", p: 0 }
+    ]},
+    { q: "Hur aktiva är ni på sociala medier?", area: "Sociala medier", opts: [
+      { t: "Regelbundna inlägg med strategi och planering", s: "", p: 20 },
+      { t: "Vi lägger ut ibland – ganska spontant", s: "", p: 12 },
+      { t: "Sida finns men uppdateras sällan", s: "", p: 4 },
+      { t: "Vi saknar närvaro på sociala medier", s: "", p: 0 }
+    ]}
+  ];
+
+  let cur = 0, ans = [], sel = null;
+  const sum = () => ans.reduce((a, b) => a + b.p, 0);
+
+  function level(pct) {
+    if (pct >= 75) return { lbl: "Stark digital närvaro", col: "#C4973A", sub: "Ni gör redan mycket rätt – men det finns alltid dolda möjligheter att växa ytterligare." };
+    if (pct >= 50) return { lbl: "Godkänd men förbättringsbar", col: "#D4870A", sub: "Ni syns, men konkurrenterna tar fortfarande kunder från er varje dag." };
+    if (pct >= 25) return { lbl: "Svag digital närvaro", col: "#C07828", sub: "Ni missar troligtvis ett stort antal potentiella kunder varje dag." };
+    return { lbl: "Kritiskt låg synlighet", col: "#C0392B", sub: "Ni är i princip osynliga för era kunder på nätet." };
+  }
+
+  function getRecs() {
+    const map = {
+      "Hemsida":       { ico: "ti-device-laptop",   t: "Ny hemsida",            d: "En snabb, modern hemsida är grunden för all digital tillväxt." },
+      "SEO":           { ico: "ti-search",           t: "Sökmotoroptimering",    d: "Osynlig på sida 1 = 90% av klicken går till konkurrenten." },
+      "Lokal SEO":     { ico: "ti-map-pin",          t: "Lokal SEO & GBP",       d: "En optimerad Google-profil ger omedelbar lokal synlighet." },
+      "Leadgenerering":{ ico: "ti-speakerphone",     t: "Google Ads",            d: "Betald annonsering ger leads direkt – redan imorgon." },
+      "Analys":        { ico: "ti-chart-bar",        t: "Konverteringsspårning", d: "Utan data vet ni inte var era pengar ska läggas." },
+      "Sociala medier":{ ico: "ti-brand-instagram",  t: "Sociala medier",        d: "Regelbundet innehåll bygger förtroende och driver trafik." }
+    };
+    return ans
+      .map((a, i) => a.p < 14 ? map[Qs[i].area] : null)
+      .filter(Boolean)
+      .slice(0, 4);
+  }
+
+  function renderQ() {
+    const q = Qs[cur];
+    const pct = Math.round((cur / Qs.length) * 100);
+
+    document.getElementById('quiz-content').innerHTML = `
+      <div class="wrap">
+        <div class="top-row">
+          <span class="step-label">Fråga ${cur + 1} av ${Qs.length}</span>
+          ${ans.length ? `<span class="pts-pill">${sum()} av ${cur * 20} möjliga poäng</span>` : '<span></span>'}
+        </div>
+        <div class="prog-track"><div class="prog-fill" style="width:${pct}%"></div></div>
+        <p class="q-text">${q.q}</p>
+        <div class="opts" id="opts"></div>
+        <div class="nav">
+          ${cur > 0 ? '<button class="btn-back" id="bk">← Tillbaka</button>' : '<span></span>'}
+          <button class="btn-next" id="nx" disabled>${cur === Qs.length - 1 ? 'Se mitt resultat →' : 'Nästa →'}</button>
+        </div>
+      </div>`;
+
+    q.opts.forEach((o, i) => {
+      const d = document.createElement('button');
+      d.className = 'opt' + (sel === i ? ' sel' : '');
+      d.innerHTML = `<div class="radio"></div><div><div class="opt-main">${o.t}</div>${o.s ? `<div class="opt-sub">${o.s}</div>` : ''}</div>`;
+      d.onclick = () => {
+        sel = i;
+        document.getElementById('nx').disabled = false;
+        document.querySelectorAll('.opt').forEach(el => el.classList.remove('sel'));
+        d.classList.add('sel');
+      };
+      document.getElementById('opts').appendChild(d);
+    });
+
+    document.getElementById('nx').onclick = () => {
+      if (sel === null) return;
+      ans[cur] = q.opts[sel];
+      cur++;
+      sel = ans[cur] ? q.opts.findIndex(o => o.p === ans[cur].p) : null;
+      cur >= Qs.length ? renderRes() : renderQ();
+    };
+
+    const bk = document.getElementById('bk');
+    if (bk) bk.onclick = () => {
+      cur--;
+      sel = ans[cur] ? Qs[cur].opts.findIndex(o => o.p === ans[cur].p) : null;
+      renderQ();
+    };
+  }
+
+  function renderRes() {
+    const score = sum();
+    const max = Qs.length * 20;
+    const pct = Math.round((score / max) * 100);
+    const lv = level(pct);
+    const r = 50, circ = 2 * Math.PI * r;
+    const dash = (pct / 100) * circ;
+
+    const barsHTML = Qs.map((q, i) => {
+      const v = ans[i] ? Math.round((ans[i].p / 20) * 100) : 0;
+      const cls = v >= 70 ? 'g' : v >= 40 ? 'w' : 'd';
+      return `<div class="bar-row">
+        <span class="bar-lbl">${q.area}</span>
+        <div class="bar-track"><div class="bar-fill ${cls}" style="width:${v}%"></div></div>
+        <span class="bar-pct">${v}%</span>
+      </div>`;
+    }).join('');
+
+    const rc = getRecs();
+    const recsHTML = rc.map(r => `
+      <div class="rec">
+        <div class="rec-ico"><i class="ti ${r.ico}"></i></div>
+        <div class="rec-t">${r.t}</div>
+        <div class="rec-d">${r.d}</div>
+      </div>`).join('');
+
+    document.getElementById('quiz-content').innerHTML = `
+      <div class="wrap">
+        <div class="ring-wrap">
+          <svg width="116" height="116" viewBox="0 0 116 116">
+            <circle cx="58" cy="58" r="${r}" fill="none" stroke="#EDE5CE" stroke-width="9"/>
+            <circle cx="58" cy="58" r="${r}" fill="none" stroke="${lv.col}" stroke-width="9"
+              stroke-dasharray="${dash.toFixed(1)} ${(circ - dash).toFixed(1)}" stroke-linecap="round"/>
+          </svg>
+          <div class="ring-num">${pct}</div>
+        </div>
+        <div class="res-label">${lv.lbl}</div>
+        <div class="res-sub">${lv.sub}</div>
+        <div class="bars">${barsHTML}</div>
+        ${rc.length ? `<p class="sec-label">Dina största möjligheter</p><div class="recs">${recsHTML}</div>` : ''}
+        <div class="cta-box">
+          <div class="cta-t">Vill du veta exakt vad som ger störst effekt?</div>
+          <div class="cta-s">Boka ett gratis 30-minuterssamtal – vi går igenom din specifika situation utan förpliktelser.</div>
+          <a class="btn-cta" href="/kontakt/#contact-form" >
+            <i class="ti ti-calendar"></i> Boka gratis genomgång
+          </a>
+        </div>
+        <button class="btn-restart" id="rst">Gör om quizzen</button>
+      </div>`;
+
+    document.getElementById('rst').onclick = () => {
+      cur = 0; ans = []; sel = null;
+      renderQ();
+    };
+  }
+
+  renderQ();
+</script>
+</body>
+</html>
