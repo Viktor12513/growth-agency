@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Digital närvaro-koll | Nordväxt AB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
   <style>
     :root {
@@ -441,19 +444,375 @@
       .recs { grid-template-columns: 1fr; }
       .q-text { font-size: 16px; }
     }
-  </style>
+  
+  /* Responsive navigation fit */
+  header nav,
+  .quiz-site-nav { min-width: 0; overflow: visible; }
+  .logo,
+  .quiz-logo { flex-shrink: 0; }
+  header nav,
+  .quiz-site-links { gap: clamp(8px, 1vw, 18px) !important; }
+  header nav a,
+  .quiz-site-links a { white-space: nowrap; font-size: clamp(12px, 0.85vw, 14px) !important; }
+  .nav-cta,
+  .quiz-site-links .nav-cta { flex-shrink: 0; padding-inline: clamp(12px, 1vw, 18px) !important; }
+  @media (max-width: 1180px) {
+    header nav,
+    .quiz-site-links { gap: 8px !important; }
+    header nav a,
+    .quiz-site-links a,
+    .nav-cta { font-size: 12px !important; }
+  }
+
+  /* Nordväxt visual alignment */
+  :root {
+    --forest: #1a3a1f;
+    --forest-mid: #2d5c35;
+    --moss: #4a7c59;
+    --sage: #b8d4c0;
+    --mint: #d8eadc;
+    --cream: #f7f4ef;
+    --warm-white: #fdfcfa;
+    --gold: #c4943a;
+    --gold-deep: #a97618;
+    --gold-light: #f3e7c7;
+    --gold-pale: #fbf6ea;
+    --ink: #1f211c;
+    --ink-mid: #4a4f43;
+    --ink-muted: #7c7f73;
+    --radius: 8px;
+    --radius-lg: 14px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .quiz-site-header {
+    background: rgba(253,252,250,0.95);
+    border-bottom: 1px solid var(--mint);
+    backdrop-filter: blur(8px);
+  }
+
+  .quiz-site-nav {
+    max-width: 1200px;
+    height: 58px;
+  }
+
+  .quiz-logo,
+  .site-footer-logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--forest);
+    letter-spacing: -0.01em;
+  }
+
+  .quiz-logo span,
+  .site-footer-logo span {
+    color: var(--gold);
+  }
+
+  .quiz-site-links a {
+    color: var(--ink-mid);
+    font-size: 0.9rem !important;
+    font-weight: 500;
+  }
+
+  .quiz-site-links a:hover,
+  .quiz-site-links a.is-active {
+    color: var(--forest);
+  }
+
+  .quiz-site-links .nav-cta {
+    background: var(--forest);
+    color: #fff;
+    border-radius: var(--radius);
+    font-weight: 700;
+    padding: 0.68rem 1.25rem !important;
+  }
+
+  .quiz-site-links .nav-cta:hover {
+    background: var(--forest-mid);
+  }
+
+  .quiz-shell {
+    background: linear-gradient(160deg, var(--cream) 0%, var(--warm-white) 68%);
+    padding: 4.5rem 5vw 5rem;
+  }
+
+  #quiz-root {
+    max-width: 760px;
+  }
+
+  .quiz-intro {
+    margin-bottom: 2rem;
+  }
+
+  .quiz-intro .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    border-radius: 100px;
+    background: var(--mint);
+    color: var(--moss);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.15rem;
+  }
+
+  .quiz-intro .eyebrow::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--moss);
+  }
+
+  .quiz-intro h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    color: var(--forest);
+    letter-spacing: -0.015em;
+    line-height: 1.08;
+    margin-bottom: 1rem;
+  }
+
+  .quiz-intro p {
+    max-width: 560px;
+    margin-inline: auto;
+    color: var(--ink-mid);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  .wrap {
+    background: #fff;
+    border: 1px solid var(--mint);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.5rem, 4vw, 2.6rem);
+    box-shadow: 0 20px 60px rgba(26,58,31,0.07);
+  }
+
+  .step-label {
+    color: var(--moss);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .pts-pill {
+    background: var(--gold-light);
+    color: var(--forest);
+    border-color: #e7d5a8;
+    font-weight: 700;
+  }
+
+  .prog-track {
+    height: 4px;
+    background: #eadfca;
+  }
+
+  .prog-fill {
+    background: var(--gold);
+  }
+
+  .q-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.45rem, 2.4vw, 2rem);
+    font-weight: 400;
+    color: var(--forest);
+    line-height: 1.18;
+    margin-bottom: 1.7rem;
+  }
+
+  .opts {
+    gap: 12px;
+  }
+
+  .opt {
+    border: 1px solid var(--mint);
+    border-radius: var(--radius);
+    padding: 1rem 1.1rem;
+    background: var(--warm-white);
+  }
+
+  .opt:hover,
+  .opt.sel {
+    border-color: var(--moss);
+    background: #f5fbf6;
+    transform: translateY(-1px);
+  }
+
+  .radio {
+    border-color: var(--sage);
+  }
+
+  .opt.sel .radio {
+    border-color: var(--forest);
+    background: var(--forest);
+  }
+
+  .opt-main {
+    color: var(--ink);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .opt-sub {
+    color: var(--ink-muted);
+    font-size: 0.82rem;
+  }
+
+  .btn-back,
+  .btn-next,
+  .btn-cta {
+    border-radius: var(--radius);
+    font-weight: 700;
+  }
+
+  .btn-back {
+    border-color: var(--mint);
+    color: var(--forest);
+  }
+
+  .btn-next {
+    background: var(--forest);
+    color: #fff;
+    padding: 0.82rem 1.8rem;
+  }
+
+  .btn-next:hover:not(:disabled) {
+    background: var(--forest-mid);
+    transform: translateY(-1px);
+  }
+
+  .btn-next:disabled {
+    background: #e9dfc8;
+    color: #7f735d;
+  }
+
+  .ring-num,
+  .res-label,
+  .rec-t {
+    color: var(--forest);
+  }
+
+  .res-label {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+
+  .rec {
+    background: var(--warm-white);
+    border-color: var(--mint);
+  }
+
+  .rec-ico {
+    color: var(--moss);
+  }
+
+  .cta-box {
+    background: var(--forest);
+    border-radius: var(--radius-lg);
+  }
+
+  .cta-t {
+    font-family: 'DM Serif Display', serif;
+    color: #fff;
+    font-size: 1.55rem;
+    font-weight: 400;
+  }
+
+  .cta-s {
+    color: rgba(255,255,255,0.72);
+  }
+
+  .btn-cta {
+    background: var(--gold);
+    color: var(--forest);
+  }
+
+  .btn-cta:hover {
+    background: #d4a44a;
+  }
+
+  .quiz-footer {
+    color: var(--ink-muted);
+  }
+
+  .quiz-footer a {
+    color: var(--moss);
+    font-weight: 600;
+  }
+
+  .site-footer {
+    background: #143a1f;
+  }
+
+  .site-footer-logo {
+    color: #fff;
+  }
+
+  @media (max-width: 760px) {
+    body {
+      padding: 0;
+    }
+
+    .quiz-shell {
+      padding: 3rem 1rem 4rem;
+    }
+  }
+
+  /* Unified inline layout and chrome */
+  :root { --site-shell-max: 1200px; --site-shell-pad: max(24px, calc((100vw - var(--site-shell-max)) / 2)); --site-nav-height: 58px; }
+  .quiz-site-header { padding: 0 !important; }
+  .quiz-site-nav { width: 100% !important; max-width: none !important; margin: 0 !important; padding-left: var(--site-shell-pad) !important; padding-right: var(--site-shell-pad) !important; height: var(--site-nav-height) !important; }
+  .quiz-logo { font-family: 'DM Serif Display', Georgia, serif !important; font-size: 1.4rem !important; font-weight: 400 !important; }
+  .quiz-site-links { flex: 1 1 auto !important; justify-content: flex-end !important; gap: clamp(10px, 1.2vw, 22px) !important; }
+  .quiz-site-links a { font-family: 'DM Sans', sans-serif !important; font-size: clamp(0.78rem, 0.86vw, 0.9rem) !important; font-weight: 500 !important; }
+  .quiz-site-links .nav-cta { background: var(--forest) !important; color: #fff !important; border-radius: 8px !important; padding: 0.65rem 1.15rem !important; font-weight: 700 !important; }
+
+/* Unified logo size */
+.nav-logo,
+.logo,
+.quiz-logo,
+.logo-nord,
+.logo-vaxt {
+  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.nav-logo span,
+.logo span,
+.quiz-logo span,
+.logo-vaxt {
+  color: var(--gold, #c4943a) !important;
+}
+</style>
 </head>
 <body>
 <header class="quiz-site-header">
   <nav class="quiz-site-nav" aria-label="Huvudnavigation">
     <a href="/" class="quiz-logo">Nord<span>växt</span> AB</a>
-    <div class="quiz-site-links">
+        <div class="quiz-site-links">
       <a href="/hemsida/">Hemsidor</a>
       <a href="/seo/">SEO</a>
       <a href="/google-ads/">Google Ads</a>
       <a href="/sociala-medier/">Sociala medier</a>
       <a href="/priser/">Priser</a>
       <a href="/quiz/" class="is-active" aria-current="page">Quiz</a>
+      <a href="/kundcases/">Kundcases</a>
       <a href="/blogg/">Blogg</a>
       <a href="/om-oss/">Om oss</a>
       <a href="/kontakt/#contact-form" class="nav-cta">Kontakta oss</a>
@@ -488,7 +847,8 @@
           <a href="/seo/">SEO</a>
           <a href="/google-ads/">Google Ads</a>
           <a href="/sociala-medier/">Sociala medier</a>
-        </div>
+          <a href="/priser/">Priser</a>
+</div>
         <div>
           <h3>Företag</h3>
           <a href="/priser/">Priser</a>

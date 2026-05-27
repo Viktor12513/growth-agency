@@ -392,3 +392,216 @@ header .site-nav {
 .breadcrumb-inner {
   width: 100%;
 }
+/* Shared responsive navigation fit */
+.site-nav,
+body > nav:not(.breadcrumb),
+header > nav,
+.quiz-site-nav {
+  min-width: 0;
+  overflow: visible;
+}
+
+.nav-logo,
+.logo,
+.quiz-logo {
+  flex-shrink: 0;
+}
+
+.nav-links,
+.quiz-site-links {
+  min-width: 0;
+  flex: 1 1 auto;
+  justify-content: center;
+  gap: clamp(0.75rem, 1.15vw, 1.35rem) !important;
+}
+
+.nav-links a,
+.quiz-site-links a {
+  white-space: nowrap;
+  font-size: clamp(0.78rem, 0.86vw, 0.9rem) !important;
+}
+
+.nav-cta,
+.quiz-site-links .nav-cta {
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding-inline: clamp(0.85rem, 1.1vw, 1.25rem) !important;
+}
+
+@media (max-width: 1180px) {
+  .nav-links,
+  .quiz-site-links {
+    gap: 0.72rem !important;
+  }
+
+  .nav-links a,
+  .quiz-site-links a,
+  .nav-cta,
+  .quiz-site-links .nav-cta {
+    font-size: 0.8rem !important;
+  }
+}
+/* Unified site layout and chrome */
+:root {
+  --site-shell-max: 1200px;
+  --site-shell-pad: max(24px, calc((100vw - var(--site-shell-max)) / 2));
+  --site-nav-height: 58px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+header[role="banner"],
+body > header,
+.quiz-site-header {
+  background: rgba(253,252,250,0.95);
+  border-bottom: 1px solid var(--mint, var(--border2, #d8eadc));
+}
+
+.site-nav,
+header > nav,
+body > nav:not(.breadcrumb),
+.quiz-site-nav {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: var(--site-shell-pad) !important;
+  padding-right: var(--site-shell-pad) !important;
+  height: var(--site-nav-height) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: clamp(12px, 1.4vw, 24px) !important;
+}
+
+.nav-logo,
+.logo,
+.quiz-logo {
+  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 400 !important;
+  color: var(--forest, var(--brand-dark, #1a3a1f)) !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  flex: 0 0 auto !important;
+}
+
+.nav-logo span,
+.logo span,
+.logo-vaxt,
+.quiz-logo span {
+  color: var(--gold, #c4943a) !important;
+}
+
+.nav-links,
+.quiz-site-links,
+header nav:not(.breadcrumb) > nav,
+.header-inner nav {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: clamp(10px, 1.2vw, 22px) !important;
+  margin: 0 !important;
+}
+
+.nav-links a,
+.quiz-site-links a,
+.header-inner nav a,
+body > nav:not(.breadcrumb) a {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: clamp(0.78rem, 0.86vw, 0.9rem) !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+}
+
+.nav-cta,
+.quiz-site-links .nav-cta,
+.header-inner nav .nav-cta {
+  flex: 0 0 auto !important;
+  background: var(--forest, var(--brand-dark, #1a3a1f)) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  padding: 0.65rem 1.15rem !important;
+  font-weight: 700 !important;
+}
+
+.container,
+.page,
+.page-hero-inner,
+.hero-inner,
+.about-hero-inner,
+.contact-hero-inner,
+.policy-layout,
+.stats-inner,
+.footer-grid,
+.footer-bottom,
+.ft,
+.fbot {
+  max-width: 1120px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.breadcrumb {
+  padding-left: var(--site-shell-pad) !important;
+  padding-right: var(--site-shell-pad) !important;
+}
+
+.breadcrumb ol,
+.breadcrumb > .container,
+.breadcrumb-list,
+.breadcrumb-inner {
+  max-width: 1120px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 1180px) {
+  .nav-links,
+  .quiz-site-links,
+  .header-inner nav {
+    gap: 10px !important;
+  }
+
+  .nav-links a,
+  .quiz-site-links a,
+  .header-inner nav a {
+    font-size: 0.78rem !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-nav,
+  header > nav,
+  body > nav:not(.breadcrumb),
+  .quiz-site-nav {
+    height: auto !important;
+    min-height: var(--site-nav-height);
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+    align-items: flex-start !important;
+  }
+}
+/* Unified logo size */
+.nav-logo,
+.logo,
+.quiz-logo,
+.logo-nord,
+.logo-vaxt {
+  font-family: 'DM Serif Display', Georgia, serif !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.nav-logo span,
+.logo span,
+.quiz-logo span,
+.logo-vaxt {
+  color: var(--gold, #c4943a) !important;
+}
