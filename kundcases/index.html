@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="sv">
 <head>
 <meta charset="UTF-8">
@@ -6,10 +6,10 @@
 <title>Kundcases | Nordväxt AB</title>
 <meta name="description" content="Se hur vi hjälpt svenska företag att växa online med SEO, Google Ads och hemsidor. Riktiga resultat, konkreta siffror.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://nordvaxt.se/kundcases">
+<link rel="canonical" href="https://www.xn--nordvxt-9wa.se/kundcases">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://nordvaxt.se/kundcases">
+<meta property="og:url" content="https://www.xn--nordvxt-9wa.se/kundcases">
 <meta property="og:title" content="Kundcases – Nordväxt AB">
 <meta property="og:description" content="Se hur vi hjälpt svenska företag att växa online med SEO, Google Ads och hemsidor.">
 <meta property="og:locale" content="sv_SE">
@@ -20,8 +20,8 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Startsida", "item": "https://nordvaxt.se/" },
-    { "@type": "ListItem", "position": 2, "name": "Kundcases", "item": "https://nordvaxt.se/kundcases" }
+    { "@type": "ListItem", "position": 1, "name": "Startsida", "item": "https://www.xn--nordvxt-9wa.se/" },
+    { "@type": "ListItem", "position": 2, "name": "Kundcases", "item": "https://www.xn--nordvxt-9wa.se/kundcases" }
   ]
 }
 </script>
@@ -332,12 +332,12 @@
   </div>
 </section>
 
-<footer>
+<footer role="contentinfo" itemscope itemtype="https://schema.org/Organization">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo">Nord<span>växt</span> AB</div>
-        <p>Vi hjälper svenska företag att växa online med professionella hemsidor, SEO och digital marknadsföring.</p>
+        <div class="footer-logo" itemprop="name">Nord<span>växt</span> AB</div>
+        <p itemprop="description">Vi hjälper svenska företag att växa online med professionella hemsidor, SEO och digital marknadsföring.</p>
       </div>
       <div class="footer-col">
         <h4>Tjänster</h4>
@@ -347,7 +347,6 @@
           <li><a href="/google-ads/">Google Ads</a></li>
           <li><a href="/sociala-medier/">Sociala medier</a></li>
     <li><a href="/priser/">Priser</a></li>
-    <li><a href="/quiz/">Quiz</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -361,12 +360,15 @@
       </div>
       <div class="footer-col">
         <h4>Kontakt</h4>
-        <ul>
-          <li><a href="mailto:hej@nordvaxt.se">hej@nordvaxt.se</a></li>
-          <li><a href="tel:+46101898790">010-189 87 90 (direkt)</a></li>
-          <li><a href="tel:+46101898791">010-189 87 91 (växel)</a></li>
-          <li>O D Krooks gata 25, 254 44 Helsingborg, Sverige</li>
-        </ul>
+        <address class="footer-address">
+          <ul>
+            <li><a href="mailto:hej@nordvaxt.se" itemprop="email">hej@nordvaxt.se</a></li>
+            <li><a href="tel:+46101898790" itemprop="telephone">010-189 87 90 (direkt)</a></li>
+            <li><a href="tel:+46101898791">010-189 87 91 (växel)</a></li>
+            <li><span itemprop="streetAddress">O D Krooks gata 25</span></li>
+            <li><span itemprop="postalCode">254 44</span> <span itemprop="addressLocality">Helsingborg</span>, <span itemprop="addressCountry">Sverige</span></li>
+          </ul>
+        </address>
       </div>
     </div>
     <div class="footer-bottom">
@@ -378,5 +380,6 @@
 
 <script src="/assets/kundcases.js" defer></script>
 
+<script src="/assets/language-toggle.js" defer></script>
 </body>
 </html>

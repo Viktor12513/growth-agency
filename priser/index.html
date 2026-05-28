@@ -1,9 +1,16 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="sv">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Priser | Nordväxt AB</title>
+<meta name="description" content="Se aktuella priser för hemsidor, SEO, Google Ads och digital marknadsföring hos Nordväxt AB.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.xn--nordvxt-9wa.se/priser/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.xn--nordvxt-9wa.se/priser/">
+<meta property="og:title" content="Priser | Nordväxt AB">
+<meta property="og:description" content="Transparenta priser för hemsidor, SEO och Google Ads för svenska företag.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -194,7 +201,91 @@
 .logo .logo-ab {
   color: var(--green, #12391f) !important;
 }
-  </style>
+  
+/* Unified Google Ads footer */
+footer[role="contentinfo"],
+footer {
+  position: relative;
+  background: #143a1f;
+  color: rgba(255,255,255,0.68);
+  padding: 4rem 5vw 2rem;
+  border-top: 1px solid rgba(255,255,255,0.14);
+}
+footer[role="contentinfo"]::before,
+footer::before {
+  content: '';
+  position: absolute;
+  left: 5vw;
+  right: 5vw;
+  top: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.08);
+}
+footer[role="contentinfo"] .container,
+footer .container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-logo {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 0.8rem;
+  line-height: 1;
+}
+.footer-logo span { color: var(--gold, #c4943a); }
+.footer-brand p { font-size: 0.875rem; line-height: 1.7; color: rgba(255,255,255,0.68); }
+.footer-col h4 {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1rem;
+}
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0;
+}
+.footer-col a {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.76);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: #fff; }
+.footer-address { font-style: normal; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.68); margin: 0; }
+.footer-legal-link { color: rgba(255,255,255,0.55); text-decoration: none; }
+.footer-legal-link:hover { color: #fff; }
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 560px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { align-items: flex-start; flex-direction: column; }
+}
+</style>
 </head>
 <body>
 
@@ -428,7 +519,7 @@
       <div class="c-name">SEO Lite</div>
       <div class="c-desc">Första steget mot bättre synlighet utan stor investering.</div>
       <div class="c-price-box">
-        <div class="price-main">399 kr<span class="price-sfx">/mån</span></div>
+        <div class="price-main">999 kr<span class="price-sfx">/mån</span></div>
         <div class="price-note" id="seo-lite-note">6 mån avtal · ex. moms</div>
         <div class="price-free" id="seo-lite-free"></div>
       </div>
@@ -451,7 +542,7 @@
       <div class="c-name">SEO Lokal</div>
       <div class="c-desc">Perfekt för lokala tjänsteföretag som vill synas i sin stad eller region.</div>
       <div class="c-price-box">
-        <div class="price-main">999 kr<span class="price-sfx">/mån</span></div>
+        <div class="price-main">1 799 kr<span class="price-sfx">/mån</span></div>
         <div class="price-note" id="seo-lokal-note">6 mån avtal · ex. moms</div>
         <div class="price-free" id="seo-lokal-free"></div>
       </div>
@@ -473,7 +564,7 @@
       <div class="c-name">SEO Tillväxt</div>
       <div class="c-desc">Syns i hela Sverige och ta marknadsandelar på Google.</div>
       <div class="c-price-box">
-        <div class="price-main">1 999 kr<span class="price-sfx">/mån</span></div>
+        <div class="price-main">3 499 kr<span class="price-sfx">/mån</span></div>
         <div class="price-note" id="seo-tillvaxt-note">6 mån avtal · ex. moms</div>
         <div class="price-free" id="seo-tillvaxt-free"></div>
       </div>
@@ -568,39 +659,48 @@
   </div>
 </div>
 
-<footer>
-  <div class="fi">
-    <div class="ft">
-      <div class="fb">
-        <a class="logo logo-footer" href="/" style="text-decoration:none">
-          <span class="logo-nord">Nord</span><span class="logo-vaxt">växt</span><span class="logo-ab"> AB</span>
-        </a>
-        <p>Webbyrå för svenska företag – hemsidor, SEO & digital marknadsföring.</p>
+<footer role="contentinfo" itemscope itemtype="https://schema.org/Organization">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo" itemprop="name">Nord<span>växt</span> AB</div>
+        <p itemprop="description">Vi hjälper svenska företag att växa online med professionella hemsidor, SEO och digital marknadsföring.</p>
       </div>
-      <div class="fl">
-        <h5>Tjänster</h5>
-        <a href="/hemsida/">Hemsidor</a>
-        <a href="/seo/">SEO</a>
-        <a href="/google-ads/">Google Ads</a>
-        <a href="/sociala-medier/">Sociala medier</a>
-        <a href="/priser/">Priser</a>
-</div>
-      <div class="fl">
-        <h5>Företaget</h5>
-        <a href="/om-oss/">Om oss</a>
-        <a href="/blogg/">Blogg</a>
-        <a href="/priser/">Priser</a>
-        <a href="/kontakt/#contact-form">Kontakt</a>
+      <div class="footer-col">
+        <h4>Tjänster</h4>
+        <ul>
+          <li><a href="/hemsida/">Hemsidor</a></li>
+          <li><a href="/seo/">SEO</a></li>
+          <li><a href="/google-ads/">Google Ads</a></li>
+          <li><a href="/sociala-medier/">Sociala medier</a></li>
+    <li><a href="/priser/">Priser</a></li>
+        </ul>
       </div>
-      <div class="fl">
-        <h5>Snabblänkar</h5>
-        <a href="/kontakt/#contact-form">Boka samtal</a>
-        <a href="/">← Startsidan</a>
+      <div class="footer-col">
+        <h4>Företaget</h4>
+        <ul>
+          <li><a href="/om-oss/">Om oss</a></li>
+          <li><a href="/kundcases/">Kundcases</a></li>
+          <li><a href="/blogg/">Blogg</a></li>
+          <li><a href="/kontakt/#contact-form">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontakt</h4>
+        <address class="footer-address">
+          <ul>
+            <li><a href="mailto:hej@nordvaxt.se" itemprop="email">hej@nordvaxt.se</a></li>
+            <li><a href="tel:+46101898790" itemprop="telephone">010-189 87 90 (direkt)</a></li>
+            <li><a href="tel:+46101898791">010-189 87 91 (växel)</a></li>
+            <li><span itemprop="streetAddress">O D Krooks gata 25</span></li>
+            <li><span itemprop="postalCode">254 44</span> <span itemprop="addressLocality">Helsingborg</span>, <span itemprop="addressCountry">Sverige</span></li>
+          </ul>
+        </address>
       </div>
     </div>
-    <div class="fbot">
-      <span>SE © 2025 Nordväxt AB</span>
-      <span>Org.nr 559565-4277</span>
+    <div class="footer-bottom">
+      <p>© 2025 Nordväxt AB. Org.nr: 559565-4277</p>
+      <p><a href="/integritetspolicy/" class="footer-legal-link">Integritetspolicy</a> · <a href="/integritetspolicy/#cookies" class="footer-legal-link">Cookies</a></p>
     </div>
   </div>
 </footer>
@@ -1042,9 +1142,9 @@ function setTerm(type, months, btn) {
     { id:'ads-tillvaxt',  category:'Google Ads', name:'Ads Tillväxt',  price:0,     monthly:5995 },
     { id:'ads-dominant',  category:'Google Ads', name:'Ads Dominant',  price:0,     monthly:0,  offert:true },
     // SEO
-    { id:'seo-lite',      category:'SEO',        name:'SEO Lite',      price:0,     monthly:399 },
-    { id:'seo-lokal',     category:'SEO',        name:'SEO Lokal',     price:0,     monthly:999 },
-    { id:'seo-tillvaxt',  category:'SEO',        name:'SEO Tillväxt',  price:0,     monthly:1999 },
+    { id:'seo-lite',      category:'SEO',        name:'SEO Lite',      price:0,     monthly:999 },
+    { id:'seo-lokal',     category:'SEO',        name:'SEO Lokal',     price:0,     monthly:1799 },
+    { id:'seo-tillvaxt',  category:'SEO',        name:'SEO Tillväxt',  price:0,     monthly:3499 },
     { id:'seo-offert',    category:'SEO',        name:'SEO Löpande Offert', price:0, monthly:0, customMonthly:true, description:'Skräddarsytt SEO-upplägg med valfritt månadspris.' },
     // Tillägg
     { id:'add-webshop',   category:'Tillägg',    name:'Webshop (WooCommerce)', price:9999, monthly:0 },
@@ -1310,5 +1410,6 @@ function setTerm(type, months, btn) {
   }
 })();
 </script>
+<script src="/assets/language-toggle.js" defer></script>
 </body>
 </html>

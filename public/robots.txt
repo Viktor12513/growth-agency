@@ -1,0 +1,4 @@
+﻿User-agent: *
+Allow: /
+
+Sitemap: https://www.xn--nordvxt-9wa.se/sitemap.xml
