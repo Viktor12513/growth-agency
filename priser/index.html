@@ -61,6 +61,7 @@
 
   .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
   .cards-grid.seo-cards-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .cards-grid.web-cards-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
   .card{background:#fff;border:1.5px solid var(--border2);border-radius:var(--r);padding:26px 22px;position:relative;transition:border-color 0.2s,transform 0.2s}
   .card:hover{border-color:var(--green3);transform:translateY(-2px)}
   .card.feat{border-color:var(--green3);border-width:2px}
@@ -140,11 +141,13 @@
     .quiz-site-links a,
     .nav-cta { font-size: 12px !important; }
     .cards-grid.seo-cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cards-grid.web-cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 
   @media (max-width: 760px) {
     .cards-grid,
     .cards-grid.seo-cards-grid,
+    .cards-grid.web-cards-grid,
     .addon-grid { grid-template-columns: 1fr; }
   }
 
@@ -227,7 +230,7 @@
   <div class="sec-label g">Hemsidor – engångspris</div>
   <div class="sec-title">Hitta rätt hemsidepaket</div>
   <div class="sec-sub">Alla paket inkluderar mobilanpassning, SEO-grund och 1 års support efter lansering.</div>
-  <div class="cards-grid">
+  <div class="cards-grid web-cards-grid">
     <div class="card">
       <div class="c-lbl">Kom igång</div>
       <div class="c-name">Start</div>
@@ -291,6 +294,34 @@
         <li>1 års support efter lansering</li>
       </ul>
       <button class="c-btn">Välj Premium</button>
+    </div>
+    <div class="card">
+      <div class="offert-tag">Valfritt pris</div>
+      <div class="c-lbl">Skräddarsytt projekt</div>
+      <div class="c-name">Hemsida Offert</div>
+      <div class="c-desc">För projekt där du vill sätta ett eget engångspris och få en hemsida anpassad efter omfattning, mål och budget.</div>
+      <div class="c-price-box">
+        <div class="price-main">Offert</div>
+        <div class="price-note">Fyll i önskat engångspris · ex. moms</div>
+        <div class="price-free"></div>
+      </div>
+      <ul class="feats">
+        <li>Valfri projektbudget</li>
+        <li>Anpassad sidstruktur</li>
+        <li>Design och innehåll enligt offert</li>
+        <li>Mobilanpassning</li>
+        <li>SEO-grund enligt överenskommelse</li>
+        <li>Leverans 1–3 veckor</li>
+        <li>1 års support efter lansering</li>
+      </ul>
+      <div class="custom-price-field">
+        <label for="web-offert-price">Engångspris</label>
+        <div class="custom-price-wrap">
+          <input id="web-offert-price" type="number" min="1" step="1" inputmode="numeric" placeholder="t.ex. 30000">
+          <span>kr</span>
+        </div>
+      </div>
+      <button class="c-btn" data-prod-id="web-offert">Välj offert</button>
     </div>
   </div>
 
@@ -1004,6 +1035,7 @@ function setTerm(type, months, btn) {
     { id:'web-start',     category:'Hemsida',    name:'Start',         price:14999, monthly:0 },
     { id:'web-tillvaxt',  category:'Hemsida',    name:'Tillväxt',      price:24999, monthly:0 },
     { id:'web-premium',   category:'Hemsida',    name:'Premium',       price:39999, monthly:0 },
+    { id:'web-offert',    category:'Hemsida',    name:'Hemsida Offert', price:0, monthly:0, customPrice:true, description:'Skräddarsytt hemsideprojekt med valfritt engångspris.' },
     // Google Ads
     { id:'ads-bas',       category:'Google Ads', name:'Ads Bas',       price:0,     monthly:2995 },
     { id:'ads-tillvaxt',  category:'Google Ads', name:'Ads Tillväxt',  price:0,     monthly:5995 },
@@ -1102,6 +1134,16 @@ function setTerm(type, months, btn) {
 
   // ---- Cart logic ----
   function addToCart(prod, btn) {
+    if (prod.customPrice) {
+      const input = document.getElementById('web-offert-price');
+      const price = input ? Number(input.value) : 0;
+      if (!price || price < 1) {
+        showToast('Fyll i ett engångspris för hemsideofferten');
+        if (input) input.focus();
+        return;
+      }
+      prod = { ...prod, price: Math.round(price), monthly: 0 };
+    }
     if (prod.customMonthly) {
       const input = document.getElementById('seo-offert-price');
       const monthly = input ? Number(input.value) : 0;
@@ -1115,7 +1157,8 @@ function setTerm(type, months, btn) {
     if (prod.offert) { showToast('📋 Kontakta oss för skräddarsytt prisförslag'); return; }
     const existing = cart.find(i => i.id === prod.id);
     if (existing) {
-      if (prod.customMonthly) {
+      if (prod.customMonthly || prod.customPrice) {
+        existing.price = prod.price;
         existing.monthly = prod.monthly;
         existing.qty = 1;
       } else {
