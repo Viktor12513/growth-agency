@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="120" viewBox="0 0 520 120" role="img" aria-labelledby="title desc">
+  <title id="title">Nordväxt AB logotyp ljus</title>
+  <desc id="desc">Nordväxt AB logotyp för mörka bakgrunder med Nord och AB i vitt och växt i guld.</desc>
+  <rect width="520" height="120" fill="none"/>
+  <text x="24" y="76"
+        font-family="'DM Serif Display', Georgia, 'Times New Roman', serif"
+        font-size="54"
+        font-weight="600"
+        letter-spacing="-0.8">
+    <tspan fill="#ffffff">Nord</tspan><tspan fill="#c4943a">växt</tspan><tspan fill="#ffffff"> AB</tspan>
+  </text>
+</svg>

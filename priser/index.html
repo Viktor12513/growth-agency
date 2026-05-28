@@ -60,6 +60,7 @@
   .toggle-pill .bp.gold{background:var(--gold2)}
 
   .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
+  .cards-grid.seo-cards-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
   .card{background:#fff;border:1.5px solid var(--border2);border-radius:var(--r);padding:26px 22px;position:relative;transition:border-color 0.2s,transform 0.2s}
   .card:hover{border-color:var(--green3);transform:translateY(-2px)}
   .card.feat{border-color:var(--green3);border-width:2px}
@@ -84,6 +85,11 @@
   .card.feat .c-btn:hover{background:var(--green3)}
   .c-btn.gold-btn{border-color:var(--gold2);color:var(--gold)}
   .c-btn.gold-btn:hover{background:var(--gold2);color:#fff}
+  .custom-price-field{margin-top:14px}
+  .custom-price-field label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text3);margin-bottom:7px}
+  .custom-price-wrap{display:flex;align-items:center;gap:8px;border:1px solid var(--border2);border-radius:10px;padding:9px 11px;background:var(--bg)}
+  .custom-price-wrap input{width:100%;border:0;background:transparent;outline:0;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text)}
+  .custom-price-wrap span{font-size:12px;color:var(--text3);white-space:nowrap}
   .offert-tag{display:inline-block;background:var(--gold-bg);border:1px solid #D4A017;color:var(--gold);font-size:11px;font-weight:500;padding:3px 10px;border-radius:6px;margin-bottom:4px}
 
   .addon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -133,6 +139,13 @@
     header nav a,
     .quiz-site-links a,
     .nav-cta { font-size: 12px !important; }
+    .cards-grid.seo-cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (max-width: 760px) {
+    .cards-grid,
+    .cards-grid.seo-cards-grid,
+    .addon-grid { grid-template-columns: 1fr; }
   }
 
   /* Unified inline layout and chrome */
@@ -377,7 +390,7 @@
       <button onclick="setTerm('seo',24,this)">24 månader <span class="bp gold">3 mån gratis</span></button>
     </div>
   </div>
-  <div class="cards-grid">
+  <div class="cards-grid seo-cards-grid">
     <div class="card">
       <div class="c-lbl">Kom igång</div>
       <div class="c-name">SEO Lite</div>
@@ -444,6 +457,33 @@
         <li>Löpande underhåll ingår</li>
       </ul>
       <button class="c-btn">Välj Tillväxt</button>
+    </div>
+    <div class="card">
+      <div class="offert-tag">Valfritt pris</div>
+      <div class="c-lbl">Skräddarsytt upplägg</div>
+      <div class="c-name">SEO Löpande Offert</div>
+      <div class="c-desc">För dig som vill sätta ett eget månadspris och få ett SEO-upplägg anpassat efter budget, bransch och mål.</div>
+      <div class="c-price-box">
+        <div class="price-main">Offert<span class="price-sfx">/mån</span></div>
+        <div class="price-note">Fyll i önskat månadspris · ex. moms</div>
+        <div class="price-free"></div>
+      </div>
+      <ul class="feats">
+        <li>Valfri månadsbudget</li>
+        <li>Anpassad SEO-plan</li>
+        <li>Prioriterade fokusområden</li>
+        <li>Löpande optimering</li>
+        <li>Rapportering enligt överenskommelse</li>
+        <li>1–3 veckors uppstart</li>
+      </ul>
+      <div class="custom-price-field">
+        <label for="seo-offert-price">Månadspris</label>
+        <div class="custom-price-wrap">
+          <input id="seo-offert-price" type="number" min="1" step="1" inputmode="numeric" placeholder="t.ex. 2500">
+          <span>kr/mån</span>
+        </div>
+      </div>
+      <button class="c-btn" data-prod-id="seo-offert">Välj offert</button>
     </div>
   </div>
 
@@ -972,6 +1012,7 @@ function setTerm(type, months, btn) {
     { id:'seo-lite',      category:'SEO',        name:'SEO Lite',      price:0,     monthly:399 },
     { id:'seo-lokal',     category:'SEO',        name:'SEO Lokal',     price:0,     monthly:999 },
     { id:'seo-tillvaxt',  category:'SEO',        name:'SEO Tillväxt',  price:0,     monthly:1999 },
+    { id:'seo-offert',    category:'SEO',        name:'SEO Löpande Offert', price:0, monthly:0, customMonthly:true, description:'Skräddarsytt SEO-upplägg med valfritt månadspris.' },
     // Tillägg
     { id:'add-webshop',   category:'Tillägg',    name:'Webshop (WooCommerce)', price:9999, monthly:0 },
     { id:'add-booking',   category:'Tillägg',    name:'Bokningssystem',        price:4999, monthly:0 },
@@ -991,9 +1032,9 @@ function setTerm(type, months, btn) {
     // Special: multiple "Välj Tillväxt" buttons – distinguish by section
     document.querySelectorAll('.c-btn').forEach(btn => {
       const txt = btn.textContent.trim();
-      let prodId = null;
+      let prodId = btn.dataset.prodId || null;
 
-      if (txt === 'Välj Tillväxt') {
+      if (!prodId && txt === 'Välj Tillväxt') {
         // Find parent card, then section
         const section = btn.closest('.cards-grid');
         const prevLabel = section ? section.previousElementSibling : null;
@@ -1010,7 +1051,7 @@ function setTerm(type, months, btn) {
           else prodId = 'web-tillvaxt';
         } else prodId = 'web-tillvaxt';
       } else {
-        prodId = btnMap[txt] || null;
+        prodId = prodId || btnMap[txt] || null;
       }
 
       if (prodId) {
@@ -1061,10 +1102,25 @@ function setTerm(type, months, btn) {
 
   // ---- Cart logic ----
   function addToCart(prod, btn) {
+    if (prod.customMonthly) {
+      const input = document.getElementById('seo-offert-price');
+      const monthly = input ? Number(input.value) : 0;
+      if (!monthly || monthly < 1) {
+        showToast('Fyll i ett månadspris för SEO-offerten');
+        if (input) input.focus();
+        return;
+      }
+      prod = { ...prod, monthly: Math.round(monthly), price: 0 };
+    }
     if (prod.offert) { showToast('📋 Kontakta oss för skräddarsytt prisförslag'); return; }
     const existing = cart.find(i => i.id === prod.id);
     if (existing) {
-      existing.qty++;
+      if (prod.customMonthly) {
+        existing.monthly = prod.monthly;
+        existing.qty = 1;
+      } else {
+        existing.qty++;
+      }
     } else {
       cart.push({ ...prod, qty: 1 });
     }
