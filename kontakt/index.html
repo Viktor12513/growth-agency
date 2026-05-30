@@ -221,7 +221,11 @@
               <p>Vi svarar inom 24 timmar – oftast samma dag.</p>
             </div>
 
-            <form id="contact-form" novalidate aria-label="Kontaktformulär">
+            <form id="contact-form" action="https://formsubmit.co/albin@nordvaxt.se" method="POST" aria-label="Kontaktformulär">
+              <input type="hidden" name="_subject" value="Ny kontaktförfrågan från Nordväxt.se">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://www.xn--nordvxt-9wa.se/kontakt/?skickat=1#form-success">
               <div class="form-row">
                 <div class="form-group">
                   <label for="fname">Förnamn *</label>
