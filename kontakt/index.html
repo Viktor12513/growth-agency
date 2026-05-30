@@ -68,6 +68,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/kontakt.css">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ML4E8DFP54"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ML4E8DFP54');
+</script>
 </head>
 <body>
 
@@ -221,11 +230,7 @@
               <p>Vi svarar inom 24 timmar – oftast samma dag.</p>
             </div>
 
-            <form id="contact-form" action="https://formsubmit.co/albin@nordvaxt.se" method="POST" aria-label="Kontaktformulär">
-              <input type="hidden" name="_subject" value="Ny kontaktförfrågan från Nordväxt.se">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_next" value="https://www.xn--nordvxt-9wa.se/kontakt/?skickat=1#form-success">
+            <form id="contact-form" aria-label="Kontaktformulär">
               <div class="form-row">
                 <div class="form-group">
                   <label for="fname">Förnamn *</label>
