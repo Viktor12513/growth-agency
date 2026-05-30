@@ -19,6 +19,7 @@ export default defineConfig({
         omOss: resolve(__dirname, 'om-oss/index.html'),
         kontakt: resolve(__dirname, 'kontakt/index.html'),
         integritetspolicy: resolve(__dirname, 'integritetspolicy/index.html'),
+        webbyraHelsingborg: resolve(__dirname, 'webbyra-helsingborg/index.html'),
         webbyraMalmo: resolve(__dirname, 'webbyra-malmo/index.html'),
         webbyraGoteborg: resolve(__dirname, 'webbyra-goteborg/index.html'),
         webbyraStockholm: resolve(__dirname, 'webbyra-stockholm/index.html'),
