@@ -92,12 +92,27 @@
   .post-card:hover { transform:translateY(-4px); box-shadow:0 14px 44px rgba(26,58,31,0.08); }
   .post-card-thumb { height:180px; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
   .post-thumb--seo { background:linear-gradient(135deg,#1a3a1f,#2d5c35); }
-  .post-thumb--ads { background:linear-gradient(135deg,#c4943a,#d4a44a); }
+.post-thumb--ads { background:linear-gradient(135deg,#f7fbff,#eef5ff); }
   .post-thumb--website { background:linear-gradient(135deg,#4a7c59,#8ab89a); }
   .post-thumb--local-seo { background:linear-gradient(135deg,#1a3a1f,#4a7c59); }
   .post-thumb--social { background:linear-gradient(135deg,#2d5c35,#8ab89a); }
   .post-thumb--speed { background:linear-gradient(135deg,#4a7c59,#1a3a1f); }
-  .post-card-thumb svg { width:36px; height:36px; stroke:rgba(255,255,255,0.7); fill:none; stroke-width:1.5; position:relative; z-index:1; }
+.post-card-thumb svg { width:36px; height:36px; stroke:rgba(255,255,255,0.7); fill:none; stroke-width:1.5; position:relative; z-index:1; }
+  .google-ads-logo { position:relative; z-index:1; width:min(50%, 132px); height:auto; display:block; filter:drop-shadow(0 16px 28px rgba(28,25,20,0.16)); }
+  .featured-icon .google-ads-logo { width:96px; max-width:none; }
+  .article-icon .google-ads-logo { width:112px; max-width:none; }
+  .article-icon:has(.google-ads-logo),
+  .featured-icon:has(.google-ads-logo) { width:auto; height:auto; padding:0.75rem 1rem; background:rgba(255,255,255,0.92); border-color:rgba(255,255,255,0.55); }
+  .custom-post-logo { position:relative; z-index:1; width:min(52%, 142px); height:auto; display:block; filter:drop-shadow(0 16px 28px rgba(28,25,20,0.16)); }
+  .post-thumb--custom-image,
+  .post-featured-img:has(.custom-post-logo),
+  .post-card-thumb:has(.custom-post-logo),
+  .article-hero:has(.custom-post-logo) { background:#fff !important; }
+  .post-thumb--custom-image::before { display:none; }
+  .featured-icon .custom-post-logo { width:82px; max-width:none; }
+  .article-icon .custom-post-logo { width:96px; max-width:none; }
+  .article-icon:has(.custom-post-logo),
+  .featured-icon:has(.custom-post-logo) { width:auto; height:auto; padding:0.75rem 1rem; background:rgba(255,255,255,0.92); border-color:rgba(255,255,255,0.55); }
   .post-card-body { padding:1.5rem 1.5rem 1.75rem; display:flex; flex-direction:column; flex:1; }
   .post-card-body .post-meta { margin-bottom:0.8rem; }
   .post-card-title { font-family:'DM Serif Display',serif; font-size:1.15rem; color:var(--ink); line-height:1.3; margin-bottom:0.75rem; transition:color 0.2s; }

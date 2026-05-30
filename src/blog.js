@@ -54,6 +54,45 @@ function catClass(post) {
   return map[post.categoryKey] || '';
 }
 
+const customPostImages = {
+  'hur-ofta-posta-instagram': {
+    src: '/assets/instagram.png',
+    alt: 'Instagram',
+    className: 'instagram-logo',
+  },
+  'linkedin-foretag-b2b': {
+    src: '/assets/linkedin.png',
+    alt: 'LinkedIn',
+    className: 'linkedin-logo',
+  },
+  'innehallskalender-sociala-medier': {
+    src: '/assets/calendar.png',
+    alt: 'Innehallskalender',
+    className: 'calendar-logo',
+  },
+};
+
+function renderPostVisual(post, variant = 'card') {
+  const customImage = customPostImages[post.slug];
+  if (customImage) {
+    const imgClass = variant === 'article'
+      ? `custom-post-logo custom-post-logo--article ${customImage.className}`
+      : `custom-post-logo ${customImage.className}`;
+    return `<img class="${imgClass}" src="${customImage.src}" alt="${customImage.alt}">`;
+  }
+
+  if (post.categoryKey === 'google-ads') {
+    const imgClass = variant === 'article' ? 'google-ads-logo google-ads-logo--article' : 'google-ads-logo';
+    return `<img class="${imgClass}" src="/assets/googleads.png" alt="Google Ads">`;
+  }
+
+  return icons[post.icon];
+}
+
+function visualClass(post) {
+  return customPostImages[post.slug] ? ' post-thumb--custom-image' : '';
+}
+
 function renderBreadcrumb(currentLabel, includeBlogLink = false) {
   const blogCrumb = includeBlogLink
     ? '<li><a href="/blogg/">Blogg</a></li><li class="sep" aria-hidden="true">&rsaquo;</li>'
@@ -96,8 +135,8 @@ function renderFilters() {
 
 function renderFeaturedPost(post) {
   return `<article class="post-featured" data-cat="${post.categoryKey}">
-    <a class="post-featured-img post-thumb--${post.coverStyle}" href="/blogg/${post.slug}" aria-label="L&auml;s ${post.title}">
-      <div class="featured-icon">${icons[post.icon]}</div>
+    <a class="post-featured-img post-thumb--${post.coverStyle}${visualClass(post)}" href="/blogg/${post.slug}" aria-label="L&auml;s ${post.title}">
+      <div class="featured-icon">${renderPostVisual(post, 'featured')}</div>
       <div class="featured-label">Popul&auml;r guide</div>
       <div class="featured-title">${post.title}</div>
     </a>
@@ -117,7 +156,7 @@ function renderFeaturedPost(post) {
 
 function renderPostCard(post) {
   return `<article class="post-card" data-cat="${post.categoryKey}">
-    <a class="post-card-thumb post-thumb--${post.coverStyle}" href="/blogg/${post.slug}" aria-label="L&auml;s ${post.title}">${icons[post.icon]}</a>
+    <a class="post-card-thumb post-thumb--${post.coverStyle}${visualClass(post)}" href="/blogg/${post.slug}" aria-label="L&auml;s ${post.title}">${renderPostVisual(post, 'card')}</a>
     <div class="post-card-body">
       <div class="post-meta">
         <span class="post-cat ${catClass(post)}">${post.category}</span>
@@ -284,10 +323,10 @@ function renderPost(post) {
 
   app.innerHTML = `${renderBreadcrumb(post.title, true)}
     <article class="blog-post">
-      <header class="article-hero post-thumb--${post.coverStyle}">
+      <header class="article-hero post-thumb--${post.coverStyle}${visualClass(post)}">
         <div class="article-hero-inner">
           <a href="/blogg/" class="article-back">Tillbaka till bloggen</a>
-          <div class="article-icon">${icons[post.icon]}</div>
+          <div class="article-icon">${renderPostVisual(post, 'article')}</div>
           <div class="post-meta article-meta">
             <span class="post-cat ${catClass(post)}">${post.category}</span>
             <span class="post-date">${post.date}</span>
