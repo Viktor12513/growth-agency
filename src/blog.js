@@ -44,6 +44,10 @@ function arrowIcon() {
   return '<svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
 }
 
+function postUrl(post) {
+  return post.staticArticle ? `/blogg/${post.slug}/` : `/blogg/${post.slug}`;
+}
+
 function catClass(post) {
   const map = {
     'google-ads': 'post-cat--ads',
@@ -134,8 +138,9 @@ function renderFilters() {
 }
 
 function renderFeaturedPost(post) {
+  const href = postUrl(post);
   return `<article class="post-featured" data-cat="${post.categoryKey}">
-    <a class="post-featured-img post-thumb--${post.coverStyle}${visualClass(post)}" href="/blogg/${post.slug}" aria-label="L&auml;s ${post.title}">
+    <a class="post-featured-img post-thumb--${post.coverStyle}${visualClass(post)}" href="${href}" aria-label="L&auml;s ${post.title}">
       <div class="featured-icon">${renderPostVisual(post, 'featured')}</div>
       <div class="featured-label">Popul&auml;r guide</div>
       <div class="featured-title">${post.title}</div>
@@ -149,23 +154,24 @@ function renderFeaturedPost(post) {
         </div>
         <p class="post-excerpt">${post.excerpt}</p>
       </div>
-      <a href="/blogg/${post.slug}" class="post-link">L&auml;s hela artikeln ${arrowIcon()}</a>
+      <a href="${href}" class="post-link">L&auml;s hela artikeln ${arrowIcon()}</a>
     </div>
   </article>`;
 }
 
 function renderPostCard(post) {
+  const href = postUrl(post);
   return `<article class="post-card" data-cat="${post.categoryKey}">
-    <a class="post-card-thumb post-thumb--${post.coverStyle}${visualClass(post)}" href="/blogg/${post.slug}" aria-label="L&auml;s ${post.title}">${renderPostVisual(post, 'card')}</a>
+    <a class="post-card-thumb post-thumb--${post.coverStyle}${visualClass(post)}" href="${href}" aria-label="L&auml;s ${post.title}">${renderPostVisual(post, 'card')}</a>
     <div class="post-card-body">
       <div class="post-meta">
         <span class="post-cat ${catClass(post)}">${post.category}</span>
         <span class="post-date">${post.date}</span>
         <span class="post-read">${post.readingTime.replace(' l&auml;sning', '')}</span>
       </div>
-      <h2 class="post-card-title"><a href="/blogg/${post.slug}">${post.title}</a></h2>
+      <h2 class="post-card-title"><a href="${href}">${post.title}</a></h2>
       <p class="post-card-excerpt">${post.excerpt}</p>
-      <a href="/blogg/${post.slug}" class="post-card-link">L&auml;s mer ${arrowIcon()}</a>
+      <a href="${href}" class="post-card-link">L&auml;s mer ${arrowIcon()}</a>
     </div>
   </article>`;
 }
@@ -315,6 +321,11 @@ function renderRelatedPosts(post) {
 }
 
 function renderPost(post) {
+  if (post.staticArticle) {
+    window.location.replace(postUrl(post));
+    return;
+  }
+
   setMeta({
     title: `${post.title} | Nordv&auml;xt AB`,
     description: post.excerpt,
