@@ -4,6 +4,24 @@
     { "source": "/blog/:slug*", "destination": "/blog/index.html" }
   ],
   "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "xn--nordvxt-9wa.se" }],
+      "destination": "https://www.nordvaxt.se/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.xn--nordvxt-9wa.se" }],
+      "destination": "https://www.nordvaxt.se/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "nordvaxt.se" }],
+      "destination": "https://www.nordvaxt.se/:path*",
+      "permanent": true
+    },
     { "source": "/blog/:slug*", "destination": "/blogg/:slug*", "permanent": true }
   ],
   "headers": [

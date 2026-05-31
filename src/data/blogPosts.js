@@ -1191,7 +1191,7 @@ export const blogPosts = [
           "Google Ads budstrategier är inte svårare än det här: <strong>matcha strategin med din situation</strong>. Ny och lite data? Börja enkelt med maximera klick eller manuell CPC. Samlat data och vet dina mål? Byt till Smart Bidding. Driver e-handel med varierande marginal? Mål-ROAS är din bästa kompis.",
           "Det absolut vanligaste misstaget vi ser är att företag hoppar direkt till avancerade strategier utan data att backa upp dem, eller att de byter strategi så ofta att algoritmen aldrig hinner lära sig. Ha tålamod. Samla data. Optimera metodiskt.",
           "Kom ihåg: budstrategin är en del av pusslet – men den funkar inte i ett vakuum. Annonstexter, sökord, negativa sökord, landningssidor och konverteringsspårning spelar minst lika stor roll. Vill du ha hjälp med att sätta ihop hela bilden?",
-          "<a href=\"https://www.xn--nordvxt-9wa.se/kontakt/#contact-form\" style=\"display:inline-block;background:var(--gold-mid);color:var(--cream-pure);font-weight:700;font-size:0.95rem;padding:13px 26px;border-radius:8px;text-decoration:none;transition:background 0.18s;\">Boka en gratis genomgång →</a>"
+          "<a href=\"https://www.nordvaxt.se/kontakt/#contact-form\" style=\"display:inline-block;background:var(--gold-mid);color:var(--cream-pure);font-weight:700;font-size:0.95rem;padding:13px 26px;border-radius:8px;text-decoration:none;transition:background 0.18s;\">Boka en gratis genomgång →</a>"
         ]
       },
       {
