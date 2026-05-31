@@ -7,19 +7,19 @@
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "xn--nordvxt-9wa.se" }],
-      "destination": "https://www.nordvaxt.se/:path*",
+      "destination": "https://nordvaxt.se/:path*",
       "permanent": true
     },
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.xn--nordvxt-9wa.se" }],
-      "destination": "https://www.nordvaxt.se/:path*",
+      "destination": "https://nordvaxt.se/:path*",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "nordvaxt.se" }],
-      "destination": "https://www.nordvaxt.se/:path*",
+      "has": [{ "type": "host", "value": "www.nordvaxt.se" }],
+      "destination": "https://nordvaxt.se/:path*",
       "permanent": true
     },
     { "source": "/blog/:slug*", "destination": "/blogg/:slug*", "permanent": true }
