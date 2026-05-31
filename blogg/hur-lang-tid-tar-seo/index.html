@@ -122,7 +122,11 @@ img { max-width:100%; display:block; }
 .nav-links a:hover,.nav-links a[aria-current] { color:var(--forest); }
 .nav-cta { background:var(--forest); color:white; font-size:.875rem; font-weight:500; padding:.55rem 1.25rem; border-radius:var(--radius); transition:background .2s; }
 .nav-cta:hover { background:var(--forest-mid); }
-@media(max-width:860px){.nav-links{display:none}}
+.mobile-nav-toggle { display:none; width:42px; height:42px; border:1px solid var(--mint); background:white; border-radius:var(--radius); align-items:center; justify-content:center; flex-direction:column; gap:5px; cursor:pointer; }
+.mobile-nav-toggle span { width:18px; height:2px; background:var(--forest); border-radius:2px; transition:transform .2s,opacity .2s; }
+.mobile-nav-toggle[aria-expanded="true"] span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.mobile-nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity:0; }
+.mobile-nav-toggle[aria-expanded="true"] span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
 
 /* BREADCRUMB */
 .breadcrumb { padding:.75rem 5vw; background:var(--cream); border-bottom:1px solid var(--mint); }
@@ -133,6 +137,8 @@ img { max-width:100%; display:block; }
 
 /* LAYOUT */
 .article-wrap { max-width:var(--max-wide); margin:0 auto; padding:3.5rem 5vw 6rem; display:grid; grid-template-columns:1fr 280px; gap:4.5rem; align-items:start; }
+.article-wrap > * { min-width:0; }
+article { min-width:0; max-width:100%; }
 @media(max-width:1060px){ .article-wrap{grid-template-columns:1fr} .article-sidebar{display:none} }
 
 /* ARTICLE HEADER */
@@ -369,6 +375,68 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
 .footer-col a { font-size:.875rem; transition:color .15s; }
 .footer-col a:hover { color:white; }
 .footer-bottom { display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem; padding-top:1.5rem; border-top:1px solid rgba(255,255,255,.1); font-size:.78rem; color:rgba(255,255,255,.28); max-width:var(--max-wide); margin:0 auto; }
+
+@media(max-width:860px){
+  .site-nav { height:auto; min-height:64px; padding:.6rem 5vw; flex-wrap:wrap; gap:.75rem; justify-content:flex-start; }
+  .nav-logo { font-size:1.28rem; }
+  .mobile-nav-toggle { display:inline-flex; margin-left:auto; }
+  .nav-cta { margin-left:0; padding:.5rem .85rem; font-size:.82rem; }
+  .nav-links { display:none; order:4; width:100%; flex-direction:column; gap:0; padding:.7rem 0 .15rem; border-top:1px solid var(--mint); }
+  .nav-links.is-open { display:flex; }
+  .nav-links li { width:100%; }
+  .nav-links a { display:block; padding:.72rem 0; font-size:.95rem; }
+}
+
+@media(max-width:760px){
+  body { line-height:1.68; }
+  .breadcrumb { padding:.7rem 4vw; }
+  .article-wrap { padding:2rem 4vw 4rem; gap:2rem; }
+  article, .article-header, .article-body { width:100%; min-width:0; max-width:100%; }
+  .article-header { margin-bottom:1.75rem; }
+  .post-badges { gap:.4rem; margin-bottom:1rem; }
+  .badge { font-size:.66rem; padding:.25rem .58rem; }
+  .article-title { font-size:clamp(2rem,9vw,2.55rem); line-height:1.08; margin-bottom:1rem; }
+  .article-title, .article-body h2, .article-body h3, .featured-answer p, .article-lead { overflow-wrap:anywhere; }
+  .article-title br { display:none; }
+  .featured-answer { padding:1rem; margin-bottom:1.1rem; }
+  .article-lead { font-size:1rem; line-height:1.65; padding-left:1rem; margin-bottom:1.25rem; }
+  .article-meta { gap:.45rem .9rem; font-size:.76rem; padding-bottom:1.2rem; }
+  .article-hero { padding:1.6rem 1rem; min-height:auto; margin-bottom:2rem; }
+  .hero-stats { grid-template-columns:1fr; gap:0; max-width:100%; }
+  .hero-divider { display:none; }
+  .hero-stat { padding:.85rem 0; border-bottom:1px solid rgba(255,255,255,.12); }
+  .hero-stat:last-child { border-bottom:0; }
+  .article-body h2 { font-size:1.55rem; margin:2.25rem 0 1rem; padding-top:1rem; }
+  .article-body h3 { font-size:1rem; margin:1.45rem 0 .65rem; }
+  .article-body p, .article-body li { font-size:.96rem; }
+  .callout { padding:1rem; gap:.75rem; margin:1.6rem 0; }
+  .timeline::before { display:none; }
+  .timeline-item { display:block; margin-bottom:1.2rem; }
+  .tl-dot { width:auto; min-width:44px; height:34px; border-radius:999px; padding:0 .9rem; margin-bottom:.65rem; display:inline-flex; }
+  .tl-body { padding:1rem; }
+  .factor-grid, .case-metrics, .related-grid, .stats-band { grid-template-columns:1fr; }
+  .stats-band { padding:1.4rem 1rem; gap:1rem; }
+  .stat-divider { display:none; }
+  .compare-table, .industry-table { display:block; width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; white-space:nowrap; font-size:.82rem; }
+  .compare-table th, .compare-table td, .industry-table th, .industry-table td { padding:.7rem .75rem; min-width:140px; }
+  .inline-cta, .cta-band { padding:2rem 1rem; }
+  .btn-gold, .btn-cta { width:100%; justify-content:center; padding:.85rem 1rem; }
+  .checklist li { gap:.7rem; }
+  .author-box { align-items:flex-start; padding:1.1rem; gap:1rem; }
+  .author-avatar { width:46px; height:46px; font-size:1.1rem; }
+  footer { padding:2.5rem 4vw 2rem; }
+  .footer-grid { grid-template-columns:1fr; gap:1.75rem; }
+  .footer-bottom { align-items:flex-start; flex-direction:column; }
+}
+
+@media(max-width:420px){
+  .site-nav { padding:.55rem 4vw; }
+  .nav-cta { display:none; }
+  .article-title { font-size:2rem; }
+  .article-wrap { padding-left:1rem; padding-right:1rem; }
+  .article-body ul,.article-body ol { margin-left:1.1rem; }
+  .case-box { padding:1.2rem; }
+}
 </style>
 </head>
 <body>
@@ -378,7 +446,12 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
 <header role="banner">
   <nav class="site-nav" aria-label="Huvudnavigation">
     <a href="/" class="nav-logo">Nord<span>växt</span> AB</a>
-    <ul class="nav-links">
+    <button class="mobile-nav-toggle" type="button" aria-label="Öppna meny" aria-expanded="false" aria-controls="primary-nav">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="nav-links" id="primary-nav">
       <li><a href="/hemsida/">Hemsidor</a></li>
       <li><a href="/seo/">SEO</a></li>
       <li><a href="/google-ads/">Google Ads</a></li>
@@ -529,10 +602,10 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
           <p>Google börjar crawla din sajt. Det är sällan märkbart — men det är den viktigaste fasen. Tekniska fel i den här perioden kan fördröja hela processen med månader.</p>
           <p>Det som händer i bakgrunden: Googlebot hittar din sajt via sitemapen eller en extern länk. Den går igenom sidstrukturen, läser robots.txt och börjar indexera de sidor den finner värda att spara.</p>
           <ul class="tl-checklist">
-            <li>Verifiera Google Search Console och skicka in sitemap</li>
+            <li>Verifiera <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener">Google Search Console</a> och skicka in sitemap</li>
             <li>Säkerställ att robots.txt tillåter crawling korrekt</li>
             <li>Kontrollera att inga sidor av misstag har <code>noindex</code></li>
-            <li>Kör PageSpeed Insights — fixa uppenbara laddningsproblem</li>
+            <li>Kör <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a> — fixa uppenbara laddningsproblem</li>
             <li>Säkerställ att canonical-taggar är konsekventa (www vs icke-www)</li>
           </ul>
           <div class="tl-tags">
@@ -548,7 +621,7 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
           <div class="tl-period">Månad 1</div>
           <h3>On-page optimering och innehållsstart</h3>
           <p>Nu börjar det verkliga arbetet. Dina befintliga sidor optimeras med rätt title-taggar, meta descriptions, H1–H3-struktur och intern länkning. Bloggpublicering startar — fokus på long-tail-sökord med lägre konkurrens.</p>
-          <p>Du kanske ser att sajten dyker upp i Search Console med dina första impressioner (hur ofta du syns i sökresultat). Rankingen är förmodligen på sida 5–10, vilket ger nästan noll klick — men det är ett positivt tecken på att Google hittat dig.</p>
+          <p>Du kanske ser att sajten dyker upp i <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener">Google Search Console</a> med dina första impressioner (hur ofta du syns i sökresultat). Rankingen är förmodligen på sida 5–10, vilket ger nästan noll klick — men det är ett positivt tecken på att Google hittat dig.</p>
           <ul class="tl-checklist">
             <li>Optimera title + meta description på alla befintliga tjänstesidor</li>
             <li>Publicera 2–4 blogginlägg riktade mot specifika long-tail-sökord</li>
@@ -568,7 +641,7 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
           <div class="tl-period">Månad 2–3</div>
           <h3>De första riktiga signalerna</h3>
           <p>Det börjar hända saker. Long-tail-sökord (fraser med 3–5+ ord, t.ex. "vad kostar SEO för ett litet företag") ger de första organiska besökarna. Dina mer konkurrenstunga målsökord rör sig in på sida 3–4.</p>
-          <p>Det är vanligt att den organiska trafiken är låg — kanske 10–50 besökare per månad — men trenden är det viktiga. Om kurvan pekar uppåt jobbar du rätt. Det är också nu du ser i Search Console vilka sökfrågor folk faktiskt skriver när de hittar dig, vilket ger värdefull information för kommande innehåll.</p>
+          <p>Det är vanligt att den organiska trafiken är låg — kanske 10–50 besökare per månad — men trenden är det viktiga. Om kurvan pekar uppåt jobbar du rätt. Det är också nu du ser i <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener">Search Console</a> vilka sökfrågor folk faktiskt skriver när de hittar dig, vilket ger värdefull information för kommande innehåll.</p>
           <ul class="tl-checklist">
             <li>Analysera Search Console: vilka sökord ger impressioner?</li>
             <li>Optimera de sidor som börjar ranka — förbättra innehållet</li>
@@ -673,7 +746,7 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
     <!-- ═══ FAKTORER ═══ -->
     <h2 id="faktorer">De 6 faktorerna som avgör ditt tempo</h2>
 
-    <p>Ingen sajt är den andra lik. Det finns faktorer du kan påverka direkt — och sådana som tar tid att förändra. Ju bättre du förstår vad som gäller för just din situation, desto mer realistiska förväntningar kan du sätta.</p>
+    <p>Ingen sajt är den andra lik. Det finns faktorer du kan påverka direkt — och sådana som tar tid att förändra. Ju bättre du förstår vad som gäller för just din situation, desto mer realistiska förväntningar kan du sätta. För sökordsdata kan du kombinera Search Console med externa verktyg som <a href="https://www.semrush.com/blog/keyword-research/" target="_blank" rel="noopener">Semrush guide till keyword research</a>.</p>
 
     <div class="factor-grid">
       <div class="factor-card">
@@ -858,12 +931,12 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
       </tbody>
     </table>
 
-    <p>Den smartaste strategin för de flesta svenska SMF är en kombination: <strong>kör Google Ads för omedelbar synlighet och direkta leads</strong> medan du parallellt bygger din organiska närvaro. När SEO väl levererar kan du trappa ned Ads-budgeten och ta hem den organiska trafiken gratis.</p>
+    <p>Den smartaste strategin för de flesta svenska SMF är en kombination: <strong>kör Google Ads för omedelbar synlighet och direkta leads</strong> medan du parallellt bygger din organiska närvaro. När SEO väl levererar kan du trappa ned Ads-budgeten och ta hem den organiska trafiken gratis. Vill du jämföra upplägg och kostnad innan du bokar samtal finns våra <a href="/priser/">SEO-priser och paket</a> samlade på prissidan.</p>
 
     <div class="inline-cta">
       <h3>Inte säker på vad som passar ditt företag?</h3>
       <p>Vi gör en kostnadsfri genomgång av din digitala närvaro och ger ett konkret förslag — utan förpliktelser.</p>
-      <a href="/kontakt" class="btn-gold">
+      <a href="/kontakt/#contact-form" class="btn-gold">
         Boka 30 minuter gratis
         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -907,7 +980,7 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
       <li>
         <div class="check-icon ci-done"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
         <div>
-          <span class="checklist-title">Skicka in din sajt till Google Search Console</span>
+          <span class="checklist-title">Skicka in din sajt till <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener">Google Search Console</a></span>
           <span class="checklist-desc">Gratis, tar 10 minuter, och ger dig data om indexering, klick och position. Utan det flyger du blind. Skicka också in din sitemap.xml.</span>
         </div>
       </li>
@@ -935,8 +1008,8 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
       <li>
         <div class="check-icon ci-todo"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
         <div>
-          <span class="checklist-title">Kör PageSpeed Insights på din sajt</span>
-          <span class="checklist-desc">Gå till pagespeed.web.dev och kolla ditt Core Web Vitals-betyg. En sajt som laddar på under 2,5 sekunder på mobil är Googles krav för bra rankning.</span>
+          <span class="checklist-title">Kör <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a> på din sajt</span>
+          <span class="checklist-desc">Gå till <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">pagespeed.web.dev</a> och kolla ditt Core Web Vitals-betyg. En sajt som laddar på under 2,5 sekunder på mobil är Googles krav för bra rankning.</span>
         </div>
       </li>
       <li>
@@ -996,7 +1069,7 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
     <h3>Tier 3 — Tekniska indikatorer</h3>
     <ul>
       <li><strong>Indexerade sidor:</strong> Skriv <code>site:dindomän.se</code> i Google. Hur många sidor är indexerade? Ökar det?</li>
-      <li><strong>Core Web Vitals:</strong> Kontrollera i Search Console under "Upplevelse". Google straffar aktivt sidor med dåliga hastighetsbetyg.</li>
+      <li><strong>Core Web Vitals:</strong> Kontrollera i <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener">Search Console</a> under "Upplevelse" och dubbelkolla med <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a>. Google straffar aktivt sidor med dåliga hastighetsbetyg.</li>
       <li><strong>Crawl-fel:</strong> I Search Console under "Indexering" — ser du 404-fel eller sidor som inte kan indexeras?</li>
     </ul>
 
@@ -1077,7 +1150,7 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
         <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="faq-a" id="faq4">
-        <p>En professionell SEO-byrå i Sverige kostar vanligtvis mellan 5 000–25 000 kr per månad beroende på konkurrens, antal sökord, hur aggressivt ni vill växa och vad som ingår. Det är en investering vars avkastning ökar kraftigt med tid — i kontrast mot annonsering där kostnaden är konstant. Vill du ha en prisindikation för din situation? <a href="/priser">Se våra paket</a> eller boka ett gratis samtal.</p>
+        <p>En professionell SEO-byrå i Sverige kostar vanligtvis mellan 5 000–25 000 kr per månad beroende på konkurrens, antal sökord, hur aggressivt ni vill växa och vad som ingår. Det är en investering vars avkastning ökar kraftigt med tid — i kontrast mot annonsering där kostnaden är konstant. Vill du ha en prisindikation för din situation? <a href="/priser/">Se våra paket</a> eller boka ett gratis samtal.</p>
       </div>
     </div>
 
@@ -1157,7 +1230,7 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
   <div class="sidebar-cta">
     <h3>Gratis SEO-analys av din sajt</h3>
     <p>Vi tittar igenom din hemsida och berättar konkret vad som behöver åtgärdas — och i vilken ordning.</p>
-    <a href="/kontakt">Boka gratis samtal →</a>
+    <a href="/kontakt/#contact-form">Boka gratis samtal →</a>
   </div>
 
 </aside>
@@ -1167,7 +1240,7 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
 <section class="cta-band">
   <h2>Redo att börja klättra på Google?</h2>
   <p>Vi hjälper dig med en SEO-strategi som passar din bransch, din budget och dina mål.</p>
-  <a href="/kontakt" class="btn-cta">
+  <a href="/kontakt/#contact-form" class="btn-cta">
     Boka gratis samtal
     <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
@@ -1236,6 +1309,21 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
 </footer>
 
 <script>
+/* Mobile navigation */
+const mobileToggle = document.querySelector('.mobile-nav-toggle');
+const primaryNav = document.getElementById('primary-nav');
+mobileToggle?.addEventListener('click', () => {
+  const isOpen = mobileToggle.getAttribute('aria-expanded') === 'true';
+  mobileToggle.setAttribute('aria-expanded', String(!isOpen));
+  primaryNav?.classList.toggle('is-open', !isOpen);
+});
+primaryNav?.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileToggle?.setAttribute('aria-expanded', 'false');
+    primaryNav.classList.remove('is-open');
+  });
+});
+
 /* FAQ */
 document.querySelectorAll('.faq-q').forEach(btn => {
   btn.addEventListener('click', () => {

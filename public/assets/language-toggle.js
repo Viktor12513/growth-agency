@@ -142,6 +142,62 @@
     if (nav) nav.appendChild(switcher);
   }
 
+  function setupMobileNavigation() {
+    const nav = document.querySelector('header[role="banner"] > nav, body > header > nav, .site-nav, .quiz-site-nav, .header-inner');
+    if (!nav) return;
+
+    const links = nav.querySelector('.nav-links, .quiz-site-links') ||
+      (nav.classList.contains('header-inner') ? nav.querySelector(':scope > nav') : null);
+    if (!links) return;
+
+    if (!links.id) {
+      links.id = 'primary-nav';
+    }
+
+    const existingMenu = document.getElementById('mobile-menu');
+    if (existingMenu && nav.querySelector('.nav-hamburger')) {
+      nav.querySelector('.nav-hamburger')?.classList.add('mobile-nav-toggle');
+      return;
+    }
+
+    let toggle = nav.querySelector('.mobile-nav-toggle');
+    if (!toggle) {
+      toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'mobile-nav-toggle';
+      toggle.setAttribute('aria-label', 'Öppna meny');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-controls', links.id);
+      toggle.innerHTML = '<span></span><span></span><span></span>';
+
+      const logo = nav.querySelector('.nav-logo, .quiz-logo, .logo');
+      if (logo?.nextSibling) {
+        nav.insertBefore(toggle, logo.nextSibling);
+      } else {
+        nav.insertBefore(toggle, links);
+      }
+    } else {
+      toggle.setAttribute('aria-controls', links.id);
+      toggle.setAttribute('aria-expanded', toggle.getAttribute('aria-expanded') || 'false');
+    }
+
+    if (toggle.dataset.mobileNavReady === 'true') return;
+    toggle.dataset.mobileNavReady = 'true';
+
+    toggle.addEventListener('click', function () {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      links.classList.toggle('is-open', !isOpen);
+    });
+
+    links.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', function () {
+        toggle.setAttribute('aria-expanded', 'false');
+        links.classList.remove('is-open');
+      });
+    });
+  }
+
   function addGoogleTranslate() {
     if (document.getElementById('google_translate_element')) return;
 
@@ -165,6 +221,7 @@
 
   function init() {
     addStyles();
+    setupMobileNavigation();
     insertButton();
     addGoogleTranslate();
   }

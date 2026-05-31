@@ -58,6 +58,29 @@
     padding: 0.55rem 1.25rem; border-radius: var(--radius); transition: background 0.2s;
   }
   .nav-cta:hover { background: var(--forest-mid); }
+  .mobile-nav-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--mint);
+    background: white;
+    border-radius: var(--radius);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  .mobile-nav-toggle span {
+    width: 18px;
+    height: 2px;
+    background: var(--forest);
+    border-radius: 999px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+  .mobile-nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .mobile-nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .mobile-nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   /* SHARED */
   section { padding: 6rem 5vw; }
@@ -714,6 +737,73 @@ body > nav:not(.breadcrumb) a {
   .quiz-site-links a,
   .header-inner nav a {
     font-size: 0.78rem !important;
+  }
+}
+
+@media (max-width: 1120px) {
+  .site-nav,
+  header > nav,
+  body > nav:not(.breadcrumb),
+  .quiz-site-nav {
+    height: auto !important;
+    min-height: var(--site-nav-height);
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  .nav-logo,
+  .logo,
+  .quiz-logo {
+    margin-right: auto !important;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex !important;
+    order: 2;
+    flex: 0 0 auto;
+  }
+
+  .nav-cta,
+  .quiz-site-links .nav-cta,
+  .header-inner nav .nav-cta {
+    order: 3;
+    flex: 0 0 auto !important;
+  }
+
+  .nav-links,
+  .quiz-site-links,
+  .header-inner nav {
+    display: none !important;
+    order: 4;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    padding: 0.75rem 0 0.2rem !important;
+    border-top: 1px solid var(--mint, #d8eadc);
+    justify-content: flex-start !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0 !important;
+  }
+
+  .nav-links.is-open,
+  .quiz-site-links.is-open,
+  .header-inner nav.is-open {
+    display: flex !important;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .quiz-site-links a,
+  .header-inner nav a {
+    display: block !important;
+    width: 100%;
+    padding: 0.62rem 0 !important;
+    font-size: 0.92rem !important;
   }
 }
 
