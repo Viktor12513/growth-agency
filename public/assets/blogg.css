@@ -79,6 +79,7 @@
   .post-cat--ads { background:#fef3dc; color:#c4943a; }
   .post-cat--website { background:#e8f5ec; color:#4a7c59; }
   .post-cat--social { background:#e0f0e8; color:#2d5c35; }
+  .post-author { font-size:0.8rem; color:var(--moss); font-weight:600; }
   .post-date { font-size:0.8rem; color:var(--ink-light); }
   .post-read { font-size:0.8rem; color:var(--ink-light); }
   .post-excerpt { font-size:0.95rem; color:var(--ink-mid); line-height:1.7; margin-bottom:1.5rem; flex:1; }

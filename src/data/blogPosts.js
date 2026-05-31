@@ -11,7 +11,9 @@
     "icon": "search",
     "featured": true,
     "staticArticle": true,
-    "contentSections": []
+    "contentSections": [],
+    "authorName": "Albin på Nordväxt",
+    "authorRole": "Digital strateg på Nordväxt AB"
   },
   {
     "slug": "vad-ar-meta-description",
@@ -150,7 +152,9 @@
           "Vill du arbeta vidare med samma typ av synlighet? L&auml;s mer om v&aring;r <a href=\"/seo/\">SEO-tj&auml;nst</a> och hur vi hj&auml;lper f&ouml;retag att synas b&auml;ttre p&aring; Google."
         ]
       }
-    ]
+    ],
+    "authorName": "Albin på Nordväxt",
+    "authorRole": "Digital strateg på Nordväxt AB"
   },
   {
     "slug": "google-ads-eller-seo",
@@ -313,7 +317,9 @@
           "Om du vill bygga l&aring;ngsiktig synlighet kan du l&auml;sa mer om v&aring;r <a href=\"/seo/\">SEO-tj&auml;nst</a>. Vill du hellre f&aring; snabbare trafik och tydligare kampanjstyrning kan du g&aring; vidare till <a href=\"/google-ads/\">Google Ads</a>."
         ]
       }
-    ]
+    ],
+    "authorName": "Albin på Nordväxt",
+    "authorRole": "Digital strateg på Nordväxt AB"
   },
   {
     "slug": "vad-kostar-en-hemsida",
@@ -452,7 +458,9 @@
           "Vill du att hemsidan ska bli en starkare grund f&ouml;r fler kunder? L&auml;s mer om v&aring;ra <a href=\"/hemsida/\">hemsidor</a> och hur vi bygger sidor som &auml;r snabba, tydliga och redo f&ouml;r marknadsf&ouml;ring."
         ]
       }
-    ]
+    ],
+    "authorName": "Nordväxt Webbteam",
+    "authorRole": "Webbstrateger och designers för konverterande hemsidor"
   },
   {
     "slug": "lokal-seo",
@@ -636,7 +644,9 @@
           "Om du vill g&ouml;ra detta praktiskt p&aring; din egen hemsida kan du l&auml;sa mer om hur vi arbetar med <a href=\"/seo/\">SEO och s&ouml;kmotoroptimering</a>. D&auml;r g&aring;r vi igenom vad som ing&aring;r, hur processen ser ut och hur vi hj&auml;lper f&ouml;retag att synas b&auml;ttre p&aring; Google."
         ]
       }
-    ]
+    ],
+    "authorName": "Albin på Nordväxt",
+    "authorRole": "Digital strateg på Nordväxt AB"
   },
   {
     "slug": "hur-ofta-posta-instagram",
@@ -775,7 +785,9 @@
           "Vill du bygga en starkare n&auml;rvaro och tydligare inneh&aring;llsplan? L&auml;s mer om hur vi hj&auml;lper f&ouml;retag med <a href=\"/sociala-medier/\">sociala medier</a>."
         ]
       }
-    ]
+    ],
+    "authorName": "Nordväxt Social-team",
+    "authorRole": "Specialister på sociala medier och innehållsplanering"
   },
   {
     "slug": "laddningstid-hemsida",
@@ -914,7 +926,9 @@
           "Vill du att hemsidan ska bli en starkare grund f&ouml;r fler kunder? L&auml;s mer om v&aring;ra <a href=\"/hemsida/\">hemsidor</a> och hur vi bygger sidor som &auml;r snabba, tydliga och redo f&ouml;r marknadsf&ouml;ring."
         ]
       }
-    ]
+    ],
+    "authorName": "Nordväxt Webbteam",
+    "authorRole": "Webbstrateger och designers för konverterande hemsidor"
   },
   {
     "slug": "google-ads-budstrategier",
@@ -1084,7 +1098,9 @@
           "Om artikeln v&auml;ckte fr&aring;gor om kampanjer, budget eller konverteringar kan du l&auml;sa mer om v&aring;r tj&auml;nst f&ouml;r <a href=\"/google-ads/\">Google Ads</a>. D&auml;r visar vi hur vi bygger annonsering som g&aring;r att m&auml;ta och f&ouml;rb&auml;ttra."
         ]
       }
-    ]
+    ],
+    "authorName": "Nordväxt Ads-team",
+    "authorRole": "Specialister på Google Ads, mätning och konvertering"
   },
   {
     "slug": "nyckelordsanalys-nyborjare",
@@ -1271,7 +1287,9 @@
           "Om du vill g&ouml;ra detta praktiskt p&aring; din egen hemsida kan du l&auml;sa mer om hur vi arbetar med <a href=\"/seo/\">SEO och s&ouml;kmotoroptimering</a>. D&auml;r g&aring;r vi igenom vad som ing&aring;r, hur processen ser ut och hur vi hj&auml;lper f&ouml;retag att synas b&auml;ttre p&aring; Google."
         ]
       }
-    ]
+    ],
+    "authorName": "Albin på Nordväxt",
+    "authorRole": "Digital strateg på Nordväxt AB"
   },
   {
     "slug": "linkedin-foretag-b2b",
@@ -1457,7 +1475,9 @@
           "Om du vill ta n&auml;sta steg med inneh&aring;ll, publicering och betald spridning kan du l&auml;sa mer om hur vi hj&auml;lper f&ouml;retag med <a href=\"/sociala-medier/\">sociala medier</a>."
         ]
       }
-    ]
+    ],
+    "authorName": "Nordväxt Social-team",
+    "authorRole": "Specialister på sociala medier och innehållsplanering"
   },
   {
     "slug": "konverteringsoptimering-hemsida",
@@ -1596,7 +1616,9 @@
           "Vill du att hemsidan ska bli en starkare grund f&ouml;r fler kunder? L&auml;s mer om v&aring;ra <a href=\"/hemsida/\">hemsidor</a> och hur vi bygger sidor som &auml;r snabba, tydliga och redo f&ouml;r marknadsf&ouml;ring."
         ]
       }
-    ]
+    ],
+    "authorName": "Nordväxt Webbteam",
+    "authorRole": "Webbstrateger och designers för konverterande hemsidor"
   },
   {
     "slug": "remarketing-google-ads",
@@ -1735,7 +1757,9 @@
           "Vill du oms&auml;tta detta i kampanjer? L&auml;s mer om hur vi arbetar med <a href=\"/google-ads/\">Google Ads</a> f&ouml;r att skapa m&auml;tbar och mer kontrollerad annonsering."
         ]
       }
-    ]
+    ],
+    "authorName": "Nordväxt Ads-team",
+    "authorRole": "Specialister på Google Ads, mätning och konvertering"
   },
   {
     "slug": "innehallskalender-sociala-medier",
@@ -1874,7 +1898,9 @@
           "Vill du bygga en starkare n&auml;rvaro och tydligare inneh&aring;llsplan? L&auml;s mer om hur vi hj&auml;lper f&ouml;retag med <a href=\"/sociala-medier/\">sociala medier</a>."
         ]
       }
-    ]
+    ],
+    "authorName": "Nordväxt Social-team",
+    "authorRole": "Specialister på sociala medier och innehållsplanering"
   },
   {
     "slug": "vad-kostar-digital-marknadsforing",
@@ -2010,7 +2036,9 @@
           "Om du vill se hur olika insatser kan paketeras kan du g&aring; vidare till v&aring;r sida med <a href=\"/priser/\">priser och paket</a>. D&auml;r hittar du hemsidor, SEO och Google Ads samlade p&aring; ett st&auml;lle."
         ]
       }
-    ]
+    ],
+    "authorName": "Albin på Nordväxt",
+    "authorRole": "Digital strateg på Nordväxt AB"
   },
   {
     "slug": "ai-seo-ai-overviews",
@@ -2180,7 +2208,9 @@
           "Om du vill g&ouml;ra detta praktiskt p&aring; din egen hemsida kan du l&auml;sa mer om hur vi arbetar med <a href=\"/seo/\">SEO och s&ouml;kmotoroptimering</a>. D&auml;r g&aring;r vi igenom vad som ing&aring;r, hur processen ser ut och hur vi hj&auml;lper f&ouml;retag att synas b&auml;ttre p&aring; Google."
         ]
       }
-    ]
+    ],
+    "authorName": "Albin på Nordväxt",
+    "authorRole": "Digital strateg på Nordväxt AB"
   },
   {
     "slug": "vaelja-ratt-webbyra",
@@ -2319,7 +2349,9 @@
           "Vill du se hur olika insatser kan paketeras? G&aring; vidare till v&aring;ra <a href=\"/priser/\">priser och paket</a>, eller l&auml;s mer om <a href=\"/hemsida/\">hemsidor</a>, <a href=\"/seo/\">SEO</a> och <a href=\"/google-ads/\">Google Ads</a>."
         ]
       }
-    ]
+    ],
+    "authorName": "Albin på Nordväxt",
+    "authorRole": "Digital strateg på Nordväxt AB"
   },
   {
     "slug": "google-ads-budget",
@@ -2458,7 +2490,9 @@
           "Vill du oms&auml;tta detta i kampanjer? L&auml;s mer om hur vi arbetar med <a href=\"/google-ads/\">Google Ads</a> f&ouml;r att skapa m&auml;tbar och mer kontrollerad annonsering."
         ]
       }
-    ]
+    ],
+    "authorName": "Nordväxt Ads-team",
+    "authorRole": "Specialister på Google Ads, mätning och konvertering"
   },
   {
     "slug": "vad-ar-content-marketing",
@@ -2597,7 +2631,9 @@
           "Vill du arbeta vidare med samma typ av synlighet? L&auml;s mer om v&aring;r <a href=\"/seo/\">SEO-tj&auml;nst</a> och hur vi hj&auml;lper f&ouml;retag att synas b&auml;ttre p&aring; Google."
         ]
       }
-    ]
+    ],
+    "authorName": "Albin på Nordväxt",
+    "authorRole": "Digital strateg på Nordväxt AB"
   },
   {
     "slug": "meta-ads-vs-google-ads",
@@ -2782,7 +2818,9 @@
           "Om kunderna redan s&ouml;ker efter din l&ouml;sning passar ofta <a href=\"/google-ads/\">Google Ads</a> bra. Om du beh&ouml;ver bygga efterfr&aring;gan och varum&auml;rke kan du ocks&aring; l&auml;sa mer om <a href=\"/sociala-medier/\">sociala medier</a>."
         ]
       }
-    ]
+    ],
+    "authorName": "Nordväxt Ads-team",
+    "authorRole": "Specialister på Google Ads, mätning och konvertering"
   }
 ];
 

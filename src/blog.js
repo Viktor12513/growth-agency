@@ -28,6 +28,39 @@ function setMeta({ title, description, canonical }) {
   canonicalLink?.setAttribute('href', canonical);
 }
 
+function setArticleStructuredData(post) {
+  let script = document.getElementById('articleStructuredData');
+  if (!script) {
+    script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'articleStructuredData';
+    document.head.appendChild(script);
+  }
+
+  script.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: decodeHtml(post.title),
+    description: decodeHtml(post.excerpt),
+    datePublished: post.date,
+    author: {
+      '@type': 'Organization',
+      name: decodeHtml(authorLabel(post)),
+      url: `${origin}/blogg/`,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Nordväxt AB',
+      url: origin,
+    },
+    mainEntityOfPage: `${origin}${postUrl(post)}`,
+  });
+}
+
+function clearArticleStructuredData() {
+  document.getElementById('articleStructuredData')?.remove();
+}
+
 function getSlugFromPath(pathname = window.location.pathname) {
   const parts = pathname.split('/').filter(Boolean);
   if (parts[0] === 'blog') {
@@ -46,6 +79,10 @@ function arrowIcon() {
 
 function postUrl(post) {
   return post.staticArticle ? `/blogg/${post.slug}/` : `/blogg/${post.slug}`;
+}
+
+function authorLabel(post) {
+  return post.authorName || 'Nordv&auml;xt AB';
 }
 
 function catClass(post) {
@@ -149,6 +186,7 @@ function renderFeaturedPost(post) {
       <div>
         <div class="post-meta">
           <span class="post-cat ${catClass(post)}">${post.category}</span>
+          <span class="post-author">Av ${authorLabel(post)}</span>
           <span class="post-date">${post.date}</span>
           <span class="post-read">${post.readingTime}</span>
         </div>
@@ -166,6 +204,7 @@ function renderPostCard(post) {
     <div class="post-card-body">
       <div class="post-meta">
         <span class="post-cat ${catClass(post)}">${post.category}</span>
+        <span class="post-author">Av ${authorLabel(post)}</span>
         <span class="post-date">${post.date}</span>
         <span class="post-read">${post.readingTime.replace(' l&auml;sning', '')}</span>
       </div>
@@ -232,6 +271,7 @@ function renderListing() {
     description: 'Tips, guider och r&aring;d om SEO, hemsidor, Google Ads och sociala medier f&ouml;r svenska f&ouml;retag.',
     canonical: `${origin}/blogg/`,
   });
+  clearArticleStructuredData();
 
   app.innerHTML = `${renderBreadcrumb('Blogg')}${renderHero()}${renderFilters()}
     <section class="blog-section" aria-labelledby="blog-heading">
@@ -331,6 +371,7 @@ function renderPost(post) {
     description: post.excerpt,
     canonical: `${origin}/blogg/${post.slug}`,
   });
+  setArticleStructuredData(post);
 
   app.innerHTML = `${renderBreadcrumb(post.title, true)}
     <article class="blog-post">
@@ -340,6 +381,7 @@ function renderPost(post) {
           <div class="article-icon">${renderPostVisual(post, 'article')}</div>
           <div class="post-meta article-meta">
             <span class="post-cat ${catClass(post)}">${post.category}</span>
+            <span class="post-author">Av ${authorLabel(post)}</span>
             <span class="post-date">${post.date}</span>
             <span class="post-read">${post.readingTime}</span>
           </div>
@@ -363,6 +405,7 @@ function renderNotFound() {
     description: 'Artikeln du s&ouml;ker finns inte. G&aring; tillbaka till bloggen f&ouml;r att hitta fler guider.',
     canonical: `${origin}/blogg/`,
   });
+  clearArticleStructuredData();
 
   app.innerHTML = `${renderBreadcrumb('404', true)}
     <section class="not-found-section">

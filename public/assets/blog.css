@@ -80,6 +80,7 @@
   .post-cat--ads { background:#fef3dc; color:#c4943a; }
   .post-cat--website { background:#e8f5ec; color:#4a7c59; }
   .post-cat--social { background:#e0f0e8; color:#2d5c35; }
+  .post-author { font-size:0.8rem; color:var(--moss); font-weight:600; }
   .post-date { font-size:0.8rem; color:var(--ink-light); }
   .post-read { font-size:0.8rem; color:var(--ink-light); }
   .post-excerpt { font-size:0.95rem; color:var(--ink-mid); line-height:1.7; margin-bottom:1.5rem; flex:1; }
@@ -184,6 +185,7 @@
 .article-hero-inner { position: relative; max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; align-items: flex-start; }
 .article-icon { width: 64px; height: 64px; border-radius: 14px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
 .article-meta { margin-bottom: 1.2rem; }
+.article-meta .post-author,
 .article-meta .post-date,
 .article-meta .post-read { color: rgba(255,255,255,0.78); }
 .article-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.1rem, 5vw, 4rem); line-height: 1.06; letter-spacing: -0.02em; max-width: 820px; margin-bottom: 1.2rem; }
