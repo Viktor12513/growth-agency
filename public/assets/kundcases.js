@@ -43,7 +43,7 @@ const caseDetails = [
     points: ['Projektgalleri med f&ouml;re- och efterbilder', 'Lokala SEO-sidor f&ouml;r Uppsala och n&auml;romr&aring;den', 'Tydliga offertknappar och kortare kontaktv&auml;g']
   },
   {
-    summary: 'Wellness-verksamheten beh&ouml;vde fler nya kunder och b&auml;ttre &aring;terbokning. Vi kombinerade sociala medier med en ny bokningssida och enklare automatisering s&aring; att fler kunder kom tillbaka efter f&ouml;rsta bes&ouml;ket.',
+    summary: 'Wellness-verksamheten beh&ouml;vde fler nya kunder och b&auml;ttre &aring;terbokning. Vi kombinerade innehåll med en ny bokningssida och enklare automatisering s&aring; att fler kunder kom tillbaka efter f&ouml;rsta bes&ouml;ket.',
     points: ['Instagram-inneh&aring;ll f&ouml;r behandlingar, resultat och f&ouml;rtroende', 'Ny bokningssida med mobilfokus', 'E-postfl&ouml;de f&ouml;r &aring;terbokning och kundrelation']
   },
   {

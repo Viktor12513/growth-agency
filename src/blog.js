@@ -166,7 +166,7 @@ function renderFilters() {
     ['seo', 'SEO'],
     ['hemsida', 'Hemsidor'],
     ['google-ads', 'Google Ads'],
-    ['sociala-medier', 'Sociala medier'],
+    ['sociala-medier', 'Innehåll'],
     ['strategi', 'Strategi'],
   ];
 
@@ -275,7 +275,7 @@ function renderListing() {
 
   setMeta({
     title: 'Blogg om SEO, hemsidor & digital marknadsf&ouml;ring | Nordv&auml;xt AB',
-    description: 'Tips, guider och r&aring;d om SEO, hemsidor, Google Ads och sociala medier f&ouml;r svenska f&ouml;retag.',
+    description: 'Tips, guider och r&aring;d om SEO, hemsidor och Google Ads f&ouml;r svenska f&ouml;retag.',
     canonical: `${origin}/blogg/`,
   });
   clearArticleStructuredData();

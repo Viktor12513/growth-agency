@@ -909,12 +909,8 @@ footer .container {
         <div class="quiz-site-links">
       <a href="/hemsida/">Hemsidor</a>
       <a href="/seo/">SEO</a>
-      <a href="/google-ads/">Google Ads</a>
-      <a href="/sociala-medier/">Sociala medier</a>
-      <a href="/priser/">Priser</a>
-      <a href="/quiz/" class="is-active" aria-current="page">Quiz</a>
-      <a href="/kundcases/">Kundcases</a>
-      <a href="/blogg/">Blogg</a>
+      <a href="/google-ads/">Google Ads</a><a href="/priser/">Priser</a>
+      <a href="/quiz/" class="is-active" aria-current="page">Quiz</a><a href="/blogg/">Blogg</a>
       <a href="/om-oss/">Om oss</a>
       <a href="/kontakt/#contact-form" class="nav-cta">Kontakta oss</a>
     </div>
@@ -946,17 +942,13 @@ footer .container {
         <ul>
           <li><a href="/hemsida/">Hemsidor</a></li>
           <li><a href="/seo/">SEO</a></li>
-          <li><a href="/google-ads/">Google Ads</a></li>
-          <li><a href="/sociala-medier/">Sociala medier</a></li>
-          <li><a href="/priser/">Priser</a></li>
+          <li><a href="/google-ads/">Google Ads</a></li><li><a href="/priser/">Priser</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>F&ouml;retaget</h4>
         <ul>
-          <li><a href="/om-oss/">Om oss</a></li>
-          <li><a href="/kundcases/">Kundcases</a></li>
-          <li><a href="/blogg/">Blogg</a></li>
+          <li><a href="/om-oss/">Om oss</a></li><li><a href="/blogg/">Blogg</a></li>
           <li><a href="/quiz/">Quiz</a></li>
           <li><a href="/kontakt/#contact-form">Kontakt</a></li>
         </ul>
@@ -1025,11 +1017,11 @@ footer .container {
       { t: "Nej – vi har inte satt upp spårning", s: "", p: 3 },
       { t: "Vi vet inte vad Google Analytics är", s: "", p: 0 }
     ]},
-    { q: "Hur aktiva är ni på sociala medier?", area: "Sociala medier", opts: [
+    { q: "Hur aktiva är ni på innehåll?", area: "Innehåll", opts: [
       { t: "Regelbundna inlägg med strategi och planering", s: "", p: 20 },
       { t: "Vi lägger ut ibland – ganska spontant", s: "", p: 12 },
       { t: "Sida finns men uppdateras sällan", s: "", p: 4 },
-      { t: "Vi saknar närvaro på sociala medier", s: "", p: 0 }
+      { t: "Vi saknar närvaro på innehåll", s: "", p: 0 }
     ]}
   ];
 
@@ -1050,7 +1042,7 @@ footer .container {
       "Lokal SEO":     { ico: "ti-map-pin",          t: "Lokal SEO & GBP",       d: "En optimerad Google-profil ger omedelbar lokal synlighet." },
       "Leadgenerering":{ ico: "ti-speakerphone",     t: "Google Ads",            d: "Betald annonsering ger leads direkt – redan imorgon." },
       "Analys":        { ico: "ti-chart-bar",        t: "Konverteringsspårning", d: "Utan data vet ni inte var era pengar ska läggas." },
-      "Sociala medier":{ ico: "ti-brand-instagram",  t: "Sociala medier",        d: "Regelbundet innehåll bygger förtroende och driver trafik." }
+      "Innehåll":{ ico: "ti-brand-instagram",  t: "Innehåll",        d: "Regelbundet innehåll bygger förtroende och driver trafik." }
     };
     return ans
       .map((a, i) => a.p < 14 ? map[Qs[i].area] : null)

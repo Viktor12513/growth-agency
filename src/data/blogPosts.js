@@ -651,7 +651,7 @@
   {
     "slug": "hur-ofta-posta-instagram",
     "title": "Hur ofta ska du posta p&aring; Instagram som f&ouml;retag?",
-    "category": "Sociala medier",
+    "category": "Innehåll",
     "categoryKey": "sociala-medier",
     "date": "7 apr 2025",
     "readingTime": "17 min l&auml;sning",
@@ -670,8 +670,8 @@
       {
         "heading": "Varf&ouml;r det h&auml;r &auml;r viktigt",
         "body": [
-          "Sociala medier fungerar b&auml;st n&auml;r de bygger igenk&auml;nning &ouml;ver tid. Det handlar inte bara om att synas ofta, utan om att konsekvent visa varf&ouml;r f&ouml;retaget &auml;r relevant och trov&auml;rdigt.",
-          "F&ouml;r m&aring;nga mindre f&ouml;retag &auml;r sociala medier ocks&aring; en f&ouml;rtroendekanal. Kunder vill se hur ni t&auml;nker, vad ni kan och om ni verkar aktiva och seri&ouml;sa."
+          "Innehåll fungerar b&auml;st n&auml;r de bygger igenk&auml;nning &ouml;ver tid. Det handlar inte bara om att synas ofta, utan om att konsekvent visa varf&ouml;r f&ouml;retaget &auml;r relevant och trov&auml;rdigt.",
+          "F&ouml;r m&aring;nga mindre f&ouml;retag &auml;r innehåll ocks&aring; en f&ouml;rtroendekanal. Kunder vill se hur ni t&auml;nker, vad ni kan och om ni verkar aktiva och seri&ouml;sa."
         ]
       },
       {
@@ -739,7 +739,7 @@
       {
         "heading": "S&aring; bygger du f&ouml;rtroende",
         "body": [
-          "Sociala medier bygger f&ouml;rtroende &ouml;ver tid. Visa riktiga situationer, tydliga budskap och &aring;terkommande teman som g&ouml;r att m&aring;lgruppen f&ouml;rst&aring;r b&aring;de vad ni kan och hur det k&auml;nns att samarbeta med er.",
+          "Innehåll bygger f&ouml;rtroende &ouml;ver tid. Visa riktiga situationer, tydliga budskap och &aring;terkommande teman som g&ouml;r att m&aring;lgruppen f&ouml;rst&aring;r b&aring;de vad ni kan och hur det k&auml;nns att samarbeta med er.",
           "F&ouml;rtroende skapas ocks&aring; av detaljer. Bes&ouml;karen vill f&ouml;rst&aring; hur ni arbetar, vad som h&auml;nder efter kontakt och varf&ouml;r ni &auml;r ett tryggt val. Ju tydligare detta blir, desto mindre beh&ouml;ver kunden gissa.",
           "Anv&auml;nd g&auml;rna exempel fr&aring;n verkliga situationer: vanliga fr&aring;gor, f&ouml;re- och efterl&auml;gen, typiska problem, kundcase eller korta f&ouml;rklaringar av er process. Det g&ouml;r inneh&aring;llet mer konkret och l&auml;ttare att tro p&aring;."
         ],
@@ -780,14 +780,14 @@
         ]
       },
       {
-        "heading": "Relaterad tj&auml;nst: Sociala medier",
+        "heading": "Relaterad tj&auml;nst: Innehåll",
         "body": [
-          "Vill du bygga en starkare n&auml;rvaro och tydligare inneh&aring;llsplan? L&auml;s mer om hur vi hj&auml;lper f&ouml;retag med <a href=\"/sociala-medier/\">sociala medier</a>."
+          "Vill du bygga en starkare n&auml;rvaro och tydligare inneh&aring;llsplan? L&auml;s mer om hur vi hj&auml;lper f&ouml;retag med <a href=\"/sociala-medier/\">innehåll</a>."
         ]
       }
     ],
     "authorName": "Nordväxt Social-team",
-    "authorRole": "Specialister på sociala medier och innehållsplanering"
+    "authorRole": "Specialister på innehåll och innehållsplanering"
   },
   {
     "slug": "laddningstid-hemsida",
@@ -1294,7 +1294,7 @@
   {
     "slug": "linkedin-foretag-b2b",
     "title": "LinkedIn för B2B-företag – allt du behöver veta",
-    "category": "Sociala medier",
+    "category": "Innehåll",
     "categoryKey": "sociala-medier",
     "date": "10 mar 2025",
     "readingTime": "14 min l&auml;sning",
@@ -1306,7 +1306,7 @@
       {
         "heading": "Introduktion",
         "body": [
-          "I den här guiden går vi igenom allt B2B-företag behöver veta om LinkedIn – från att sätta upp en stark företagssida och skapa innehåll som faktiskt når fram, till LinkedIn Ads och hur du mäter om det du gör faktiskt ger resultat. Du behöver inte ha jobbat med sociala medier förut för att förstå och använda den här guiden."
+          "I den här guiden går vi igenom allt B2B-företag behöver veta om LinkedIn – från att sätta upp en stark företagssida och skapa innehåll som faktiskt når fram, till LinkedIn Ads och hur du mäter om det du gör faktiskt ger resultat. Du behöver inte ha jobbat med innehåll förut för att förstå och använda den här guiden."
         ]
       },
       {
@@ -1314,7 +1314,7 @@
         "body": [
           "Vi vet, vi vet. Det finns hundra ställen du kan marknadsföra ditt företag. Instagram, Facebook, TikTok, X – listan är lång och råden du får är motstridiga. Men för B2B, alltså om du säljer till andra företag, finns det ett självklart svar: <strong>LinkedIn är nummer ett.</strong> Inte för att vi säger det, utan för att siffrorna säger det.",
           "LinkedIn har över 1 miljard registrerade användare globalt och drygt 4 miljoner i Sverige. Det som gör plattformen unik är att folk faktiskt är i jobbar-läge när de är där. De bläddrar igenom flödet på sin lunchrast och tänker på sin bransch, sina utmaningar och sina kollegor. Du kan nå dem precis i det ögonblicket – med rätt budskap.",
-          "Det är inte slumpen att LinkedIn drar in upp till 80 % av alla B2B-leads som genereras via sociala medier. Det är plattformens DNA. Du hittar beslutsfattare, ekonomichefer, inköpschefer, IT-ansvariga och affärsutvecklare – alla med namn, titel och kontaktuppgifter synliga. Det finns helt enkelt ingen annan kanal som matchar den möjligheten om du säljer till företag.",
+          "Det är inte slumpen att LinkedIn drar in upp till 80 % av alla B2B-leads som genereras via innehåll. Det är plattformens DNA. Du hittar beslutsfattare, ekonomichefer, inköpschefer, IT-ansvariga och affärsutvecklare – alla med namn, titel och kontaktuppgifter synliga. Det finns helt enkelt ingen annan kanal som matchar den möjligheten om du säljer till företag.",
           "Men – och det här är viktigt – att bara finnas på LinkedIn räcker inte. Att ha en halvdålig företagssida med tre inlägg från 2022 och ett profilfoto som ser ut att vara taget i ett källarrum hjälper dig inte ett dugg. Det är kanske till och med sämre än att inte finnas alls, för det signalerar att ditt företag inte tar sin digitala närvaro på allvar.",
           "Så låt oss prata om hur du faktiskt gör det rätt."
         ]
@@ -1459,25 +1459,25 @@
       {
         "heading": "Vanliga frågor om LinkedIn för B2B",
         "body": [
-          "<strong>Sociala medier för företag – vår tjänst och vad som ingår</strong>",
+          "<strong>Innehåll för företag – vår tjänst och vad som ingår</strong>",
           "<strong>Vad är SEO och varför rankar du inte på Google?</strong>",
           "<strong>Google Ads för B2B – hur du sätter upp din första kampanj</strong>",
           "<strong>Fler guider om digital marknadsföring för svenska företag</strong>",
-          "Ja – LinkedIn är den överlägset starkaste kanalen för B2B. Plattformen har 1 miljard användare globalt och är designad för professionella relationer. Studier visar att LinkedIn genererar upp till 3 gånger fler B2B-leads än Facebook och Twitter kombinerat, och 80 % av alla B2B-leads från sociala medier kommer från LinkedIn.",
+          "Ja – LinkedIn är den överlägset starkaste kanalen för B2B. Plattformen har 1 miljard användare globalt och är designad för professionella relationer. Studier visar att LinkedIn genererar upp till 3 gånger fler B2B-leads än Facebook och Twitter kombinerat, och 80 % av alla B2B-leads från innehåll kommer från LinkedIn.",
           "Fokusera på innehåll som ger värde: branschinsikter, konkreta tips, bakom-kulisserna-innehåll, kundcase och data. Undvik rent säljande innehåll – LinkedIn-algoritmen och dina följare belönar äkta kunskap och personlighet. En bra tumregel: 70 % värde för läsaren, 30 % om er verksamhet.",
           "LinkedIn Ads är dyrare än Facebook – typiskt 50–200 kr per klick (CPC) beroende på målgrupp och budgivning. Minimumbudgeten är ungefär 110 kr per dag. Trots det höga priset är ofta ROAS bättre för B2B eftersom målgruppen är mer kvalificerad. Vi rekommenderar en månadsbudget på minst 5 000–8 000 kr för att få meningsfull data.",
           "De snabbaste sätten: be alla anställda följa och interagera med sidan, publicera värdefullt innehåll regelbundet (2–3 gånger per vecka), tagga relevanta personer och företag i inläggen, delta i kommentarsfält hos branschrelevanta inlägg, och kör LinkedIn Follower-annonser om du vill accelerera tillväxten med betalt."
         ]
       },
       {
-        "heading": "Vill du bygga starkare n&auml;rvaro i sociala medier?",
+        "heading": "Vill du bygga starkare n&auml;rvaro i innehåll?",
         "body": [
-          "Om du vill ta n&auml;sta steg med inneh&aring;ll, publicering och betald spridning kan du l&auml;sa mer om hur vi hj&auml;lper f&ouml;retag med <a href=\"/sociala-medier/\">sociala medier</a>."
+          "Om du vill ta n&auml;sta steg med inneh&aring;ll, publicering och betald spridning kan du l&auml;sa mer om hur vi hj&auml;lper f&ouml;retag med <a href=\"/sociala-medier/\">innehåll</a>."
         ]
       }
     ],
     "authorName": "Nordväxt Social-team",
-    "authorRole": "Specialister på sociala medier och innehållsplanering"
+    "authorRole": "Specialister på innehåll och innehållsplanering"
   },
   {
     "slug": "konverteringsoptimering-hemsida",
@@ -1763,12 +1763,12 @@
   },
   {
     "slug": "innehallskalender-sociala-medier",
-    "title": "S&aring; skapar du en inneh&aring;llskalender f&ouml;r sociala medier",
-    "category": "Sociala medier",
+    "title": "S&aring; skapar du en inneh&aring;llskalender f&ouml;r innehåll",
+    "category": "Innehåll",
     "categoryKey": "sociala-medier",
     "date": "17 feb 2025",
     "readingTime": "17 min l&auml;sning",
-    "excerpt": "En inneh&aring;llskalender g&ouml;r sociala medier enklare, j&auml;mnare och mer strategiskt. H&auml;r visar vi hur du planerar teman, &aring;teranv&auml;nder material och skapar en rytm som g&aring;r att h&aring;lla &ouml;ver tid.",
+    "excerpt": "En inneh&aring;llskalender g&ouml;r innehåll enklare, j&auml;mnare och mer strategiskt. H&auml;r visar vi hur du planerar teman, &aring;teranv&auml;nder material och skapar en rytm som g&aring;r att h&aring;lla &ouml;ver tid.",
     "coverStyle": "local-seo",
     "icon": "chat",
     "featured": false,
@@ -1776,15 +1776,15 @@
       {
         "heading": "Kort sammanfattning",
         "body": [
-          "En inneh&aring;llskalender g&ouml;r sociala medier enklare, j&auml;mnare och mer strategiskt. H&auml;r visar vi hur du planerar teman, &aring;teranv&auml;nder material och skapar en rytm som g&aring;r att h&aring;lla &ouml;ver tid.",
+          "En inneh&aring;llskalender g&ouml;r innehåll enklare, j&auml;mnare och mer strategiskt. H&auml;r visar vi hur du planerar teman, &aring;teranv&auml;nder material och skapar en rytm som g&aring;r att h&aring;lla &ouml;ver tid.",
           "Guiden &auml;r skriven f&ouml;r dig som driver eller marknadsf&ouml;r ett svenskt f&ouml;retag och vill f&ouml;rst&aring; vad som faktiskt g&ouml;r skillnad. Vi g&aring;r igenom b&aring;de strategi och praktiska steg, s&aring; att du kan fatta b&auml;ttre beslut &auml;ven om du inte arbetar med digital marknadsf&ouml;ring varje dag."
         ]
       },
       {
         "heading": "Varf&ouml;r det h&auml;r &auml;r viktigt",
         "body": [
-          "Sociala medier fungerar b&auml;st n&auml;r de bygger igenk&auml;nning &ouml;ver tid. Det handlar inte bara om att synas ofta, utan om att konsekvent visa varf&ouml;r f&ouml;retaget &auml;r relevant och trov&auml;rdigt.",
-          "F&ouml;r m&aring;nga mindre f&ouml;retag &auml;r sociala medier ocks&aring; en f&ouml;rtroendekanal. Kunder vill se hur ni t&auml;nker, vad ni kan och om ni verkar aktiva och seri&ouml;sa."
+          "Innehåll fungerar b&auml;st n&auml;r de bygger igenk&auml;nning &ouml;ver tid. Det handlar inte bara om att synas ofta, utan om att konsekvent visa varf&ouml;r f&ouml;retaget &auml;r relevant och trov&auml;rdigt.",
+          "F&ouml;r m&aring;nga mindre f&ouml;retag &auml;r innehåll ocks&aring; en f&ouml;rtroendekanal. Kunder vill se hur ni t&auml;nker, vad ni kan och om ni verkar aktiva och seri&ouml;sa."
         ]
       },
       {
@@ -1852,7 +1852,7 @@
       {
         "heading": "S&aring; bygger du f&ouml;rtroende",
         "body": [
-          "Sociala medier bygger f&ouml;rtroende &ouml;ver tid. Visa riktiga situationer, tydliga budskap och &aring;terkommande teman som g&ouml;r att m&aring;lgruppen f&ouml;rst&aring;r b&aring;de vad ni kan och hur det k&auml;nns att samarbeta med er.",
+          "Innehåll bygger f&ouml;rtroende &ouml;ver tid. Visa riktiga situationer, tydliga budskap och &aring;terkommande teman som g&ouml;r att m&aring;lgruppen f&ouml;rst&aring;r b&aring;de vad ni kan och hur det k&auml;nns att samarbeta med er.",
           "F&ouml;rtroende skapas ocks&aring; av detaljer. Bes&ouml;karen vill f&ouml;rst&aring; hur ni arbetar, vad som h&auml;nder efter kontakt och varf&ouml;r ni &auml;r ett tryggt val. Ju tydligare detta blir, desto mindre beh&ouml;ver kunden gissa.",
           "Anv&auml;nd g&auml;rna exempel fr&aring;n verkliga situationer: vanliga fr&aring;gor, f&ouml;re- och efterl&auml;gen, typiska problem, kundcase eller korta f&ouml;rklaringar av er process. Det g&ouml;r inneh&aring;llet mer konkret och l&auml;ttare att tro p&aring;."
         ],
@@ -1893,14 +1893,14 @@
         ]
       },
       {
-        "heading": "Relaterad tj&auml;nst: Sociala medier",
+        "heading": "Relaterad tj&auml;nst: Innehåll",
         "body": [
-          "Vill du bygga en starkare n&auml;rvaro och tydligare inneh&aring;llsplan? L&auml;s mer om hur vi hj&auml;lper f&ouml;retag med <a href=\"/sociala-medier/\">sociala medier</a>."
+          "Vill du bygga en starkare n&auml;rvaro och tydligare inneh&aring;llsplan? L&auml;s mer om hur vi hj&auml;lper f&ouml;retag med <a href=\"/sociala-medier/\">innehåll</a>."
         ]
       }
     ],
     "authorName": "Nordväxt Social-team",
-    "authorRole": "Specialister på sociala medier och innehållsplanering"
+    "authorRole": "Specialister på innehåll och innehållsplanering"
   },
   {
     "slug": "vad-kostar-digital-marknadsforing",
@@ -1909,7 +1909,7 @@
     "categoryKey": "strategi",
     "date": "19 maj 2025",
     "readingTime": "11 min l&auml;sning",
-    "excerpt": "Vad kostar digital marknadsföring egentligen? Vi går igenom priser på SEO, Google Ads, sociala medier och hemsidor – och hjälper dig förstå vad som är värt pengarna för ditt företag.",
+    "excerpt": "Vad kostar digital marknadsföring egentligen? Vi går igenom priser på SEO, Google Ads, innehåll och hemsidor – och hjälper dig förstå vad som är värt pengarna för ditt företag.",
     "coverStyle": "strategy",
     "icon": "chart",
     "featured": false,
@@ -1926,8 +1926,8 @@
         "heading": "Vad ingår egentligen i \"digital marknadsföring\"?",
         "body": [
           "Innan vi pratar kronor och ören är det värt att reda ut vad vi faktiskt menar när vi säger \"digital marknadsföring\". Det är nämligen ett paraplybegrepp som kan innefatta massor av saker – och det är lätt att jämföra äpplen med päron om du inte vet vad du tittar på.",
-          "De vanligaste delarna är SEO (sökmotoroptimering), betald annonsering via Google Ads, sociala medier-hantering, innehållsmarknadsföring och hemsidor. Sedan finns det mer nischade delar som e-postmarknadsföring, displayannonsering och videoannonsering. Varje del har sin egen prisbild och sin egen tidslinje för resultat.",
-          "En viktig sak att förstå är att dessa delar inte nödvändigtvis ersätter varandra – de förstärker varandra. En bra hemsida gör din SEO mer effektiv. En väloptimerad SEO gör dina Google Ads billigare. Bra innehåll gör dina sociala medier mer engagerande. Det är ett ekosystem, och hur mycket av det du väljer att bygga ut beror på din budget och dina mål.",
+          "De vanligaste delarna är SEO (sökmotoroptimering), betald annonsering via Google Ads, innehåll-hantering, innehållsmarknadsföring och hemsidor. Sedan finns det mer nischade delar som e-postmarknadsföring, displayannonsering och videoannonsering. Varje del har sin egen prisbild och sin egen tidslinje för resultat.",
+          "En viktig sak att förstå är att dessa delar inte nödvändigtvis ersätter varandra – de förstärker varandra. En bra hemsida gör din SEO mer effektiv. En väloptimerad SEO gör dina Google Ads billigare. Bra innehåll gör dina innehåll mer engagerande. Det är ett ekosystem, och hur mycket av det du väljer att bygga ut beror på din budget och dina mål.",
           "<strong>Viktigt att veta:</strong> Försök aldrig pressa in en hel digital strategi i en alldeles för liten budget. Det är mycket bättre att göra ett par saker riktigt bra än att göra allt halvdåligt. Välj en kanal, gör den rätt, och lägg till fler när pengarna tillåter."
         ]
       },
@@ -1939,7 +1939,7 @@
           "<strong>Google Ads – betald söknonsering</strong>",
           "Med Google Ads betalar du per klick (CPC – cost per click) och kan vara synlig på Google redan dagen efter du startat. Budgeten består av dels en annonsbudget som går direkt till Google, och dels en eventuell hanteringsavgift om du anlitar en byrå.",
           "Lägg till byråavgift om du anlitar någon att hantera kampanjerna: 1 500–5 000 kr/mån beroende på volym och komplexitet.",
-          "Att vara aktiv på sociala medier handlar om två saker: organisk närvaro (gratisinnehåll du publicerar) och betalda annonser. För de flesta lokala företag är en kombination av de två mest effektivt.",
+          "Att vara aktiv på innehåll handlar om två saker: organisk närvaro (gratisinnehåll du publicerar) och betalda annonser. För de flesta lokala företag är en kombination av de två mest effektivt.",
           "Hemsidan är grunden för allt. Utan en bra hemsida är det ingen idé att köra trafik – varken via SEO eller annonser. Tänk på den som ditt skyltfönster på nätet."
         ],
         "bullets": [
@@ -1971,7 +1971,7 @@
         "heading": "Byrå, frilans eller göra det själv?",
         "body": [
           "Det är en av de frågor vi får mest – och svaret beror på tre saker: hur mycket tid du har, hur mycket kompetens du har och hur snabbt du vill se resultat. Här är en ärlig genomgång av de tre alternativen.",
-          "Det billigaste alternativet i reda pengar – men inte i tid. SEO, Google Ads och sociala medier är färdigheter som tar tid att lära sig, och misstag i till exempel Google Ads kan kosta dig pengar utan att ge resultat. Lämpar sig bäst om du är i uppstartsfasen, har tid att lära dig och inte behöver snabba resultat.",
+          "Det billigaste alternativet i reda pengar – men inte i tid. SEO och Google Ads är färdigheter som tar tid att lära sig, och misstag i till exempel Google Ads kan kosta dig pengar utan att ge resultat. Lämpar sig bäst om du är i uppstartsfasen, har tid att lära dig och inte behöver snabba resultat.",
           "Flexibelt och ofta kostnadseffektivt för specifika insatser – en bloggpost här, en annonsuppsättning där. Utmaningen är att koordinera flera frilansare kan bli rörigt, och du behöver ändå ha koll på helheten själv. Passar bra för avgränsade uppdrag när du vet exakt vad du behöver.",
           "Dyrare per timme, men du köper ett helt team och en färdig process. En bra byrå ser helheten, håller ihop strategi och exekvering, och kan eskalera insatserna när det behövs. Det viktigaste är att hitta en byrå som är transparent med vad du faktiskt betalar för – och som rapporterar resultat, inte bara aktivitet."
         ],
@@ -2015,8 +2015,8 @@
           "<strong>Betala för trafik till en dålig hemsida</strong>",
           "Det vanligaste av alla misstag. Du startar Google Ads eller betalar för SEO, folk klickar sig in – och lämnar direkt för att hemsidan är seg, ful eller rörig. Fixen är enkel: se till att hemsidan är i ordning innan du kör trafik till den.",
           "Det finns gott om aktörer som säljer SEO för 500–1 000 kr i månaden. Vad du i bästa fall får är ingenting. I sämsta fall skadar det din sida via spam-länkar eller tunt innehåll som Google straffar. Bra SEO kostar vad det kostar – och det är i regel minst 2 000–3 000 kr/mån för att det ska röra sig framåt.",
-          "<strong>Betala för sociala medier utan strategi</strong>",
-          "Att posta \"för att man måste\" är ett effektivt sätt att bränna tid och pengar. Sociala medier fungerar bäst när du har en tydlig målgrupp och ett tydligt syfte. Är det inte din starkaste kanal – prioritera ned det och satsa på SEO och hemsida istället.",
+          "<strong>Betala för innehåll utan strategi</strong>",
+          "Att posta \"för att man måste\" är ett effektivt sätt att bränna tid och pengar. Innehåll fungerar bäst när du har en tydlig målgrupp och ett tydligt syfte. Är det inte din starkaste kanal – prioritera ned det och satsa på SEO och hemsida istället.",
           "Om du inte vet vad din marknadsföring genererar i form av samtal, leads och affärer – vet du inte heller om du spenderar rätt. Google Analytics och Search Console är gratis. Se till att de är uppsatta och att du faktiskt tittar på dem en gång i månaden."
         ]
       },
@@ -2234,7 +2234,7 @@
       {
         "heading": "Varf&ouml;r det h&auml;r &auml;r viktigt",
         "body": [
-          "Digital marknadsf&ouml;ring blir starkast n&auml;r kanalerna h&auml;nger ihop. Hemsidan, SEO, annonser och sociala medier ska inte konkurrera om uppm&auml;rksamheten, utan f&ouml;rst&auml;rka samma erbjudande.",
+          "Digital marknadsf&ouml;ring blir starkast n&auml;r kanalerna h&auml;nger ihop. Hemsidan, SEO, annonser och innehåll ska inte konkurrera om uppm&auml;rksamheten, utan f&ouml;rst&auml;rka samma erbjudande.",
           "En tydlig strategi hj&auml;lper dig att prioritera. D&aring; blir det l&auml;ttare att avg&ouml;ra vad som ska g&ouml;ras nu, vad som kan v&auml;nta och vilka insatser som faktiskt p&aring;verkar int&auml;kterna."
         ]
       },
@@ -2242,7 +2242,7 @@
         "heading": "S&aring; g&ouml;r du i praktiken",
         "body": [
           "B&ouml;rja med aff&auml;rsm&aring;let. Vill du ha fler offertf&ouml;rfr&aring;gningar, b&auml;ttre kvalitet p&aring; leads, starkare varum&auml;rke eller mer &aring;terkommande trafik?",
-          "Koppla sedan varje kanal till en roll. SEO kan skapa l&aring;ngsiktig efterfr&aring;gan, annonser kan testa budskap snabbt och sociala medier kan bygga f&ouml;rtroende mellan besluten."
+          "Koppla sedan varje kanal till en roll. SEO kan skapa l&aring;ngsiktig efterfr&aring;gan, annonser kan testa budskap snabbt och innehåll kan bygga f&ouml;rtroende mellan besluten."
         ],
         "bullets": [
           "V&auml;lj ett tydligt m&aring;l innan du b&ouml;rjar &auml;ndra sidan, kampanjen eller inneh&aring;llet.",
@@ -2813,9 +2813,9 @@
         ]
       },
       {
-        "heading": "N&auml;sta steg: Google Ads eller sociala medier",
+        "heading": "N&auml;sta steg: Google Ads eller innehåll",
         "body": [
-          "Om kunderna redan s&ouml;ker efter din l&ouml;sning passar ofta <a href=\"/google-ads/\">Google Ads</a> bra. Om du beh&ouml;ver bygga efterfr&aring;gan och varum&auml;rke kan du ocks&aring; l&auml;sa mer om <a href=\"/sociala-medier/\">sociala medier</a>."
+          "Om kunderna redan s&ouml;ker efter din l&ouml;sning passar ofta <a href=\"/google-ads/\">Google Ads</a> bra. Om du beh&ouml;ver bygga efterfr&aring;gan och varum&auml;rke kan du ocks&aring; l&auml;sa mer om <a href=\"/sociala-medier/\">innehåll</a>."
         ]
       }
     ],
