@@ -363,3 +363,111 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* SEO intent sections */
+.seo-intent-section {
+  padding: 74px 0;
+  background:
+    linear-gradient(180deg, #fff 0%, var(--cream, #f7f4ef) 100%);
+  border-top: 1px solid var(--mint, var(--border, rgba(20,58,31,0.12)));
+  border-bottom: 1px solid var(--mint, var(--border, rgba(20,58,31,0.12)));
+}
+
+.seo-intent-section .container,
+.seo-intent-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.seo-intent-head {
+  max-width: 720px;
+  margin-bottom: 32px;
+}
+
+.seo-intent-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: var(--green-light, var(--mint, #e8f2eb));
+  color: var(--green, var(--forest, #143a1f));
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.seo-intent-title {
+  font-family: var(--display-font, 'DM Serif Display', Georgia, serif);
+  color: var(--green, var(--forest, #143a1f));
+  font-size: clamp(1.75rem, 3.2vw, 2.55rem);
+  line-height: 1.14;
+  letter-spacing: -0.015em;
+  margin: 0 0 14px;
+}
+
+.seo-intent-lead {
+  color: var(--text-muted, var(--ink-mid, #4a6350));
+  font-size: 1.02rem;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.seo-intent-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.seo-intent-card {
+  background: #fff;
+  border: 1px solid var(--mint, var(--border, rgba(20,58,31,0.12)));
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(20, 58, 31, 0.06);
+}
+
+.seo-intent-card h3 {
+  color: var(--green, var(--forest, #143a1f));
+  font-size: 1rem;
+  line-height: 1.3;
+  margin: 0 0 9px;
+}
+
+.seo-intent-card p {
+  color: var(--text-muted, var(--ink-mid, #4a6350));
+  font-size: 0.9rem;
+  line-height: 1.68;
+  margin: 0;
+}
+
+.seo-intent-card a {
+  color: var(--green, var(--forest, #143a1f));
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.seo-intent-card-wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 900px) {
+  .seo-intent-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seo-intent-card-wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .seo-intent-section {
+    padding: 52px 0;
+  }
+}
