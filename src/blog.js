@@ -5,6 +5,7 @@ const pageTitle = document.querySelector('title');
 const descriptionMeta = document.querySelector('meta[name="description"]');
 const canonicalLink = document.querySelector('link[rel="canonical"]');
 const origin = window.location.origin;
+let cleanupArticleEvents = () => {};
 
 const icons = {
   search: '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>',
@@ -237,6 +238,11 @@ function renderCta() {
   </section>`;
 }
 
+function resetArticleEvents() {
+  cleanupArticleEvents();
+  cleanupArticleEvents = () => {};
+}
+
 function attachListingEvents() {
   document.querySelectorAll('.filter-btn').forEach((button) => {
     button.addEventListener('click', () => {
@@ -263,6 +269,7 @@ function attachNewsletterEvent() {
 }
 
 function renderListing() {
+  resetArticleEvents();
   const featured = blogPosts.find((post) => post.featured) || blogPosts[0];
   const rest = blogPosts.filter((post) => post.slug !== featured.slug);
 
@@ -302,7 +309,7 @@ function renderArticleSections(post) {
     <span class="article-section-kicker">${String(index + 1).padStart(2, '0')}</span>
     <h2>${section.heading}</h2>
     <div class="article-section-body">${section.body.map((paragraph) => `<p>${paragraph}</p>`).join('')}</div>
-    ${section.bullets ? `<ul>${section.bullets.map((item) => `<li>${item}</li>`).join('')}</ul>` : ''}
+    ${section.bullets ? `<ul class="guide-list">${section.bullets.map((item) => `<li>${item}</li>`).join('')}</ul>` : ''}
   </section>`;
   }).join('');
 }
@@ -335,12 +342,86 @@ function renderArticleToc(post) {
     .filter(({ section }) => !isServiceSection(section))
     .slice(0, 10);
 
-  return `<aside class="article-toc" aria-label="Inneh&aring;llsf&ouml;rteckning">
-    <p class="article-toc-title">I den h&auml;r guiden</p>
-    <ol>
-      ${sections.map(({ section, index, id }) => `<li><a href="#${id}"><span>${String(index + 1).padStart(2, '0')}</span>${section.heading}</a></li>`).join('')}
-    </ol>
+  return `<aside class="article-sidebar" aria-label="Artikelverktyg">
+    <div class="sidebar-progress" aria-label="Din l&auml;sning">
+      <h3>Din l&auml;sning</h3>
+      <div class="read-bar"><div class="read-fill" id="readFill"></div></div>
+      <div class="read-pct" id="readPct">0% klart</div>
+    </div>
+    <div class="sidebar-toc">
+      <h3>Inneh&aring;ll</h3>
+      <ol class="toc-list">
+        ${sections.map(({ section, index, id }) => `<li><a href="#${id}"><span class="toc-num">${String(index + 1).padStart(2, '0')}</span>${section.heading}</a></li>`).join('')}
+      </ol>
+    </div>
+    <div class="sidebar-cta">
+      <h3>Vill du g&ouml;ra detta praktiskt?</h3>
+      <p>Vi tittar p&aring; din situation och visar vad som ger mest effekt f&ouml;rst.</p>
+      <a href="/kontakt/#contact-form">Boka gratis samtal</a>
+    </div>
   </aside>`;
+}
+
+function featuredAnswer(post) {
+  const firstSection = post.contentSections?.[0];
+  const source = firstSection?.body?.[0] || post.excerpt;
+  return plainText(source).slice(0, 260);
+}
+
+function renderAuthorBox(post) {
+  return `<div class="author-box">
+    <div class="author-avatar" aria-hidden="true">${plainText(authorLabel(post)).charAt(0) || 'N'}</div>
+    <div>
+      <div class="author-name">${authorLabel(post)}</div>
+      <p class="author-desc">${post.authorRole || 'Specialister p&aring; SEO, hemsidor och digital marknadsf&ouml;ring f&ouml;r svenska f&ouml;retag.'}</p>
+    </div>
+  </div>`;
+}
+
+function renderArticleTags(post) {
+  const tags = [post.category, 'Nordv&auml;xt', 'Digital marknadsf&ouml;ring'].filter(Boolean);
+  return `<div class="article-tags">${tags.map((tag) => `<span class="tag">${tag}</span>`).join('')}</div>`;
+}
+
+function attachArticleEvents() {
+  resetArticleEvents();
+
+  const article = document.querySelector('.blog-post--guide');
+  const fill = document.getElementById('readFill');
+  const pct = document.getElementById('readPct');
+  const headings = document.querySelectorAll('.article-body h2[id]');
+  const tocLinks = document.querySelectorAll('.toc-list a');
+
+  function updateProgress() {
+    if (!article || !fill || !pct) return;
+    const rect = article.getBoundingClientRect();
+    const total = Math.max(1, article.offsetHeight - window.innerHeight);
+    const scrolled = Math.max(0, -rect.top);
+    const percent = Math.min(100, Math.round((scrolled / total) * 100));
+    fill.style.width = `${percent}%`;
+    pct.textContent = `${percent}% klart`;
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  let observer = null;
+  if ('IntersectionObserver' in window && headings.length) {
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        tocLinks.forEach((link) => link.classList.remove('active'));
+        document.querySelector(`.toc-list a[href="#${entry.target.id}"]`)?.classList.add('active');
+      });
+    }, { rootMargin: '-15% 0px -75% 0px' });
+
+    headings.forEach((heading) => observer.observe(heading));
+  }
+
+  cleanupArticleEvents = () => {
+    window.removeEventListener('scroll', updateProgress);
+    observer?.disconnect();
+  };
 }
 
 function renderRelatedPosts(post) {
@@ -361,6 +442,8 @@ function renderRelatedPosts(post) {
 }
 
 function renderPost(post) {
+  resetArticleEvents();
+
   if (post.staticArticle) {
     window.location.replace(postUrl(post));
     return;
@@ -374,32 +457,66 @@ function renderPost(post) {
   setArticleStructuredData(post);
 
   app.innerHTML = `${renderBreadcrumb(post.title, true)}
-    <article class="blog-post">
-      <header class="article-hero post-thumb--${post.coverStyle}${visualClass(post)}">
-        <div class="article-hero-inner">
-          <a href="/blogg/" class="article-back">Tillbaka till bloggen</a>
-          <div class="article-icon">${renderPostVisual(post, 'article')}</div>
-          <div class="post-meta article-meta">
-            <span class="post-cat ${catClass(post)}">${post.category}</span>
-            <span class="post-author">Av ${authorLabel(post)}</span>
-            <span class="post-date">${post.date}</span>
-            <span class="post-read">${post.readingTime}</span>
+    <main class="article-page article-page--dynamic">
+      <div class="article-wrap">
+        <article class="blog-post blog-post--guide" itemscope itemtype="https://schema.org/BlogPosting">
+          <meta itemprop="datePublished" content="${post.date}">
+          <header class="article-header">
+            <a href="/blogg/" class="article-back article-back--guide">Tillbaka till bloggen</a>
+            <div class="post-badges">
+              <span class="badge badge-cat">${post.category}</span>
+              <span class="badge badge-time">${post.readingTime}</span>
+            </div>
+            <h1 class="article-title" itemprop="headline">${post.title}</h1>
+            <div class="featured-answer">
+              <span class="featured-answer-label">Kort svar</span>
+              <p>${featuredAnswer(post)}</p>
+            </div>
+            <p class="article-lead" itemprop="description">${post.excerpt}</p>
+            <div class="article-meta">
+              <span><strong>Publicerad:</strong> ${post.date}</span>
+              <span><strong>Av:</strong> ${authorLabel(post)}</span>
+              <span><strong>Kategori:</strong> ${post.category}</span>
+              <span><strong>L&auml;stid:</strong> ${post.readingTime}</span>
+            </div>
+          </header>
+
+          <div class="article-hero article-hero--guide post-thumb--${post.coverStyle}${visualClass(post)}" role="img" aria-label="${post.category}">
+            <div class="article-hero-visual">${renderPostVisual(post, 'article')}</div>
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <div class="hero-stat-num">01</div>
+                <div class="hero-stat-label">praktisk guide</div>
+              </div>
+              <div class="hero-divider"></div>
+              <div class="hero-stat">
+                <div class="hero-stat-num">${post.contentSections.length}</div>
+                <div class="hero-stat-label">avsnitt</div>
+              </div>
+              <div class="hero-divider"></div>
+              <div class="hero-stat">
+                <div class="hero-stat-num"><span>✓</span></div>
+                <div class="hero-stat-label">konkreta steg</div>
+              </div>
+            </div>
           </div>
-          <h1>${post.title}</h1>
-          <p>${post.excerpt}</p>
-        </div>
-      </header>
-      <div class="article-layout">
+
+          <div class="article-body">
+            ${renderArticleSections(post)}
+          </div>
+          ${renderAuthorBox(post)}
+          ${renderArticleTags(post)}
+        </article>
         ${renderArticleToc(post)}
-        <div class="article-content">
-          ${renderArticleSections(post)}
-        </div>
       </div>
-    </article>
+    </main>
     ${renderRelatedPosts(post)}${renderCta()}`;
+
+  attachArticleEvents();
 }
 
 function renderNotFound() {
+  resetArticleEvents();
   setMeta({
     title: '404 - Artikeln hittades inte | Nordv&auml;xt AB',
     description: 'Artikeln du s&ouml;ker finns inte. G&aring; tillbaka till bloggen f&ouml;r att hitta fler guider.',
