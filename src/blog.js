@@ -45,10 +45,15 @@ function setArticleStructuredData(post) {
     description: decodeHtml(post.excerpt),
     datePublished: post.date,
     author: {
-      '@type': 'Organization',
+      '@type': 'Person',
       name: decodeHtml(authorLabel(post)),
-      url: `${origin}/blogg/`,
+      affiliation: {
+        '@type': 'Organization',
+        name: 'Nordväxt AB',
+        url: origin,
+      },
     },
+    dateModified: '2026-06-03',
     publisher: {
       '@type': 'Organization',
       name: 'Nordväxt AB',
@@ -383,6 +388,28 @@ function renderArticleTags(post) {
   return `<div class="article-tags">${tags.map((tag) => `<span class="tag">${tag}</span>`).join('')}</div>`;
 }
 
+function renderAuthorityBox(post) {
+  const serviceLink = post.categoryKey === 'google-ads'
+    ? ['Google Ads', '/google-ads/']
+    : post.categoryKey === 'hemsida'
+      ? ['hemsidor', '/hemsida/']
+      : ['SEO', '/seo/'];
+
+  return `<aside class="authority-box" aria-label="Källor och nästa steg">
+    <div>
+      <span class="authority-label">Fördjupning och nästa steg</span>
+      <h2>Vill du kontrollera eller jämföra själv?</h2>
+      <p>Här är några pålitliga resurser och interna sidor som hjälper dig gå från guide till beslut.</p>
+    </div>
+    <div class="authority-links">
+      <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener">Google Search Console</a>
+      <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a>
+      <a href="/priser/">Se priser och paket</a>
+      <a href="${serviceLink[1]}">Läs mer om ${serviceLink[0]}</a>
+    </div>
+  </aside>`;
+}
+
 function attachArticleEvents() {
   resetArticleEvents();
 
@@ -504,6 +531,7 @@ function renderPost(post) {
           <div class="article-body">
             ${renderArticleSections(post)}
           </div>
+          ${renderAuthorityBox(post)}
           ${renderAuthorBox(post)}
           ${renderArticleTags(post)}
         </article>

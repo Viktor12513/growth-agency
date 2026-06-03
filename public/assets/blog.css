@@ -1390,3 +1390,50 @@ footer .container {
     font-size: 1.1rem;
   }
 }
+
+
+.authority-box {
+  margin: 3rem 0 2rem;
+  padding: 1.6rem;
+  border: 1px solid var(--mint);
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--cream), #fff 70%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, 0.7fr);
+  gap: 1.4rem;
+  align-items: start;
+}
+.authority-label {
+  display: inline-block;
+  color: var(--moss);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.authority-box h2 {
+  font-family: 'DM Serif Display', serif;
+  color: var(--forest);
+  font-size: 1.45rem;
+  line-height: 1.2;
+  margin: 0 0 0.55rem;
+}
+.authority-box p { margin: 0; color: var(--ink-mid); }
+.authority-links { display: grid; gap: 0.65rem; }
+.authority-links a {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.8rem 0.95rem;
+  border: 1px solid var(--mint);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--forest);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+.authority-links a::after { content: '→'; color: var(--gold); }
+@media (max-width: 760px) {
+  .authority-box { grid-template-columns: 1fr; padding: 1.25rem; }
+}
