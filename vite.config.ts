@@ -16,6 +16,7 @@ export default defineConfig({
         quiz: resolve(__dirname, 'quiz/index.html'),
         blog: resolve(__dirname, 'blog/index.html'),
         blogg: resolve(__dirname, 'blogg/index.html'),
+        faq: resolve(__dirname, 'faq/index.html'),
         bloggSeoResults: resolve(__dirname, 'blogg/hur-lang-tid-tar-seo/index.html'),
         omOss: resolve(__dirname, 'om-oss/index.html'),
         kontakt: resolve(__dirname, 'kontakt/index.html'),

@@ -62,48 +62,6 @@
 }
 </script>
 
-<!-- Schema: FAQ -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Hur lång tid tar det att bygga en hemsida?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Leverans av vår produkt sker normalt inom 1–3 veckor från att vi har allt material och upplägget är godkänt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Vad kostar en hemsida hos Nordväxt?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Alla aktuella priser finns på vår Priser-sida. Där håller vi paket och villkor samlade så att informationen alltid är konsekvent."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Är hemsidorna mobilanpassade?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja, alla hemsidor vi bygger är fullt responsiva och fungerar perfekt på mobil, surfplatta och dator."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Får jag hjälp med innehållet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Ja. Vi hjälper till med copywriting, struktur och bildval. Du behöver inte ha allt klart – vi guider dig genom processen."
-      }
-    }
-  ]
-}
-</script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -119,6 +77,55 @@
   gtag('config', 'G-ML4E8DFP54');
 </script>
   <link rel="stylesheet" href="/assets/footer-areas.css">
+<link rel="stylesheet" href="/assets/faq.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vad innebär mobilanpassning för SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google använder mobile-first indexing, vilket innebär att den mobila versionen av din sajt indexeras och rankas primärt. En sajt som inte fungerar bra på mobil riskerar betydligt sämre ranking, oavsett hur bra den ser ut på dator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Påverkar sidladdningshastigheten SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, sidladdningshastighet är en bekräftad rankingfaktor för Google, särskilt på mobil. En sida som laddar på under 2 sekunder presterar generellt bättre än en som tar 5+ sekunder. Hastigheten påverkar också konverteringsgrad — besökare lämnar långsamma sajter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad är schema markup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Schema markup (strukturerad data) är kod du lägger till på sidan för att hjälpa Google förstå innehållet bättre. Det kan resultera i så kallade rich results i sökresultaten, som stjärnbetyg, FAQ-texter, recept, evenemang m.m. — vilket ökar klickfrekvensen markant."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad är en sitemap och behöver jag en?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En XML-sitemap är en fil som listar alla sidor på din webbplats och hjälper Google att hitta och indexera dem. De flesta sajter bör ha en — den är särskilt viktig för stora sajter eller sajter med många nya sidor som publiceras regelbundet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Behöver min webbplats HTTPS för SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, HTTPS är en rankingfaktor och ett grundkrav. Google Chrome markerar HTTP-sidor som 'Inte säker', vilket avskräcker besökare. Alla seriösa sajter bör ha ett giltigt SSL-certifikat, vilket de flesta webbhotell erbjuder gratis via Let's Encrypt."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -1156,6 +1163,25 @@
       Boka gratis samtal
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
+  </div>
+</section>
+
+
+<section class="service-faq" aria-labelledby="service-faq-heading">
+  <div class="container">
+    <div class="service-faq-header">
+      <span class="section-tag">Vanliga frågor</span>
+      <h2 class="section-title" id="service-faq-heading">Frågor om hemsidor och teknisk grund</h2>
+      <p class="section-lead">Korta svar på frågorna som oftast dyker upp innan ett företag går vidare.</p>
+    </div>
+    <div class="service-faq-grid">
+      <article class="service-faq-item"><h3>Vad innebär mobilanpassning för SEO?</h3><p>Google använder mobile-first indexing, vilket innebär att den mobila versionen av din sajt indexeras och rankas primärt. En sajt som inte fungerar bra på mobil riskerar betydligt sämre ranking, oavsett hur bra den ser ut på dator.</p></article>
+      <article class="service-faq-item"><h3>Påverkar sidladdningshastigheten SEO?</h3><p>Ja, sidladdningshastighet är en bekräftad rankingfaktor för Google, särskilt på mobil. En sida som laddar på under 2 sekunder presterar generellt bättre än en som tar 5+ sekunder. Hastigheten påverkar också konverteringsgrad — besökare lämnar långsamma sajter.</p></article>
+      <article class="service-faq-item"><h3>Vad är schema markup?</h3><p>Schema markup (strukturerad data) är kod du lägger till på sidan för att hjälpa Google förstå innehållet bättre. Det kan resultera i så kallade rich results i sökresultaten, som stjärnbetyg, FAQ-texter, recept, evenemang m.m. — vilket ökar klickfrekvensen markant.</p></article>
+      <article class="service-faq-item"><h3>Vad är en sitemap och behöver jag en?</h3><p>En XML-sitemap är en fil som listar alla sidor på din webbplats och hjälper Google att hitta och indexera dem. De flesta sajter bör ha en — den är särskilt viktig för stora sajter eller sajter med många nya sidor som publiceras regelbundet.</p></article>
+      <article class="service-faq-item"><h3>Behöver min webbplats HTTPS för SEO?</h3><p>Ja, HTTPS är en rankingfaktor och ett grundkrav. Google Chrome markerar HTTP-sidor som 'Inte säker', vilket avskräcker besökare. Alla seriösa sajter bör ha ett giltigt SSL-certifikat, vilket de flesta webbhotell erbjuder gratis via Let's Encrypt.</p></article>
+    </div>
+    <p class="service-faq-more"><a href="/faq/">Se alla 50 frågor i vår FAQ</a></p>
   </div>
 </section>
 
