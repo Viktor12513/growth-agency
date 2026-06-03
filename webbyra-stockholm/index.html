@@ -1,250 +1,677 @@
 <!DOCTYPE html>
-<html lang="sv" style="height:100%">
+<html lang="sv">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Webbyrå Stockholm | Nordväxt AB</title>
-<meta name="description" content="Nordväxt är en webbyrå för stockholmsföretag som hjälper dig växa online. Hemsidor, SEO och Google Ads – skräddarsytt för Stockholmsmarknaden. Boka gratis genomgång.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.nordvaxt.se/webbyra-stockholm/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webbyrå Stockholm | SEO, hemsidor & Google Ads | Nordväxt AB</title>
+  <meta name="description" content="Webbyrå i Stockholm för företag som vill växa online. Hemsidor, SEO, sökmotoroptimering, Google Ads och digital marknadsföring för Stockholmsregionen.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.nordvaxt.se/webbyra-stockholm/">
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.nordvaxt.se/webbyra-stockholm/">
-<meta property="og:title" content="Webbyrå Stockholm | Nordväxt AB">
-<meta property="og:description" content="Vi hjälper stockholmska företag att synas, växa och sälja mer online. Hemsidor, SEO och Google Ads – utan krångel.">
-<meta property="og:image" content="https://www.nordvaxt.se/images/logo.png">
-<meta property="og:locale" content="sv_SE">
-<meta property="og:site_name" content="Nordväxt AB">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.nordvaxt.se/webbyra-stockholm/">
+  <meta property="og:title" content="Webbyrå Stockholm | Nordväxt AB">
+  <meta property="og:description" content="Vi hjälper företag i Stockholm med professionell hemsida, SEO, Google Ads och digital marknadsföring som skapar fler leads.">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:site_name" content="Nordväxt AB">
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Nordväxt AB",
-  "url": "https://www.nordvaxt.se",
-  "telephone": "+46101898790",
-  "email": "albin@nordvaxt.se",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "O D Krooks gata 25",
-    "postalCode": "254 44",
-    "addressLocality": "Helsingborg",
-    "addressRegion": "Skåne",
-    "addressCountry": "SE"
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Stockholm" },
-    { "@type": "City", "name": "Nacka" },
-    { "@type": "City", "name": "Järfälla" },
-    { "@type": "Country", "name": "Sverige" }
-  ],
-  "description": "Webbyrå som hjälper företag i Stockholm med hemsidor, SEO och Google Ads."
-}
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
-
-<style>
-  :root {
-    --green: #143a1f;
-    --green-mid: #1e5c2e;
-    --green-light: #e8f2eb;
-    --green-hover: #0f2b17;
-    --gold: #b8860b;
-    --gold-light: #fdf6e3;
-    --off-white: #f9faf8;
-    --border: rgba(20,58,31,0.12);
-    --text: #1a2b1e;
-    --text-muted: #4a6350;
-    --radius: 10px;
-    --shadow: 0 2px 16px rgba(20,58,31,0.08);
+  <!-- Schema: LocalBusiness Stockholm -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Nordväxt AB",
+    "url": "https://www.nordvaxt.se",
+    "telephone": "+46101898790",
+    "email": "albin@nordvaxt.se",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Stockholm",
+      "addressRegion": "Stockholm",
+      "addressCountry": "SE"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 59.3293, "longitude": 18.0686 },
+    "areaServed": [
+      { "@type": "City", "name": "Stockholm" },
+      { "@type": "City", "name": "Solna" },
+      { "@type": "City", "name": "Nacka" },
+      { "@type": "City", "name": "Sundbyberg" },
+      { "@type": "City", "name": "Täby" },
+      { "@type": "City", "name": "Huddinge" }
+    ],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" }
+    ]
   }
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'DM Sans', Arial, sans-serif; color: var(--text); background: #fff; line-height: 1.6; }
-  a { color: inherit; text-decoration: none; }
-  img { display: block; max-width: 100%; }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  </script>
 
-  /* NAV */
-  header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--border); backdrop-filter: blur(8px); }
-  nav { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; max-width: 1100px; margin: 0 auto; height: 64px; }
-  .nav-logo { font-size: 1.2rem; font-weight: 700; color: var(--green); letter-spacing: -0.02em; }
-  .nav-logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 28px; list-style: none; }
-  .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
-  .nav-links a:hover { color: var(--green); }
-  .nav-cta { background: var(--green); color: #fff; padding: 9px 20px; border-radius: var(--radius); font-size: 0.88rem; font-weight: 600; transition: background 0.2s; }
-  .nav-cta:hover { background: var(--green-hover); }
-  @media (max-width: 768px) { .nav-links { display: none; } }
+  <!-- Schema: FAQPage Stockholm -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Vad gör en webbyrå i Stockholm annorlunda än en generell webbyrå?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "En lokal Stockholm-strategi tar hänsyn till sökbeteenden, konkurrens och kundflöden i områden som centrum, Kista, Norrmalm, Södermalm, Kista, Hagastaden och Hammarby Sjöstad och Stockholmsregionen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Hjälper Nordväxt både B2B-företag och lokala konsumentföretag i Stockholm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Vi anpassar hemsida, SEO, annonsering och innehåll efter bransch, oavsett om målet är leads inom logistik och industri eller fler bokningar, besök och samtal för lokala serviceföretag."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ni rikta annonser mot specifika delar av Stockholm?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Google Ads och Meta Ads kan riktas mot Stockholm, Kista, centrum, Råå, Norrmalm, Södermalm, Solna, Sundbyberg, Nacka och andra relevanta områden beroende på målgrupp."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Arbetar ni även med kunder som vill nå Solna och Öresundsmarknaden?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja, när det är relevant kan vi bygga kampanjer och innehåll som tar hänsyn till kundflöden i regionen och företag som vill synas på båda sidor av Stockholm-Solna."
+        }
+      }
+    ]
+  }
+  </script>
 
-  /* HERO */
-  .hero { padding: 72px 0 60px; background: linear-gradient(135deg, #f4f9f5 0%, #fff 60%); }
-  .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
-  .hero-pill { display: inline-flex; align-items: center; gap: 6px; background: var(--green-light); color: var(--green); font-size: 0.8rem; font-weight: 600; padding: 5px 12px; border-radius: 20px; margin-bottom: 20px; }
-  .hero-pill svg { width: 8px; height: 8px; fill: #2e7d32; }
-  h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.03em; color: var(--green); margin-bottom: 18px; }
-  h1 em { font-style: italic; color: var(--gold); }
-  .lead { font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 28px; max-width: 480px; }
-  .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
-  .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; padding: 13px 24px; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem; transition: background 0.2s; }
-  .btn-primary:hover { background: var(--green-hover); }
-  .btn-primary svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2.5; }
-  .btn-secondary { display: inline-flex; align-items: center; padding: 13px 24px; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem; border: 1.5px solid var(--border); color: var(--green); transition: border-color 0.2s; }
-  .btn-secondary:hover { border-color: var(--green); }
-  .hero-trust { display: flex; gap: 20px; flex-wrap: wrap; }
-  .trust-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
-  .trust-item svg { width: 14px; height: 14px; stroke: #2e7d32; fill: none; stroke-width: 2.5; }
-  .hero-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .hero-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
-  .hero-card h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; color: var(--green); }
-  .hero-card p { font-size: 0.78rem; color: var(--text-muted); }
-  .hero-card-icon { width: 32px; height: 32px; background: var(--green-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
-  .hero-card-icon svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2; }
-  .hero-card-link { display: inline-flex; align-items: center; gap: 4px; font-size: 0.78rem; font-weight: 600; color: var(--green); margin-top: 8px; }
-  .hero-card-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; }
-  .hero-badge { background: var(--green); color: #fff; border-radius: var(--radius); padding: 10px 14px; display: flex; align-items: center; gap: 10px; margin-top: 12px; }
-  .hero-badge-icon { font-size: 1.2rem; }
-  .hero-badge-text strong { display: block; font-size: 0.88rem; }
-  .hero-badge-text span { font-size: 0.75rem; opacity: 0.8; }
-  @media (max-width: 768px) { .hero-inner { grid-template-columns: 1fr; } .hero-cards-grid { display: none; } }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,600&display=swap" rel="stylesheet">
 
-  /* PROOF BAR */
-  .proof-bar { background: var(--green); color: #fff; padding: 18px 0; }
-  .proof-bar-inner { display: flex; justify-content: center; align-items: center; gap: 0; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-  .proof-stat { text-align: center; padding: 0 28px; }
-  .proof-num { display: block; font-size: 1.4rem; font-weight: 700; }
-  .proof-label { font-size: 0.75rem; opacity: 0.8; }
-  .proof-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.25); }
-  @media (max-width: 600px) { .proof-divider { display: none; } .proof-stat { padding: 8px 16px; } }
+  <style>
+    :root {
+      --green: #143a1f;
+      --green-mid: #1e5430;
+      --green-light: #e8f2ea;
+      --green-pale: #f4f9f5;
+      --gold: #b8860b;
+      --gold-light: #fdf6e3;
+      --text: #1a2a1e;
+      --text-muted: #4a6350;
+      --border: rgba(20,58,31,0.12);
+      --white: #ffffff;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(20,58,31,0.10);
+      --shadow-lg: 0 12px 48px rgba(20,58,31,0.16);
+    }
 
-  /* GÖTEBORG SECTION */
-  .gbg-section { padding: 72px 0; background: var(--off-white); }
-  .gbg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-  .section-tag { display: inline-block; background: var(--green-light); color: var(--green); font-size: 0.78rem; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; letter-spacing: 0.02em; }
-  .section-title { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 700; letter-spacing: -0.02em; color: var(--green); margin-bottom: 14px; line-height: 1.2; }
-  .section-lead { font-size: 1rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 24px; }
-  .gbg-points { display: flex; flex-direction: column; gap: 20px; }
-  .gbg-point { display: flex; gap: 14px; }
-  .gbg-num { width: 32px; height: 32px; min-width: 32px; background: var(--green); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; margin-top: 2px; }
-  .gbg-point h4 { font-size: 0.95rem; font-weight: 600; color: var(--green); margin-bottom: 4px; }
-  .gbg-point p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; }
-  .gbg-districts { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
-  .gbg-districts h3 { font-size: 1rem; font-weight: 600; color: var(--green); margin-bottom: 14px; }
-  .district-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-  .district-tag { background: var(--green-light); color: var(--green); font-size: 0.78rem; font-weight: 500; padding: 5px 12px; border-radius: 20px; }
-  .gbg-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; }
-  .gbg-stat { background: var(--off-white); border-radius: 8px; padding: 14px; text-align: center; }
-  .gbg-stat strong { display: block; font-size: 1.3rem; font-weight: 700; color: var(--green); }
-  .gbg-stat span { font-size: 0.75rem; color: var(--text-muted); }
-  @media (max-width: 768px) { .gbg-grid { grid-template-columns: 1fr; } }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
 
-  /* SERVICES */
-  .services { padding: 72px 0; }
-  .services-header { text-align: center; max-width: 580px; margin: 0 auto 40px; }
-  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-  .service-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; position: relative; overflow: hidden; transition: box-shadow 0.2s; }
-  .service-card:hover { box-shadow: var(--shadow); }
-  .service-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--green); }
-  .svc-seo .service-card-accent { background: var(--gold); }
-  .svc-ads .service-card-accent { background: #3b7dd8; }
-  .svc-social .service-card-accent { background: #c4478a; }
-  .service-card-icon { width: 40px; height: 40px; background: var(--green-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
-  .service-card-icon svg { width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 2; }
-  .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--green); margin-bottom: 8px; }
-  .service-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 14px; }
-  .service-card-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
-  .service-card-list li { font-size: 0.82rem; color: var(--text-muted); padding-left: 16px; position: relative; }
-  .service-card-list li::before { content: '✓'; position: absolute; left: 0; color: #2e7d32; font-weight: 700; font-size: 0.78rem; }
-  .service-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; font-weight: 600; color: var(--green); }
-  .service-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-  /* WHY US */
-  .why { padding: 72px 0; background: var(--green); color: #fff; }
-  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
-  .why .section-tag { background: rgba(255,255,255,0.15); color: #fff; }
-  .why .section-title { color: #fff; }
-  .why .section-lead { color: rgba(255,255,255,0.8); }
-  .why-points { display: flex; flex-direction: column; gap: 20px; }
-  .why-point { display: flex; gap: 14px; }
-  .why-num { width: 32px; height: 32px; min-width: 32px; background: rgba(255,255,255,0.15); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; font-weight: 700; }
-  .why-point h4 { font-size: 0.95rem; font-weight: 600; color: #fff; margin-bottom: 4px; }
-  .why-point p { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
-  .why-visual { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: var(--radius); padding: 24px; }
-  .why-visual-title { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em; }
-  .why-check-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .why-check-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: rgba(255,255,255,0.9); }
-  .why-check-list li svg { width: 16px; height: 16px; min-width: 16px; stroke: #86efac; fill: none; stroke-width: 2.5; margin-top: 2px; }
-  .why-divider { border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 20px 0; }
-  .why-cta-box p { font-size: 0.88rem; color: rgba(255,255,255,0.8); margin-bottom: 14px; }
-  .btn-cta-white { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--green); padding: 11px 20px; border-radius: var(--radius); font-weight: 600; font-size: 0.88rem; transition: opacity 0.2s; }
-  .btn-cta-white:hover { opacity: 0.9; }
-  .btn-cta-white svg { width: 14px; height: 14px; stroke: var(--green); fill: none; stroke-width: 2.5; }
-  @media (max-width: 768px) { .why-grid { grid-template-columns: 1fr; } }
+    .skip-link {
+      position: absolute;
+      top: -999px; left: 8px;
+      z-index: 9999;
+      background: var(--green);
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .skip-link:focus { top: 8px; }
 
-  /* TESTIMONIALS */
-  .testimonials { padding: 72px 0; }
-  .testimonials-header { text-align: center; max-width: 540px; margin: 0 auto 40px; }
-  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-  .testimonial-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; }
-  .testimonial-stars { display: flex; gap: 3px; margin-bottom: 12px; }
-  .testimonial-stars svg { width: 15px; height: 15px; stroke: var(--gold); fill: var(--gold); }
-  .testimonial-quote { font-size: 0.9rem; color: var(--text); line-height: 1.7; margin-bottom: 18px; font-style: italic; }
-  .testimonial-author { display: flex; align-items: center; gap: 10px; }
-  .testimonial-avatar { width: 36px; height: 36px; background: var(--green-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700; color: var(--green); }
-  .testimonial-name { font-size: 0.88rem; font-weight: 600; color: var(--green); }
-  .testimonial-company { font-size: 0.78rem; color: var(--text-muted); }
+    /* NAV */
+    header {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      height: 68px; gap: 16px;
+    }
+    .nav-logo {
+      font-size: 1.35rem; font-weight: 800;
+      color: var(--green); letter-spacing: -0.02em; flex-shrink: 0;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links {
+      display: flex; align-items: center;
+      gap: 2px; list-style: none;
+      flex: 1; justify-content: center;
+    }
+    .nav-links li a {
+      padding: 6px 11px; border-radius: 8px;
+      font-size: 0.88rem; font-weight: 500;
+      color: var(--text); transition: background 0.18s, color 0.18s;
+    }
+    .nav-links li a:hover { background: var(--green-light); color: var(--green); }
+    .nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .nav-cta {
+      background: var(--green); color: #fff;
+      padding: 9px 20px; border-radius: 8px;
+      font-size: 0.88rem; font-weight: 700;
+      transition: background 0.2s, transform 0.15s; white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--green-mid); transform: translateY(-1px); }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--green); border-radius: 2px; transition: all 0.25s;
+    }
 
-  /* PROCESS */
-  .process-strip { padding: 72px 0; background: var(--off-white); }
-  .process-strip .section-tag, .process-strip .section-title { display: block; text-align: center; }
-  .process-strip .section-title { margin-bottom: 36px; }
-  .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-  .pstep { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; position: relative; }
-  .pstep-num { width: 36px; height: 36px; background: var(--green); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 700; margin-bottom: 12px; }
-  .pstep h4 { font-size: 0.95rem; font-weight: 600; color: var(--green); margin-bottom: 6px; }
-  .pstep p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 10px; }
-  .pstep-tag { background: var(--green-light); color: var(--green); font-size: 0.72rem; font-weight: 600; padding: 3px 8px; border-radius: 20px; }
+    /* MOBILE MENU */
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 2px;
+      position: fixed; top: 68px; left: 0; right: 0;
+      background: #fff; padding: 16px 20px 24px;
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-lg); z-index: 199;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 12px 16px; border-radius: 8px;
+      font-weight: 500; color: var(--text); transition: background 0.15s;
+    }
+    .mobile-menu a:hover { background: var(--green-light); }
+    .mobile-cta {
+      margin-top: 8px;
+      background: var(--green) !important;
+      color: #fff !important;
+      text-align: center; font-weight: 700 !important; border-radius: 8px;
+    }
 
-  /* CTA BAND */
-  .cta-band { padding: 72px 0; background: var(--off-white); text-align: center; }
-  .cta-band .section-title { margin-bottom: 12px; }
-  .cta-band p { font-size: 1rem; color: var(--text-muted); max-width: 540px; margin: 0 auto 28px; line-height: 1.7; }
-  .cta-band-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
-  .btn-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--green); color: #fff; padding: 13px 24px; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem; transition: background 0.2s; }
-  .btn-cta:hover { background: var(--green-hover); }
-  .btn-cta svg { width: 16px; height: 16px; stroke: #fff; fill: none; stroke-width: 2.5; }
-  .btn-cta-outline { display: inline-flex; align-items: center; padding: 13px 24px; border-radius: var(--radius); font-weight: 600; font-size: 0.95rem; border: 1.5px solid var(--border); color: var(--green); transition: border-color 0.2s; }
-  .btn-cta-outline:hover { border-color: var(--green); }
-  .cta-trust { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
-  .cta-trust-item { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
-  .cta-trust-item svg { width: 14px; height: 14px; stroke: #2e7d32; fill: none; stroke-width: 2.5; }
+    /* BUTTONS */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green); color: #fff;
+      padding: 14px 28px; border-radius: 10px;
+      font-weight: 700; font-size: 1rem;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 2px 12px rgba(20,58,31,0.18);
+    }
+    .btn-primary:hover { background: var(--green-mid); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(20,58,31,0.22); }
+    .btn-primary svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; flex-shrink: 0; }
 
-  /* FOOTER */
-  footer { background: var(--green); color: rgba(255,255,255,0.85); padding: 48px 0 24px; }
-  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 32px; margin-bottom: 32px; }
-  .footer-logo { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
-  .footer-logo span { color: var(--gold); }
-  .footer-brand p { font-size: 0.82rem; line-height: 1.6; }
-  .footer-col h4 { font-size: 0.82rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
-  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-  .footer-col ul li a { font-size: 0.82rem; color: rgba(255,255,255,0.7); transition: color 0.2s; }
-  .footer-col ul li a:hover { color: #fff; }
-  .footer-address ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-  .footer-address ul li { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
-  .footer-address a { color: rgba(255,255,255,0.7); }
-  .footer-address a:hover { color: #fff; }
-  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.15); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
-  .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
-  .footer-legal-link { color: rgba(255,255,255,0.5); font-size: 0.78rem; }
-  .footer-legal-link:hover { color: #fff; }
-  @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 480px) { .footer-grid { grid-template-columns: 1fr; } }
-</style>
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green-light); color: var(--green);
+      padding: 14px 28px; border-radius: 10px;
+      font-weight: 700; font-size: 1rem; transition: background 0.2s;
+    }
+    .btn-secondary:hover { background: #d4e8d8; }
+
+    .btn-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #fff; color: var(--green);
+      padding: 14px 28px; border-radius: 10px;
+      font-weight: 700; font-size: 1rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-cta:hover { background: var(--green-light); transform: translateY(-1px); }
+    .btn-cta svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+    .btn-cta-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: #fff;
+      padding: 14px 28px; border-radius: 10px;
+      font-weight: 700; font-size: 1rem;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-cta-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    .btn-cta-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green); color: #fff;
+      padding: 12px 24px; border-radius: 8px;
+      font-weight: 700; font-size: 0.95rem; transition: background 0.2s;
+    }
+    .btn-cta-white:hover { background: var(--green-mid); }
+    .btn-cta-white svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+    /* SECTION TAGS */
+    .section-tag {
+      display: inline-block;
+      background: var(--green-light); color: var(--green);
+      font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 100px; margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 800; line-height: 1.15;
+      letter-spacing: -0.025em; color: var(--text); margin-bottom: 16px;
+    }
+    .section-lead {
+      font-size: 1.07rem; color: var(--text-muted);
+      max-width: 600px; line-height: 1.65;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #f0f7f1 0%, #e8f2ea 40%, #f8fcf8 100%);
+      padding: 80px 0 70px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -80px; right: -120px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(20,58,31,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: center;
+    }
+    .hero-pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--green); color: #fff;
+      font-size: 0.82rem; font-weight: 700;
+      padding: 6px 14px; border-radius: 100px;
+      margin-bottom: 22px; letter-spacing: 0.02em;
+    }
+    .hero-pill svg { width: 8px; height: 8px; fill: #4ade80; flex-shrink: 0; }
+    .hero-left h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 800; line-height: 1.1;
+      letter-spacing: -0.03em; color: var(--text); margin-bottom: 20px;
+    }
+    .hero-left h1 em { font-style: normal; color: var(--green); }
+    .lead {
+      font-size: 1.08rem; color: var(--text-muted);
+      line-height: 1.65; max-width: 520px; margin-bottom: 32px;
+    }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+    .hero-trust { display: flex; flex-direction: column; gap: 8px; }
+    .trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 0.9rem; font-weight: 500; color: var(--text-muted);
+    }
+    .trust-item svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2.5; flex-shrink: 0; }
+
+    .hero-visual { position: relative; }
+    .hero-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .hero-card {
+      background: #fff; border-radius: var(--radius);
+      padding: 20px; box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .hero-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .hero-card-icon {
+      width: 40px; height: 40px; background: var(--green-light);
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 12px;
+    }
+    .hero-card-icon svg { width: 20px; height: 20px; stroke: var(--green); fill: none; stroke-width: 1.8; }
+    .hero-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; color: var(--text); }
+    .hero-card p { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.45; }
+    .hero-card-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.8rem; font-weight: 700; color: var(--green); transition: gap 0.15s;
+    }
+    .hero-card-link:hover { gap: 8px; }
+    .hero-card-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+    .hero-badge {
+      display: flex; align-items: center; gap: 10px;
+      background: #fff; border-radius: 12px; padding: 12px 18px;
+      box-shadow: var(--shadow); border: 1px solid var(--border); margin-top: 12px;
+    }
+    .hero-badge-icon { font-size: 1.4rem; }
+    .hero-badge-text { font-size: 0.84rem; color: var(--text-muted); }
+    .hero-badge-text strong { display: block; color: var(--text); font-weight: 700; }
+
+    /* PROOF BAR */
+    .proof-bar { background: var(--green); padding: 20px 0; }
+    .proof-bar-inner {
+      display: flex; align-items: center;
+      justify-content: center; flex-wrap: wrap; gap: 0;
+      max-width: 1180px; margin: 0 auto; padding: 0 24px;
+    }
+    .proof-stat { display: flex; flex-direction: column; align-items: center; padding: 0 32px; }
+    .proof-num { font-size: 1.5rem; font-weight: 800; color: #fff; line-height: 1; }
+    .proof-label { font-size: 0.78rem; color: rgba(255,255,255,0.72); font-weight: 500; margin-top: 3px; text-align: center; }
+    .proof-divider { width: 1px; height: 36px; background: rgba(255,255,255,0.2); }
+
+    /* HBG SECTION */
+    .hbg-section {
+      background: var(--green-pale);
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .hbg-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
+    }
+    .hbg-facts {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 16px; margin-top: 32px;
+    }
+    .hbg-fact {
+      background: #fff; border-radius: var(--radius);
+      padding: 20px; border: 1px solid var(--border);
+    }
+    .hbg-fact-icon { font-size: 1.5rem; margin-bottom: 8px; }
+    .hbg-fact h4 { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .hbg-fact p { font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; }
+
+    .insight-item {
+      display: flex; gap: 16px;
+      padding: 20px 0; border-bottom: 1px solid var(--border);
+    }
+    .insight-item:last-child { border-bottom: none; }
+    .insight-num {
+      font-size: 1.4rem; font-weight: 800; color: var(--green);
+      min-width: 40px; line-height: 1; margin-top: 2px;
+    }
+    .insight-item h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .insight-item p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* LOCAL MARKET */
+    .local-market { padding: 88px 0; background: #fff; border-bottom: 1px solid var(--border); }
+    .local-market-header { max-width: 760px; margin-bottom: 44px; }
+    .local-market-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .local-market-card {
+      background: var(--green-pale); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px;
+    }
+    .local-market-card span {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 10px;
+      background: #fff; color: var(--green); font-size: 0.78rem;
+      font-weight: 800; margin-bottom: 14px; border: 1px solid var(--border);
+    }
+    .local-market-card h3 { font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+    .local-market-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.58; }
+    .local-market-note {
+      margin-top: 28px; padding: 24px 28px; border-left: 4px solid var(--gold);
+      background: var(--gold-light); color: var(--text); border-radius: var(--radius);
+    }
+    .local-market-note strong { color: var(--green); }
+
+    /* FAQ */
+    .faq-section { padding: 88px 0; background: var(--green-pale); border-top: 1px solid var(--border); }
+    .faq-header { text-align: center; max-width: 760px; margin: 0 auto 42px; }
+    .faq-header .section-lead { margin: 0 auto; }
+    .faq-grid { max-width: 920px; margin: 0 auto; display: grid; gap: 14px; }
+    .faq-item {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px 28px;
+    }
+    .faq-item h3 { font-size: 1rem; font-weight: 800; color: var(--text); margin-bottom: 8px; }
+    .faq-item p { color: var(--text-muted); font-size: 0.94rem; line-height: 1.62; }
+
+    /* SERVICES */
+    .services { padding: 88px 0; background: #fff; }
+    .services-header { text-align: center; margin-bottom: 52px; }
+    .services-header .section-lead { margin: 0 auto; }
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .service-card {
+      position: relative; background: #fff;
+      border-radius: var(--radius-lg); padding: 32px;
+      border: 1.5px solid var(--border); overflow: hidden;
+      transition: box-shadow 0.25s, transform 0.25s;
+    }
+    .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+    .service-card-accent {
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--green); border-radius: 3px 3px 0 0;
+    }
+    .svc-seo .service-card-accent { background: var(--gold); }
+    .svc-ads .service-card-accent { background: #3b7dd8; }
+    .svc-social .service-card-accent { background: #c4478a; }
+    .service-card-icon {
+      width: 48px; height: 48px; background: var(--green-light);
+      border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 18px;
+    }
+    .service-card-icon svg { width: 22px; height: 22px; stroke: var(--green); fill: none; stroke-width: 1.8; }
+    .service-card h3 { font-size: 1.15rem; font-weight: 800; margin-bottom: 10px; color: var(--text); }
+    .service-card > p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 18px; }
+    .service-card-list {
+      list-style: none; display: flex; flex-direction: column; gap: 7px; margin-bottom: 22px;
+    }
+    .service-card-list li {
+      font-size: 0.87rem; color: var(--text-muted);
+      padding-left: 18px; position: relative;
+    }
+    .service-card-list li::before {
+      content: '✓'; position: absolute; left: 0;
+      color: var(--green); font-weight: 700; font-size: 0.8rem;
+    }
+    .service-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.87rem; font-weight: 700; color: var(--green); transition: gap 0.15s;
+    }
+    .service-link:hover { gap: 9px; }
+    .service-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+    /* WHY */
+    .why { background: var(--green-pale); padding: 88px 0; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+    .why-points { margin-top: 32px; display: flex; flex-direction: column; gap: 24px; }
+    .why-point { display: flex; gap: 18px; }
+    .why-num {
+      font-size: 1.05rem; font-weight: 800; color: var(--green);
+      opacity: 0.5; min-width: 36px; line-height: 1.4; flex-shrink: 0;
+    }
+    .why-point h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 5px; }
+    .why-point p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+    .why-visual {
+      background: #fff; border-radius: var(--radius-lg);
+      padding: 32px; border: 1.5px solid var(--border); box-shadow: var(--shadow);
+    }
+    .why-visual-title {
+      font-size: 0.85rem; font-weight: 700; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 20px;
+    }
+    .why-check-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .why-check-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 0.92rem; color: var(--text); line-height: 1.5;
+    }
+    .why-check-list li svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2.5; flex-shrink: 0; margin-top: 2px; }
+    .why-divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+    .why-cta-box p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px; }
+
+    /* TESTIMONIALS */
+    .testimonials { background: #fff; padding: 88px 0; }
+    .testimonials-header { text-align: center; margin-bottom: 52px; }
+    .testimonials-header .section-lead { margin: 0 auto; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 48px; }
+    .testimonial-card {
+      background: var(--green-pale); border-radius: var(--radius-lg);
+      padding: 28px; border: 1px solid var(--border);
+    }
+    .testimonial-stars { display: flex; gap: 3px; margin-bottom: 14px; }
+    .testimonial-stars svg { width: 16px; height: 16px; fill: var(--gold); stroke: var(--gold); stroke-width: 1; }
+    .testimonial-quote {
+      font-size: 0.93rem; color: var(--text); line-height: 1.65;
+      margin-bottom: 20px; font-style: italic;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .testimonial-avatar {
+      width: 40px; height: 40px; background: var(--green);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 0.8rem; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .testimonial-name { font-size: 0.9rem; font-weight: 700; color: var(--text); }
+    .testimonial-company { font-size: 0.8rem; color: var(--text-muted); }
+    .testimonials-logos {
+      display: flex; align-items: center; justify-content: center;
+      gap: 20px; flex-wrap: wrap; opacity: 0.35;
+    }
+    .logo-placeholder { height: 28px; background: var(--green); border-radius: 4px; }
+
+    /* ABOUT TEASER */
+    .about-teaser { background: var(--green-pale); padding: 88px 0; }
+    .about-teaser-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 72px; align-items: center; }
+    .about-photo-stack { position: relative; }
+    .about-photo-main {
+      background: var(--green-light); border-radius: var(--radius-lg);
+      aspect-ratio: 4/3; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      color: var(--text-muted); font-size: 0.9rem;
+      position: relative; overflow: hidden; border: 1.5px solid var(--border);
+    }
+    .about-photo-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(20,58,31,0.85); color: #fff; padding: 12px 16px;
+    }
+    .about-photo-caption strong { display: block; font-size: 0.9rem; }
+    .about-photo-caption span { font-size: 0.8rem; opacity: 0.8; }
+    .about-badge-float {
+      position: absolute; bottom: -16px; right: -16px;
+      background: var(--green); color: #fff;
+      padding: 12px 16px; border-radius: 12px;
+      text-align: center; box-shadow: var(--shadow-lg);
+    }
+    .about-badge-float strong { display: block; font-size: 1.1rem; font-weight: 800; }
+    .about-badge-float span { font-size: 0.75rem; opacity: 0.85; }
+    .about-text .section-lead { margin-bottom: 24px; }
+    .about-values { display: flex; flex-direction: column; gap: 16px; margin: 24px 0 28px; }
+    .about-value { display: flex; gap: 12px; align-items: flex-start; }
+    .about-value-dot {
+      width: 8px; height: 8px; background: var(--green);
+      border-radius: 50%; flex-shrink: 0; margin-top: 6px;
+    }
+    .about-value p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+    .about-value p strong { color: var(--text); }
+
+    /* PROCESS */
+    .process-strip { background: var(--green); padding: 80px 0; }
+    .process-strip .section-tag { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); }
+    .process-strip .section-title { color: #fff; }
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+    .pstep {
+      background: rgba(255,255,255,0.1); border-radius: var(--radius);
+      padding: 24px; border: 1px solid rgba(255,255,255,0.15); position: relative;
+    }
+    .pstep-num {
+      width: 36px; height: 36px; background: rgba(255,255,255,0.2);
+      border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 0.95rem; font-weight: 800;
+      color: #fff; margin-bottom: 14px;
+    }
+    .pstep h4 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+    .pstep p { font-size: 0.87rem; color: rgba(255,255,255,0.72); line-height: 1.6; margin-bottom: 12px; }
+    .pstep-tag {
+      display: inline-block; background: rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.9); font-size: 0.75rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 100px;
+    }
+
+    /* AREAS */
+    .areas-section { padding: 64px 0; background: #fff; border-top: 1px solid var(--border); }
+    .areas-section .section-title { text-align: center; margin-bottom: 8px; }
+    .areas-section > .container > p { text-align: center; color: var(--text-muted); margin-bottom: 36px; }
+    .areas-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .area-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--green-pale); color: var(--green);
+      padding: 8px 18px; border-radius: 100px;
+      font-size: 0.9rem; font-weight: 600;
+      border: 1px solid var(--border); transition: background 0.2s;
+    }
+    .area-tag:hover { background: var(--green-light); }
+    .area-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; opacity: 0.5; }
+
+    /* CTA BAND */
+    .cta-band {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-mid) 100%);
+      padding: 80px 0; text-align: center;
+    }
+    .cta-band .section-title { color: #fff; margin-bottom: 14px; }
+    .cta-band > .container > p { color: rgba(255,255,255,0.8); font-size: 1.05rem; max-width: 580px; margin: 0 auto 36px; }
+    .cta-band-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-bottom: 28px; }
+    .cta-trust { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; }
+    .cta-trust-item {
+      display: flex; align-items: center; gap: 7px;
+      color: rgba(255,255,255,0.8); font-size: 0.88rem; font-weight: 500;
+    }
+    .cta-trust-item svg { width: 15px; height: 15px; stroke: rgba(255,255,255,0.6); fill: none; stroke-width: 2.5; }
+
+    /* FOOTER */
+    footer { background: #0e2716; color: rgba(255,255,255,0.75); padding: 56px 0 0; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px; padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-logo { font-size: 1.3rem; font-weight: 800; color: #fff; margin-bottom: 12px; letter-spacing: -0.02em; }
+    .footer-logo span { color: var(--gold); }
+    .footer-brand p { font-size: 0.88rem; line-height: 1.65; }
+    .footer-col h4 {
+      font-size: 0.85rem; font-weight: 700; color: #fff;
+      text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .footer-col li a { font-size: 0.88rem; color: rgba(255,255,255,0.65); transition: color 0.15s; }
+    .footer-col li a:hover { color: #fff; }
+    .footer-address ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-address li { font-size: 0.87rem; color: rgba(255,255,255,0.65); }
+    .footer-address a { color: rgba(255,255,255,0.65); transition: color 0.15s; }
+    .footer-address a:hover { color: #fff; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; font-size: 0.82rem; color: rgba(255,255,255,0.4);
+      flex-wrap: wrap; gap: 8px;
+    }
+    .footer-legal-link { color: rgba(255,255,255,0.4); transition: color 0.15s; }
+    .footer-legal-link:hover { color: rgba(255,255,255,0.7); }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .hero-inner, .hbg-grid, .services-grid, .local-market-grid,
+      .why-grid, .about-teaser-grid, .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual { display: none; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .proof-stat { padding: 0 16px; }
+      .proof-divider { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero { padding: 52px 0 48px; }
+      .hero-left h1 { font-size: 2rem; }
+      .process-steps { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .hbg-facts { grid-template-columns: 1fr; }
+    }
+  </style>
   <link rel="stylesheet" href="/assets/footer-areas.css">
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ML4E8DFP54"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -254,9 +681,9 @@
   gtag('config', 'G-ML4E8DFP54');
 </script>
 </head>
-<body class="area-page area-stockholm">
+<body>
 
-<a href="#main-content" style="position:absolute;left:-9999px;top:4px;background:var(--green);color:#fff;padding:8px 16px;border-radius:4px;z-index:999;font-size:0.88rem">Hoppa till innehållet</a>
+<a href="#main-content" class="skip-link">Hoppa till innehållet</a>
 
 <!-- NAV -->
 <header role="banner">
@@ -288,20 +715,22 @@
     <div class="hero-inner">
       <div class="hero-left">
         <div class="hero-pill">
-          <svg viewBox="0 0 10 10"><circle cx="5" cy="5" r="5"/></svg>
-          Webbyrå för Stockholm
+          <svg viewBox="0 0 10 10" fill="currentColor"><circle cx="5" cy="5" r="5"/></svg>
+          Webbyrå för Stockholm & Stockholmsregionen
         </div>
-        <h1 id="hero-heading">Din digitala närvaro –<br><em>byggd för att växa</em></h1>
-        <p class="lead">Vi hjälper stockholmska företag att synas på Google, konvertera besökare och växa online – med hemsidor, SEO och Google Ads under ett tak.</p>
+        <h1 id="hero-heading">Din digitala närvaro –<br><em>byggd för Stockholmsmarknaden</em></h1>
+        <p class="lead">Vi hjälper företag i Stockholm att bli valda när kunder söker lokalt – från lokal handel, restauranger och servicebolag till B2B, logistik och industri kring hamnen, Norrmalm, Södermalm och Kista.</p>
         <div class="hero-btns">
           <a href="/kontakt/#contact-form" class="btn-primary">
             Boka gratis genomgång
             <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a></div>
+          </a>
+          <a href="/priser/" class="btn-secondary">Se priser</a>
+        </div>
         <div class="hero-trust">
           <div class="trust-item">
             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Leverans inom 1–3 veckor
+            Lokal marknadskännedom – Stockholm & Stockholmsregionen
           </div>
           <div class="trust-item">
             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
@@ -309,17 +738,42 @@
           </div>
           <div class="trust-item">
             <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Allt under ett tak
+            Leverans inom 1–3 veckor
           </div>
         </div>
       </div>
+
       <div class="hero-visual" aria-hidden="true">
-        
+        <div class="hero-cards-grid">
+          <div class="hero-card svc-web">
+            <div class="hero-card-icon">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <h3>Hemsidor</h3>
+            <p>Snabba sidor med lokal Stockholm-struktur</p>
+            <a href="/hemsida/" class="hero-card-link">Läs mer <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="hero-card svc-seo">
+            <div class="hero-card-icon" style="background:var(--gold-light)">
+              <svg viewBox="0 0 24 24" stroke="var(--gold)"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            </div>
+            <h3>SEO</h3>
+            <p>Syns i centrum, Kista och stockholmska sökningar</p>
+            <a href="/seo/" class="hero-card-link" style="color:var(--gold)">Läs mer <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+          <div class="hero-card svc-ads">
+            <div class="hero-card-icon" style="background:#e8f0fb">
+              <svg viewBox="0 0 24 24" stroke="#3b7dd8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <h3>Google Ads</h3>
+            <p>Geo-styrning mot Stockholm, Kista och Öresund</p>
+            <a href="/google-ads/" class="hero-card-link" style="color:#3b7dd8">Läs mer <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div></div>
         <div class="hero-badge">
           <div class="hero-badge-icon">⭐</div>
           <div class="hero-badge-text">
             <strong>4,9 / 5 i betyg</strong>
-            <span>Baserat på Google-omdömen</span>
+            Baserat på Google-omdömen
           </div>
         </div>
       </div>
@@ -327,85 +781,106 @@
   </div>
 </section>
 
-<!-- PROOF BAR -->
+<!-- SOCIAL PROOF BAR -->
 <div class="proof-bar" aria-label="Nyckeltal">
   <div class="proof-bar-inner">
-    <div class="proof-stat"><span class="proof-num">60+</span><span class="proof-label">Nöjda kunder</span></div>
+    <div class="proof-stat">
+      <span class="proof-num">60+</span>
+      <span class="proof-label">Nöjda kunder</span>
+    </div>
     <div class="proof-divider" aria-hidden="true"></div>
-    <div class="proof-stat"><span class="proof-num">1–3 v</span><span class="proof-label">Leveranstid produkt</span></div>
+    <div class="proof-stat">
+      <span class="proof-num">1–3 v</span>
+      <span class="proof-label">Leveranstid hemsida</span>
+    </div>
     <div class="proof-divider" aria-hidden="true"></div>
-    <div class="proof-stat"><span class="proof-num">4,9★</span><span class="proof-label">Snittbetyg Google</span></div>
+    <div class="proof-stat">
+      <span class="proof-num">4,9★</span>
+      <span class="proof-label">Snittbetyg Google</span>
+    </div>
     <div class="proof-divider" aria-hidden="true"></div>
-    <div class="proof-stat"><span class="proof-num">+120%</span><span class="proof-label">Mer organisk trafik (snitt)</span></div>
+    <div class="proof-stat">
+      <span class="proof-num">+120%</span>
+      <span class="proof-label">Mer organisk trafik (snitt)</span>
+    </div>
     <div class="proof-divider" aria-hidden="true"></div>
-    <div class="proof-stat"><span class="proof-num">100%</span><span class="proof-label">Nöjdhetsgaranti</span></div>
+    <div class="proof-stat">
+      <span class="proof-num">100%</span>
+      <span class="proof-label">Nöjdhetsgaranti</span>
+    </div>
   </div>
 </div>
 
-<!-- GÖTEBORG-SPECIFIKT -->
-<section class="gbg-section" aria-labelledby="gbg-heading">
+<!-- HELSINGBORG-SPECIFIK SEKTION -->
+<section class="hbg-section" aria-labelledby="hbg-heading">
   <div class="container">
-    <div class="gbg-grid">
+    <div class="hbg-grid">
       <div>
-        <span class="section-tag">Stockholm &amp; Mälardalen</span>
-        <h2 class="section-title" id="gbg-heading">Vi förstår Stockholmsmarknaden – och anpassar oss efter den</h2>
-        <p class="section-lead">Stockholm är en av Sveriges mest konkurrensutsatta digitala marknader. Från Kista Tech Arena till Stureplan – vi vet hur göteborska kunder söker och vad som krävs för att synas.</p>
-        <div class="gbg-points">
-          <div class="gbg-point">
-            <div class="gbg-num">01</div>
-            <div>
-              <h4>Lokalt anpassad SEO för Stockholm</h4>
-              <p>Vi optimerar specifikt för stockholmsrelaterade sökfraser: "webbyrå Stockholm", "hemsida Stockholm", "[din bransch] Södermalm" och liknande. Ingen generisk rikstäckning – vi riktar in oss på din stad och dina stadsdelar.</p>
-            </div>
+        <span class="section-tag">Stockholm & Stockholmsregionen</span>
+        <h2 class="section-title" id="hbg-heading">Vi förstår Stockholmsmarknaden</h2>
+        <p class="section-lead">Stockholm är en Öresundsstad där handel, hamn, logistik, besöksnäring, tech och lokala serviceföretag möts på liten yta. Det gör den digitala konkurrensen mer nyanserad än i en vanlig stadssida.</p>
+
+        <div class="insight-item" style="padding-top:32px">
+          <div class="insight-num">01</div>
+          <div>
+            <h4>Hamnen och logistiken skapar B2B-sökningar med hög intention</h4>
+            <p>Stockholms hamn är en central nod för import, export, väg, järnväg och sjöfart. För logistikbolag, grossister, industriföretag och leverantörer handlar synlighet inte bara om trafik – utan om förtroende, tydliga erbjudanden och leads från rätt beslutsfattare.</p>
           </div>
-          <div class="gbg-point">
-            <div class="gbg-num">02</div>
-            <div>
-              <h4>Stockholm är en teknikstad – vi håller takten</h4>
-              <p>Stockholmare är vana vid att möta välbyggda digitala produkter varje dag — de jobbar på eller med företag som Ericsson, Spotify och King, studerar på KTH och rör sig i en av Europas tätaste startupscener. Det märks när de landar på en hemsida. En slarvig sajt eller svag Google-närvaro kostar dig trovärdighet snabbare här än i de flesta andra städer. Vi bygger hemsidor och SEO som håller den nivån.</p>
-            </div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-num">02</div>
+          <div>
+            <h4>H+ flyttar både stadsbilden och sökbeteendet</h4>
+            <p>Kista, Hagastaden och Hammarby Sjöstad, Universitetsområdet, Husarområdet och Gåsebäck växer fram som nya delar av centrala södra Stockholm. Vi bygger innehåll och landningssidor som fångar upp nya platsnamn, nya kundflöden och sökningar kring boende, kontor, service och upplevelser.</p>
           </div>
-          <div class="gbg-point">
-            <div class="gbg-num">03</div>
-            <div>
-              <h4>Konkurrensen är hård – rätt timing är avgörande</h4>
-              <p>Stockholm är Sveriges absolut hårdaste marknad för SEO. Söker du "webbyrå Stockholm" ser du direkt hur många aktörer som slåss om samma positioner. Vi vet hur man vinner de striderna — med rätt teknisk grund, rätt sökord och konsekvent länkbyggning.</p>
-            </div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-num">03</div>
+          <div>
+            <h4>Cityhandel, restauranger och upplevelser avgörs ofta i mobilen</h4>
+            <p>Från Kullagatan och Stortorget till Strandpromenaden, Råå och Kista söker kunder efter öppettider, menyer, bokning, vägbeskrivning och omdömen i stunden. Vi optimerar kundresan så att lokala sökningar blir samtal, bokningar, besök och köp.</p>
           </div>
-          <div class="gbg-point">
-            <div class="gbg-num">04</div>
-            <div>
-              <h4>Hela Storstockholm – 26 kommuner</h4>
-              <p>Vi optimerar mot hela Stockholmsregionen: Nacka, Solna, Sundbyberg, Järfälla, Täby och Lidingö. Bor dina kunder i hela regionen – syns du i hela regionen.</p>
-            </div>
+        </div>
+        <div class="insight-item">
+          <div class="insight-num">04</div>
+          <div>
+            <h4>Campus, HETCH och kunskapsbolag höjer ribban</h4>
+            <p>Med Campus Stockholm, HETCH och ett växande ekosystem av startups, konsulter och teknikbolag räcker det inte att bara “ha en hemsida”. Digital trovärdighet, snabb laddning, tydligt erbjudande och skarp konvertering blir en del av säljarbetet.</p>
           </div>
         </div>
       </div>
+
       <div>
-        <div class="gbg-districts">
-          <h3>Stadsdelar &amp; kommuner vi riktar SEO mot</h3>
-          <div class="district-tags">
-            <span class="district-tag">Stockholm city</span>
-            <span class="district-tag">Södermalm</span>
-            <span class="district-tag">Östermalm</span>
-            <span class="district-tag">Nacka</span>
-            <span class="district-tag">Solna</span>
-            <span class="district-tag">Sundbyberg</span>
-            <span class="district-tag">Järfälla</span>
-            <span class="district-tag">Täby</span>
-            <span class="district-tag">Lidingö</span>
-            <span class="district-tag">Kista</span>
-            <span class="district-tag">Stureplan</span>
-            <span class="district-tag">Bromma</span>
-            <span class="district-tag">Spånga</span>
-            <span class="district-tag">Huddinge</span>
+        <div class="hbg-facts">
+          <div class="hbg-fact">
+            <div class="hbg-fact-icon">⛴️</div>
+            <h4>Öresundsläge</h4>
+            <p>Stockholm och Solna skapar kundflöden i regionen. När det är relevant bygger vi kampanjer för både svensk och dansk efterfrågan.</p>
           </div>
-          <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.6">Varje landningssida vi bygger för Stockholm är unik, lokalt anpassad och skriven för att ranka – inte en generisk kopia med ett stadsnamn inbytt.</p>
-          <div class="gbg-stats">
-            <div class="gbg-stat"><strong>980 000+</strong><span>invånare i Stockholm</span></div>
-            <div class="gbg-stat"><strong>2,4 miljoner+</strong><span>i Stockholmsregionen</span></div>
-            <div class="gbg-stat"><strong>Top 3</strong><span>Googles söktävlan</span></div>
-            <div class="gbg-stat"><strong>3–6 mån</strong><span>till synlig SEO-effekt</span></div>
+          <div class="hbg-fact">
+            <div class="hbg-fact-icon">🏙️</div>
+            <h4>H+ till 2035</h4>
+            <p>Kista, Hagastaden och Hammarby Sjöstad, Universitetsområdet, Husarområdet och Gåsebäck ger nya lokala sökningar, nya målgrupper och nya etableringar.</p>
+          </div>
+          <div class="hbg-fact">
+            <div class="hbg-fact-icon">🛍️</div>
+            <h4>City & Kista</h4>
+            <p>Kullagatan, Stortorget, Kista och restaurangstråken kräver mobilvänliga sidor, stark Google-profil och lokalt relevant innehåll.</p>
+          </div>
+          <div class="hbg-fact">
+            <div class="hbg-fact-icon">🏭</div>
+            <h4>Hamn & industri</h4>
+            <p>Norrmalm, Södermalm, Långeberga och hamnområdet behöver B2B-sidor som förklarar kompetens, kapacitet och kontaktvägar snabbt.</p>
+          </div>
+          <div class="hbg-fact">
+            <div class="hbg-fact-icon">📍</div>
+            <h4>Nordvästra Stockholm</h4>
+            <p>Sökningar stannar sällan vid kommungränsen. Vi kopplar Stockholm till Sundbyberg, Solna, Nacka, Täby och Huddinge.</p>
+          </div>
+          <div class="hbg-fact">
+            <div class="hbg-fact-icon">📈</div>
+            <h4>Lokal SEO i praktiken</h4>
+            <p>Vi arbetar med Google Business-profil, lokala landningssidor, recensioner, kartresultat och sökintention per område.</p>
           </div>
         </div>
       </div>
@@ -413,102 +888,50 @@
   </div>
 </section>
 
-
-<!-- LOKAL FÖRDJUPNING -->
-<section class="local-depth" aria-labelledby="local-depth-area-stockholm">
+<!-- LOCAL MARKET -->
+<section class="local-market" aria-labelledby="local-market-heading">
   <div class="container">
-    <div class="local-depth-grid">
-      <div class="local-depth-copy">
-        <span class="section-tag">Hög digital standard kräver precision</span>
-        <h2 class="section-title" id="local-depth-area-stockholm">Stockholmssidor som håller nivån kunderna förväntar sig</h2>
-        <p>Stockholmare är vana vid att möta välbyggda digitala produkter varje dag. De jobbar på eller med företag som Ericsson, Spotify och King, studerar på KTH och rör sig i en av Europas tätaste startupscener. Det märks när de landar på en hemsida.</p>
-        <p>En slarvig sajt eller svag Google-närvaro kostar trovärdighet snabbare här än i de flesta andra städer. Därför bygger vi hemsidor, SEO och Google Ads med extra fokus på tydlig positionering, snabb upplevelse och text som inte känns som en kopia av alla andra byråsidor.</p>
-        <!-- LOKAL SEO TERMER -->
-        <p><strong>Stockholm är en marknad där besökaren ofta jämför snabbt och hårt.</strong> Därför behöver din hemsida visa kompetens direkt, förklara erbjudandet tydligt och ha en SEO-struktur som gör att rätt personer hittar dig på Google.</p>
-        <p>Oavsett om du ska anlita webbyrå, ta hjälp av en SEO-byrå eller komplettera med Google Ads bygger vi texterna runt verkliga kundfrågor, inte runt upprepade sökfraser.</p>
-<!-- /LOKAL SEO TERMER -->
-        <div class="local-signature">
-          <span>Nordväxt lokalt</span>
-          Rätt för konsultbolag, B2B, SaaS, kliniker, lokala tjänster och företag som vill konkurrera i city, Södermalm, Nacka, Solna, Kista, Täby och resten av Stockholmsområdet.
-        </div>
+    <div class="local-market-header">
+      <span class="section-tag">Lokal marknadslogik</span>
+      <h2 class="section-title" id="local-market-heading">Så bygger vi digital synlighet för Stockholms olika marknader</h2>
+      <p class="section-lead">En sida för Stockholm ska inte bara byta ut ortsnamnet. Den behöver spegla hur kunder faktiskt söker, jämför och väljer leverantör i staden och i Stockholmsregionen.</p>
+    </div>
+
+    <div class="local-market-grid">
+      <div class="local-market-card">
+        <span>01</span>
+        <h3>Hamn, logistik och B2B</h3>
+        <p>För företag nära hamnen, Norrmalm, Södermalm och Långeberga prioriterar vi förtroende, teknisk tydlighet, offertflöden och sökord med köpintention snarare än bred trafik.</p>
       </div>
-      <div class="local-depth-cards" aria-label="Lokala prioriteringar för Stockholm">
-        <article class="local-card">
-          <div class="local-card-icon">01</div>
-          <div>
-            <h3>Trovärdighet först</h3>
-            <p>I Stockholm behöver sidan snabbt bevisa varför kunden ska välja dig. Vi lyfter process, resultat, tydliga paket och nästa steg.</p>
-          </div>
-        </article>
-        <article class="local-card">
-          <div class="local-card-icon">02</div>
-          <div>
-            <h3>Segmenterad SEO</h3>
-            <p>Vi skiljer på sökningar i city, norrort, söderort och närförorter eftersom kundens förväntningar ofta ser olika ut.</p>
-          </div>
-        </article>
-        <article class="local-card local-card-wide">
-          <div class="local-card-icon">03</div>
-          <div>
-            <h3>Premium utan fluff</h3>
-            <p>Designen ska kännas modern och trygg, men innehållet måste fortfarande vara konkret nog för att driva kontakt.</p>
-          </div>
-        </article>
+      <div class="local-market-card">
+        <span>02</span>
+        <h3>Cityhandel och restaurang</h3>
+        <p>För butiker, caféer, restauranger och upplevelsebolag runt Kullagatan, Stortorget, Norra hamnen och Kista fokuserar vi på mobil upplevelse, kartresultat, öppettider och recensioner.</p>
+      </div>
+      <div class="local-market-card">
+        <span>03</span>
+        <h3>H+ och nya stadsdelar</h3>
+        <p>När Kista, Hagastaden och Hammarby Sjöstad, Universitetsområdet, Husarområdet och Gåsebäck utvecklas förändras lokala sökningar. Vi fångar nya platsnamn tidigt innan konkurrensen blir dyr.</p>
+      </div>
+      <div class="local-market-card">
+        <span>04</span>
+        <h3>Tech, startup och konsulter</h3>
+        <p>För kunskapsbolag kring Campus Stockholm, HETCH och Prisma behöver webbplatsen snabbt visa spets, metod, cases och tydliga nästa steg för en mer digitalt van målgrupp.</p>
+      </div>
+      <div class="local-market-card">
+        <span>05</span>
+        <h3>Serviceföretag i stadsdelar</h3>
+        <p>Rörmokare, elektriker, kliniker, byggfirmor och andra lokala tjänster vinner ofta på sidor för specifika områden som Råå, Söder, Dalhem, Miatorp, Påarp och Ramlösa.</p>
+      </div>
+      <div class="local-market-card">
+        <span>06</span>
+        <h3>Öresund och kranskommuner</h3>
+        <p>För många företag kommer kunder från Sundbyberg, Solna, Nacka, Täby, Huddinge och ibland Solna. Då bygger vi kampanjer som matchar verkligt upptagningsområde.</p>
       </div>
     </div>
-  </div>
-</section>
 
-
-<!-- AREA SERVICES -->
-<section class="area-services" aria-labelledby="area-services-stockholm">
-  <div class="container">
-    <div class="area-services-head">
-      <span class="section-tag">Våra tjänster i Stockholm</span>
-      <h2 class="section-title" id="area-services-stockholm">Digital hjälp för företag i Stockholm</h2>
-      <p>Vi hjälper företag i Stockholm att bygga en starkare digital närvaro, från första hemsidan till löpande SEO, annonser och underhåll. Här är de vanligaste tjänsterna våra kunder brukar behöva.</p>
-    </div>
-    <div class="area-services-grid">
-      <article class="area-service-item">
-        <h3>Webbyrå Stockholm</h3>
-        <p>Som <span class="service-keyword">webbyrå i Stockholm</span> hjälper vi dig med strategi, design, text och teknisk produktion så att allt hänger ihop från start.</p>
-      </article>
-      <article class="area-service-item">
-        <h3>Hemsida för företag Stockholm</h3>
-        <p>Behöver du en <a href="/hemsida/">hemsida för företag</a> i Stockholm? Vi bygger professionella, mobilanpassade hemsidor som är tydliga att läsa och enkla att kontakta från.</p>
-      </article>
-      <article class="area-service-item">
-        <h3>Webbdesign Stockholm</h3>
-        <p>Vi tar fram webbdesign som känns modern, trygg och lokal. Målet är en sida som både ser bra ut och hjälper besökaren att förstå varför de ska välja dig.</p>
-      </article>
-      <article class="area-service-item">
-        <h3>Billig hemsida Stockholm</h3>
-        <p>En billig hemsida behöver inte kännas billig. Vi kan bygga enklare lösningar med rätt grund, tydlig struktur och plats att växa när företaget behöver mer.</p>
-      </article>
-      <article class="area-service-item">
-        <h3>SEO byrå Stockholm</h3>
-        <p>Med <a href="/seo/">sökmotoroptimering</a> hjälper vi dig synas när kunder söker lokalt. Vi arbetar med teknik, innehåll och sökord som matchar hur människor i Stockholm faktiskt letar.</p>
-      </article>
-      <article class="area-service-item">
-        <h3>Google Ads Stockholm</h3>
-        <p>Vill du synas snabbare? Med <a href="/google-ads/">Google Ads</a> kan vi driva relevant trafik direkt och samtidigt mäta vilka sökord, annonser och landningssidor som ger bäst effekt.</p>
-      </article>
-      <article class="area-service-item">
-        <h3>Webbhotell och underhåll</h3>
-        <p>Vi hjälper till med hosting, tekniskt underhåll och löpande förbättringar så att din hemsida fortsätter fungera, laddar snabbt och känns trygg över tid.</p>
-      </article>
-      <article class="area-service-item">
-        <h3>Support och serviceavtal Stockholm</h3>
-        <p>Vill du slippa tänka på småfix, uppdateringar och tekniska frågor? Våra serviceavtal gör att hemsidan hålls i ordning medan du fokuserar på verksamheten.</p>
-      </article>
-      <article class="area-service-item">
-        <h3>E-handel och WooCommerce</h3>
-        <p>Vi bygger e-handel och enklare webbutiker för företag som vill sälja online, med tydliga produktsidor, betalflöde och struktur som går att vidareutveckla.</p>
-      </article>
-      <article class="area-service-item">
-        <h3>Marknadsföring Stockholm</h3>
-        <p>Behöver du hjälp med marknadsföring i Stockholm? Vi kombinerar hemsida, SEO och Google Ads till en plan som är lätt att förstå och följa upp.</p>
-      </article>
+    <div class="local-market-note">
+      <strong>Praktiskt betyder det:</strong> vi planerar inte bara en “webbyrå Stockholm”-sida, utan en struktur med lokala undersidor, Google Business-signaler, annonser per upptagningsområde och innehåll som matchar branschens faktiska kundresa.
     </div>
   </div>
 </section>
@@ -519,94 +942,147 @@
     <div class="services-header">
       <span class="section-tag">Våra tjänster</span>
       <h2 class="section-title" id="services-heading">Allt du behöver för att växa online i Stockholm</h2>
-      <p class="section-lead">Vi kombinerar fyra discipliner som förstärker varandra – och du slipper koordinera tre olika leverantörer.</p>
+      <p class="section-lead">Vi kombinerar fyra discipliner som förstärker varandra – med lokal struktur för Stockholms stadskärna, Kista, industriområdena, Öresund och Stockholmsregionen.</p>
     </div>
     <div class="services-grid">
+
       <div class="service-card svc-web">
         <div class="service-card-accent"></div>
-        <div class="service-card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        </div>
         <h3>Hemsidor</h3>
-        <p>Vi bygger snabba, mobilanpassade och SEO-optimerade hemsidor som konverterar besökare till kunder – inte bara ser snygga ut.</p>
+        <p>Vi bygger snabba, mobilanpassade hemsidor som gör det lätt för lokala kunder att välja dig – oavsett om de söker från centrum, Kista, Råå, Norrmalm, Södermalm eller en kranskommun.</p>
         <ul class="service-card-list">
-          <li>Unik design anpassad efter ditt varumärke</li>
-          <li>SEO-teknisk grund inkluderad</li>
-          <li>Redigerbart CMS – du uppdaterar själv</li>
+          <li>Lokal sidstruktur för tjänster, områden och branscher</li>
+          <li>SEO-teknisk grund, schema och snabb laddning</li>
+          <li>Konverteringsflöden för samtal, bokning och offert</li>
           <li>Leverans inom 1–3 veckor</li>
         </ul>
-        <a href="/hemsida/" class="service-link">Läs mer om hemsidor <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/hemsida/" class="service-link">
+          Läs mer om hemsidor
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
+
       <div class="service-card svc-seo">
         <div class="service-card-accent"></div>
-        <div class="service-card-icon" style="background:var(--gold-light)"><svg viewBox="0 0 24 24" style="stroke:var(--gold)"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
-        <h3>Sökmotoroptimering (SEO)</h3>
-        <p>Vi ser till att ditt företag syns när dina kunder söker på Google i Stockholm – med sökordsanalys, optimerade texter och teknisk SEO.</p>
+        <div class="service-card-icon" style="background:var(--gold-light)">
+          <svg viewBox="0 0 24 24" stroke="var(--gold)"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </div>
+        <h3>SEO – Sökmotoroptimering</h3>
+        <p>Vi bygger synlighet kring hur människor faktiskt söker i Stockholm: “nära mig”, stadsdelar, bransch + ort, Google Maps, jämförelsesökningar och sökningar från Stockholmsregionen.</p>
         <ul class="service-card-list">
-          <li>Lokal SEO för Stockholm &amp; Mälardalen</li>
-          <li>On-page och teknisk SEO</li>
-          <li>Länkbyggning och Google Business</li>
-          <li>Månadsrapport med tydliga resultat</li>
+          <li>Lokal SEO för Stockholm, Kista och Stockholmsregionen</li>
+          <li>Google Business-profil, recensioner och kartresultat</li>
+          <li>Innehåll för stadsdelar, upptagningsområde och bransch</li>
+          <li>Månadsrapport med ranking, leads och lokala insikter</li>
         </ul>
-        <a href="/seo/" class="service-link" style="color:var(--gold)">Läs mer om SEO <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/seo/" class="service-link" style="color:var(--gold)">
+          Läs mer om SEO
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
+
       <div class="service-card svc-ads">
         <div class="service-card-accent"></div>
-        <div class="service-card-icon" style="background:#e8f0fb"><svg viewBox="0 0 24 24" style="stroke:#3b7dd8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div class="service-card-icon" style="background:#e8f0fb">
+          <svg viewBox="0 0 24 24" stroke="#3b7dd8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
         <h3>Google Ads</h3>
-        <p>Synlighet på Google redan imorgon. Vi bygger och hanterar kampanjer riktade mot Stockholm som levererar mätbar avkastning.</p>
+        <p>Betald annonsering som skiljer på lokala kundflöden: city, Kista, techbolag, konsulter, B2B, premiumtjänster, e-handel och lokala serviceföretag, B2B-områden, kranskommuner och Öresund när din verksamhet tjänar på bredare räckvidd.</p>
         <ul class="service-card-list">
-          <li>Geo-targeting mot Stockholm &amp; regionen</li>
-          <li>Sökkampanjer och shopping-annonser</li>
-          <li>Löpande optimering och A/B-test</li>
-          <li>Transparent rapportering varje månad</li>
+          <li>Sökannonser per område, tjänst och köpintention</li>
+          <li>Separata budstrategier för lokala och regionala sökningar</li>
+          <li>Remarketing mot besökare från Stockholm och nordväst</li>
+          <li>Rapportering på leads, bokningar och samtal</li>
         </ul>
-        <a href="/google-ads/" class="service-link" style="color:#3b7dd8">Läs mer om Google Ads <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-      </div>
-      
-    </div>
+        <a href="/google-ads/" class="service-link" style="color:#3b7dd8">
+          Läs mer om Google Ads
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div></div>
   </div>
 </section>
 
 <!-- WHY US -->
-<section class="why" id="varfor-oss" aria-labelledby="why-heading">
+<section class="why" id="varfor" aria-labelledby="why-heading">
   <div class="container">
     <div class="why-grid">
       <div>
         <span class="section-tag">Varför Nordväxt</span>
-        <h2 class="section-title" id="why-heading">Vi levererar resultat – inte bara filer</h2>
-        <p class="section-lead">De flesta byråer levererar en produkt. Vi levererar ett samarbete med ett tydligt mål: att ditt företag växer online.</p>
+        <h2 class="section-title" id="why-heading">Varför väljer stockholmföretag oss?</h2>
         <div class="why-points">
           <div class="why-point">
             <div class="why-num">01</div>
-            <div><h4>Allt under ett tak</h4><p>Hemsida, SEO och annonser hänger ihop. Hos oss slipper du koordinera tre olika leverantörer.</p></div>
+            <div>
+              <h4>Vi skiljer på Stockholms olika konkurrenslägen</h4>
+              <p>En restaurang vid Stortorget, ett B2B-bolag i Långeberga och en klinik i Ramlösa behöver inte samma sökord, annonser eller landningssidor. Vi bygger strategin efter verklig lokal efterfrågan.</p>
+            </div>
           </div>
           <div class="why-point">
             <div class="why-num">02</div>
-            <div><h4>Vi mäter alltid resultat</h4><p>Varje uppdrag kopplas till mätbara mål från dag ett. Du vet alltid vad du betalar för och vad det ger tillbaka.</p></div>
+            <div>
+              <h4>Vi mäter alltid resultat</h4>
+              <p>Varje uppdrag kopplas till mätbara mål från dag ett. Du vet alltid vad du betalar för och vad det ger tillbaka.</p>
+            </div>
           </div>
           <div class="why-point">
             <div class="why-num">03</div>
-            <div><h4>Ärlig kommunikation</h4><p>Vi lovar inte guld och gröna skogar. Vi berättar vad som fungerar, vad som tar tid och vad som inte är värt pengarna.</p></div>
+            <div>
+              <h4>Ärlig kommunikation</h4>
+              <p>Vi lovar inte guld och gröna skogar. Vi berättar vad som fungerar, vad som tar tid och vad som inte är värt pengarna – oavsett om det gäller SEO för "rörmokare Stockholm" eller annonser mot Sundbyberg.</p>
+            </div>
           </div>
           <div class="why-point">
             <div class="why-num">04</div>
-            <div><h4>Specialiserade på svenska småföretag</h4><p>Vi förstår utmaningarna för ett företag med 1–20 anställda. Inga onödiga möten, inga byråkratiska processer.</p></div>
+            <div>
+              <h4>Vi förstår stockholmska småföretag</h4>
+              <p>Stockholm och Stockholmsregionen har stark handel, hantverk, logistik och ägarledda bolag. Vi prioriterar insatser som går att följa upp i samtal, formulär, bokningar och intäkter.</p>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="why-visual">
         <div class="why-visual-title">Vad som alltid ingår – oavsett uppdrag</div>
         <ul class="why-check-list">
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Dedikerad kontaktperson som svarar inom en arbetsdag</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Tydlig tidsplan och milestones som du godkänner</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Google Analytics och konverteringsspårning från start</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>GDPR-anpassning och cookiehantering</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>30 dagars support efter lansering</li>
-          <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Månadsrapport med faktiska siffror – inte fluff</li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Dedikerad kontaktperson som svarar inom en arbetsdag
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Tydlig tidsplan och milestones som du godkänner
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Google Analytics och konverteringsspårning från start
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Lokal SEO och Google Business-profil inkluderat
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            GDPR-anpassning och cookiehantering
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            1 års support efter lansering
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            Månadsrapport med faktiska siffror – inte fluff
+          </li>
         </ul>
         <hr class="why-divider">
         <div class="why-cta-box">
           <p>Inte säker på vad du behöver? Vi ger dig ett ärligt svar utan förpliktelser.</p>
-          <a href="/kontakt/#contact-form" class="btn-cta-white">Boka gratis genomgång <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          <a href="/kontakt/#contact-form" class="btn-cta-white">
+            Boka gratis genomgång
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </div>
@@ -622,6 +1098,7 @@
       <p class="section-lead">Vi mäts på hur väl våra kunders verksamheter växer – inte på hur snygga presentationerna är.</p>
     </div>
     <div class="testimonials-grid">
+
       <div class="testimonial-card">
         <div class="testimonial-stars">
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -630,15 +1107,16 @@
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p class="testimonial-quote">Innan Nordväxt hittade ingen oss på Google. Nu får vi 4–6 offertförfrågningar i veckan direkt från hemsidan. Investeringen betalade sig på tre månader.</p>
+        <p class="testimonial-quote">Innan Nordväxt hittade ingen oss på Google. Nu får vi 3–5 offertförfrågningar i veckan direkt från hemsidan. Investeringen betalade sig på fyra månader.</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">MJ</div>
+          <div class="testimonial-avatar">MK</div>
           <div>
-            <div class="testimonial-name">Magnus Johansson</div>
-            <div class="testimonial-company">Johanssons Måleri AB, Stockholm</div>
+            <div class="testimonial-name">Marcus Karlsson</div>
+            <div class="testimonial-company">Karlssons VVS, Stockholm</div>
           </div>
         </div>
       </div>
+
       <div class="testimonial-card">
         <div class="testimonial-stars">
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -647,15 +1125,16 @@
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p class="testimonial-quote">De förstår vad vi behöver utan att vi behöver förklara allt. Hemsidan är professionell, lätt att uppdatera och vi rankar nu på förstasidan för våra viktigaste sökord.</p>
+        <p class="testimonial-quote">De förstår vad vi behöver utan att vi behöver förklara allt. Hemsidan är professionell och vi rankar nu på förstasidan för våra viktigaste sökord i Stockholm och Solna.</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">SL</div>
           <div>
-            <div class="testimonial-name">Sara Lindström</div>
-            <div class="testimonial-company">Lindströms Redovisning, Solna</div>
+            <div class="testimonial-name">Sara Lindqvist</div>
+            <div class="testimonial-company">Lindqvists Redovisning, Stockholm</div>
           </div>
         </div>
       </div>
+
       <div class="testimonial-card">
         <div class="testimonial-stars">
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -664,14 +1143,67 @@
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <p class="testimonial-quote">Nordväxt sköter vår Google Ads. Trafiken har tredubblats och vi spenderar faktiskt mindre på annonser än innan, tack vare bättre optimering.</p>
+        <p class="testimonial-quote">Nordväxt sköter vår Google Ads och sociala medier. Trafiken har fördubblats och vi når nu kunder i hela regionen – tack vare smart geo-targeting mot både Stockholm och Solna.</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">EK</div>
+          <div class="testimonial-avatar">JN</div>
           <div>
-            <div class="testimonial-name">Erik Karlsson</div>
-            <div class="testimonial-company">Studio Forma, Kungsholmen</div>
+            <div class="testimonial-name">Johan Nilsson</div>
+            <div class="testimonial-company">Nilssons Interiör, Söder, Stockholm</div>
           </div>
         </div>
+      </div>
+
+    </div>
+    <div class="testimonials-logos" aria-label="Exempel på kunder">
+      <div class="logo-placeholder" style="width:90px" aria-label="Kundlogotyp"></div>
+      <div class="logo-placeholder" style="width:110px" aria-label="Kundlogotyp"></div>
+      <div class="logo-placeholder" style="width:80px" aria-label="Kundlogotyp"></div>
+      <div class="logo-placeholder" style="width:120px" aria-label="Kundlogotyp"></div>
+      <div class="logo-placeholder" style="width:95px" aria-label="Kundlogotyp"></div>
+      <div class="logo-placeholder" style="width:75px" aria-label="Kundlogotyp"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT TEASER -->
+<section class="about-teaser" id="om-oss" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-teaser-grid">
+      <div class="about-photo-stack" aria-hidden="true">
+        <div class="about-photo-main">
+          <span style="font-size:0.85rem;position:relative;z-index:1">Teamfoto</span>
+          <div class="about-photo-caption">
+            <strong>Teamet på Nordväxt</strong>
+            <span>Stockholm · Malmö · Sverige</span>
+          </div>
+        </div>
+        <div class="about-badge-float">
+          <strong>2025</strong>
+          <span>Grundat</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Vilka är vi</span>
+        <h2 class="section-title" id="about-heading">En byrå nära Stockholm – med ett tydligt uppdrag</h2>
+        <p class="section-lead">Nordväxt grundades med en enkel övertygelse: svenska småföretag förtjänar digital marknadsföring av samma kvalitet som de stora bolagen – utan konsultspråk och onödiga mellanhänder.</p>
+        <div class="about-values">
+          <div class="about-value">
+            <div class="about-value-dot"></div>
+            <p><strong>Vi är baserade i Stockholm</strong> och jobbar med företag i hela regionen – Stockholm, Solna, Nacka och resten av Stockholmsregionen. De flesta möten sker digitalt, men vi kan alltid ses fysiskt.</p>
+          </div>
+          <div class="about-value">
+            <div class="about-value-dot"></div>
+            <p><strong>Vi är ett litet team</strong> vilket betyder att du alltid pratar med den som faktiskt gör jobbet – inte en account manager som vidarebefordrar dina frågor.</p>
+          </div>
+          <div class="about-value">
+            <div class="about-value-dot"></div>
+            <p><strong>Vi tar inte fler kunder än vi hinner med</strong> ordentligt. Hellre 30 nöjda stockholmska företag än 100 halvnöjda kunder.</p>
+          </div>
+        </div>
+        <a href="/om-oss/" class="btn-primary">
+          Läs mer om oss
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </div>
@@ -686,7 +1218,7 @@
       <div class="pstep">
         <div class="pstep-num">1</div>
         <h4>Gratis genomgång</h4>
-        <p>Vi lär känna ditt företag, tittar på konkurrenterna i Stockholm och berättar exakt vad vi skulle göra – utan förpliktelse.</p>
+        <p>Vi lär känna ditt företag, tittar på konkurrenterna i Stockholm och Stockholmsregionen och berättar exakt vad vi skulle göra – utan förpliktelse.</p>
         <span class="pstep-tag">Dag 1</span>
       </div>
       <div class="pstep">
@@ -698,7 +1230,7 @@
       <div class="pstep">
         <div class="pstep-num">3</div>
         <h4>Produktion &amp; lansering</h4>
-        <p>Vi bygger, du godkänner varje steg. Leverans sker normalt inom 1–3 veckor. SEO och annonser startar omgående.</p>
+        <p>Vi bygger, du godkänner varje steg. Leverans av vår produkt sker normalt inom 1–3 veckor. SEO och annonser startar omgående.</p>
         <span class="pstep-tag">Vecka 1–4</span>
       </div>
       <div class="pstep">
@@ -711,22 +1243,160 @@
   </div>
 </section>
 
+<!-- AREAS -->
+<section class="areas-section" aria-labelledby="areas-heading">
+  <div class="container">
+    <h2 class="section-title" id="areas-heading">Lokala områden vi bygger synlighet för</h2>
+    <p>Vi planerar innehåll och annonser efter verkliga upptagningsområden – från city och Kista till hamnen, industriområdena och Stockholmsregionens kranskommuner.</p>
+    <div class="areas-grid">
+      <span class="area-tag"><span class="area-dot"></span>Norrmalm</span>
+      <span class="area-tag"><span class="area-dot"></span>Södermalm</span>
+      <span class="area-tag"><span class="area-dot"></span>Östermalm</span>
+      <span class="area-tag"><span class="area-dot"></span>Vasastan</span>
+      <span class="area-tag"><span class="area-dot"></span>Kungsholmen</span>
+      <span class="area-tag"><span class="area-dot"></span>Kista</span>
+      <span class="area-tag"><span class="area-dot"></span>Hammarby Sjöstad</span>
+      <span class="area-tag"><span class="area-dot"></span>Liljeholmen</span>
+      <span class="area-tag"><span class="area-dot"></span>Bromma</span>
+      <span class="area-tag"><span class="area-dot"></span>Farsta</span>
+      <span class="area-tag"><span class="area-dot"></span>Globen</span>
+      <span class="area-tag"><span class="area-dot"></span>Hägersten</span>
+      <span class="area-tag"><span class="area-dot"></span>Sickla</span>
+      <span class="area-tag"><span class="area-dot"></span>Solna</span>
+      <span class="area-tag"><span class="area-dot"></span>Nacka</span>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL INTRO -->
+<section class="local-market" id="lokal-strategi-stockholm">
+  <div class="container">
+    <div class="local-market-header">
+      <span class="section-tag">Lokal digital strategi</span>
+      <h2 class="section-title">Webbyrå i Stockholm med fokus på lokal synlighet</h2>
+      <p class="section-lead">Företag i Stockholm konkurrerar inte bara med företag som har liknande tjänster. De konkurrerar med alla som dyker upp före dem på Google, i kartresultat och i kundens mobil. Därför bygger vi hemsidor, SEO och annonsering utifrån hur människor i Stockholmsregionen faktiskt söker, jämför och väljer leverantör.</p>
+    </div>
+    <div class="local-market-grid">
+      <article class="local-market-card">
+        <span>01</span>
+        <h3>Kista och köpstarka flöden</h3>
+        <p>Vi tar hänsyn till var kunderna rör sig: Kista, Norrmalm, Södermalm och andra platser där företag i Stockholm ofta möter sin målgrupp digitalt innan första kontakten.</p>
+      </article>
+      <article class="local-market-card">
+        <span>02</span>
+        <h3>Kista, Hagastaden och Hammarby Sjöstad</h3>
+        <p>Tillväxtområden kräver tydliga landningssidor, lokal SEO och budskap som känns relevanta för både nya kunder och etablerade företag i området.</p>
+      </article>
+      <article class="local-market-card">
+        <span>03</span>
+        <h3>det regionala perspektivet när företag vill nå både innerstad, förorter och kranskommuner</h3>
+        <p>Alla företag behöver inte nå hela regionen. Vi hjälper dig avgöra om strategin ska vara hyperlokal, regional eller byggd för flera orter samtidigt.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- SEO KEYWORD GUIDE -->
+<section class="local-market" id="seo-guide-stockholm">
+  <div class="container">
+    <div class="local-market-header">
+      <span class="section-tag">SEO-guide för Stockholm</span>
+      <h2 class="section-title">Vanliga frågor när företag i Stockholm vill få fler kunder online</h2>
+      <p class="section-lead">Här samlar vi sökfrågor och begrepp som ofta dyker upp när företag jämför webbyrå, SEO byrå, Google Ads byrå och digital marknadsföring i Stockholm. Texterna är skrivna för att vara användbara, inte för att stapla ord.</p>
+    </div>
+    <div class="local-market-grid">
+      <article class="local-market-card">
+        <span>01</span>
+        <h3>Vad är SEO och hur funkar Google ranking?</h3>
+        <p>SEO, eller sökmotoroptimering, handlar om att göra en professionell hemsida snabb, tydlig och trovärdig. En bra SEO guide för Stockholm förklarar hur Google ranking påverkas av teknik, innehåll, lokala signaler och hur väl sidan svarar på kundens fråga.</p>
+      </article>
+      <article class="local-market-card">
+        <span>02</span>
+        <h3>Hemsida företag, pris och design</h3>
+        <p>Om du söker hemsida företag, hemsida till företag pris, hemsida design pris eller vad kostar en hemsida för småföretag behöver du veta vad som ingår: mobilanpassad hemsida, SEO-grund, konverterande landningssida, support och möjlighet till en hemsida som ger leads.</p>
+      </article>
+      <article class="local-market-card">
+        <span>03</span>
+        <h3>Skapa hemsida billigt utan att tappa kvalitet</h3>
+        <p>Att skapa hemsida billigt kan fungera om strukturen är smart från början. För stockholmska småföretag fokuserar vi på tydlig design, snabba sidor och innehåll som hjälper dig köpa hemsida företag utan att behöva bygga om allt efter några månader.</p>
+      </article>
+      <article class="local-market-card">
+        <span>04</span>
+        <h3>SEO hjälp företag och SEO tjänster pris</h3>
+        <p>När företag söker SEO hjälp företag eller SEO tjänster pris vill de förstå vad arbetet faktiskt ger. Vi visar hur man kan öka trafik till hemsida, hur förbättrar man SEO snabbt, varför syns inte min hemsida på Google och hur får man första sidan på Google.</p>
+      </article>
+      <article class="local-market-card">
+        <span>05</span>
+        <h3>Google Ads, CPC och CTR</h3>
+        <p>Google Ads passar när du vill synas direkt. Vi förklarar hur fungerar Google Ads, google ads pris, cpc vad är det och hur man kan ctr förbättra annonser. För många företag är skillnad mellan SEO och Google Ads enkel: annonsering på Google ger fart nu, SEO bygger värde över tid.</p>
+      </article>
+      <article class="local-market-card">
+        <span>06</span>
+        <h3>Digital marknadsföring för småföretag</h3>
+        <p>Den bästa strategin för digital marknadsföring småföretag kombinerar webbyrå, marknadsföringsbyrå, marknadsföring småföretag, facebook ads strategi och lokal SEO. Målet är tydligt: hur får man kunder online, få fler kunder online och öka försäljning via Google.</p>
+      </article>
+    </div>
+    <div class="local-market-note">
+      <strong>Vårt mål:</strong> att hjälpa företag i Stockholm förstå hur får man fler kunder via hemsida 2026, bästa sättet att få leads från Google och hur gör man en konverterande landningssida som faktiskt leder till samtal, bokningar och offertförfrågningar.
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="faq-header">
+      <span class="section-tag">Vanliga frågor</span>
+      <h2 class="section-title" id="faq-heading">Webbyrå Stockholm – lokala frågor vi ofta får</h2>
+      <p class="section-lead">Här är de vanligaste frågorna från företag som vill bli mer synliga i Stockholm, Stockholmsregionen och ibland även i regionen.</p>
+    </div>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <h3>Hur gör ni en Stockholmssida unik?</h3>
+        <p>Vi bygger sidan kring lokala sökintentioner, branscher, stadsdelar och konkurrenssituationer. Det betyder innehåll för exempelvis lokal handel, Kista, techbolag, konsulter, B2B, premiumtjänster, e-handel och lokala serviceföretag, H+, serviceföretag och Stockholmsregionen – inte bara ett ortsnamn i rubriken.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Vilka branscher i Stockholm passar lokal SEO bäst för?</h3>
+        <p>Lokal SEO fungerar särskilt bra för serviceföretag, vård och kliniker, restauranger, butiker, hantverkare, B2B-leverantörer, logistiknära bolag och företag som vill fånga kunder från flera delar av Stockholmsregionen.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Kan ni rikta annonser separat mot centrum, Kista och industriområden?</h3>
+        <p>Ja. Vi kan dela upp Google Ads och Meta Ads efter område, sökord, målgrupp och landningssida. En butik i city, en verksamhet på Kista och ett B2B-bolag i Norrmalm behöver ofta olika budskap och budgetlogik.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Kan sidan också fånga kunder från Solna och Stockholmsregionen?</h3>
+        <p>Om det är relevant för verksamheten kan vi lägga in det regionala perspektivet när företag vill nå både innerstad, förorter och kranskommuner i annonser, innehåll och landningssidor. För vissa branscher är Stockholm-Solna ett naturligt upptagningsområde, för andra är det bättre att fokusera helt lokalt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA BAND -->
 <section class="cta-band" id="kontakt-cta" aria-labelledby="cta-heading">
   <div class="container">
-    <h2 class="section-title" id="cta-heading">Redo att växa i Stockholm?</h2>
-    <p>Boka ett kostnadsfritt 30-minuterssamtal. Vi tittar på din situation, din bransch och dina konkurrenter i Stockholm – och berättar exakt vad som skulle göra störst skillnad för dig.</p>
+    <h2 class="section-title" id="cta-heading">Redo att ta mer plats i Stockholms sökresultat?</h2>
+    <p>Boka ett kostnadsfritt 30-minuterssamtal. Vi tittar på din bransch, din Google Business-profil, dina lokala konkurrenter och vilka områden i Stockholm som borde ge dig fler kunder först.</p>
     <div class="cta-band-btns">
       <a href="/kontakt/#contact-form" class="btn-cta">
         Boka gratis genomgång
-        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <a href="/priser/" class="btn-cta-outline">Se priser</a>
     </div>
     <div class="cta-trust">
-      <div class="cta-trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Flexibla avtal</div>
-      <div class="cta-trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Ingen försäljning under mötet</div>
-      <div class="cta-trust-item"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Svar inom 24 timmar</div>
+      <div class="cta-trust-item">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Flexibla avtal
+      </div>
+      <div class="cta-trust-item">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Ingen försäljning under mötet
+      </div>
+      <div class="cta-trust-item">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Svar inom 24 timmar
+      </div>
     </div>
   </div>
 </section>
@@ -760,7 +1430,7 @@
       <div class="footer-col">
         <h4>Verksamhetsomr&aring;den</h4>
         <ul>
-          <li><a href="/webbyra-helsingborg/">Helsingborg</a></li>
+          <li><a href="/webbyra-stockholm/">Stockholm</a></li>
           <li><a href="/webbyra-malmo/">Malm&ouml;</a></li>
           <li><a href="/webbyra-vasteras/">V&auml;ster&aring;s</a></li>
           <li><a href="/webbyra-stockholm/">Stockholm</a></li>
@@ -777,7 +1447,7 @@
             <li><a href="tel:+46101898790" itemprop="telephone">010-189 87 90 (direkt)</a></li>
             <li><a href="tel:+46101898791">010-189 87 91 (v&auml;xel)</a></li>
             <li><span itemprop="streetAddress">O D Krooks gata 25</span></li>
-            <li><span itemprop="postalCode">254 44</span> <span itemprop="addressLocality">Helsingborg</span>, <span itemprop="addressCountry">Sverige</span></li>
+            <li><span itemprop="postalCode">254 44</span> <span itemprop="addressLocality">Stockholm</span>, <span itemprop="addressCountry">Sverige</span></li>
           </ul>
         </address>
       </div>
@@ -788,6 +1458,8 @@
     </div>
   </div>
 </footer>
+
+
 
 <script src="/assets/language-toggle.js" defer></script>
 </body>
