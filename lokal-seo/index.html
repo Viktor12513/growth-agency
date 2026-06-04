@@ -206,6 +206,105 @@ section{padding:72px 24px}
   .compare-table th,.compare-table td{padding:10px 12px}
   .footer-top{grid-template-columns:1fr}
 }
+
+/* Nordvaxt theme refinements for local SEO */
+.local-seo-page{
+  --green:#1a3a1f;
+  --green-light:#8ab89a;
+  --green-xlight:#eef7f0;
+  --green-dark:#143a1f;
+  --text:#1a1a18;
+  --text-muted:#4d554a;
+  --border:#c8e6d0;
+  --bg-soft:#f7f4ef;
+}
+.local-seo-page .hero{
+  background:
+    radial-gradient(circle at 82% 12%, rgba(196,148,58,.18), transparent 34%),
+    linear-gradient(155deg, #f7f4ef 0%, #fdfcfa 58%, #eef7f0 100%);
+  color:var(--text);
+  border-bottom:1px solid var(--border);
+}
+.local-seo-page .hero-badge{
+  background:#fff;
+  color:var(--green-dark);
+  border-color:var(--border);
+  box-shadow:0 10px 28px rgba(26,58,31,.06);
+}
+.local-seo-page .hero h1{
+  font-family:'DM Serif Display',serif;
+  color:var(--green-dark);
+}
+.local-seo-page .hero h1 em{
+  color:#c4943a;
+}
+.local-seo-page .hero-lead,
+.local-seo-page .hero-bullets li{
+  color:var(--text-muted);
+  opacity:1;
+}
+.local-seo-page .hero-bullets li::before{
+  background:var(--green-dark);
+  color:#fff;
+}
+.local-seo-page .btn-white{
+  background:var(--green-dark);
+  color:#fff !important;
+  box-shadow:0 16px 36px rgba(20,58,31,.16);
+}
+.local-seo-page .btn-white:hover{
+  background:#214f2a;
+  color:#fff !important;
+}
+.local-seo-page .btn-outline{
+  background:#fff;
+  color:var(--green-dark);
+  border-color:var(--border);
+}
+.local-seo-page .btn-outline:hover{
+  background:var(--green-xlight);
+}
+.local-seo-page .hero-card{
+  background:rgba(255,255,255,.78);
+  border-color:var(--border);
+  color:var(--text);
+  box-shadow:0 24px 70px rgba(26,58,31,.12);
+}
+.local-seo-page .hero-card h3{
+  color:var(--green-dark);
+  opacity:1;
+}
+.local-seo-page .stat-item{
+  background:var(--green-xlight);
+}
+.local-seo-page .stat-num{
+  color:var(--green-dark);
+}
+.local-seo-page .stat-label,
+.local-seo-page .hero-rating{
+  color:var(--text-muted);
+  opacity:1;
+}
+.local-seo-page .process-strip{
+  background:#fff;
+  border-color:var(--border);
+}
+.local-seo-page .process-strip-inner{
+  gap:clamp(1rem,2.5vw,2rem);
+}
+.local-seo-page .step-item{
+  align-items:flex-start;
+}
+.local-seo-page .step-num{
+  background:var(--green-dark);
+  color:#fff;
+}
+.local-seo-page .step-text strong{
+  color:var(--green-dark);
+}
+.local-seo-page .step-text span{
+  color:var(--text-muted);
+}
 </style>
 </head>
 <body>
