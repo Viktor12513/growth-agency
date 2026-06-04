@@ -120,6 +120,7 @@ img { max-width:100%; display:block; }
 .nav-links { display:flex; gap:1.25rem; list-style:none; }
 .nav-links a { font-size:.875rem; font-weight:500; color:var(--ink-mid); transition:color .2s; }
 .nav-links a:hover,.nav-links a[aria-current] { color:var(--forest); }
+.nav-right { display:flex; align-items:center; gap:.75rem; }
 .nav-cta { background:var(--forest); color:white; font-size:.875rem; font-weight:500; padding:.55rem 1.25rem; border-radius:var(--radius); transition:background .2s; }
 .nav-cta:hover { background:var(--forest-mid); }
 .mobile-nav-toggle { display:none; width:42px; height:42px; border:1px solid var(--mint); background:white; border-radius:var(--radius); align-items:center; justify-content:center; flex-direction:column; gap:5px; cursor:pointer; }
@@ -512,9 +513,9 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
 <a href="#main-content" class="skip-link">Hoppa till innehållet</a>
 
 <header role="banner">
-<nav aria-label="Huvudnavigation">
+<nav class="site-nav" aria-label="Huvudnavigation">
   <a href="/" class="nav-logo" aria-label="Nordväxt AB – startsida">Nord<span>växt</span> AB</a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="primary-nav">
     <li><a href="/hemsida/">Hemsidor</a></li>
     <li class="nav-dropdown">
       <a href="/seo/" class="nav-dropdown-trigger" aria-haspopup="true">SEO</a>
@@ -535,6 +536,10 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
           <strong>SEO byrå för småföretag</strong>
           <span>Praktisk SEO-hjälp för mindre företag.</span>
         </a>
+        <a href="/internationell-seo/">
+          <strong>Internationell SEO</strong>
+          <span>Strategi för språk, länder och hreflang.</span>
+        </a>
         <a href="/blogg/hur-lang-tid-tar-seo/">
           <strong>Hur lång tid tar SEO?</strong>
           <span>Guide med realistisk tidslinje och vanliga misstag.</span>
@@ -550,7 +555,7 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
   </ul>
   <div class="nav-right">
     <a href="/kontakt/#contact-form" class="nav-cta">Kontakta oss</a>
-    <button class="nav-hamburger" id="hamburger" aria-label="Öppna meny" aria-expanded="false">
+    <button class="mobile-nav-toggle" id="hamburger" aria-label="Öppna meny" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>

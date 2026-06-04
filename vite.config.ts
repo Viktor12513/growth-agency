@@ -24,6 +24,7 @@ export default defineConfig({
         seoPris: resolve(__dirname, 'seo-pris/index.html'),
         lokalSeo: resolve(__dirname, 'lokal-seo/index.html'),
         seoByraSmaforetag: resolve(__dirname, 'seo-byra-smaforetag/index.html'),
+        internationellSeo: resolve(__dirname, 'internationell-seo/index.html'),
         hemsidaForetagPris: resolve(__dirname, 'hemsida-foretag-pris/index.html'),
         hemsidaSmaforetag: resolve(__dirname, 'hemsida-smaforetag/index.html'),
         webbyraHelsingborg: resolve(__dirname, 'webbyra-helsingborg/index.html'),
