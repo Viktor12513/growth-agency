@@ -445,9 +445,9 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
 .nav-dropdown-trigger::after { content: none !important; }
 .nav-dropdown-menu {
   position: absolute !important;
-  top: calc(100% + 14px) !important;
+  top: 100% !important;
   left: 0 !important;
-  transform: translateY(8px) !important;
+  transform: translateY(6px) !important;
   width: min(760px, calc(100vw - 48px)) !important;
   display: grid !important;
   grid-template-columns: repeat(2, minmax(260px, 1fr)) !important;
@@ -461,6 +461,14 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
   visibility: hidden !important;
   pointer-events: none !important;
   z-index: 500 !important;
+}
+.nav-dropdown-menu::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -14px;
+  height: 14px;
 }
 .nav-dropdown:hover .nav-dropdown-menu,
 .nav-dropdown:focus-within .nav-dropdown-menu {
