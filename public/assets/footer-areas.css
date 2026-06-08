@@ -2,6 +2,10 @@
   grid-template-columns: minmax(220px, 2fr) repeat(3, minmax(140px, 1fr)) minmax(190px, 1.4fr) !important;
 }
 
+footer .footer-logo span.logo-domain {
+  color: #fff !important;
+}
+
 @media (max-width: 1100px) {
   .footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -1303,6 +1307,12 @@ body > header[role="banner"] .mobile-nav-toggle {
   .nav-dropdown-menu a {
     padding: 0.45rem 0 !important;
   }
+}
+
+/* Nordvaxt.se brand mark: keep the domain suffix green in page headers. */
+body > header[role="banner"] .nav-logo span.logo-domain,
+header[role="banner"] .nav-logo span.logo-domain {
+  color: #1a3a1f !important;
 }
 
 @media (max-width: 1280px) {

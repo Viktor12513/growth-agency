@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="120" viewBox="0 0 520 120" role="img" aria-labelledby="title desc">
-  <title id="title">Nordväxt AB logotyp</title>
-  <desc id="desc">Nordväxt AB logotyp med Nord och AB i mörkgrönt och växt i guld.</desc>
-  <rect width="520" height="120" fill="none"/>
-  <text x="24" y="76"
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="120" viewBox="0 0 560 120" role="img" aria-labelledby="title desc">
+  <title id="title">Nordväxt.se logotyp</title>
+  <desc id="desc">Nordväxt.se med Nord och punkt se i mörkgrönt och växt i guld.</desc>
+  <rect width="560" height="120" fill="none"/>
+  <text x="24" y="78"
         font-family="'DM Serif Display', Georgia, 'Times New Roman', serif"
-        font-size="54"
+        font-size="58"
         font-weight="600"
         letter-spacing="-0.8">
-    <tspan fill="#12391f">Nord</tspan><tspan fill="#c4943a">växt</tspan><tspan fill="#12391f"> AB</tspan>
+    <tspan fill="#12391f">Nord</tspan><tspan fill="#b1841d">växt</tspan><tspan fill="#12391f">.se</tspan>
   </text>
 </svg>

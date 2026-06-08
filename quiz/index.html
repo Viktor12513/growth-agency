@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital närvaro-koll | Nordväxt AB</title>
+  <title>Digital närvaro-koll | Nordväxt.se</title>
 <meta name="description" content="Gör Nordväxts kostnadsfria quiz och få en snabb indikation på hur stark din digitala närvaro är.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nordvaxt.se/quiz/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.nordvaxt.se/quiz/">
-<meta property="og:title" content="Digital närvaro-koll | Nordväxt AB">
+<meta property="og:title" content="Digital närvaro-koll | Nordväxt.se">
 <meta property="og:description" content="Svara på några frågor och se hur stark din digitala närvaro är.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -901,11 +901,28 @@ footer .container {
   gtag('config', 'G-ML4E8DFP54');
 </script>
   <link rel="stylesheet" href="/assets/footer-areas.css">
+<style id="nordvaxt-brand-overrides">
+.nav-logo .logo-domain,
+.footer-logo .logo-domain {
+  color: var(--forest, #1a3a1f) !important;
+  font: inherit;
+  font-weight: inherit;
+}
+footer .footer-logo .logo-domain {
+  color: #fff !important;
+}
+.brand-owner {
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .brand-owner { white-space: normal; }
+}
+</style>
 </head>
 <body>
 <header role="banner">
 <nav aria-label="Huvudnavigation">
-  <a href="/" class="nav-logo" aria-label="Nordväxt AB – startsida">Nord<span>växt</span> AB</a>
+  <a href="/" class="nav-logo" aria-label="Nordväxt.se – startsida">Nord<span>växt</span><span class="logo-domain">.se</span></a>
   <ul class="nav-links">
     <li><a href="/hemsida/">Hemsidor</a></li>
     <li class="nav-dropdown">
@@ -955,7 +972,7 @@ footer .container {
 
 <div class="quiz-shell"><div id="quiz-root">
   <div class="quiz-intro">
-    <div class="eyebrow">Nordväxt AB</div>
+    <div class="eyebrow">Nordväxt.se</div>
     <h1>Hur stark är din digitala närvaro?</h1>
     <p>Svara på 6 korta frågor och få ett personligt resultat – helt gratis och utan förpliktelser.</p>
   </div>
@@ -970,7 +987,7 @@ footer .container {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo" itemprop="name">Nord<span>v&auml;xt</span> AB</div>
+        <div class="footer-logo" itemprop="name">Nord<span>v&auml;xt</span><span class="logo-domain">.se</span></div>
         <p itemprop="description">Vi hj&auml;lper svenska f&ouml;retag att v&auml;xa online med professionella hemsidor, SEO och digital marknadsf&ouml;ring.</p>
       </div>
       <div class="footer-col">
@@ -1015,7 +1032,7 @@ footer .container {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Nordv&auml;xt AB. Org.nr: 559565-4277</p>
+      <p>&copy; 2025 Nordv&auml;xt.se. <span class="brand-owner">Drivs av Albin Hagman Consulting.</span> Org.nr: 559565-4277</p>
       <p><a href="/integritetspolicy/" class="footer-legal-link">Integritetspolicy</a> &middot; <a href="/integritetspolicy/#cookies" class="footer-legal-link">Cookies</a></p>
     </div>
   </div>

@@ -13,7 +13,7 @@
     "staticArticle": true,
     "contentSections": [],
     "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt AB"
+    "authorRole": "Digital strateg på Nordväxt.se"
   },
   {
     "slug": "vad-ar-meta-description",
@@ -154,7 +154,7 @@
       }
     ],
     "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt AB"
+    "authorRole": "Digital strateg på Nordväxt.se"
   },
   {
     "slug": "google-ads-eller-seo",
@@ -319,7 +319,7 @@
       }
     ],
     "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt AB"
+    "authorRole": "Digital strateg på Nordväxt.se"
   },
   {
     "slug": "vad-kostar-en-hemsida",
@@ -646,7 +646,7 @@
       }
     ],
     "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt AB"
+    "authorRole": "Digital strateg på Nordväxt.se"
   },
   {
     "slug": "hur-ofta-posta-instagram",
@@ -1289,7 +1289,7 @@
       }
     ],
     "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt AB"
+    "authorRole": "Digital strateg på Nordväxt.se"
   },
   {
     "slug": "linkedin-foretag-b2b",
@@ -2038,7 +2038,7 @@
       }
     ],
     "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt AB"
+    "authorRole": "Digital strateg på Nordväxt.se"
   },
   {
     "slug": "ai-seo-ai-overviews",
@@ -2210,7 +2210,7 @@
       }
     ],
     "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt AB"
+    "authorRole": "Digital strateg på Nordväxt.se"
   },
   {
     "slug": "vaelja-ratt-webbyra",
@@ -2351,7 +2351,7 @@
       }
     ],
     "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt AB"
+    "authorRole": "Digital strateg på Nordväxt.se"
   },
   {
     "slug": "google-ads-budget",
@@ -2633,7 +2633,7 @@
       }
     ],
     "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt AB"
+    "authorRole": "Digital strateg på Nordväxt.se"
   },
   {
     "slug": "meta-ads-vs-google-ads",

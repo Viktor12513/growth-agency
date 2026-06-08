@@ -841,6 +841,12 @@ body > nav:not(.breadcrumb) a {
   color: var(--gold, #c4943a) !important;
 }
 
+.nav-logo span.logo-domain,
+.logo span.logo-domain,
+.quiz-logo span.logo-domain {
+  color: #1a3a1f !important;
+}
+
 /* Unified Google Ads footer */
 footer[role="contentinfo"],
 footer {

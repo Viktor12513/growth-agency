@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="refresh" content="0; url=/blogg/">
 <link rel="canonical" href="https://www.nordvaxt.se/blog/">
-<title>Blogg | Nordv&auml;xt AB</title>
+<title>Blogg | Nordv&auml;xt.se</title>
 <script>
   const oldPath = window.location.pathname.replace(/^\/blog\/?/, '');
   const target = '/blogg/' + oldPath + window.location.search + window.location.hash;
@@ -21,6 +21,23 @@
   gtag('config', 'G-ML4E8DFP54');
 </script>
   <link rel="stylesheet" href="/assets/footer-areas.css">
+<style id="nordvaxt-brand-overrides">
+.nav-logo .logo-domain,
+.footer-logo .logo-domain {
+  color: var(--forest, #1a3a1f) !important;
+  font: inherit;
+  font-weight: inherit;
+}
+footer .footer-logo .logo-domain {
+  color: #fff !important;
+}
+.brand-owner {
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .brand-owner { white-space: normal; }
+}
+</style>
 </head>
 <body>
 <p><a href="/blogg/">G&aring; till bloggen</a></p>

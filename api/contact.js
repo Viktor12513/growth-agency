@@ -1,5 +1,5 @@
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'albin@nordvaxt.se';
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Nordväxt AB <kontakt@nordvaxt.se>';
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Nordväxt.se <kontakt@nordvaxt.se>';
 
 function clean(value) {
   return String(value || '').trim();

@@ -49,14 +49,14 @@ function setArticleStructuredData(post) {
       name: decodeHtml(authorLabel(post)),
       affiliation: {
         '@type': 'Organization',
-        name: 'Nordväxt AB',
+        name: 'Nordväxt.se',
         url: origin,
       },
     },
     dateModified: '2026-06-03',
     publisher: {
       '@type': 'Organization',
-      name: 'Nordväxt AB',
+      name: 'Nordväxt.se',
       url: origin,
     },
     mainEntityOfPage: `${origin}${postUrl(post)}`,
@@ -88,7 +88,7 @@ function postUrl(post) {
 }
 
 function authorLabel(post) {
-  return post.authorName || 'Nordv&auml;xt AB';
+  return post.authorName || 'Nordv&auml;xt.se';
 }
 
 function catClass(post) {
@@ -279,7 +279,7 @@ function renderListing() {
   const rest = blogPosts.filter((post) => post.slug !== featured.slug);
 
   setMeta({
-    title: 'Blogg om SEO, hemsidor & digital marknadsf&ouml;ring | Nordv&auml;xt AB',
+    title: 'Blogg om SEO, hemsidor & digital marknadsf&ouml;ring | Nordv&auml;xt.se',
     description: 'Tips, guider och r&aring;d om SEO, hemsidor och Google Ads f&ouml;r svenska f&ouml;retag.',
     canonical: `${origin}/blogg/`,
   });
@@ -477,7 +477,7 @@ function renderPost(post) {
   }
 
   setMeta({
-    title: `${post.title} | Nordv&auml;xt AB`,
+    title: `${post.title} | Nordv&auml;xt.se`,
     description: post.excerpt,
     canonical: `${origin}/blogg/${post.slug}`,
   });
@@ -546,7 +546,7 @@ function renderPost(post) {
 function renderNotFound() {
   resetArticleEvents();
   setMeta({
-    title: '404 - Artikeln hittades inte | Nordv&auml;xt AB',
+    title: '404 - Artikeln hittades inte | Nordv&auml;xt.se',
     description: 'Artikeln du s&ouml;ker finns inte. G&aring; tillbaka till bloggen f&ouml;r att hitta fler guider.',
     canonical: `${origin}/blogg/`,
   });

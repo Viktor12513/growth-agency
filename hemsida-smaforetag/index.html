@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hemsida för småföretag | Nordväxt AB</title>
+<title>Hemsida för småföretag | Nordväxt.se</title>
 <meta name="description" content="Hemsida för småföretag med mobilanpassad design, SEO-grund och fokus på fler kunder online.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.nordvaxt.se/hemsida-smaforetag/">
@@ -13,13 +13,30 @@
 <link rel="stylesheet" href="/assets/start.css">
 <link rel="stylesheet" href="/assets/footer-areas.css">
 <link rel="stylesheet" href="/assets/cluster.css">
+<style id="nordvaxt-brand-overrides">
+.nav-logo .logo-domain,
+.footer-logo .logo-domain {
+  color: var(--forest, #1a3a1f) !important;
+  font: inherit;
+  font-weight: inherit;
+}
+footer .footer-logo .logo-domain {
+  color: #fff !important;
+}
+.brand-owner {
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .brand-owner { white-space: normal; }
+}
+</style>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Hoppa till innehållet</a>
 <!-- NAV -->
 <header role="banner">
 <nav aria-label="Huvudnavigation">
-  <a href="/" class="nav-logo" aria-label="Nordväxt AB – startsida">Nord<span>växt</span> AB</a>
+  <a href="/" class="nav-logo" aria-label="Nordväxt.se – startsida">Nord<span>växt</span><span class="logo-domain">.se</span></a>
   <ul class="nav-links">
     <li><a href="/hemsida/">Hemsidor</a></li>
     <li class="nav-dropdown">
@@ -116,7 +133,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="footer-logo" itemprop="name">Nord<span>v&auml;xt</span> AB</div>
+        <div class="footer-logo" itemprop="name">Nord<span>v&auml;xt</span><span class="logo-domain">.se</span></div>
         <p itemprop="description">Vi hj&auml;lper svenska f&ouml;retag att v&auml;xa online med professionella hemsidor, SEO och digital marknadsf&ouml;ring.</p>
       </div>
       <div class="footer-col">
@@ -161,7 +178,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Nordv&auml;xt AB. Org.nr: 559565-4277</p>
+      <p>&copy; 2025 Nordv&auml;xt.se. <span class="brand-owner">Drivs av Albin Hagman Consulting.</span> Org.nr: 559565-4277</p>
       <p><a href="/integritetspolicy/" class="footer-legal-link">Integritetspolicy</a> &middot; <a href="/integritetspolicy/#cookies" class="footer-legal-link">Cookies</a></p>
     </div>
   </div>
