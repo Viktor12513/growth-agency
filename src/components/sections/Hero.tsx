@@ -24,7 +24,7 @@ export default function Hero() {
     Boka kostnadsfri tillväxtanalys
   </a>
 
-  <a href="tel:+46768283996" className="btn btn-secondary">
+  <a href="tel:+46735365788" className="btn btn-secondary">
     Ring oss
   </a>
 
