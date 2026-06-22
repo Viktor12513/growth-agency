@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section id="about" className="section about-section">
       <Container>
-        <h3 className="founders-title">Vi bakom Nordväxt</h3>
+        <h3 className="founders-title">Vi bakom Plasma MEDIA AB</h3>
         {/* Founder Cards */}
         <div className="founders">
 
@@ -31,7 +31,7 @@ export default function About() {
           <h2>Albin & Viktor</h2>
               <center>
           <p className="about-text">
-            Nordväxt drivs av ett litet och personligt team där strategi, kommunikation och produktion arbetar nära tillsammans genom hela processen. 
+            Plasma MEDIA AB drivs av ett litet och personligt team där strategi, kommunikation och produktion arbetar nära tillsammans genom hela processen. 
 <br></br><br></br>Vi hjälper företag att synas bättre online genom hemsidor, digital utveckling och löpande optimering. Med fokus på tydlig kommunikation och smarta lösningar bygger vi digitala plattformar som både ser bra ut och skapar resultat över tid. 
 
           </p></center>

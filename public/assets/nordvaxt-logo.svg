@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="560" height="120" viewBox="0 0 560 120" role="img" aria-labelledby="title desc">
-  <title id="title">Nordväxt.se logotyp</title>
-  <desc id="desc">Nordväxt.se med Nord och punkt se i mörkgrönt och växt i guld.</desc>
-  <rect width="560" height="120" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="120" viewBox="0 0 620 120" role="img" aria-labelledby="title desc">
+  <title id="title">Plasma MEDIA AB logotyp</title>
+  <desc id="desc">Plasma MEDIA AB i mörkgrönt och guld.</desc>
+  <rect width="620" height="120" fill="none"/>
   <text x="24" y="78"
         font-family="'DM Serif Display', Georgia, 'Times New Roman', serif"
-        font-size="58"
+        font-size="54"
         font-weight="600"
-        letter-spacing="-0.8">
-    <tspan fill="#12391f">Nord</tspan><tspan fill="#b1841d">växt</tspan><tspan fill="#12391f">.se</tspan>
+        letter-spacing="-0.2">
+    <tspan fill="#12391f">Plasma </tspan><tspan fill="#b1841d">MEDIA</tspan><tspan fill="#12391f"> AB</tspan>
   </text>
 </svg>

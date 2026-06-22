@@ -1,5 +1,5 @@
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'albin@nordvaxt.se';
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Nordväxt.se <kontakt@nordvaxt.se>';
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'albin@plasmamedia.se';
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Plasma MEDIA AB <kontakt@plasmamedia.se>';
 
 function clean(value) {
   return String(value || '').trim();
@@ -25,7 +25,7 @@ function buildEmailHtml(data) {
     ['Meddelande', data.message],
   ];
 
-  return `<h2>Ny kontaktförfrågan från Nordväxt.se</h2>
+  return `<h2>Ny kontaktförfrågan från Plasma MEDIA AB</h2>
   <table cellpadding="8" cellspacing="0" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px">
     ${rows.map(([label, value]) => `<tr>
       <td style="border:1px solid #ddd;font-weight:bold;background:#f7f3ea">${escapeHtml(label)}</td>
@@ -66,7 +66,7 @@ export default async function handler(req, res) {
       from: FROM_EMAIL,
       to: TO_EMAIL,
       reply_to: clean(data.email),
-      subject: 'Ny kontaktförfrågan från Nordväxt.se',
+      subject: 'Ny kontaktförfrågan från Plasma MEDIA AB',
       html: buildEmailHtml(data),
     }),
   });

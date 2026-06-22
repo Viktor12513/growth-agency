@@ -38,7 +38,7 @@ function buildPayload() {
 }
 
 function buildMailto(payload) {
-  const subject = encodeURIComponent('Ny kontaktförfrågan från Nordväxt.se');
+  const subject = encodeURIComponent('Ny kontaktförfrågan från Plasma MEDIA AB');
   const body = encodeURIComponent(
     `Förnamn: ${payload.fname}\n` +
     `Efternamn: ${payload.lname}\n` +
@@ -49,7 +49,7 @@ function buildMailto(payload) {
     `Meddelande:\n${payload.message}`
   );
 
-  return `mailto:albin@nordvaxt.se?subject=${subject}&body=${body}`;
+  return `mailto:albin@plasmamedia.se?subject=${subject}&body=${body}`;
 }
 
 function showSuccess() {

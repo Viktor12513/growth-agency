@@ -1309,7 +1309,7 @@ body > header[role="banner"] .mobile-nav-toggle {
   }
 }
 
-/* Nordvaxt.se brand mark: keep the domain suffix green in page headers. */
+/* Plasma MEDIA.se brand mark: keep the domain suffix green in page headers. */
 body > header[role="banner"] .nav-logo span.logo-domain,
 header[role="banner"] .nav-logo span.logo-domain {
   color: #1a3a1f !important;

@@ -15,7 +15,7 @@ export default function Cases() {
     {
       image: "/images/sorangs.png",
       quote:
-        "Nordväxt hjälpte oss skapa en tydlig struktur för vår digitala närvaro och generera fler kvalificerade förfrågningar från rätt kunder.",
+        "Plasma MEDIA AB hjälpte oss skapa en tydlig struktur för vår digitala närvaro och generera fler kvalificerade förfrågningar från rätt kunder.",
       company: "— Christer Gunnarsson",
       industry: "VD, Sörängs Glas",
     },
@@ -29,14 +29,14 @@ export default function Cases() {
     {
       image: "/images/pvsab.png",
       quote:
-        "Nordväxt hjälpte oss strukturera vår marknadsföring och skapa ett system för kontinuerlig tillväxt. Vi har sett en markant förbättring i både synlighet och konverteringar.",
+        "Plasma MEDIA AB hjälpte oss strukturera vår marknadsföring och skapa ett system för kontinuerlig tillväxt. Vi har sett en markant förbättring i både synlighet och konverteringar.",
       company: "— Piotr Zgliczynski",
       industry: "VD, PVS AB",
     },
     {
       image: "/images/sorangs.png",
       quote:
-        "Nordväxt hjälpte oss skapa en tydlig struktur för vår digitala närvaro och generera fler kvalificerade förfrågningar från rätt kunder.",
+        "Plasma MEDIA AB hjälpte oss skapa en tydlig struktur för vår digitala närvaro och generera fler kvalificerade förfrågningar från rätt kunder.",
       company: "— Christer Gunnarsson",
       industry: "VD, Sörängs Glas",
     },

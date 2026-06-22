@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
-  <title id="title">NordvÃ¤xt.se favicon</title>
+  <title id="title">Plasma MEDIA AB favicon</title>
   <rect width="512" height="512" rx="112" fill="#f8f5ef"/>
-  <path d="M128 350V144h60l136 128V144h60v224h-57L188 236v114h-60z" fill="#12391f"/>
-  <circle cx="360" cy="148" r="38" fill="#c9952e"/>
-  <path d="M112 392h288" stroke="#c9952e" stroke-width="26" stroke-linecap="round"/>
+  <path d="M142 370V136h112c58 0 96 34 96 86s-38 87-96 87h-48v61h-64zm64-115h42c23 0 38-12 38-33 0-20-15-32-38-32h-42v65z" fill="#12391f"/>
+  <circle cx="348" cy="156" r="42" fill="#c9952e"/>
+  <path d="M132 404h248" stroke="#c9952e" stroke-width="24" stroke-linecap="round"/>
 </svg>

@@ -6,20 +6,20 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "xn--nordvxt-9wa.se" }],
-      "destination": "https://www.nordvaxt.se/:path*",
+      "has": [{ "type": "host", "value": "plasmamedia.se" }],
+      "destination": "https://www.plasmamedia.se/:path*",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.xn--nordvxt-9wa.se" }],
-      "destination": "https://www.nordvaxt.se/:path*",
+      "has": [{ "type": "host", "value": "www.plasmamedia.se" }],
+      "destination": "https://www.plasmamedia.se/:path*",
       "permanent": true
     },
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "nordvaxt.se" }],
-      "destination": "https://www.nordvaxt.se/:path*",
+      "has": [{ "type": "host", "value": "plasmamedia.se" }],
+      "destination": "https://www.plasmamedia.se/:path*",
       "permanent": true
     },
     { "source": "/blog/:slug*", "destination": "/blogg/:slug*", "permanent": true }

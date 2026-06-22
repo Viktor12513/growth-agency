@@ -20,7 +20,7 @@ const productCatalog = {
   'seo-dominant': { name: 'SEO Dominant', description: 'Avancerad SEO f\u00f6r f\u00f6retag som vill dominera s\u00f6kresultaten i sin bransch.', priceType: 'monthly', monthly: 9995, agreement: true },
 };
 
-const storageKey = 'nordvaxt-request-cart';
+const storageKey = 'plasmamedia-request-cart';
 let cart = loadCart();
 
 const formatCurrency = (value) => new Intl.NumberFormat('sv-SE').format(value) + ' kr';

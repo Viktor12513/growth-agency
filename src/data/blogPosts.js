@@ -12,8 +12,8 @@
     "featured": true,
     "staticArticle": true,
     "contentSections": [],
-    "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt.se"
+    "authorName": "Albin på Plasma MEDIA AB",
+    "authorRole": "Digital strateg på Plasma MEDIA AB"
   },
   {
     "slug": "vad-ar-meta-description",
@@ -153,8 +153,8 @@
         ]
       }
     ],
-    "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt.se"
+    "authorName": "Albin på Plasma MEDIA AB",
+    "authorRole": "Digital strateg på Plasma MEDIA AB"
   },
   {
     "slug": "google-ads-eller-seo",
@@ -281,7 +281,7 @@
       {
         "heading": "Varför du ofta bör kombinera båda",
         "body": [
-          "Här är den ärliga sanningen som vi på Nordväxt alltid pratar om: <strong>för de flesta etablerade företag är svaret inte \"antingen eller\" – det är \"båda, men på rätt sätt\".</strong>",
+          "Här är den ärliga sanningen som vi på Plasma MEDIA AB alltid pratar om: <strong>för de flesta etablerade företag är svaret inte \"antingen eller\" – det är \"båda, men på rätt sätt\".</strong>",
           "Tänk dig en kapplöpning. SEO är maratonlöparen – lugn, metodisk, bygger upp sin fördel under loppets gång och vinner på lång sikt. Google Ads är sprintern – exploderar ut ur startblocken, tar täten direkt och kan hålla den ett tag. Problemet är att en ren sprintare inte klarar ett maraton, och en ren maratonlöpare hinner aldrig ikapp om de startar för sent.",
           "Den smarta kombinationen ser ut ungefär så här: du använder Google Ads för att generera trafik och leads <em>nu</em>, medan du parallellt bygger upp ditt SEO-fundament. Med tiden minskar du gradvis beroendet av betald trafik och mer och mer av dina besökare kommer organiskt – gratis.",
           "De företag som <strong>kombinerar Google Ads och SEO</strong> vinner på båda planen: de fångar upp köpredo kunder nu via annonser, och de bygger ett <strong>långsiktigt, självförsörjande kundflöde</strong> via organisk söktrafik. Det ena förstärker det andra – sökordsdata från Ads gör din SEO skarpare, och en stark SEO-sida ger bättre kvalitetspoäng i dina Ads-kampanjer."
@@ -318,8 +318,8 @@
         ]
       }
     ],
-    "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt.se"
+    "authorName": "Albin på Plasma MEDIA AB",
+    "authorRole": "Digital strateg på Plasma MEDIA AB"
   },
   {
     "slug": "vad-kostar-en-hemsida",
@@ -459,7 +459,7 @@
         ]
       }
     ],
-    "authorName": "Nordväxt Webbteam",
+    "authorName": "Plasma MEDIA AB Webbteam",
     "authorRole": "Webbstrateger och designers för konverterande hemsidor"
   },
   {
@@ -469,7 +469,7 @@
     "categoryKey": "seo",
     "date": "14 apr 2025",
     "readingTime": "14 min l&auml;sning",
-    "excerpt": "Lär dig allt om lokal SEO: Google Business Profile, lokala sökord, NAP-konsistens och hur du rankar högre i din stad. Praktisk guide från Nordväxt i Helsingborg.",
+    "excerpt": "Lär dig allt om lokal SEO: Google Business Profile, lokala sökord, NAP-konsistens och hur du rankar högre i din stad. Praktisk guide från Plasma MEDIA AB i Helsingborg.",
     "coverStyle": "seo",
     "icon": "search",
     "featured": false,
@@ -645,8 +645,8 @@
         ]
       }
     ],
-    "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt.se"
+    "authorName": "Albin på Plasma MEDIA AB",
+    "authorRole": "Digital strateg på Plasma MEDIA AB"
   },
   {
     "slug": "hur-ofta-posta-instagram",
@@ -786,7 +786,7 @@
         ]
       }
     ],
-    "authorName": "Nordväxt Social-team",
+    "authorName": "Plasma MEDIA AB Social-team",
     "authorRole": "Specialister på innehåll och innehållsplanering"
   },
   {
@@ -927,7 +927,7 @@
         ]
       }
     ],
-    "authorName": "Nordväxt Webbteam",
+    "authorName": "Plasma MEDIA AB Webbteam",
     "authorRole": "Webbstrateger och designers för konverterande hemsidor"
   },
   {
@@ -1089,7 +1089,7 @@
           "Google Ads budstrategier är inte svårare än det här: <strong>matcha strategin med din situation</strong>. Ny och lite data? Börja enkelt med maximera klick eller manuell CPC. Samlat data och vet dina mål? Byt till Smart Bidding. Driver e-handel med varierande marginal? Mål-ROAS är din bästa kompis.",
           "Det absolut vanligaste misstaget vi ser är att företag hoppar direkt till avancerade strategier utan data att backa upp dem, eller att de byter strategi så ofta att algoritmen aldrig hinner lära sig. Ha tålamod. Samla data. Optimera metodiskt.",
           "Kom ihåg: budstrategin är en del av pusslet – men den funkar inte i ett vakuum. Annonstexter, sökord, negativa sökord, landningssidor och konverteringsspårning spelar minst lika stor roll. Vill du ha hjälp med att sätta ihop hela bilden?",
-          "<a href=\"https://www.nordvaxt.se/kontakt/#contact-form\" style=\"display:inline-block;background:var(--gold-mid);color:var(--cream-pure);font-weight:700;font-size:0.95rem;padding:13px 26px;border-radius:8px;text-decoration:none;transition:background 0.18s;\">Boka en gratis genomgång →</a>"
+          "<a href=\"https://www.plasmamedia.se/kontakt/#contact-form\" style=\"display:inline-block;background:var(--gold-mid);color:var(--cream-pure);font-weight:700;font-size:0.95rem;padding:13px 26px;border-radius:8px;text-decoration:none;transition:background 0.18s;\">Boka en gratis genomgång →</a>"
         ]
       },
       {
@@ -1099,7 +1099,7 @@
         ]
       }
     ],
-    "authorName": "Nordväxt Ads-team",
+    "authorName": "Plasma MEDIA AB Ads-team",
     "authorRole": "Specialister på Google Ads, mätning och konvertering"
   },
   {
@@ -1162,7 +1162,7 @@
         "bullets": [
           "Typ - Vad söker de? - Exempel - Rätt innehåll",
           "Informationell - Vill lära sig något - \"vad är SEO\" - Bloggpost, guide, video",
-          "Navigationell - Vill hitta en specifik sajt - \"nordväxt hemsida\" - Er startsida / om-sida",
+          "Navigationell - Vill hitta en specifik sajt - \"plasma media hemsida\" - Er startsida / om-sida",
           "Kommersiell - Undersöker alternativ inför köp - \"bästa SEO-byrå stockholm\" - Jämförelsesida, kundcase",
           "Transaktionell - Redo att köpa eller kontakta - \"anlita SEO-byrå pris\" - Tjänstesida, kontaktformulär"
         ]
@@ -1247,7 +1247,7 @@
           "<strong>H1-rubriken:</strong> Din sidas huvudrubrik. Ska innehålla primärt sökord, men skriv för läsaren – inte bara för Google. Det ska låta naturligt.",
           "<strong>De första 100 orden:</strong> Försök att ta med sökordet tidigt i brödtexten. Inte klumpigt, utan naturligt. Det signalerar till Google att sidan faktiskt handlar om det den utger sig för att handla om.",
           "<strong>Alt-texter på bilder:</strong> Beskriv bilderna med relevanta sökord. Det är lättvinniga signaler som många glömmer.",
-          "<strong>URL-strukturen:</strong> En URL som nordvaxt.se/seo/nyckelordsanalys är bättre än nordvaxt.se/page?id=4392. Enkelt, läsbart och sökordsrelevant.",
+          "<strong>URL-strukturen:</strong> En URL som plasmamedia.se/seo/nyckelordsanalys är bättre än plasmamedia.se/page?id=4392. Enkelt, läsbart och sökordsrelevant.",
           "Att tvångsmässigt proppa in ditt sökord på varje möjlig plats i texten – det kallas keyword stuffing och det fungerar inte. Google är smart nog att se igenom det och kan faktiskt straffa din sida för det. Skriv naturlig text för människor och låt sökordet finnas med där det passar organiskt."
         ]
       },
@@ -1288,8 +1288,8 @@
         ]
       }
     ],
-    "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt.se"
+    "authorName": "Albin på Plasma MEDIA AB",
+    "authorRole": "Digital strateg på Plasma MEDIA AB"
   },
   {
     "slug": "linkedin-foretag-b2b",
@@ -1476,7 +1476,7 @@
         ]
       }
     ],
-    "authorName": "Nordväxt Social-team",
+    "authorName": "Plasma MEDIA AB Social-team",
     "authorRole": "Specialister på innehåll och innehållsplanering"
   },
   {
@@ -1617,7 +1617,7 @@
         ]
       }
     ],
-    "authorName": "Nordväxt Webbteam",
+    "authorName": "Plasma MEDIA AB Webbteam",
     "authorRole": "Webbstrateger och designers för konverterande hemsidor"
   },
   {
@@ -1758,7 +1758,7 @@
         ]
       }
     ],
-    "authorName": "Nordväxt Ads-team",
+    "authorName": "Plasma MEDIA AB Ads-team",
     "authorRole": "Specialister på Google Ads, mätning och konvertering"
   },
   {
@@ -1899,7 +1899,7 @@
         ]
       }
     ],
-    "authorName": "Nordväxt Social-team",
+    "authorName": "Plasma MEDIA AB Social-team",
     "authorRole": "Specialister på innehåll och innehållsplanering"
   },
   {
@@ -2037,8 +2037,8 @@
         ]
       }
     ],
-    "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt.se"
+    "authorName": "Albin på Plasma MEDIA AB",
+    "authorRole": "Digital strateg på Plasma MEDIA AB"
   },
   {
     "slug": "ai-seo-ai-overviews",
@@ -2209,8 +2209,8 @@
         ]
       }
     ],
-    "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt.se"
+    "authorName": "Albin på Plasma MEDIA AB",
+    "authorRole": "Digital strateg på Plasma MEDIA AB"
   },
   {
     "slug": "vaelja-ratt-webbyra",
@@ -2350,8 +2350,8 @@
         ]
       }
     ],
-    "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt.se"
+    "authorName": "Albin på Plasma MEDIA AB",
+    "authorRole": "Digital strateg på Plasma MEDIA AB"
   },
   {
     "slug": "google-ads-budget",
@@ -2491,7 +2491,7 @@
         ]
       }
     ],
-    "authorName": "Nordväxt Ads-team",
+    "authorName": "Plasma MEDIA AB Ads-team",
     "authorRole": "Specialister på Google Ads, mätning och konvertering"
   },
   {
@@ -2632,8 +2632,8 @@
         ]
       }
     ],
-    "authorName": "Albin på Nordväxt",
-    "authorRole": "Digital strateg på Nordväxt.se"
+    "authorName": "Albin på Plasma MEDIA AB",
+    "authorRole": "Digital strateg på Plasma MEDIA AB"
   },
   {
     "slug": "meta-ads-vs-google-ads",
@@ -2809,7 +2809,7 @@
           "Meta Ads har generellt lägre kostnad per klick (3–10 kr) jämfört med Google Ads (15–50 kr). Men konverteringsgraden är vanligtvis högre på Google, vilket gör att kostnaden per lead ofta blir likvärdig. Billigare klick är inte detsamma som bättre ROI – mät alltid i kostnad per faktiskt lead eller försäljning.",
           "Absolut – och det är ofta den bästa strategin. Meta Ads bygger medvetenhet och värmer upp målgruppen. Google Ads fångar de som sedan söker aktivt. Kombinationen skapar en full-funnel-strategi som fungerar på alla delar av kundresan. Rekommenderad minimibudget för en kombinationsstrategi är 6 000–8 000 kr per månad totalt.",
           "Google Ads kan generera leads redan inom de första dagarna. Meta Ads tar vanligtvis 2–4 veckor för algoritmen att lämna inlärningsfasen. För en rättvis bedömning av Meta-kampanjer, ge dem minst 30 dagar och minst 50 konverteringar. Google-kampanjer kan utvärderas efter 2 veckor med tillräcklig budget.",
-          "Tekniskt sett kan du sätta upp kampanjer själv. Men utan erfarenhet är det lätt att bränna budget på felaktiga inställningar, dåliga sökordsmatchningar eller annonser som inte konverterar. En seriös byrå ska kunna visa tydlig ROI på sin avgift. Vi på Nordväxt erbjuder alltid en kostnadsfri genomgång utan förpliktelse där vi tittar på din specifika situation."
+          "Tekniskt sett kan du sätta upp kampanjer själv. Men utan erfarenhet är det lätt att bränna budget på felaktiga inställningar, dåliga sökordsmatchningar eller annonser som inte konverterar. En seriös byrå ska kunna visa tydlig ROI på sin avgift. Vi på Plasma MEDIA AB erbjuder alltid en kostnadsfri genomgång utan förpliktelse där vi tittar på din specifika situation."
         ]
       },
       {
@@ -2819,7 +2819,7 @@
         ]
       }
     ],
-    "authorName": "Nordväxt Ads-team",
+    "authorName": "Plasma MEDIA AB Ads-team",
     "authorRole": "Specialister på Google Ads, mätning och konvertering"
   }
 ];

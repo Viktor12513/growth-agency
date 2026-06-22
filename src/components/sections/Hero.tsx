@@ -7,7 +7,7 @@ export default function Hero() {
 
       <Container>
         <div className="hero-card">
-          <p className="hero-eyebrow">Nordväxt.se</p>
+          <p className="hero-eyebrow">Plasma MEDIA AB</p>
 
           <h1>
             Bygg ett förutsägbart
