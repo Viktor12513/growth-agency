@@ -23,6 +23,15 @@ function decodeHtml(value) {
   return textarea.value;
 }
 
+function toIsoDate(value) {
+  const months = {
+    jan: '01', feb: '02', mar: '03', apr: '04', maj: '05', jun: '06',
+    jul: '07', aug: '08', sep: '09', okt: '10', nov: '11', dec: '12',
+  };
+  const [day, month, year] = value.trim().split(/\s+/);
+  return `${year}-${months[month]}-${day.padStart(2, '0')}`;
+}
+
 function setMeta({ title, description, canonical }) {
   pageTitle.textContent = decodeHtml(title);
   descriptionMeta?.setAttribute('content', decodeHtml(description));
@@ -43,7 +52,7 @@ function setArticleStructuredData(post) {
     '@type': 'BlogPosting',
     headline: decodeHtml(post.title),
     description: decodeHtml(post.excerpt),
-    datePublished: post.date,
+    datePublished: toIsoDate(post.date),
     author: {
       '@type': 'Person',
       name: decodeHtml(authorLabel(post)),
@@ -53,7 +62,7 @@ function setArticleStructuredData(post) {
         url: origin,
       },
     },
-    dateModified: '2026-06-03',
+    dateModified: toIsoDate(post.date),
     publisher: {
       '@type': 'Organization',
       name: 'Plasma MEDIA AB',
@@ -275,8 +284,9 @@ function attachNewsletterEvent() {
 
 function renderListing() {
   resetArticleEvents();
-  const featured = blogPosts.find((post) => post.featured) || blogPosts[0];
-  const rest = blogPosts.filter((post) => post.slug !== featured.slug);
+  const sortedPosts = [...blogPosts].sort((a, b) => toIsoDate(b.date).localeCompare(toIsoDate(a.date)));
+  const featured = sortedPosts.find((post) => post.featured) || sortedPosts[0];
+  const rest = sortedPosts.filter((post) => post.slug !== featured.slug);
 
   setMeta({
     title: 'Blogg om SEO, hemsidor & digital marknadsf&ouml;ring | Plasma MEDIA AB',
@@ -487,7 +497,7 @@ function renderPost(post) {
     <main class="article-page article-page--dynamic">
       <div class="article-wrap">
         <article class="blog-post blog-post--guide" itemscope itemtype="https://schema.org/BlogPosting">
-          <meta itemprop="datePublished" content="${post.date}">
+          <meta itemprop="datePublished" content="${toIsoDate(post.date)}">
           <header class="article-header">
             <a href="/blogg/" class="article-back article-back--guide">Tillbaka till bloggen</a>
             <div class="post-badges">

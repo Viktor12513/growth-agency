@@ -114,6 +114,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
+  <url><loc>https://www.plasmamedia.se/webbyra/</loc><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://www.plasmamedia.se/webbyra-uppsala/</loc><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://www.plasmamedia.se/webbyra-linkoping/</loc><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://www.plasmamedia.se/webbyra-jonkoping/</loc><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://www.plasmamedia.se/webbyra-lund/</loc><lastmod>2026-06-29</lastmod></url>
+  <url><loc>https://www.plasmamedia.se/webbyra-norrkoping/</loc><lastmod>2026-06-29</lastmod></url>
   <url>
     <loc>https://www.plasmamedia.se/blogg/hur-lang-tid-tar-seo/</loc>
     <lastmod>2026-05-31</lastmod>
@@ -269,5 +275,21 @@
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://www.plasmamedia.se/blogg/vad-kostar-google-ads-2026</loc>
+    <lastmod>2026-06-29</lastmod>
+  </url>
+  <url>
+    <loc>https://www.plasmamedia.se/blogg/vad-kostar-seo-2026</loc>
+    <lastmod>2026-06-27</lastmod>
+  </url>
+  <url>
+    <loc>https://www.plasmamedia.se/blogg/hur-syns-man-i-chatgpt</loc>
+    <lastmod>2026-06-24</lastmod>
+  </url>
+  <url>
+    <loc>https://www.plasmamedia.se/blogg/bygg-wordpress-hemsida-2026</loc>
+    <lastmod>2026-06-21</lastmod>
   </url>
 </urlset>
