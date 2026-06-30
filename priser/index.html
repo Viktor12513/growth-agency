@@ -67,7 +67,7 @@
   .toggle-pill .bp.gold{background:var(--gold2)}
 
   .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
-  .cards-grid.seo-cards-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .cards-grid.seo-cards-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
   .cards-grid.web-cards-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
   .card{background:#fff;border:1.5px solid var(--border2);border-radius:var(--r);padding:26px 22px;position:relative;transition:border-color 0.2s,transform 0.2s}
   .card:hover{border-color:var(--green3);transform:translateY(-2px)}
@@ -99,6 +99,7 @@
   .custom-price-wrap input{width:100%;border:0;background:transparent;outline:0;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text)}
   .custom-price-wrap span{font-size:12px;color:var(--text3);white-space:nowrap}
   .offert-tag{display:inline-block;background:var(--gold-bg);border:1px solid #D4A017;color:var(--gold);font-size:11px;font-weight:500;padding:3px 10px;border-radius:6px;margin-bottom:4px}
+  .card > .offert-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);margin:0;white-space:nowrap}
 
   .addon-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
   .addon{background:#fff;border:1.5px solid var(--border2);border-radius:var(--r-sm);padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -315,6 +316,7 @@ footer .footer-logo .logo-domain {
 </style>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="alternate icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/assets/site-shell.css">
 </head>
 <body>
 
@@ -379,24 +381,24 @@ footer .footer-logo .logo-domain {
   <!-- HEMSIDOR -->
   <div class="sec-label g">Hemsidor – engångspris</div>
   <div class="sec-title">Hitta rätt hemsidepaket</div>
-  <div class="sec-sub">Alla paket inkluderar mobilanpassning, SEO-grund och 1 års support efter lansering.</div>
+  <div class="sec-sub">Alla paket inkluderar mobilanpassning, teknisk SEO-grund, säker lansering och 1 års support.</div>
   <div class="cards-grid web-cards-grid">
     <div class="card">
       <div class="c-lbl">Kom igång</div>
       <div class="c-name">Start</div>
-      <div class="c-desc">Perfekt för dig som precis ska börja online eller vill byta ut en gammal hemsida.</div>
+      <div class="c-desc">En professionell företagshemsida för ett tydligt erbjudande och en enkel väg till kontakt.</div>
       <div class="c-price-box">
-        <div class="price-main">14 999 kr</div>
+        <div class="price-main">19 999 kr</div>
         <div class="price-note">engångspris, ex. moms</div>
       </div>
       <ul class="feats">
-        <li>Upp till 5 sidor</li>
-        <li>Professionell design</li>
-        <li>Mobilanpassad (responsive)</li>
-        <li>SEO-grundoptimering</li>
-        <li>Kontaktformulär</li>
-        <li>Google Analytics-uppsättning</li>
-        <li class="no">Logotyp & grafisk profil</li>
+        <li>Upp till 5 innehållssidor</li>
+        <li>Design anpassad efter ert varumärke</li>
+        <li>Mobil-, surfplatte- och desktopanpassning</li>
+        <li>Teknisk SEO-grund och metadata</li>
+        <li>Kontaktformulär och tydliga CTA:er</li>
+        <li>Analytics och Search Console</li>
+        <li>Cookiebanner och grundläggande GDPR-stöd</li>
         <li class="no">Blogg / nyhetssektion</li>
         <li class="no">Webshop / e-handel</li>
       </ul>
@@ -406,20 +408,20 @@ footer .footer-logo .logo-domain {
       <div class="c-badge g">⭐ Mest vald</div>
       <div class="c-lbl">För tillväxt</div>
       <div class="c-name">Tillväxt</div>
-      <div class="c-desc">För dig som vill ha en komplett digital närvaro som faktiskt driver kunder.</div>
+      <div class="c-desc">För företag som behöver fler landningssidor, löpande innehåll och tydlig konverteringsmätning.</div>
       <div class="c-price-box">
-        <div class="price-main">24 999 kr</div>
+        <div class="price-main">29 999 kr</div>
         <div class="price-note">engångspris, ex. moms</div>
       </div>
       <ul class="feats">
-        <li>Upp till 10 sidor</li>
-        <li>Skräddarsydd design</li>
-        <li>Mobilanpassad (responsive)</li>
-        <li>SEO-grundoptimering</li>
+        <li>Upp till 10 innehållssidor</li>
+        <li>Skräddarsydd design och sidmallar</li>
+        <li>Allt i Start-paketet</li>
         <li>Blogg / nyhetssektion</li>
-        <li>Google Analytics + Search Console</li>
-        <li>CMS – uppdatera själv enkelt</li>
-        <li>Logotyp & grafisk profil ingår</li>
+        <li>Konverteringsspårning för formulär och samtal</li>
+        <li>CMS och redaktörsutbildning</li>
+        <li>Grundläggande text- och bildstöd</li>
+        <li>Prestanda- och tillgänglighetskontroll</li>
         <li class="no">Webshop / e-handel</li>
       </ul>
       <button class="c-btn">Välj Tillväxt</button>
@@ -427,52 +429,43 @@ footer .footer-logo .logo-domain {
     <div class="card">
       <div class="c-lbl">Fullständig lösning</div>
       <div class="c-name">Premium</div>
-      <div class="c-desc">Komplex sajt, webshop eller varumärkesplattform. Vi skräddarsyr allt.</div>
+      <div class="c-desc">En mer omfattande webbplats med avancerad struktur, integrationer och stöd genom hela innehållsarbetet.</div>
       <div class="c-price-box">
-        <div class="price-main">Från 39 999 kr</div>
+        <div class="price-main">39 999 kr</div>
         <div class="price-note">engångspris, ex. moms</div>
       </div>
       <ul class="feats">
-        <li>Obegränsat antal sidor</li>
-        <li>Unik design från grunden</li>
-        <li>Webshop / e-handel</li>
-        <li>Avancerad SEO-struktur</li>
-        <li>Integrationer (CRM, bokn., m.m.)</li>
-        <li>Logotyp & grafisk profil ingår</li>
-        <li>Utbildning av ditt team</li>
+        <li>Upp till 15 innehållssidor</li>
+        <li>Unik design och komponentbibliotek</li>
+        <li>Allt i Tillväxt-paketet</li>
+        <li>Avancerad informations- och SEO-struktur</li>
+        <li>En standardintegration, exempelvis bokning eller CRM</li>
+        <li>Utökat stöd för texter och innehåll</li>
+        <li>Utbildning och dokumentation</li>
         <li>Dedikerad projektledare</li>
         <li>1 års support efter lansering</li>
       </ul>
       <button class="c-btn">Välj Premium</button>
     </div>
     <div class="card">
-      <div class="offert-tag">Valfritt pris</div>
+      <div class="offert-tag">Anpassat pris</div>
       <div class="c-lbl">Skräddarsytt projekt</div>
       <div class="c-name">Hemsida Offert</div>
-      <div class="c-desc">För projekt där du vill sätta ett eget engångspris och få en tvåspråkig hemsida anpassad efter omfattning, mål och budget.</div>
+      <div class="c-desc">För e-handel, medlemsportaler, flera språk, specialintegrationer eller projekt med fler än 15 sidor.</div>
       <div class="c-price-box">
         <div class="price-main">Offert</div>
-        <div class="price-note">Fyll i önskat engångspris · ex. moms</div>
+        <div class="price-note">Pris efter behovsanalys · ex. moms</div>
         <div class="price-free"></div>
       </div>
       <ul class="feats">
-        <li>Valfri projektbudget</li>
-        <li>Tvåspråkig sida på svenska och engelska</li>
-        <li>Anpassad sidstruktur</li>
-        <li>Design och innehåll enligt offert</li>
-        <li>Mobilanpassning</li>
-        <li>SEO-grund enligt överenskommelse</li>
-        <li>Leverans 1–3 veckor</li>
-        <li>1 års support efter lansering</li>
+        <li>Gemensam workshop och kravspecifikation</li>
+        <li>Anpassad design, teknik och sidstruktur</li>
+        <li>E-handel eller specialfunktioner vid behov</li>
+        <li>Integrationer enligt kravspecifikation</li>
+        <li>Plan för innehåll, SEO och migrering</li>
+        <li>Tidsplan och support enligt offert</li>
       </ul>
-      <div class="custom-price-field">
-        <label for="web-offert-price">Engångspris</label>
-        <div class="custom-price-wrap">
-          <input id="web-offert-price" type="number" min="1" step="1" inputmode="numeric" placeholder="t.ex. 30000">
-          <span>kr</span>
-        </div>
-      </div>
-      <button class="c-btn" data-prod-id="web-offert">Välj offert</button>
+      <button class="c-btn" data-prod-id="web-offert">Begär offert</button>
     </div>
   </div>
 
@@ -484,9 +477,9 @@ footer .footer-logo .logo-domain {
   <div class="sec-sub">Betala bara när någon klickar. Vi sköter kampanjerna – du fokuserar på ditt företag.</div>
   <div class="toggle-wrap">
     <div class="toggle-pill" id="ads-toggle">
-      <button class="on" onclick="setTerm('ads',6,this)">6 månader</button>
-      <button onclick="setTerm('ads',12,this)">12 månader <span class="bp">1 mån gratis</span></button>
-      <button onclick="setTerm('ads',24,this)">24 månader <span class="bp gold">3 mån gratis</span></button>
+      <button class="on" onclick="setTerm('ads',12,this)">12 månader</button>
+      <button onclick="setTerm('ads',24,this)">24 månader <span class="bp gold">Rekommenderas</span></button>
+      <button onclick="setTerm('ads',36,this)">36 månader</button>
     </div>
   </div>
   <div class="cards-grid">
@@ -496,7 +489,7 @@ footer .footer-logo .logo-domain {
       <div class="c-desc">Testa Google Ads och synas lokalt med en effektiv sökkampanj.</div>
       <div class="c-price-box">
         <div class="price-main">2 995 kr<span class="price-sfx">/mån</span></div>
-        <div class="price-note" id="ads-bas-note">6 mån avtal · ex. moms · annonsbudget tillkommer</div>
+        <div class="price-note" id="ads-bas-note">Minst 12 mån avtal · ex. moms · annonsbudget tillkommer</div>
         <div class="price-free" id="ads-bas-free"></div>
       </div>
       <ul class="feats">
@@ -519,7 +512,7 @@ footer .footer-logo .logo-domain {
       <div class="c-desc">Skala trafiken och driv fler leads med optimerade flerkampanjer.</div>
       <div class="c-price-box">
         <div class="price-main">5 995 kr<span class="price-sfx">/mån</span></div>
-        <div class="price-note" id="ads-tillvaxt-note">6 mån avtal · ex. moms · annonsbudget tillkommer</div>
+        <div class="price-note" id="ads-tillvaxt-note">Minst 12 mån avtal · ex. moms · annonsbudget tillkommer</div>
         <div class="price-free" id="ads-tillvaxt-free"></div>
       </div>
       <ul class="feats">
@@ -564,108 +557,110 @@ footer .footer-logo .logo-domain {
   <!-- SEO -->
   <div class="sec-label g3">SEO – löpande abonnemang</div>
   <div class="sec-title">Bygg organisk synlighet</div>
-  <div class="sec-sub">SEO är ett maraton, inte en sprint. Välj den nivå som passar din ambition och budget.</div>
+  <div class="sec-sub">Minsta avtalstid är 12 månader. Vi rekommenderar 24 månader för stabil utveckling, och erbjuder även 36 månader.</div>
   <div class="toggle-wrap">
     <div class="toggle-pill" id="seo-toggle">
-      <button class="on" onclick="setTerm('seo',6,this)">6 månader</button>
-      <button onclick="setTerm('seo',12,this)">12 månader <span class="bp">1 mån gratis</span></button>
-      <button onclick="setTerm('seo',24,this)">24 månader <span class="bp gold">3 mån gratis</span></button>
+      <button class="on" onclick="setTerm('seo',12,this)">12 månader</button>
+      <button onclick="setTerm('seo',24,this)">24 månader <span class="bp gold">Rekommenderas</span></button>
+      <button onclick="setTerm('seo',36,this)">36 månader</button>
     </div>
   </div>
   <div class="cards-grid seo-cards-grid">
     <div class="card">
       <div class="c-lbl">Kom igång</div>
-      <div class="c-name">SEO Lite</div>
-      <div class="c-desc">Första steget mot bättre synlighet utan stor investering.</div>
+      <div class="c-name">Grundläggande SEO</div>
+      <div class="c-desc">För mindre webbplatser som behöver en stabil teknisk grund och löpande förbättring av de viktigaste sidorna.</div>
       <div class="c-price-box">
         <div class="price-main">999 kr<span class="price-sfx">/mån</span></div>
-        <div class="price-note" id="seo-lite-note">6 mån avtal · ex. moms</div>
+        <div class="price-note" id="seo-lite-note">Minst 12 mån avtal · ex. moms</div>
         <div class="price-free" id="seo-lite-free"></div>
       </div>
       <ul class="feats">
-        <li>3 nyckelord att ranka på</li>
-        <li>Enkel on-page-granskning</li>
-        <li>Google Business Profile-setup</li>
-        <li>Kvartalsvis rapport</li>
-        <li>Löpande underhåll ingår</li>
-        <li class="no">SEO-optimerade artiklar</li>
-        <li class="no">Länkbyggnad</li>
-        <li class="no">Teknisk SEO-audit</li>
-        <li class="no">Strategimöten</li>
+        <li>Teknisk grundkontroll vid start</li>
+        <li>Optimering av upp till 3 prioriterade sidor</li>
+        <li>Metadata och internlänkning</li>
+        <li>Kontroll av indexering och sitemap</li>
+        <li>Kvartalsvis uppföljning</li>
+        <li>E-postsupport</li>
       </ul>
-      <button class="c-btn">Välj Lite</button>
+      <button class="c-btn">Välj Grundläggande</button>
     </div>
     <div class="card feat">
       <div class="c-badge g">⭐ Mest vald</div>
       <div class="c-lbl">Lokal synlighet</div>
       <div class="c-name">SEO Lokal</div>
-      <div class="c-desc">Perfekt för lokala tjänsteföretag som vill synas i sin stad eller region.</div>
+      <div class="c-desc">För lokala tjänsteföretag som vill synas i en stad eller kommun och stärka sin närvaro i Google Maps.</div>
       <div class="c-price-box">
         <div class="price-main">1 799 kr<span class="price-sfx">/mån</span></div>
-        <div class="price-note" id="seo-lokal-note">6 mån avtal · ex. moms</div>
+        <div class="price-note" id="seo-lokal-note">Minst 12 mån avtal · ex. moms</div>
         <div class="price-free" id="seo-lokal-free"></div>
       </div>
       <ul class="feats">
-        <li>5 nyckelord att ranka på</li>
-        <li>Månadslig on-page-optimering</li>
-        <li>Google Business Profile-hantering</li>
-        <li>1 SEO-optimerad artikel/mån</li>
+        <li>Allt i Grundläggande SEO</li>
+        <li>Optimering för en stad eller kommun</li>
+        <li>Google Business Profile-optimering</li>
+        <li>Upp till 5 prioriterade sökteman</li>
+        <li>En lokal landningssida eller större uppdatering per kvartal</li>
         <li>Månadsrapport</li>
-        <li>Kvartalsvisa strategimöten</li>
-        <li>Löpande underhåll ingår</li>
-        <li class="no">Länkbyggnad</li>
-        <li class="no">Teknisk SEO-audit</li>
       </ul>
       <button class="c-btn">Välj Lokal</button>
     </div>
     <div class="card">
-      <div class="c-lbl">Nationell tillväxt</div>
-      <div class="c-name">SEO Tillväxt</div>
-      <div class="c-desc">Syns i hela Sverige och ta marknadsandelar på Google.</div>
+      <div class="c-lbl">Större geografiskt område</div>
+      <div class="c-name">SEO Regional</div>
+      <div class="c-desc">För företag som vill synas i flera kommuner eller inom ett helt län med en sammanhängande lokal strategi.</div>
       <div class="c-price-box">
-        <div class="price-main">3 499 kr<span class="price-sfx">/mån</span></div>
-        <div class="price-note" id="seo-tillvaxt-note">6 mån avtal · ex. moms</div>
-        <div class="price-free" id="seo-tillvaxt-free"></div>
+        <div class="price-main">2 999 kr<span class="price-sfx">/mån</span></div>
+        <div class="price-note" id="seo-regional-note">Minst 12 mån avtal · ex. moms</div>
+        <div class="price-free" id="seo-regional-free"></div>
       </div>
       <ul class="feats">
-        <li>Upp till 15 nyckelord</li>
-        <li>Löpande on-page-optimering</li>
-        <li>3 SEO-artiklar/mån</li>
-        <li>Länkbyggnad (off-page)</li>
-        <li>Teknisk SEO-audit (kvartalsvis)</li>
-        <li>Konkurrentanalys</li>
-        <li>Detaljerad månadsrapport</li>
-        <li>Kvartalsvisa strategimöten</li>
-        <li>Löpande underhåll ingår</li>
+        <li>Allt i SEO Lokal</li>
+        <li>Strategi för flera kommuner eller ett län</li>
+        <li>Upp till 10 prioriterade sökteman</li>
+        <li>Två innehållsinsatser per kvartal</li>
+        <li>Regional internlänkning och sidstruktur</li>
+        <li>Konkurrent- och resultatuppföljning varje månad</li>
       </ul>
-      <button class="c-btn">Välj Tillväxt</button>
+      <button class="c-btn">Välj Regional</button>
     </div>
     <div class="card">
-      <div class="offert-tag">Valfritt pris</div>
-      <div class="c-lbl">Skräddarsytt upplägg</div>
-      <div class="c-name">SEO Löpande Offert</div>
-      <div class="c-desc">För dig som vill sätta ett eget månadspris och få ett SEO-upplägg anpassat efter budget, bransch och mål.</div>
+      <div class="c-lbl">Hela Sverige</div>
+      <div class="c-name">SEO Nationell</div>
+      <div class="c-desc">För företag som konkurrerar nationellt och behöver löpande innehåll, teknisk utveckling och auktoritetsarbete.</div>
       <div class="c-price-box">
-        <div class="price-main">Offert<span class="price-sfx">/mån</span></div>
-        <div class="price-note">Fyll i önskat månadspris · ex. moms</div>
+        <div class="price-main">6 999 kr<span class="price-sfx">/mån</span></div>
+        <div class="price-note" id="seo-nationell-note">Minst 12 mån avtal · ex. moms</div>
+        <div class="price-free" id="seo-nationell-free"></div>
+      </div>
+      <ul class="feats">
+        <li>Nationell sök- och innehållsstrategi</li>
+        <li>Upp till 20 prioriterade sökteman</li>
+        <li>Två större innehållsinsatser per månad</li>
+        <li>Löpande teknisk SEO och internlänkning</li>
+        <li>Digital PR- och auktoritetsplan</li>
+        <li>Månadsrapport och kvartalsvis strategimöte</li>
+      </ul>
+      <button class="c-btn">Välj Nationell</button>
+    </div>
+    <div class="card">
+      <div class="offert-tag">Anpassad omfattning</div>
+      <div class="c-lbl">Skräddarsytt upplägg</div>
+      <div class="c-name">SEO Offert</div>
+      <div class="c-desc">För e-handel, internationell SEO, större webbplatser eller verksamheter med särskilda tekniska och redaktionella behov.</div>
+      <div class="c-price-box">
+        <div class="price-main">Offert</div>
+        <div class="price-note">Pris efter analys · minst 12 mån · ex. moms</div>
         <div class="price-free"></div>
       </div>
       <ul class="feats">
-        <li>Valfri månadsbudget</li>
-        <li>Anpassad SEO-plan</li>
-        <li>Prioriterade fokusområden</li>
-        <li>Löpande optimering</li>
-        <li>Rapportering enligt överenskommelse</li>
-        <li>1–3 veckors uppstart</li>
+        <li>Teknisk och kommersiell behovsanalys</li>
+        <li>Anpassad SEO- och innehållsplan</li>
+        <li>Resurser efter webbplatsens omfattning</li>
+        <li>Integration med utveckling och redaktion</li>
+        <li>Rapportering och mötesplan enligt offert</li>
       </ul>
-      <div class="custom-price-field">
-        <label for="seo-offert-price">Månadspris</label>
-        <div class="custom-price-wrap">
-          <input id="seo-offert-price" type="number" min="1" step="1" inputmode="numeric" placeholder="t.ex. 2500">
-          <span>kr/mån</span>
-        </div>
-      </div>
-      <button class="c-btn" data-prod-id="seo-offert">Välj offert</button>
+      <button class="c-btn" data-prod-id="seo-offert">Begär offert</button>
     </div>
   </div>
 
@@ -683,10 +678,6 @@ footer .footer-logo .logo-domain {
     <div class="addon">
       <div><h4>Bokningssystem</h4><p>Integrerat bokningsflöde med kalender och bekräftelsemejl.</p></div>
       <div class="addon-price">+ 4 999 kr<small>engångspris</small></div>
-    </div>
-    <div class="addon">
-      <div><h4>Flerspråkig sajt</h4><p>Lägg till engelska eller ytterligare ett språk på hela sajten.</p></div>
-      <div class="addon-price">+ 999 kr<small>engångspris</small></div>
     </div>
     <div class="addon">
       <div><h4>Extra sidor (styck)</h4><p>Lägg till fler sidor utöver vad paketet inkluderar.</p></div>
@@ -707,8 +698,9 @@ footer .footer-logo .logo-domain {
     <div class="faq-item"><h4>Vad händer om jag inte är nöjd?</h4><p>Vi jobbar inte klart förrän du är nöjd. För hemsidor ingår 2 revideringsrundor. Om vi inte kan hitta en lösning som du är helt nöjd med betalar du inget.</p></div>
     <div class="faq-item"><h4>Hur lång är leveranstiden?</h4><p>Leverans sker normalt inom 1–3 veckor från godkänd offert och mottaget material. Om projektet är mer komplext får du en tydlig tidsplan innan start.</p></div>
     <div class="faq-item"><h4>Kan jag uppdatera hemsidan själv efteråt?</h4><p>Ja. Tillväxt och Premium byggs med ett användarvänligt CMS (WordPress) som gör det enkelt att redigera texter, lägga till bilder och publicera blogginlägg – utan teknisk kunskap.</p></div>
+    <div class="faq-item"><h4>Hur lång är avtalstiden för SEO och Google Ads?</h4><p>Minsta avtalstid är 12 månader. Vi rekommenderar 24 månader för att hinna samla data, genomföra förbättringar och bygga stabila resultat över tid. För företag som vill arbeta ännu mer långsiktigt erbjuder vi även 36 månader.</p></div>
     <div class="faq-item"><h4>Hur snabbt ser jag SEO-resultat?</h4><p>De flesta kunder ser tydliga förbättringar i rankingen inom 3–6 månader. SEO bygger auktoritet över tid – desto längre vi jobbar ihop, desto starkare blir resultaten.</p></div>
-    <div class="faq-item"><h4>Kan jag kombinera hemsida + SEO eller Google Ads?</h4><p>Absolut – och det är faktiskt det vi rekommenderar. Kontakta oss så sätter vi ihop ett skräddarsytt upplägg med rabatten inräknad.</p></div>
+    <div class="faq-item"><h4>Kan jag kombinera hemsida + SEO eller Google Ads?</h4><p>Absolut. Kontakta oss så sätter vi ihop ett sammanhängande upplägg där webbplats, sökmotoroptimering och annonsering arbetar mot samma mål.</p></div>
   </div>
 
   
@@ -770,6 +762,7 @@ footer .footer-logo .logo-domain {
       <div class="footer-col">
         <h4>Verksamhetsomr&aring;den</h4>
         <ul>
+          <li><a href="/webbyra/">Alla orter</a></li>
           <li><a href="/webbyra-helsingborg/">Helsingborg</a></li>
           <li><a href="/webbyra-malmo/">Malm&ouml;</a></li>
           <li><a href="/webbyra-vasteras/">V&auml;ster&aring;s</a></li>
@@ -793,7 +786,7 @@ footer .footer-logo .logo-domain {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Plasma MEDIA AB. Org.nr: 559565-4277</p>
+      <p>&copy; 2026 Plasma MEDIA AB. Org.nr: 559565-4277</p>
       <p><a href="/integritetspolicy/" class="footer-legal-link">Integritetspolicy</a> &middot; <a href="/integritetspolicy/#cookies" class="footer-legal-link">Cookies</a></p>
     </div>
   </div>
@@ -803,15 +796,14 @@ footer .footer-logo .logo-domain {
 function setTerm(type, months, btn) {
   document.getElementById(type+'-toggle').querySelectorAll('button').forEach(b=>b.classList.remove('on'));
   btn.classList.add('on');
-  const free = months===12 ? '+ 1 månad gratis ingår i avtalet' : months===24 ? '+ 3 månader gratis ingår i avtalet' : '';
   const extra = type==='ads' ? ' · annonsbudget tillkommer' : '';
-  const note = months+' mån avtal · ex. moms'+extra;
-  const keys = type==='ads' ? ['bas','tillvaxt'] : ['lite','lokal','tillvaxt'];
+  const note = (months===12 ? 'Minst 12 mån avtal' : months+' mån avtal')+' · ex. moms'+extra;
+  const keys = type==='ads' ? ['bas','tillvaxt'] : ['lite','lokal','regional','nationell'];
   keys.forEach(k=>{
     const n=document.getElementById(type+'-'+k+'-note');
     const f=document.getElementById(type+'-'+k+'-free');
     if(n) n.textContent=note;
-    if(f) f.textContent=free;
+    if(f) f.textContent='';
   });
 }
 </script>
@@ -1227,23 +1219,23 @@ function setTerm(type, months, btn) {
   // ---- Product catalogue (parsed from DOM buttons) ----
   const products = [
     // Hemsidor
-    { id:'web-start',     category:'Hemsida',    name:'Start',         price:14999, monthly:0 },
-    { id:'web-tillvaxt',  category:'Hemsida',    name:'Tillväxt',      price:24999, monthly:0 },
+    { id:'web-start',     category:'Hemsida',    name:'Start',         price:19999, monthly:0 },
+    { id:'web-tillvaxt',  category:'Hemsida',    name:'Tillväxt',      price:29999, monthly:0 },
     { id:'web-premium',   category:'Hemsida',    name:'Premium',       price:39999, monthly:0 },
-    { id:'web-offert',    category:'Hemsida',    name:'Hemsida Offert', price:0, monthly:0, customPrice:true, description:'Skräddarsytt hemsideprojekt med valfritt engångspris och tvåspråkig sida på svenska och engelska.' },
+    { id:'web-offert',    category:'Hemsida',    name:'Hemsida Offert', price:0, monthly:0, offert:true, description:'Skräddarsytt hemsideprojekt efter behovsanalys och kravspecifikation.' },
     // Google Ads
     { id:'ads-bas',       category:'Google Ads', name:'Ads Bas',       price:0,     monthly:2995 },
     { id:'ads-tillvaxt',  category:'Google Ads', name:'Ads Tillväxt',  price:0,     monthly:5995 },
     { id:'ads-dominant',  category:'Google Ads', name:'Ads Dominant',  price:0,     monthly:0,  offert:true },
     // SEO
-    { id:'seo-lite',      category:'SEO',        name:'SEO Lite',      price:0,     monthly:999 },
+    { id:'seo-lite',      category:'SEO',        name:'Grundläggande SEO', price:0, monthly:999 },
     { id:'seo-lokal',     category:'SEO',        name:'SEO Lokal',     price:0,     monthly:1799 },
-    { id:'seo-tillvaxt',  category:'SEO',        name:'SEO Tillväxt',  price:0,     monthly:3499 },
-    { id:'seo-offert',    category:'SEO',        name:'SEO Löpande Offert', price:0, monthly:0, customMonthly:true, description:'Skräddarsytt SEO-upplägg med valfritt månadspris.' },
+    { id:'seo-regional',  category:'SEO',        name:'SEO Regional',  price:0,     monthly:2999 },
+    { id:'seo-nationell', category:'SEO',        name:'SEO Nationell', price:0,     monthly:6999 },
+    { id:'seo-offert',    category:'SEO',        name:'SEO Offert',    price:0,     monthly:0, offert:true, description:'Skräddarsytt SEO-upplägg efter webbplatsens mål och omfattning.' },
     // Tillägg
     { id:'add-webshop',   category:'Tillägg',    name:'Webshop (WooCommerce)', price:9999, monthly:0 },
     { id:'add-booking',   category:'Tillägg',    name:'Bokningssystem',        price:4999, monthly:0 },
-    { id:'add-lang',      category:'Tillägg',    name:'Flerspråkig sajt',      price:999,  monthly:0 },
     { id:'add-page',      category:'Tillägg',    name:'Extra sida (per st.)',  price:1500, monthly:0 },
     { id:'add-maint',     category:'Tillägg',    name:'Löpande underhåll',     price:0,    monthly:149 },
   ];
@@ -1254,7 +1246,8 @@ function setTerm(type, months, btn) {
     const btnMap = {
       'Välj Start':'web-start', 'Välj Tillväxt':'web-tillvaxt', 'Välj Premium':'web-premium',
       'Välj Bas':'ads-bas', 'Begär offert':'ads-dominant',
-      'Välj Lite':'seo-lite', 'Välj Lokal':'seo-lokal',
+      'Välj Grundläggande':'seo-lite', 'Välj Lokal':'seo-lokal',
+      'Välj Regional':'seo-regional', 'Välj Nationell':'seo-nationell',
     };
     // Special: multiple "Välj Tillväxt" buttons – distinguish by section
     document.querySelectorAll('.c-btn').forEach(btn => {
@@ -1274,7 +1267,6 @@ function setTerm(type, months, btn) {
         if (el) {
           const labelText = el.textContent;
           if (labelText.includes('Google Ads')) prodId = 'ads-tillvaxt';
-          else if (labelText.includes('SEO')) prodId = 'seo-tillvaxt';
           else prodId = 'web-tillvaxt';
         } else prodId = 'web-tillvaxt';
       } else {
@@ -1294,7 +1286,6 @@ function setTerm(type, months, btn) {
     const addonMap = [
       ['Webshop (WooCommerce)', 'add-webshop'],
       ['Bokningssystem', 'add-booking'],
-      ['Flerspråkig sajt', 'add-lang'],
       ['Extra sidor (styck)', 'add-page'],
       ['Löpande underhåll', 'add-maint'],
     ];
@@ -1329,36 +1320,10 @@ function setTerm(type, months, btn) {
 
   // ---- Cart logic ----
   function addToCart(prod, btn) {
-    if (prod.customPrice) {
-      const input = document.getElementById('web-offert-price');
-      const price = input ? Number(input.value) : 0;
-      if (!price || price < 1) {
-        showToast('Fyll i ett engångspris för hemsideofferten');
-        if (input) input.focus();
-        return;
-      }
-      prod = { ...prod, price: Math.round(price), monthly: 0 };
-    }
-    if (prod.customMonthly) {
-      const input = document.getElementById('seo-offert-price');
-      const monthly = input ? Number(input.value) : 0;
-      if (!monthly || monthly < 1) {
-        showToast('Fyll i ett månadspris för SEO-offerten');
-        if (input) input.focus();
-        return;
-      }
-      prod = { ...prod, monthly: Math.round(monthly), price: 0 };
-    }
     if (prod.offert) { showToast('📋 Kontakta oss för skräddarsytt prisförslag'); return; }
     const existing = cart.find(i => i.id === prod.id);
     if (existing) {
-      if (prod.customMonthly || prod.customPrice) {
-        existing.price = prod.price;
-        existing.monthly = prod.monthly;
-        existing.qty = 1;
-      } else {
-        existing.qty++;
-      }
+      existing.qty++;
     } else {
       cart.push({ ...prod, qty: 1 });
     }
@@ -1504,6 +1469,6 @@ function setTerm(type, months, btn) {
   }
 })();
 </script>
-<script src="/assets/language-toggle.js" defer></script>
+<script src="/assets/site-shell.js"></script>
 </body>
 </html>
