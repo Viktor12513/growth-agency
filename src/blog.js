@@ -115,16 +115,22 @@ const customPostImages = {
     src: '/assets/instagram.png',
     alt: 'Instagram',
     className: 'instagram-logo',
+    width: 204,
+    height: 192,
   },
   'linkedin-foretag-b2b': {
     src: '/assets/linkedin.png',
     alt: 'LinkedIn',
     className: 'linkedin-logo',
+    width: 225,
+    height: 225,
   },
   'innehallskalender-sociala-medier': {
     src: '/assets/calendar.png',
     alt: 'Innehallskalender',
     className: 'calendar-logo',
+    width: 192,
+    height: 192,
   },
 };
 
@@ -134,12 +140,14 @@ function renderPostVisual(post, variant = 'card') {
     const imgClass = variant === 'article'
       ? `custom-post-logo custom-post-logo--article ${customImage.className}`
       : `custom-post-logo ${customImage.className}`;
-    return `<img class="${imgClass}" src="${customImage.src}" alt="${customImage.alt}">`;
+    const loading = variant === 'article' ? 'eager' : 'lazy';
+    return `<img class="${imgClass}" src="${customImage.src}" alt="${customImage.alt}" width="${customImage.width}" height="${customImage.height}" loading="${loading}" decoding="async">`;
   }
 
   if (post.categoryKey === 'google-ads') {
     const imgClass = variant === 'article' ? 'google-ads-logo google-ads-logo--article' : 'google-ads-logo';
-    return `<img class="${imgClass}" src="/assets/googleads.png" alt="Google Ads">`;
+    const loading = variant === 'article' ? 'eager' : 'lazy';
+    return `<img class="${imgClass}" src="/assets/googleads.webp" alt="Google Ads" width="480" height="599" loading="${loading}" decoding="async">`;
   }
 
   return icons[post.icon];
