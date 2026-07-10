@@ -27,6 +27,10 @@ const caseDetails = [
     points: ['Tydliga tj&auml;nstesidor f&ouml;r VVS, r&ouml;rstopp och jour&auml;renden', 'Lokal SEO mot prioriterade stadsdelar i Stockholm', 'Google Ads-kampanjer med fokus p&aring; akuta leads']
   },
   {
+    summary: 'Arborist Roslagen beh&ouml;vde en sida som k&auml;ndes seri&ouml;s direkt och gjorde det enkelt f&ouml;r lokala kunder att f&ouml;rst&aring; tj&auml;nsterna. Vi tog fram en ren struktur, tydliga tj&auml;nstesektioner och kontaktv&auml;gar som fungerar bra p&aring; mobil.',
+    points: ['Tydlig hemsida f&ouml;r tr&auml;df&auml;llning, besk&auml;rning och tr&auml;dv&aring;rd', 'Lokal SEO-grund f&ouml;r Roslagen och n&auml;rliggande orter', 'F&ouml;rtroendeskapande design med enkel v&auml;g till offertf&ouml;rfr&aringgan']
+  },
+  {
     summary: 'Kliniken beh&ouml;vde en enklare v&auml;g fr&aring;n s&ouml;kning till bokning. Vi byggde en snabbare hemsida, gjorde bokningen synlig p&aring; varje viktig sida och skapade annonser f&ouml;r b&aring;de planerade behandlingar och akuta bes&ouml;k.',
     points: ['Ny mobilanpassad hemsida med tydlig bokningsv&auml;g', 'Annonser f&ouml;r tandl&auml;kare, akut tandv&aring;rd och unders&ouml;kningar', 'M&auml;tning av bokningar, samtal och formul&auml;r']
   },

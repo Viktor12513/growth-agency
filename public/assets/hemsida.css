@@ -1,4 +1,4 @@
-﻿.skip-link {
+.skip-link {
     position: absolute; top: -40px; left: 1rem; z-index: 9999;
     background: var(--forest); color: white; padding: 0.5rem 1rem;
     border-radius: 0 0 var(--radius) var(--radius); font-size: 0.85rem; font-weight: 600;
@@ -214,6 +214,7 @@
   /* SHOWCASE / EXAMPLES */
   .showcase { background: var(--cream); }
   .showcase-header { margin-bottom: 3rem; }
+  .showcase-case-link { margin-top: 1.3rem; }
   .showcase-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
   .tab-btn {
     font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500;
