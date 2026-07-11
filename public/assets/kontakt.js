@@ -96,13 +96,11 @@ function setupFormSubmitValidation(form) {
     }
 
     if (submitButton) {
-      submitButton.disabled = true;
       submitButton.setAttribute('aria-busy', 'true');
       submitButton.innerHTML = 'Skickar...';
 
       window.setTimeout(() => {
         if (document.visibilityState === 'visible') {
-          submitButton.disabled = false;
           submitButton.removeAttribute('aria-busy');
           submitButton.innerHTML = originalSubmitText;
         }
