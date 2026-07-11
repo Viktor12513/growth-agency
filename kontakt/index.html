@@ -282,7 +282,7 @@ footer .footer-logo .logo-domain {
               <p>Vi svarar inom 24 timmar – oftast samma dag.</p>
             </div>
 
-            <form id="contact-form" class="js-formsubmit-form" action="https://formsubmit.co/albin@plasmamedia.se" method="POST" enctype="multipart/form-data" aria-label="Kontakt- och offertformulär">
+            <form id="contact-form" class="js-formsubmit-form" action="https://formsubmit.co/albin@plasmamedia.se" method="POST" enctype="multipart/form-data" onsubmit="return window.plasmaValidateContactForm ? window.plasmaValidateContactForm(this) : true" aria-label="Kontakt- och offertformulär">
               <input type="hidden" name="_subject" value="Ny kontakt- och offertförfrågan från Plasma MEDIA AB">
               <input type="hidden" name="_next" value="https://www.plasmamedia.se/tack/">
               <input type="hidden" name="_template" value="table">
@@ -292,8 +292,8 @@ footer .footer-logo .logo-domain {
                 <label for="contact-honey">Lämna tomt</label>
                 <input type="text" id="contact-honey" name="_honey" tabindex="-1" autocomplete="off">
               </div>
-              <input type="hidden" id="quizResult" name="Quizresultat">
-              <input type="hidden" id="quizRecommendation" name="Quizrekommendation">
+              <input type="hidden" id="quizResult" name="quiz_result">
+              <input type="hidden" id="quizRecommendation" name="quiz_recommendation">
               <div class="contact-quiz" id="contact-quiz" aria-labelledby="contact-quiz-title">
                 <div class="contact-quiz-head">
                   <span class="contact-quiz-kicker">Snabb rekommendation</span>
@@ -307,7 +307,7 @@ footer .footer-logo .logo-domain {
               </div>
               <div class="form-group">
                 <label for="name">Namn *</label>
-                <input type="text" id="name" name="Namn" placeholder="Anna Lindström" autocomplete="name" maxlength="120" required>
+                <input type="text" id="name" name="name" placeholder="Anna Lindström" autocomplete="name" maxlength="120" required>
               </div>
               <div class="form-group">
                 <label for="email">E-postadress *</label>
@@ -315,19 +315,19 @@ footer .footer-logo .logo-domain {
               </div>
               <div class="form-group">
                 <label for="phone">Telefon *</label>
-                <input type="tel" id="phone" name="Telefon" placeholder="070-123 45 67" autocomplete="tel" maxlength="60" pattern="[0-9+() -]{7,20}" required>
+                <input type="tel" id="phone" name="phone" placeholder="070-123 45 67" autocomplete="tel" maxlength="60" pattern="[0-9+() -]{7,20}" required>
               </div>
               <div class="form-group">
                 <label for="location">Ort *</label>
-                <input type="text" id="location" name="Ort" placeholder="Helsingborg" autocomplete="address-level2" maxlength="100" required>
+                <input type="text" id="location" name="city" placeholder="Helsingborg" autocomplete="address-level2" maxlength="100" required>
               </div>
               <div class="form-group">
                 <label for="company">Företagsnamn</label>
-                <input type="text" id="company" name="Företag" placeholder="Lindströms Redovisning AB" autocomplete="organization" maxlength="140">
+                <input type="text" id="company" name="company" placeholder="Lindströms Redovisning AB" autocomplete="organization" maxlength="140">
               </div>
               <div class="form-group">
                 <label for="service">Vad är du intresserad av? *</label>
-                <select id="service" name="Tjänst / ärende" required>
+                <select id="service" name="service" required>
                   <option value="" disabled selected>Välj ett alternativ</option>
                   <option value="hemsida">Ny hemsida</option>
                   <option value="seo">SEO – sökmotoroptimering</option>
@@ -337,7 +337,7 @@ footer .footer-logo .logo-domain {
               </div>
               <div class="form-group">
                 <label for="message">Berätta kort om ditt företag *</label>
-                <textarea id="message" name="Meddelande" placeholder="T.ex. vad du säljer, var du befinner dig idag online och vad du vill uppnå..." minlength="10" maxlength="3000" required></textarea>
+                <textarea id="message" name="message" placeholder="T.ex. vad du säljer, var du befinner dig idag online och vad du vill uppnå..." minlength="10" maxlength="3000" required></textarea>
               </div>
               <div class="form-group">
                 <label for="images">Bilder eller underlag (valfritt)</label>
@@ -349,7 +349,8 @@ footer .footer-logo .logo-domain {
                 <input type="checkbox" id="consent" name="consent" required>
                 <label for="consent">Jag godkänner att Plasma MEDIA AB lagrar mina uppgifter för att kunna besvara mitt meddelande. Läs vår <a href="/integritetspolicy/">integritetspolicy</a>.</label>
               </div>
-              <button type="submit" class="btn-submit">
+              <p class="form-error" id="form-submit-error" role="alert" hidden></p>
+              <button type="submit" class="btn-submit" formaction="https://formsubmit.co/albin@plasmamedia.se" formmethod="POST" formenctype="multipart/form-data">
                 Skicka förfrågan
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
@@ -455,7 +456,7 @@ footer .footer-logo .logo-domain {
   </div>
 </footer>
 
-<script src="/assets/kontakt.js?v=20260711-clean-submit" defer></script>
+<script src="/assets/kontakt.js?v=20260711-simple-submit" defer></script>
 <script src="/assets/site-shell.js" defer></script>
 </body>
 </html>

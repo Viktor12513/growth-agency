@@ -85,6 +85,30 @@ function setupFormSubmitValidation(form) {
   });
 }
 
+window.plasmaValidateContactForm = function plasmaValidateContactForm(form) {
+  const submitError = form.querySelector('#form-submit-error');
+  const fileInputs = form.querySelectorAll('[data-file-input]');
+  const filesAreValid = Array.from(fileInputs).every(validateFileInput);
+
+  if (!filesAreValid || !form.checkValidity()) {
+    if (submitError) {
+      submitError.textContent = !filesAreValid
+        ? 'Kontrollera bilduppladdningen. Endast JPG, PNG eller WebP och max 10 MB totalt.'
+        : 'Fyll i alla obligatoriska fält innan du skickar förfrågan.';
+      submitError.hidden = false;
+    }
+    form.reportValidity();
+    return false;
+  }
+
+  if (submitError) {
+    submitError.hidden = true;
+    submitError.textContent = '';
+  }
+
+  return true;
+};
+
 document.querySelectorAll('.js-formsubmit-form').forEach(setupFormSubmitValidation);
 
 const contactForm = document.getElementById('contact-form');
@@ -192,10 +216,10 @@ function saveQuizResult(recommendation) {
     return `${index + 1}. ${question.question} ${answer}`;
   }).join('\n');
 
-  const quizResultField = getContactField('Quizresultat');
-  const quizRecommendationField = getContactField('Quizrekommendation');
-  const serviceField = getContactField('Tjänst / ärende');
-  const messageField = getContactField('Meddelande');
+  const quizResultField = getContactField('quiz_result');
+  const quizRecommendationField = getContactField('quiz_recommendation');
+  const serviceField = getContactField('service');
+  const messageField = getContactField('message');
 
   if (quizResultField) quizResultField.value = readableAnswers;
   if (quizRecommendationField) quizRecommendationField.value = `${recommendation.title}\n${recommendation.text}`;
@@ -230,8 +254,8 @@ function renderContactQuizResult() {
   document.getElementById('contact-quiz-restart')?.addEventListener('click', () => {
     contactQuizStep = 0;
     contactQuizAnswers = [];
-    const quizResultField = getContactField('Quizresultat');
-    const quizRecommendationField = getContactField('Quizrekommendation');
+    const quizResultField = getContactField('quiz_result');
+    const quizRecommendationField = getContactField('quiz_recommendation');
     if (quizResultField) quizResultField.value = '';
     if (quizRecommendationField) quizRecommendationField.value = '';
     contactQuizResult.hidden = true;
