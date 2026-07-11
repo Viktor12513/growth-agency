@@ -95,6 +95,8 @@ function setupFormSubmitValidation(form) {
       return;
     }
 
+    event.preventDefault();
+
     if (submitButton) {
       submitButton.disabled = true;
       submitButton.setAttribute('aria-busy', 'true');
@@ -108,6 +110,10 @@ function setupFormSubmitValidation(form) {
         }
       }, 12000);
     }
+
+    window.setTimeout(() => {
+      window.HTMLFormElement.prototype.submit.call(form);
+    }, 50);
   });
 }
 
