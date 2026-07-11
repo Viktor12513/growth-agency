@@ -9,9 +9,21 @@
     document.body.style.top = '0';
   }
 
+  function removeQuizLinks() {
+    document.querySelectorAll('header[role="banner"] a, nav a, footer a').forEach((link) => {
+      const label = (link.textContent || '').trim().toLowerCase();
+      const href = (link.getAttribute('href') || '').toLowerCase();
+      if (label === 'quiz' || href === '/quiz/' || href === '/quiz' || href.includes('/quiz/')) {
+        link.closest('li')?.remove();
+        if (link.isConnected) link.remove();
+      }
+    });
+  }
+
   function setupNavigation() {
     const toggle = document.querySelector('header[role="banner"] .nav-hamburger');
     const links = document.querySelector('header[role="banner"] .nav-links');
+    removeQuizLinks();
     if (!toggle || !links || toggle.dataset.ready === 'true') return;
     toggle.dataset.ready = 'true';
     toggle.addEventListener('click', () => {
@@ -28,5 +40,7 @@
   }
 
   clearTranslation();
+  removeQuizLinks();
+  new MutationObserver(removeQuizLinks).observe(document.documentElement, { childList: true, subtree: true });
   setupNavigation();
 })();

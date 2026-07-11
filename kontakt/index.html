@@ -140,8 +140,7 @@ footer .footer-logo .logo-domain {
     </li>
     <li><a href="/google-ads/">Google Ads</a></li>
     <li><a href="/priser/">Priser</a></li>
-    <li><a href="/quiz/">Quiz</a></li>
-    <li><a href="/blogg/">Blogg</a></li>
+<li><a href="/blogg/">Blogg</a></li>
     <li><a href="/faq/">FAQ</a></li>
     <li><a href="/om-oss/">Om oss</a></li>
   </ul>
@@ -284,27 +283,44 @@ footer .footer-logo .logo-domain {
             </div>
 
             <form id="contact-form" aria-label="Kontaktformulär">
+              <div class="form-honeypot" aria-hidden="true">
+                <label for="website">Webbplats</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+              </div>
+              <input type="hidden" id="quizResult" name="quizResult">
+              <input type="hidden" id="quizRecommendation" name="quizRecommendation">
+              <div class="contact-quiz" id="contact-quiz" aria-labelledby="contact-quiz-title">
+                <div class="contact-quiz-head">
+                  <span class="contact-quiz-kicker">Snabb rekommendation</span>
+                  <h3 id="contact-quiz-title">Osäker på vad du behöver?</h3>
+                  <p>Svara på tre frågor så fyller vi i en rekommendation i formuläret automatiskt.</p>
+                </div>
+                <div class="contact-quiz-progress" aria-hidden="true"><span id="contact-quiz-progress"></span></div>
+                <div class="contact-quiz-question" id="contact-quiz-question"></div>
+                <div class="contact-quiz-options" id="contact-quiz-options"></div>
+                <div class="contact-quiz-result" id="contact-quiz-result" hidden></div>
+              </div>
               <div class="form-row">
                 <div class="form-group">
                   <label for="fname">Förnamn *</label>
-                  <input type="text" id="fname" name="fname" placeholder="Anna" autocomplete="given-name" required>
+                  <input type="text" id="fname" name="fname" placeholder="Anna" autocomplete="given-name" maxlength="80" required>
                 </div>
                 <div class="form-group">
                   <label for="lname">Efternamn *</label>
-                  <input type="text" id="lname" name="lname" placeholder="Lindström" autocomplete="family-name" required>
+                  <input type="text" id="lname" name="lname" placeholder="Lindström" autocomplete="family-name" maxlength="80" required>
                 </div>
               </div>
               <div class="form-group">
                 <label for="email">E-postadress *</label>
-                <input type="email" id="email" name="email" placeholder="anna@foretaget.se" autocomplete="email" required>
+                <input type="email" id="email" name="email" placeholder="anna@foretaget.se" autocomplete="email" maxlength="160" required>
               </div>
               <div class="form-group">
                 <label for="phone">Telefon (valfritt)</label>
-                <input type="tel" id="phone" name="phone" placeholder="070-123 45 67" autocomplete="tel">
+                <input type="tel" id="phone" name="phone" placeholder="070-123 45 67" autocomplete="tel" maxlength="60">
               </div>
               <div class="form-group">
                 <label for="company">Företagsnamn</label>
-                <input type="text" id="company" name="company" placeholder="Lindströms Redovisning AB" autocomplete="organization">
+                <input type="text" id="company" name="company" placeholder="Lindströms Redovisning AB" autocomplete="organization" maxlength="140">
               </div>
               <div class="form-group">
                 <label for="service">Vad är du intresserad av? *</label>
@@ -318,7 +334,7 @@ footer .footer-logo .logo-domain {
               </div>
               <div class="form-group">
                 <label for="message">Berätta kort om ditt företag *</label>
-                <textarea id="message" name="message" placeholder="T.ex. vad du säljer, var du befinner dig idag online och vad du vill uppnå..." required></textarea>
+                <textarea id="message" name="message" placeholder="T.ex. vad du säljer, var du befinner dig idag online och vad du vill uppnå..." minlength="10" maxlength="3000" required></textarea>
               </div>
               <div class="form-consent">
                 <input type="checkbox" id="consent" name="consent" required>
@@ -339,7 +355,7 @@ footer .footer-logo .logo-domain {
                 <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
               <h3>Tack för ditt meddelande!</h3>
-              <p>Vi hör av oss inom 24 timmar. Under tiden är du välkommen att kolla in våra <a href="//" class="form-success-link">kundcase</a> för inspiration.</p>
+              <p>Vi hör av oss inom 24 timmar. Under tiden är du välkommen att kolla in våra <a href="/kundcases/" class="form-success-link">kundcase</a> för inspiration.</p>
             </div>
           </div>
         </div>
@@ -394,8 +410,7 @@ footer .footer-logo .logo-domain {
           <li><a href="/om-oss/">Om oss</a></li>
           <li><a href="/blogg/">Blogg</a></li>
           <li><a href="/kundcases/">Kundcase</a></li>
-          <li><a href="/quiz/">Quiz</a></li>
-          <li><a href="/kontakt/#contact-form">Kontakt</a></li>
+<li><a href="/kontakt/#contact-form">Kontakt</a></li>
         </ul>
       </div>
       <div class="footer-col">
