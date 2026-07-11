@@ -4,6 +4,8 @@
     { "source": "/blog/:slug*", "destination": "/blog/index.html" }
   ],
   "redirects": [
+    { "source": "/quiz", "destination": "/kontakt/#contact-form", "permanent": true },
+    { "source": "/quiz/", "destination": "/kontakt/#contact-form", "permanent": true },
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "plasmamedia.se" }],
@@ -13,6 +15,17 @@
     { "source": "/blog/:slug*", "destination": "/blogg/:slug*", "permanent": true }
   ],
   "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=()" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://api.resend.com; upgrade-insecure-requests" }
+      ]
+    },
     {
       "source": "/sitemap.xml",
       "headers": [
