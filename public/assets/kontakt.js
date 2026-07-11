@@ -75,7 +75,7 @@ function validateFileInput(input) {
   return true;
 }
 
-function setupFormSubmitValidation(form) {
+function setupContactFormValidation(form) {
   const fileInputs = form.querySelectorAll('[data-file-input]');
 
   fileInputs.forEach((input) => {
@@ -85,31 +85,115 @@ function setupFormSubmitValidation(form) {
   });
 }
 
-window.plasmaValidateContactForm = function plasmaValidateContactForm(form) {
+function readFileAsBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.addEventListener('load', () => {
+      const result = String(reader.result || '');
+      resolve(result.includes(',') ? result.split(',').pop() : result);
+    });
+    reader.addEventListener('error', () => reject(reader.error || new Error('Kunde inte läsa filen.')));
+    reader.readAsDataURL(file);
+  });
+}
+
+async function getAttachments(form) {
+  const input = form.querySelector('[data-file-input]');
+  const files = Array.from(input?.files || []);
+
+  return Promise.all(files.map(async (file) => ({
+    filename: file.name,
+    content: await readFileAsBase64(file),
+    content_type: file.type || 'application/octet-stream',
+  })));
+}
+
+function setSubmitError(form, message) {
   const submitError = form.querySelector('#form-submit-error');
-  const fileInputs = form.querySelectorAll('[data-file-input]');
-  const filesAreValid = Array.from(fileInputs).every(validateFileInput);
+  if (!submitError) return;
+  submitError.textContent = message || '';
+  submitError.hidden = !message;
+}
 
-  if (!filesAreValid || !form.checkValidity()) {
-    if (submitError) {
-      submitError.textContent = !filesAreValid
-        ? 'Kontrollera bilduppladdningen. Endast JPG, PNG eller WebP och max 10 MB totalt.'
-        : 'Fyll i alla obligatoriska fält innan du skickar förfrågan.';
-      submitError.hidden = false;
+function getFormPayload(form) {
+  return {
+    name: form.elements.name?.value?.trim() || '',
+    email: form.elements.email?.value?.trim() || '',
+    phone: form.elements.phone?.value?.trim() || '',
+    city: form.elements.city?.value?.trim() || '',
+    company: form.elements.company?.value?.trim() || '',
+    service: form.elements.service?.value?.trim() || '',
+    message: form.elements.message?.value?.trim() || '',
+    quiz_result: form.elements.quiz_result?.value?.trim() || '',
+    quiz_recommendation: form.elements.quiz_recommendation?.value?.trim() || '',
+    website: form.elements.website?.value?.trim() || '',
+  };
+}
+
+function setupContactApiSubmit(form) {
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalSubmitText = submitButton?.innerHTML || '';
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    setSubmitError(form, '');
+
+    const fileInputs = form.querySelectorAll('[data-file-input]');
+    const filesAreValid = Array.from(fileInputs).every(validateFileInput);
+
+    if (!filesAreValid || !form.checkValidity()) {
+      setSubmitError(
+        form,
+        !filesAreValid
+          ? 'Kontrollera bilduppladdningen. Endast JPG, PNG eller WebP och max 10 MB totalt.'
+          : 'Fyll i alla obligatoriska fält innan du skickar förfrågan.'
+      );
+      form.reportValidity();
+      return;
     }
-    form.reportValidity();
-    return false;
-  }
 
-  if (submitError) {
-    submitError.hidden = true;
-    submitError.textContent = '';
-  }
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+      submitButton.innerHTML = 'Skickar...';
+    }
 
-  return true;
-};
+    try {
+      const payload = getFormPayload(form);
+      payload.attachments = await getAttachments(form);
 
-document.querySelectorAll('.js-formsubmit-form').forEach(setupFormSubmitValidation);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || 'Meddelandet kunde inte skickas.');
+      }
+
+      window.location.href = '/tack/';
+    } catch (error) {
+      console.error(error);
+      setSubmitError(form, error.message === 'Email service is not configured'
+        ? 'Mailtjänsten är inte konfigurerad ännu. Lägg till RESEND_API_KEY i Vercel.'
+        : 'Meddelandet kunde inte skickas just nu. Prova igen eller maila albin@plasmamedia.se.'
+      );
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-busy');
+        submitButton.innerHTML = originalSubmitText;
+      }
+    }
+  });
+}
+
+document.querySelectorAll('.js-contact-api-form').forEach((form) => {
+  setupContactFormValidation(form);
+  setupContactApiSubmit(form);
+});
 
 const contactForm = document.getElementById('contact-form');
 const contactQuizQuestion = document.getElementById('contact-quiz-question');
