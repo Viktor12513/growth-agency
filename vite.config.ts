@@ -20,6 +20,7 @@ export default defineConfig({
         bloggSeoResults: resolve(__dirname, 'blogg/hur-lang-tid-tar-seo/index.html'),
         omOss: resolve(__dirname, 'om-oss/index.html'),
         kontakt: resolve(__dirname, 'kontakt/index.html'),
+        tack: resolve(__dirname, 'tack/index.html'),
         integritetspolicy: resolve(__dirname, 'integritetspolicy/index.html'),
         seoPris: resolve(__dirname, 'seo-pris/index.html'),
         lokalSeo: resolve(__dirname, 'lokal-seo/index.html'),

@@ -333,6 +333,23 @@
   }
   .form-group textarea { resize: vertical; min-height: 110px; }
   .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237a7a72' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.9rem center; padding-right: 2.5rem; cursor: pointer; }
+  .form-group input[type="file"] {
+    padding: 0.75rem;
+    cursor: pointer;
+  }
+  .form-help {
+    color: var(--ink-light);
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+  .form-error {
+    color: #9f1d1d;
+    font-size: 0.78rem;
+    font-weight: 700;
+    line-height: 1.45;
+    margin-top: 0.1rem;
+  }
+  .form-error[hidden] { display: none; }
 
   .form-consent { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 1.5rem; }
   .form-consent input[type="checkbox"] { margin-top: 3px; flex-shrink: 0; accent-color: var(--forest); }
@@ -347,7 +364,58 @@
     transition: all 0.2s;
   }
   .btn-submit:hover { background: var(--forest-mid); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,58,31,0.2); }
+  .btn-submit:disabled {
+    opacity: 0.72;
+    cursor: wait;
+    transform: none;
+    box-shadow: none;
+  }
   .btn-submit svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; }
+
+  /* PRIORITY FORM */
+  .priority-contact {
+    padding: 4.5rem 5vw;
+    background: linear-gradient(135deg, #fff 0%, var(--cream) 100%);
+    border-top: 1px solid var(--mint);
+  }
+  .priority-contact-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .priority-copy {
+    position: sticky;
+    top: 100px;
+  }
+  .priority-copy h2 {
+    font-family: 'DM Serif Display', serif;
+    color: var(--forest);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.04;
+    margin: 0.4rem 0 1rem;
+  }
+  .priority-copy p {
+    color: var(--ink-mid);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+  }
+  .priority-copy ul {
+    display: grid;
+    gap: 0.75rem;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    padding-left: 1.1rem;
+  }
+  .priority-form {
+    position: relative;
+    background: #fff;
+    border: 1px solid var(--mint);
+    border-radius: var(--radius-lg);
+    padding: clamp(1.4rem, 3vw, 2rem);
+    box-shadow: 0 20px 60px rgba(26,58,31,0.08);
+  }
 
   .form-guarantee {
     text-align: center; margin-top: 1rem;
@@ -368,6 +436,58 @@
   .success-icon svg { width: 28px; height: 28px; stroke: var(--forest); fill: none; stroke-width: 2; }
   .form-success h3 { font-family: 'DM Serif Display', serif; font-size: 1.4rem; color: var(--forest); margin-bottom: 0.6rem; }
   .form-success p { font-size: 0.9rem; color: var(--ink-mid); }
+
+  /* THANK YOU PAGE */
+  .thank-you-hero {
+    min-height: 62vh;
+    display: grid;
+    place-items: center;
+    padding: 6rem 5vw;
+    background:
+      radial-gradient(circle at top right, rgba(200,230,208,0.6), transparent 34%),
+      linear-gradient(135deg, var(--warm-white) 0%, var(--cream) 100%);
+  }
+  .thank-you-card {
+    max-width: 760px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid var(--mint);
+    border-radius: var(--radius-lg);
+    padding: clamp(2rem, 5vw, 4rem);
+    box-shadow: 0 24px 80px rgba(26,58,31,0.11);
+    text-align: center;
+  }
+  .thank-you-card h1 {
+    font-family: 'DM Serif Display', serif;
+    color: var(--forest);
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 0.98;
+    margin: 0.5rem 0 1rem;
+  }
+  .thank-you-card p {
+    color: var(--ink-mid);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  .thank-you-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  .thank-you-btn {
+    width: auto;
+    text-decoration: none;
+  }
+  .thank-you-link {
+    color: var(--forest);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
 
   /* SOCIAL PROOF STRIP */
   .social-proof {
@@ -407,6 +527,8 @@
   @media (max-width: 900px) {
     .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     .contact-form-wrap { position: static; }
+    .priority-contact-grid { grid-template-columns: 1fr; }
+    .priority-copy { position: static; }
   }
   @media (max-width: 768px) {
     .nav-links { display: none; }
