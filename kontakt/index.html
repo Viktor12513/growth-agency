@@ -282,15 +282,10 @@ footer .footer-logo .logo-domain {
               <p>Vi svarar inom 24 timmar – oftast samma dag.</p>
             </div>
 
-            <form id="contact-form" class="js-formsubmit-form" action="https://formsubmit.co/albin@plasmamedia.se" method="POST" enctype="multipart/form-data" onsubmit="return window.plasmaValidateContactForm ? window.plasmaValidateContactForm(this) : true" aria-label="Kontakt- och offertformulär">
-              <input type="hidden" name="_subject" value="Ny kontakt- och offertförfrågan från Plasma MEDIA AB">
-              <input type="hidden" name="_next" value="https://www.plasmamedia.se/tack/">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_autoresponse" value="Tack för din förfrågan till Plasma MEDIA AB. Vi har tagit emot ditt meddelande och återkommer normalt inom 24 timmar med nästa steg.">
-              <input type="hidden" name="_blacklist" value="viagra, casino, cryptocurrency, crypto, backlink, guest post, seo service, loan, adult">
+            <form id="contact-form" class="js-contact-api-form" action="/api/contact" method="POST" enctype="multipart/form-data" aria-label="Kontakt- och offertformulär">
               <div class="form-honeypot" aria-hidden="true">
                 <label for="contact-honey">Lämna tomt</label>
-                <input type="text" id="contact-honey" name="_honey" tabindex="-1" autocomplete="off">
+                <input type="text" id="contact-honey" name="website" tabindex="-1" autocomplete="off">
               </div>
               <input type="hidden" id="quizResult" name="quiz_result">
               <input type="hidden" id="quizRecommendation" name="quiz_recommendation">
@@ -350,7 +345,7 @@ footer .footer-logo .logo-domain {
                 <label for="consent">Jag godkänner att Plasma MEDIA AB lagrar mina uppgifter för att kunna besvara mitt meddelande. Läs vår <a href="/integritetspolicy/">integritetspolicy</a>.</label>
               </div>
               <p class="form-error" id="form-submit-error" role="alert" hidden></p>
-              <button type="submit" class="btn-submit" formaction="https://formsubmit.co/albin@plasmamedia.se" formmethod="POST" formenctype="multipart/form-data">
+              <button type="submit" class="btn-submit">
                 Skicka förfrågan
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
@@ -456,7 +451,7 @@ footer .footer-logo .logo-domain {
   </div>
 </footer>
 
-<script src="/assets/kontakt.js?v=20260711-simple-submit" defer></script>
+<script src="/assets/kontakt.js?v=20260711-vercel-api" defer></script>
 <script src="/assets/site-shell.js" defer></script>
 </body>
 </html>

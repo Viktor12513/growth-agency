@@ -1,6 +1,8 @@
-const TO_EMAIL = 'albin@plasmamedia.se';
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Plasma MEDIA AB <kontakt@plasmamedia.se>';
-const MAX_BODY_BYTES = 16 * 1024;
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'albin@plasmamedia.se';
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'Plasma MEDIA AB <onboarding@resend.dev>';
+const MAX_BODY_BYTES = 12 * 1024 * 1024;
+const MAX_TOTAL_ATTACHMENT_BYTES = 10 * 1024 * 1024;
+const ALLOWED_ATTACHMENT_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 const rateLimitStore = globalThis.__contactRateLimitStore || new Map();
@@ -78,24 +80,52 @@ function escapeHtml(value) {
 
 function buildEmailHtml(data) {
   const rows = [
-    ['Förnamn', data.fname],
-    ['Efternamn', data.lname],
+    ['Namn', data.name],
     ['E-post', data.email],
-    ['Telefon', data.phone || '-'],
+    ['Telefon', data.phone],
+    ['Ort', data.city],
     ['Företag', data.company || '-'],
-    ['Tjänst', data.service],
-    ['Quizrekommendation', data.quizRecommendation || '-'],
-    ['Quizsvar', data.quizResult || '-'],
+    ['Tjänst / ärende', data.service],
+    ['Quizrekommendation', data.quiz_recommendation || '-'],
+    ['Quizsvar', data.quiz_result || '-'],
     ['Meddelande', data.message],
   ];
 
-  return `<h2>Ny kontaktförfrågan från Plasma MEDIA AB</h2>
+  return `<h2>Ny kontakt- och offertförfrågan från Plasma MEDIA AB</h2>
   <table cellpadding="8" cellspacing="0" style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px">
     ${rows.map(([label, value]) => `<tr>
       <td style="border:1px solid #ddd;font-weight:bold;background:#f7f3ea">${escapeHtml(label)}</td>
       <td style="border:1px solid #ddd">${escapeHtml(value).replace(/\n/g, '<br>')}</td>
     </tr>`).join('')}
   </table>`;
+}
+
+function normalizeAttachments(rawAttachments) {
+  if (!Array.isArray(rawAttachments)) return [];
+
+  let totalBytes = 0;
+  return rawAttachments.slice(0, 5).map((attachment) => {
+    const filename = limit(attachment?.filename, 160) || 'bilaga';
+    const content = clean(attachment?.content);
+    const contentType = clean(attachment?.content_type);
+    const estimatedBytes = Math.ceil((content.length * 3) / 4);
+
+    totalBytes += estimatedBytes;
+
+    if (!content || !ALLOWED_ATTACHMENT_TYPES.has(contentType)) {
+      throw new Error('Invalid attachment type');
+    }
+
+    if (totalBytes > MAX_TOTAL_ATTACHMENT_BYTES) {
+      throw new Error('Attachments too large');
+    }
+
+    return {
+      filename,
+      content,
+      content_type: contentType,
+    };
+  });
 }
 
 export default async function handler(req, res) {
@@ -130,19 +160,18 @@ export default async function handler(req, res) {
   }
 
   const data = {
-    fname: limit(rawData.fname, 80),
-    lname: limit(rawData.lname, 80),
+    name: limit(rawData.name, 120),
     email: limit(rawData.email, 160),
     phone: limit(rawData.phone, 60),
+    city: limit(rawData.city, 100),
     company: limit(rawData.company, 140),
-    service: limit(rawData.service, 60),
-    quizResult: limit(rawData.quizResult, 1200),
-    quizRecommendation: limit(rawData.quizRecommendation, 700),
+    service: limit(rawData.service, 80),
+    quiz_result: limit(rawData.quiz_result, 1200),
+    quiz_recommendation: limit(rawData.quiz_recommendation, 700),
     message: limit(rawData.message, 3000),
   };
 
-  const required = ['fname', 'lname', 'email', 'service', 'message'];
-  const missing = required.filter((field) => !clean(data[field]));
+  const missing = ['name', 'email', 'phone', 'city', 'service', 'message'].filter((field) => !clean(data[field]));
 
   if (missing.length) {
     return res.status(400).json({ ok: false, error: 'Missing required fields', missing });
@@ -156,11 +185,17 @@ export default async function handler(req, res) {
     return res.status(400).json({ ok: false, error: 'Message is too short' });
   }
 
+  let attachments = [];
+  try {
+    attachments = normalizeAttachments(rawData.attachments);
+  } catch (error) {
+    return res.status(400).json({ ok: false, error: error.message });
+  }
+
   if (!process.env.RESEND_API_KEY) {
     return res.status(503).json({
       ok: false,
       error: 'Email service is not configured',
-      fallback: 'mailto',
     });
   }
 
@@ -174,12 +209,15 @@ export default async function handler(req, res) {
       from: FROM_EMAIL,
       to: TO_EMAIL,
       reply_to: clean(data.email),
-      subject: 'Ny kontaktförfrågan från Plasma MEDIA AB',
+      subject: 'Ny kontakt- och offertförfrågan från Plasma MEDIA AB',
       html: buildEmailHtml(data),
+      attachments,
     }),
   });
 
   if (!response.ok) {
+    const providerError = await response.text().catch(() => '');
+    console.error('Resend failed:', providerError);
     return res.status(502).json({ ok: false, error: 'Email provider failed' });
   }
 
