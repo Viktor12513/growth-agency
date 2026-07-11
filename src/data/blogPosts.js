@@ -1,6 +1,10 @@
 import { blogPosts2026 } from './blogPosts2026.js';
+import { blogPostsSeoCluster2026 } from './blogPostsSeoCluster2026.js';
+import { blogPostsQuestionGuides2026 } from './blogPostsQuestionGuides2026.js';
 
 export const blogPosts = [
+  ...blogPostsQuestionGuides2026,
+  ...blogPostsSeoCluster2026,
   ...blogPosts2026,
   {
     "slug": "hur-lang-tid-tar-seo",
