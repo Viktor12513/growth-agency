@@ -282,13 +282,18 @@ footer .footer-logo .logo-domain {
               <p>Vi svarar inom 24 timmar – oftast samma dag.</p>
             </div>
 
-            <form id="contact-form" aria-label="Kontaktformulär">
+            <form id="contact-form" class="js-formsubmit-form" action="https://formsubmit.co/albin@plasmamedia.se" method="POST" enctype="multipart/form-data" aria-label="Kontakt- och offertformulär">
+              <input type="hidden" name="_subject" value="Ny kontakt- och offertförfrågan från Plasma MEDIA AB">
+              <input type="hidden" name="_next" value="https://www.plasmamedia.se/tack/">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_autoresponse" value="Tack för din förfrågan till Plasma MEDIA AB. Vi har tagit emot ditt meddelande och återkommer normalt inom 24 timmar med nästa steg.">
+              <input type="hidden" name="_blacklist" value="viagra, casino, cryptocurrency, crypto, backlink, guest post, seo service, loan, adult">
               <div class="form-honeypot" aria-hidden="true">
-                <label for="website">Webbplats</label>
-                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                <label for="contact-honey">Lämna tomt</label>
+                <input type="text" id="contact-honey" name="_honey" tabindex="-1" autocomplete="off">
               </div>
-              <input type="hidden" id="quizResult" name="quizResult">
-              <input type="hidden" id="quizRecommendation" name="quizRecommendation">
+              <input type="hidden" id="quizResult" name="Quizresultat">
+              <input type="hidden" id="quizRecommendation" name="Quizrekommendation">
               <div class="contact-quiz" id="contact-quiz" aria-labelledby="contact-quiz-title">
                 <div class="contact-quiz-head">
                   <span class="contact-quiz-kicker">Snabb rekommendation</span>
@@ -300,31 +305,29 @@ footer .footer-logo .logo-domain {
                 <div class="contact-quiz-options" id="contact-quiz-options"></div>
                 <div class="contact-quiz-result" id="contact-quiz-result" hidden></div>
               </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="fname">Förnamn *</label>
-                  <input type="text" id="fname" name="fname" placeholder="Anna" autocomplete="given-name" maxlength="80" required>
-                </div>
-                <div class="form-group">
-                  <label for="lname">Efternamn *</label>
-                  <input type="text" id="lname" name="lname" placeholder="Lindström" autocomplete="family-name" maxlength="80" required>
-                </div>
+              <div class="form-group">
+                <label for="name">Namn *</label>
+                <input type="text" id="name" name="Namn" placeholder="Anna Lindström" autocomplete="name" maxlength="120" required>
               </div>
               <div class="form-group">
                 <label for="email">E-postadress *</label>
                 <input type="email" id="email" name="email" placeholder="anna@foretaget.se" autocomplete="email" maxlength="160" required>
               </div>
               <div class="form-group">
-                <label for="phone">Telefon (valfritt)</label>
-                <input type="tel" id="phone" name="phone" placeholder="070-123 45 67" autocomplete="tel" maxlength="60">
+                <label for="phone">Telefon *</label>
+                <input type="tel" id="phone" name="Telefon" placeholder="070-123 45 67" autocomplete="tel" maxlength="60" pattern="[0-9+() -]{7,20}" required>
+              </div>
+              <div class="form-group">
+                <label for="location">Ort *</label>
+                <input type="text" id="location" name="Ort" placeholder="Helsingborg" autocomplete="address-level2" maxlength="100" required>
               </div>
               <div class="form-group">
                 <label for="company">Företagsnamn</label>
-                <input type="text" id="company" name="company" placeholder="Lindströms Redovisning AB" autocomplete="organization" maxlength="140">
+                <input type="text" id="company" name="Företag" placeholder="Lindströms Redovisning AB" autocomplete="organization" maxlength="140">
               </div>
               <div class="form-group">
                 <label for="service">Vad är du intresserad av? *</label>
-                <select id="service" name="service" required>
+                <select id="service" name="Tjänst / ärende" required>
                   <option value="" disabled selected>Välj ett alternativ</option>
                   <option value="hemsida">Ny hemsida</option>
                   <option value="seo">SEO – sökmotoroptimering</option>
@@ -334,14 +337,20 @@ footer .footer-logo .logo-domain {
               </div>
               <div class="form-group">
                 <label for="message">Berätta kort om ditt företag *</label>
-                <textarea id="message" name="message" placeholder="T.ex. vad du säljer, var du befinner dig idag online och vad du vill uppnå..." minlength="10" maxlength="3000" required></textarea>
+                <textarea id="message" name="Meddelande" placeholder="T.ex. vad du säljer, var du befinner dig idag online och vad du vill uppnå..." minlength="10" maxlength="3000" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="images">Bilder eller underlag (valfritt)</label>
+                <input type="file" id="images" name="Bilder" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" multiple data-file-input>
+                <span class="form-help">JPG, PNG eller WebP. Max 10 MB totalt.</span>
+                <p class="form-error" data-file-error role="alert" hidden></p>
               </div>
               <div class="form-consent">
                 <input type="checkbox" id="consent" name="consent" required>
                 <label for="consent">Jag godkänner att Plasma MEDIA AB lagrar mina uppgifter för att kunna besvara mitt meddelande. Läs vår <a href="/integritetspolicy/">integritetspolicy</a>.</label>
               </div>
               <button type="submit" class="btn-submit">
-                Skicka meddelande
+                Skicka förfrågan
                 <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
               <p class="form-guarantee">
@@ -361,6 +370,103 @@ footer .footer-logo .logo-domain {
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <section class="priority-contact" aria-labelledby="priority-form-title">
+    <div class="container priority-contact-grid">
+      <div class="priority-copy">
+        <span class="section-kicker">Prioriterad tjänst</span>
+        <h2 id="priority-form-title">Vill du ha en snabbare rekommendation?</h2>
+        <p>Fyll i den korta varianten om du redan vet att hemsidan eller SEO är viktigast. Då får vi rätt underlag direkt och kan återkomma med ett tydligare nästa steg.</p>
+        <ul>
+          <li>Passar när du vill jämföra hemsida, lokal SEO eller ett större SEO-upplägg.</li>
+          <li>Vi prioriterar konkreta åtgärder som kan ge mätbara resultat inom cirka 3 månader.</li>
+          <li>Google Ads rekommenderas bara när snabb trafik verkligen behövs som komplement.</li>
+        </ul>
+      </div>
+
+      <form id="priority-form" class="priority-form js-formsubmit-form" action="https://formsubmit.co/albin@plasmamedia.se" method="POST" enctype="multipart/form-data" aria-label="Prioriterat kontaktformulär">
+        <input type="hidden" name="_subject" value="Prioriterad förfrågan från Plasma MEDIA AB">
+        <input type="hidden" name="_next" value="https://www.plasmamedia.se/tack/">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_autoresponse" value="Tack för din prioriterade förfrågan till Plasma MEDIA AB. Vi återkommer normalt inom 24 timmar med en rekommendation kring hemsida, SEO eller nästa rimliga steg.">
+        <input type="hidden" name="_blacklist" value="viagra, casino, cryptocurrency, crypto, backlink, guest post, seo service, loan, adult">
+        <div class="form-honeypot" aria-hidden="true">
+          <label for="priority-honey">Lämna tomt</label>
+          <input type="text" id="priority-honey" name="_honey" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="priority-name">Namn *</label>
+            <input type="text" id="priority-name" name="Namn" autocomplete="name" maxlength="120" required>
+          </div>
+          <div class="form-group">
+            <label for="priority-phone">Telefon *</label>
+            <input type="tel" id="priority-phone" name="Telefon" autocomplete="tel" maxlength="60" pattern="[0-9+() -]{7,20}" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="priority-email">E-post *</label>
+            <input type="email" id="priority-email" name="email" autocomplete="email" maxlength="160" required>
+          </div>
+          <div class="form-group">
+            <label for="priority-location">Ort *</label>
+            <input type="text" id="priority-location" name="Ort" autocomplete="address-level2" maxlength="100" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="priority-service">Vad vill du prioritera? *</label>
+          <select id="priority-service" name="Prioriterad tjänst" required>
+            <option value="" disabled selected>Välj prioritet</option>
+            <option>Ny eller förbättrad hemsida</option>
+            <option>SEO för lokal synlighet</option>
+            <option>SEO för större område eller nationellt</option>
+            <option>Hemsida + SEO tillsammans</option>
+            <option>Osäker – vill ha rekommendation</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="priority-site">Nuvarande webbplats</label>
+            <input type="url" id="priority-site" name="Nuvarande webbplats" placeholder="https://..." autocomplete="url" maxlength="180">
+          </div>
+          <div class="form-group">
+            <label for="priority-timeline">När vill du komma igång? *</label>
+            <select id="priority-timeline" name="Tidsplan" required>
+              <option value="" disabled selected>Välj tidsplan</option>
+              <option>Så snart som möjligt</option>
+              <option>Inom 1 månad</option>
+              <option>Inom 3 månader</option>
+              <option>Jag vill först förstå rätt upplägg</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="priority-message">Kort bakgrund *</label>
+          <textarea id="priority-message" name="Meddelande" minlength="10" maxlength="2000" required placeholder="Skriv kort vad ni säljer, vilka orter ni vill synas i och vad ni vill förbättra."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="priority-images">Bilder eller underlag (valfritt)</label>
+          <input type="file" id="priority-images" name="Bilder" accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" multiple data-file-input>
+          <span class="form-help">JPG, PNG eller WebP. Max 10 MB totalt.</span>
+          <p class="form-error" data-file-error role="alert" hidden></p>
+        </div>
+
+        <div class="form-consent">
+          <input type="checkbox" id="priority-consent" name="Samtycke" required>
+          <label for="priority-consent">Jag godkänner att Plasma MEDIA AB lagrar mina uppgifter för att kunna besvara min förfrågan. Läs vår <a href="/integritetspolicy/">integritetspolicy</a>.</label>
+        </div>
+
+        <button type="submit" class="btn-submit">Skicka prioriterad förfrågan</button>
+      </form>
     </div>
   </section>
 

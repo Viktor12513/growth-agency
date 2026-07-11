@@ -2,11 +2,12 @@
 document.querySelectorAll('.faq-q').forEach((btn) => {
   btn.addEventListener('click', () => {
     const item = btn.closest('.faq-item');
+    if (!item) return;
     const isOpen = item.classList.contains('open');
 
     document.querySelectorAll('.faq-item').forEach((faqItem) => {
       faqItem.classList.remove('open');
-      faqItem.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      faqItem.querySelector('.faq-q')?.setAttribute('aria-expanded', 'false');
     });
 
     if (!isOpen) {
@@ -16,10 +17,103 @@ document.querySelectorAll('.faq-q').forEach((btn) => {
   });
 });
 
+const MAX_TOTAL_UPLOAD_SIZE = 10 * 1024 * 1024;
+const ALLOWED_IMAGE_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp']);
+const ALLOWED_IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.webp'];
+
+function formatFileSize(bytes) {
+  return `${(bytes / (1024 * 1024)).toFixed(1).replace('.', ',')} MB`;
+}
+
+function fileHasAllowedExtension(file) {
+  const fileName = file.name.toLowerCase();
+  return ALLOWED_IMAGE_EXTENSIONS.some((extension) => fileName.endsWith(extension));
+}
+
+function getFileErrorElement(input) {
+  const group = input.closest('.form-group');
+  return group?.querySelector('[data-file-error]') || input.form?.querySelector('[data-file-error]');
+}
+
+function setFileError(input, message = '') {
+  const errorElement = getFileErrorElement(input);
+  if (!errorElement) return;
+  errorElement.textContent = message;
+  errorElement.hidden = !message;
+}
+
+function validateFileInput(input) {
+  const files = Array.from(input.files || []);
+  if (!files.length) {
+    setFileError(input);
+    input.setCustomValidity('');
+    return true;
+  }
+
+  const invalidFile = files.find((file) => {
+    const hasAllowedType = ALLOWED_IMAGE_TYPES.has(file.type);
+    return !hasAllowedType && !fileHasAllowedExtension(file);
+  });
+
+  if (invalidFile) {
+    const message = 'Ladda bara upp bilder i JPG, PNG eller WebP.';
+    setFileError(input, message);
+    input.setCustomValidity(message);
+    return false;
+  }
+
+  const totalSize = files.reduce((sum, file) => sum + file.size, 0);
+  if (totalSize > MAX_TOTAL_UPLOAD_SIZE) {
+    const message = `Bilderna är ${formatFileSize(totalSize)} totalt. Maxgränsen är 10 MB.`;
+    setFileError(input, message);
+    input.setCustomValidity(message);
+    return false;
+  }
+
+  setFileError(input);
+  input.setCustomValidity('');
+  return true;
+}
+
+function setupFormSubmitValidation(form) {
+  const fileInputs = form.querySelectorAll('[data-file-input]');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalSubmitText = submitButton?.innerHTML || '';
+
+  fileInputs.forEach((input) => {
+    input.addEventListener('change', () => {
+      validateFileInput(input);
+    });
+  });
+
+  form.addEventListener('submit', (event) => {
+    const filesAreValid = Array.from(fileInputs).every(validateFileInput);
+
+    if (!filesAreValid || !form.checkValidity()) {
+      event.preventDefault();
+      form.reportValidity();
+      return;
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+      submitButton.innerHTML = 'Skickar...';
+
+      window.setTimeout(() => {
+        if (document.visibilityState === 'visible') {
+          submitButton.disabled = false;
+          submitButton.removeAttribute('aria-busy');
+          submitButton.innerHTML = originalSubmitText;
+        }
+      }, 12000);
+    }
+  });
+}
+
+document.querySelectorAll('.js-formsubmit-form').forEach(setupFormSubmitValidation);
+
 const contactForm = document.getElementById('contact-form');
-const formSuccess = document.getElementById('form-success');
-const submitButton = contactForm.querySelector('.btn-submit');
-const originalSubmitText = submitButton.innerHTML;
 const contactQuizQuestion = document.getElementById('contact-quiz-question');
 const contactQuizOptions = document.getElementById('contact-quiz-options');
 const contactQuizProgress = document.getElementById('contact-quiz-progress');
@@ -58,43 +152,8 @@ const contactQuizQuestions = [
 let contactQuizStep = 0;
 let contactQuizAnswers = [];
 
-function formValue(name) {
-  return contactForm.elements[name]?.value?.trim() || '';
-}
-
-function buildPayload() {
-  return {
-    fname: formValue('fname'),
-    lname: formValue('lname'),
-    email: formValue('email'),
-    phone: formValue('phone'),
-    company: formValue('company'),
-    service: formValue('service'),
-    message: formValue('message'),
-    website: formValue('website'),
-    quizResult: formValue('quizResult'),
-    quizRecommendation: formValue('quizRecommendation'),
-  };
-}
-
-function buildMailto(payload) {
-  const subject = encodeURIComponent('Ny kontaktförfrågan från Plasma MEDIA AB');
-  const quizText = payload.quizRecommendation
-    ? `\nQuizrekommendation:\n${payload.quizRecommendation}\n\nQuizsvar:\n${payload.quizResult || '-'}\n`
-    : '';
-  const body = encodeURIComponent(
-    `Förnamn: ${payload.fname}\n` +
-    `Efternamn: ${payload.lname}\n` +
-    `E-post: ${payload.email}\n` +
-    `Telefon: ${payload.phone || '-'}\n` +
-    `Företag: ${payload.company || '-'}\n` +
-    `Tjänst: ${payload.service}\n` +
-    quizText +
-    `\n` +
-    `Meddelande:\n${payload.message}`
-  );
-
-  return `mailto:albin@plasmamedia.se?subject=${subject}&body=${body}`;
+function getContactField(name) {
+  return contactForm?.elements[name] || null;
 }
 
 function getQuizRecommendation() {
@@ -159,22 +218,31 @@ function saveQuizResult(recommendation) {
     return `${index + 1}. ${question.question} ${answer}`;
   }).join('\n');
 
-  contactForm.elements.quizResult.value = readableAnswers;
-  contactForm.elements.quizRecommendation.value = `${recommendation.title}\n${recommendation.text}`;
-  contactForm.elements.service.value = recommendation.service;
+  const quizResultField = getContactField('Quizresultat');
+  const quizRecommendationField = getContactField('Quizrekommendation');
+  const serviceField = getContactField('Tjänst / ärende');
+  const messageField = getContactField('Meddelande');
 
-  const message = contactForm.elements.message;
-  const quizSummary = `Quizresultat:\n${recommendation.title}\n${recommendation.text}\n\nSvar:\n${readableAnswers}\n\nMeddelande:\n`;
-  const existingText = message.value.includes('Quizresultat:')
-    ? message.value.split('Meddelande:\n').slice(1).join('Meddelande:\n').trim()
-    : message.value.trim();
+  if (quizResultField) quizResultField.value = readableAnswers;
+  if (quizRecommendationField) quizRecommendationField.value = `${recommendation.title}\n${recommendation.text}`;
+  if (serviceField) serviceField.value = recommendation.service;
 
-  message.value = quizSummary + existingText;
+  if (messageField) {
+    const quizSummary = `Quizresultat:\n${recommendation.title}\n${recommendation.text}\n\nSvar:\n${readableAnswers}\n\nMeddelande:\n`;
+    const existingText = messageField.value.includes('Quizresultat:')
+      ? messageField.value.split('Meddelande:\n').slice(1).join('Meddelande:\n').trim()
+      : messageField.value.trim();
+
+    messageField.value = quizSummary + existingText;
+  }
 }
 
 function renderContactQuizResult() {
   const recommendation = getQuizRecommendation();
   saveQuizResult(recommendation);
+
+  if (!contactQuizQuestion || !contactQuizOptions || !contactQuizProgress || !contactQuizResult) return;
+
   contactQuizQuestion.textContent = '';
   contactQuizOptions.innerHTML = '';
   contactQuizProgress.style.width = '100%';
@@ -185,18 +253,21 @@ function renderContactQuizResult() {
     <span>${recommendation.cta}</span>
     <button type="button" class="contact-quiz-restart" id="contact-quiz-restart">Gör om</button>
   `;
-  document.getElementById('contact-quiz-restart').addEventListener('click', () => {
+  document.getElementById('contact-quiz-restart')?.addEventListener('click', () => {
     contactQuizStep = 0;
     contactQuizAnswers = [];
-    contactForm.elements.quizResult.value = '';
-    contactForm.elements.quizRecommendation.value = '';
+    const quizResultField = getContactField('Quizresultat');
+    const quizRecommendationField = getContactField('Quizrekommendation');
+    if (quizResultField) quizResultField.value = '';
+    if (quizRecommendationField) quizRecommendationField.value = '';
     contactQuizResult.hidden = true;
     renderContactQuiz();
   });
 }
 
 function renderContactQuiz() {
-  if (!contactQuizQuestion || !contactQuizOptions) return;
+  if (!contactForm || !contactQuizQuestion || !contactQuizOptions || !contactQuizProgress) return;
+
   const current = contactQuizQuestions[contactQuizStep];
   contactQuizQuestion.textContent = current.question;
   contactQuizOptions.innerHTML = '';
@@ -219,53 +290,5 @@ function renderContactQuiz() {
     contactQuizOptions.appendChild(button);
   });
 }
-
-function showSuccess() {
-  contactForm.style.display = 'none';
-  formSuccess.classList.add('visible');
-}
-
-function setSubmitting(isSubmitting) {
-  submitButton.disabled = isSubmitting;
-  submitButton.innerHTML = isSubmitting ? 'Skickar...' : originalSubmitText;
-}
-
-contactForm.addEventListener('submit', async function (event) {
-  event.preventDefault();
-
-  if (!this.checkValidity()) {
-    this.reportValidity();
-    return;
-  }
-
-  const payload = buildPayload();
-  setSubmitting(true);
-
-  try {
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-
-    if (response.ok) {
-      showSuccess();
-      return;
-    }
-
-    const result = await response.json().catch(() => ({}));
-    if (result.fallback === 'mailto') {
-      window.location.href = buildMailto(payload);
-      return;
-    }
-
-    throw new Error(result.error || 'Contact request failed');
-  } catch (error) {
-    console.error(error);
-    window.location.href = buildMailto(payload);
-  } finally {
-    setSubmitting(false);
-  }
-});
 
 renderContactQuiz();
