@@ -77,35 +77,11 @@ function validateFileInput(input) {
 
 function setupFormSubmitValidation(form) {
   const fileInputs = form.querySelectorAll('[data-file-input]');
-  const submitButton = form.querySelector('button[type="submit"]');
-  const originalSubmitText = submitButton?.innerHTML || '';
 
   fileInputs.forEach((input) => {
     input.addEventListener('change', () => {
       validateFileInput(input);
     });
-  });
-
-  form.addEventListener('submit', (event) => {
-    const filesAreValid = Array.from(fileInputs).every(validateFileInput);
-
-    if (!filesAreValid || !form.checkValidity()) {
-      event.preventDefault();
-      form.reportValidity();
-      return;
-    }
-
-    if (submitButton) {
-      submitButton.setAttribute('aria-busy', 'true');
-      submitButton.innerHTML = 'Skickar...';
-
-      window.setTimeout(() => {
-        if (document.visibilityState === 'visible') {
-          submitButton.removeAttribute('aria-busy');
-          submitButton.innerHTML = originalSubmitText;
-        }
-      }, 8000);
-    }
   });
 }
 
