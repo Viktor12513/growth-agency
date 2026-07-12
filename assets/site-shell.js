@@ -1,4 +1,26 @@
 (function () {
+  function clearElement(element) {
+    while (element.firstChild) element.removeChild(element.firstChild);
+  }
+
+  function createBreadcrumbList(label) {
+    const list = document.createElement('ol');
+    const homeItem = document.createElement('li');
+    const homeLink = document.createElement('a');
+    homeLink.href = '/';
+    homeLink.textContent = 'Startsida';
+    homeItem.appendChild(homeLink);
+
+    const currentItem = document.createElement('li');
+    const current = document.createElement('span');
+    current.setAttribute('aria-current', 'page');
+    current.textContent = label;
+    currentItem.appendChild(current);
+
+    list.append(homeItem, currentItem);
+    return list;
+  }
+
   function clearTranslation() {
     document.querySelectorAll('.language-switch, #google_translate_element, .goog-te-banner-frame').forEach((element) => element.remove());
     document.cookie = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT; SameSite=Lax';
@@ -59,7 +81,7 @@
       breadcrumb = document.createElement('nav');
       breadcrumb.className = 'breadcrumb';
       breadcrumb.setAttribute('aria-label', 'Brödsmulor');
-      breadcrumb.innerHTML = `<ol><li><a href="/">Startsida</a></li><li aria-current="page"></li></ol>`;
+      breadcrumb.appendChild(createBreadcrumbList(''));
       header.insertAdjacentElement('afterend', breadcrumb);
     }
 
@@ -70,11 +92,13 @@
     const label = getPageLabel();
     let list = breadcrumb.querySelector('ol, .breadcrumb-list, .breadcrumb-inner');
     if (!list) {
-      breadcrumb.innerHTML = '<ol></ol>';
-      list = breadcrumb.querySelector('ol');
+      clearElement(breadcrumb);
+      list = createBreadcrumbList(label);
+      breadcrumb.appendChild(list);
     }
     if (breadcrumb.dataset.normalizedLabel === label) return;
-    list.innerHTML = `<li><a href="/">Startsida</a></li><li aria-current="page">${label}</li>`;
+    clearElement(breadcrumb);
+    breadcrumb.appendChild(createBreadcrumbList(label));
     breadcrumb.dataset.normalizedLabel = label;
   }
 
@@ -101,9 +125,17 @@
       const current = Array.from(menu.querySelectorAll('a')).map((link) => link.getAttribute('href')).join('|');
       const expected = links.map((item) => item.href).join('|');
       if (current === expected) return;
-      menu.innerHTML = links.map((item) => (
-        `<a href="${item.href}"><strong>${item.title}</strong><span>${item.text}</span></a>`
-      )).join('');
+      clearElement(menu);
+      links.forEach((item) => {
+        const link = document.createElement('a');
+        const title = document.createElement('strong');
+        const text = document.createElement('span');
+        link.href = item.href;
+        title.textContent = item.title;
+        text.textContent = item.text;
+        link.append(title, text);
+        menu.appendChild(link);
+      });
     });
   }
 
@@ -131,10 +163,12 @@
   removeQuizLinks();
   normalizeBreadcrumb();
   enhanceSeoDropdown();
-  new MutationObserver(() => {
+  const observer = new MutationObserver(() => {
     removeQuizLinks();
     normalizeBreadcrumb();
     enhanceSeoDropdown();
-  }).observe(document.documentElement, { childList: true, subtree: true });
+  });
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+  window.setTimeout(() => observer.disconnect(), 4500);
   setupNavigation();
 })();

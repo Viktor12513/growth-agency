@@ -89,6 +89,7 @@ footer[role="contentinfo"] .footer-logo span{color:#c4943a!important}
 footer[role="contentinfo"] .footer-logo .logo-domain{color:#fff!important}
 footer[role="contentinfo"] p,footer[role="contentinfo"] li,footer[role="contentinfo"] a{font-family:"DM Sans",Arial,sans-serif!important}
 footer[role="contentinfo"] .footer-brand p{max-width:280px!important;color:rgba(255,255,255,.68)!important;font-size:.875rem!important}
+footer[role="contentinfo"] h3,
 footer[role="contentinfo"] h4{margin:0 0 15px!important;color:#fff!important;font-size:.9rem!important}
 footer[role="contentinfo"] ul{margin:0!important;padding:0!important;list-style:none!important}
 footer[role="contentinfo"] li{margin:8px 0!important;padding:0!important;font-size:.84rem!important}
