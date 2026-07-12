@@ -41,9 +41,9 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Vad kostar en hemsida hos Plasma MEDIA AB?", "acceptedAnswer": { "@type": "Answer", "text": "Hemsidor kan betalas månadsvis upp till 24 månader. Start börjar från 834 kr per månad exklusive moms, med totalt avtalsvärde 19 999 kr. Större lösningar och specialprojekt offereras utifrån omfattning, antal sidor, innehåll och funktioner." } },
+        { "@type": "Question", "name": "Vad kostar en hemsida hos Plasma MEDIA AB?", "acceptedAnswer": { "@type": "Answer", "text": "Hemsidor kan betalas månadsvis över 12, 24 eller 36 månader. Start börjar från 556 kr per månad exklusive moms vid 36 månader, med totalt avtalsvärde 19 999 kr. Större lösningar och specialprojekt offereras utifrån omfattning, antal sidor, innehåll och funktioner." } },
         { "@type": "Question", "name": "Vad kostar SEO per månad?", "acceptedAnswer": { "@type": "Answer", "text": "SEO-paketen börjar från 999 kr per månad för grundläggande SEO och går upp till lokala, regionala och nationella upplägg beroende på konkurrens och mål." } },
-        { "@type": "Question", "name": "Hur lång bindningstid gäller?", "acceptedAnswer": { "@type": "Answer", "text": "Hemsidor kan delas upp på upp till 24 månader. För SEO och Google Ads är minsta bindningstid 12 månader. För långsiktigt SEO-arbete rekommenderas ofta 24 månader och i vissa fall 36 månader." } },
+        { "@type": "Question", "name": "Hur lång bindningstid gäller?", "acceptedAnswer": { "@type": "Answer", "text": "Hemsidor kan delas upp på 12, 24 eller 36 månader. För SEO och Google Ads är minsta bindningstid 12 månader. För långsiktigt SEO-arbete rekommenderas ofta 24 månader och i vissa fall 36 månader." } },
         { "@type": "Question", "name": "Kan man få offert på ett större projekt?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Projekt med e-handel, medlemsportaler, flera språk, integrationer eller större sidstruktur offereras separat." } }
       ]
     }
@@ -416,16 +416,23 @@ footer .footer-logo .logo-domain {
   <!-- HEMSIDOR -->
   <div class="sec-label g">Hemsidor – avbetalning</div>
   <div class="sec-title">Hitta rätt hemsidepaket</div>
-  <div class="sec-sub">Alla hemsidepaket kan delas upp på upp till 24 månader. Mobilanpassning, teknisk SEO-grund, säker lansering och 1 års support ingår.</div>
+  <div class="sec-sub">Alla hemsidepaket kan delas upp på 12, 24 eller 36 månader. Mobilanpassning, teknisk SEO-grund, säker lansering och 1 års support ingår.</div>
+  <div class="toggle-wrap web-term-wrap">
+    <div class="toggle-pill" id="web-toggle">
+      <button onclick="setWebTerm(12,this)">12 månader</button>
+      <button class="on" onclick="setWebTerm(24,this)">24 månader <span class="bp gold">Standard</span></button>
+      <button onclick="setWebTerm(36,this)">36 månader</button>
+    </div>
+  </div>
   <div class="cards-grid web-cards-grid">
     <div class="card">
       <div class="c-lbl">Kom igång</div>
       <div class="c-name">Start</div>
       <div class="c-desc">En professionell företagshemsida för ett tydligt erbjudande och en enkel väg till kontakt.</div>
       <div class="c-price-box">
-        <div class="price-main">834 kr/mån</div>
-        <div class="price-note">24 mån avbetalning · ex. moms</div>
-        <div class="price-free">Totalt avtalsvärde: 19 999 kr</div>
+        <div class="price-main" id="web-start-price">834 kr/mån</div>
+        <div class="price-note" id="web-start-note">24 mån avbetalning · ex. moms</div>
+        <div class="price-free" id="web-start-total">Totalt avtalsvärde: 19 999 kr</div>
       </div>
       <ul class="feats">
         <li>Upp till 5 innehållssidor</li>
@@ -446,9 +453,9 @@ footer .footer-logo .logo-domain {
       <div class="c-name">Tillväxt</div>
       <div class="c-desc">För företag som behöver fler landningssidor, löpande innehåll och tydlig konverteringsmätning.</div>
       <div class="c-price-box">
-        <div class="price-main">1 250 kr/mån</div>
-        <div class="price-note">24 mån avbetalning · ex. moms</div>
-        <div class="price-free">Totalt avtalsvärde: 29 999 kr</div>
+        <div class="price-main" id="web-tillvaxt-price">1 250 kr/mån</div>
+        <div class="price-note" id="web-tillvaxt-note">24 mån avbetalning · ex. moms</div>
+        <div class="price-free" id="web-tillvaxt-total">Totalt avtalsvärde: 29 999 kr</div>
       </div>
       <ul class="feats">
         <li>Upp till 10 innehållssidor</li>
@@ -468,9 +475,9 @@ footer .footer-logo .logo-domain {
       <div class="c-name">Premium</div>
       <div class="c-desc">En mer omfattande webbplats med avancerad struktur, integrationer och stöd genom hela innehållsarbetet.</div>
       <div class="c-price-box">
-        <div class="price-main">1 667 kr/mån</div>
-        <div class="price-note">24 mån avbetalning · ex. moms</div>
-        <div class="price-free">Totalt avtalsvärde: 39 999 kr</div>
+        <div class="price-main" id="web-premium-price">1 667 kr/mån</div>
+        <div class="price-note" id="web-premium-note">24 mån avbetalning · ex. moms</div>
+        <div class="price-free" id="web-premium-total">Totalt avtalsvärde: 39 999 kr</div>
       </div>
       <ul class="feats">
         <li>Upp till 15 innehållssidor</li>
@@ -709,7 +716,7 @@ footer .footer-logo .logo-domain {
   <div class="sec-title">Svar på det du undrar</div>
   <div class="faq-list">
     <div class="faq-item"><h4>Vad händer om jag inte är nöjd?</h4><p>Vi jobbar inte klart förrän du är nöjd. För hemsidor ingår 2 revideringsrundor. Om vi inte kan hitta en lösning som du är helt nöjd med betalar du inget.</p></div>
-    <div class="faq-item"><h4>Kan jag dela upp betalningen för en hemsida?</h4><p>Ja. Våra hemsidepaket kan betalas månadsvis upp till 24 månader. På prissidan visar vi månadsbeloppet och det totala avtalsvärdet exklusive moms, så du ser både månadskostnad och total kostnad innan du skickar en förfrågan.</p></div>
+    <div class="faq-item"><h4>Kan jag dela upp betalningen för en hemsida?</h4><p>Ja. Våra hemsidepaket kan betalas månadsvis över 12, 24 eller 36 månader. På prissidan väljer du period och ser månadsbeloppet direkt tillsammans med det totala avtalsvärdet exklusive moms, så du ser både månadskostnad och total kostnad innan du skickar en förfrågan.</p></div>
     <div class="faq-item"><h4>Hur lång är leveranstiden?</h4><p>Leverans sker normalt inom 1–3 veckor från godkänd offert och mottaget material. Om projektet är mer komplext får du en tydlig tidsplan innan start.</p></div>
     <div class="faq-item"><h4>Kan jag uppdatera hemsidan själv efteråt?</h4><p>Ja. Tillväxt och Premium byggs med ett användarvänligt CMS (WordPress) som gör det enkelt att redigera texter, lägga till bilder och publicera blogginlägg – utan teknisk kunskap.</p></div>
     <div class="faq-item"><h4>Hur lång är avtalstiden för SEO och Google Ads?</h4><p>Minsta avtalstid är 12 månader. Vi rekommenderar 24 månader för att hinna samla data, genomföra förbättringar och bygga stabila resultat över tid. För företag som vill arbeta ännu mer långsiktigt erbjuder vi även 36 månader.</p></div>
@@ -820,6 +827,61 @@ function setTerm(type, months, btn) {
     if(n) n.textContent=note;
     if(f) f.textContent='';
   });
+}
+
+let webTermMonths = 24;
+const webPackageTotals = {
+  start: 19999,
+  tillvaxt: 29999,
+  premium: 39999,
+};
+
+function calcWebMonthly(total, months) {
+  return Math.ceil(total / months);
+}
+
+function fmtWebKr(n) {
+  return n.toLocaleString('sv-SE').replace(/\s/g, ' ') + ' kr';
+}
+
+function getWebPackageState(key) {
+  const contractValue = webPackageTotals[key];
+  return {
+    monthly: calcWebMonthly(contractValue, webTermMonths),
+    termMonths: webTermMonths,
+    contractValue,
+  };
+}
+
+function setWebTerm(months, btn) {
+  webTermMonths = months;
+  document.getElementById('web-toggle').querySelectorAll('button').forEach(b => b.classList.remove('on'));
+  if (btn) btn.classList.add('on');
+
+  Object.keys(webPackageTotals).forEach(key => {
+    const state = getWebPackageState(key);
+    const price = document.getElementById(`web-${key}-price`);
+    const note = document.getElementById(`web-${key}-note`);
+    const total = document.getElementById(`web-${key}-total`);
+    if (price) price.textContent = `${fmtWebKr(state.monthly)}/mån`;
+    if (note) note.textContent = `${state.termMonths} mån avbetalning · ex. moms`;
+    if (total) total.textContent = `Totalt avtalsvärde: ${fmtWebKr(state.contractValue)}`;
+  });
+
+  if (typeof products !== 'undefined') {
+    products.forEach(product => {
+      if (!product.webKey) return;
+      Object.assign(product, getWebPackageState(product.webKey));
+    });
+  }
+
+  if (typeof cart !== 'undefined') {
+    cart.forEach(item => {
+      if (!item.webKey) return;
+      Object.assign(item, getWebPackageState(item.webKey));
+    });
+    updateCartUI();
+  }
 }
 </script>
 
@@ -1235,9 +1297,9 @@ function setTerm(type, months, btn) {
   // ---- Product catalogue (parsed from DOM buttons) ----
   const products = [
     // Hemsidor
-    { id:'web-start',     category:'Hemsida',    name:'Start',         price:0, monthly:834, termMonths:24, contractValue:19999 },
-    { id:'web-tillvaxt',  category:'Hemsida',    name:'Tillväxt',      price:0, monthly:1250, termMonths:24, contractValue:29999 },
-    { id:'web-premium',   category:'Hemsida',    name:'Premium',       price:0, monthly:1667, termMonths:24, contractValue:39999 },
+    { id:'web-start',     category:'Hemsida',    name:'Start',         price:0, monthly:834,  termMonths:24, contractValue:19999, webKey:'start' },
+    { id:'web-tillvaxt',  category:'Hemsida',    name:'Tillväxt',      price:0, monthly:1250, termMonths:24, contractValue:29999, webKey:'tillvaxt' },
+    { id:'web-premium',   category:'Hemsida',    name:'Premium',       price:0, monthly:1667, termMonths:24, contractValue:39999, webKey:'premium' },
     { id:'web-offert',    category:'Hemsida',    name:'Hemsida Offert', price:0, monthly:0, offert:true, description:'Skräddarsytt hemsideprojekt efter behovsanalys och kravspecifikation.' },
     // Google Ads
     { id:'ads-bas',       category:'Google Ads', name:'Ads Bas',       price:0,     monthly:2995 },
@@ -1499,13 +1561,19 @@ function setTerm(type, months, btn) {
   window.closeCart = closeCart;
   window.clearCart = clearCart;
   window.goCheckout = goCheckout;
+  window.setWebTerm = setWebTerm;
   window._cartRemove = removeFromCart;
   window._cartChangeQty = changeQty;
 
   // Init after DOM ready
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => { wireButtons(); updateCartUI(); });
+    document.addEventListener('DOMContentLoaded', () => {
+      setWebTerm(webTermMonths, document.querySelector('#web-toggle button.on'));
+      wireButtons();
+      updateCartUI();
+    });
   } else {
+    setWebTerm(webTermMonths, document.querySelector('#web-toggle button.on'));
     wireButtons();
     updateCartUI();
   }
