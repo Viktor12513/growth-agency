@@ -20,11 +20,27 @@
     window.gtag('config', measurementId, { anonymize_ip: true });
   }
 
-  if ('requestIdleCallback' in window) {
-    window.requestIdleCallback(loadAnalytics, { timeout: 3500 });
+  function armInteractionLoader() {
+    var events = ['pointerdown', 'keydown', 'touchstart', 'scroll'];
+    var options = { once: true, passive: true };
+
+    function onFirstIntent() {
+      events.forEach(function (eventName) {
+        window.removeEventListener(eventName, onFirstIntent, options);
+      });
+      loadAnalytics();
+    }
+
+    events.forEach(function (eventName) {
+      window.addEventListener(eventName, onFirstIntent, options);
+    });
+
+    window.setTimeout(loadAnalytics, 12000);
+  }
+
+  if (document.readyState === 'complete') {
+    armInteractionLoader();
   } else {
-    window.addEventListener('load', function () {
-      window.setTimeout(loadAnalytics, 1800);
-    }, { once: true });
+    window.addEventListener('load', armInteractionLoader, { once: true });
   }
 })();
