@@ -1,47 +1,54 @@
 import { resolve } from 'node:path';
+import { readdirSync } from 'node:fs';
 import { defineConfig } from 'vite';
+
+const excludedInputDirs = new Set([
+  '.git',
+  '.pnpm-store',
+  'api',
+  'assets',
+  'dist',
+  'images',
+  'node_modules',
+  'public',
+  'scripts',
+  'src',
+  'quiz',
+]);
+
+function toInputName(route: string) {
+  if (!route) return 'main';
+  return route
+    .split(/[\\/]+/)
+    .filter(Boolean)
+    .map((part, index) => {
+      const clean = part.replace(/[^a-zA-Z0-9]+(.)?/g, (_, char = '') => char.toUpperCase());
+      return index === 0 ? clean : clean.charAt(0).toUpperCase() + clean.slice(1);
+    })
+    .join('');
+}
+
+function collectHtmlInputs(dir = __dirname, route = ''): Record<string, string> {
+  const entries = readdirSync(dir, { withFileTypes: true });
+  const inputs: Record<string, string> = {};
+
+  if (entries.some((entry) => entry.isFile() && entry.name === 'index.html')) {
+    inputs[toInputName(route)] = resolve(dir, 'index.html');
+  }
+
+  for (const entry of entries) {
+    if (!entry.isDirectory() || excludedInputDirs.has(entry.name) || entry.name.startsWith('.')) continue;
+    Object.assign(inputs, collectHtmlInputs(resolve(dir, entry.name), route ? `${route}/${entry.name}` : entry.name));
+  }
+
+  return inputs;
+}
 
 export default defineConfig({
   base: '/',
   build: {
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        hemsida: resolve(__dirname, 'hemsida/index.html'),
-        kundcases: resolve(__dirname, 'kundcases/index.html'),
-        seo: resolve(__dirname, 'seo/index.html'),
-        googleAds: resolve(__dirname, 'google-ads/index.html'),
-        socialaMedier: resolve(__dirname, 'sociala-medier/index.html'),
-        priser: resolve(__dirname, 'priser/index.html'),
-        quiz: resolve(__dirname, 'quiz/index.html'),
-        blog: resolve(__dirname, 'blog/index.html'),
-        blogg: resolve(__dirname, 'blogg/index.html'),
-        faq: resolve(__dirname, 'faq/index.html'),
-        bloggSeoResults: resolve(__dirname, 'blogg/hur-lang-tid-tar-seo/index.html'),
-        omOss: resolve(__dirname, 'om-oss/index.html'),
-        kontakt: resolve(__dirname, 'kontakt/index.html'),
-        tack: resolve(__dirname, 'tack/index.html'),
-        integritetspolicy: resolve(__dirname, 'integritetspolicy/index.html'),
-        seoPris: resolve(__dirname, 'seo-pris/index.html'),
-        lokalSeo: resolve(__dirname, 'lokal-seo/index.html'),
-        seoByraSmaforetag: resolve(__dirname, 'seo-byra-smaforetag/index.html'),
-        internationellSeo: resolve(__dirname, 'internationell-seo/index.html'),
-        hemsidaForetagPris: resolve(__dirname, 'hemsida-foretag-pris/index.html'),
-        hemsidaSmaforetag: resolve(__dirname, 'hemsida-smaforetag/index.html'),
-        webbyraHelsingborg: resolve(__dirname, 'webbyra-helsingborg/index.html'),
-        webbyraMalmo: resolve(__dirname, 'webbyra-malmo/index.html'),
-        webbyraGoteborg: resolve(__dirname, 'webbyra-goteborg/index.html'),
-        webbyraStockholm: resolve(__dirname, 'webbyra-stockholm/index.html'),
-        webbyraVasteras: resolve(__dirname, 'webbyra-vasteras/index.html'),
-        webbyraUmea: resolve(__dirname, 'webbyra-umea/index.html'),
-        webbyraOrebro: resolve(__dirname, 'webbyra-orebro/index.html'),
-        webbyraHub: resolve(__dirname, 'webbyra/index.html'),
-        webbyraUppsala: resolve(__dirname, 'webbyra-uppsala/index.html'),
-        webbyraLinkoping: resolve(__dirname, 'webbyra-linkoping/index.html'),
-        webbyraJonkoping: resolve(__dirname, 'webbyra-jonkoping/index.html'),
-        webbyraLund: resolve(__dirname, 'webbyra-lund/index.html'),
-        webbyraNorrkoping: resolve(__dirname, 'webbyra-norrkoping/index.html'),
-      },
+      input: collectHtmlInputs(),
     },
   },
 });

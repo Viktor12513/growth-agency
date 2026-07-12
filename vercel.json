@@ -1,9 +1,9 @@
 {
-  "rewrites": [
-    { "source": "/blogg/:slug*", "destination": "/blogg/index.html" },
-    { "source": "/blog/:slug*", "destination": "/blog/index.html" }
-  ],
+  "rewrites": [],
   "redirects": [
+    { "source": "/blog", "destination": "/blogg/", "permanent": true },
+    { "source": "/blog/", "destination": "/blogg/", "permanent": true },
+    { "source": "/blog/:slug*", "destination": "/blogg/:slug*", "permanent": true },
     { "source": "/quiz", "destination": "/kontakt/#contact-form", "permanent": true },
     { "source": "/quiz/", "destination": "/kontakt/#contact-form", "permanent": true },
     {
@@ -11,8 +11,7 @@
       "has": [{ "type": "host", "value": "plasmamedia.se" }],
       "destination": "https://www.plasmamedia.se/:path*",
       "permanent": true
-    },
-    { "source": "/blog/:slug*", "destination": "/blogg/:slug*", "permanent": true }
+    }
   ],
   "headers": [
     {

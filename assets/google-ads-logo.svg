@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-labelledby="title desc">
+  <title id="title">Google Ads</title>
+  <desc id="desc">Google Ads-symbol med blå, gul och grön form.</desc>
+  <rect width="320" height="220" fill="none"/>
+  <path d="M179 21c22-32 66-40 99-18 31 21 40 64 19 96l-59 90c-22 33-66 41-99 19-32-22-40-64-19-97l59-90z" fill="#4285F4"/>
+  <path d="M40 153 142 21c22-31 65-39 98-18 32 22 41 64 20 97L158 232 40 153z" fill="#FBBC04"/>
+  <path d="M206 178 158 232 117 164 165 110 206 178z" fill="#4285F4"/>
+  <circle cx="70" cy="156" r="45" fill="#34A853"/>
+</svg>
