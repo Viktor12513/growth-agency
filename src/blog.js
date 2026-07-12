@@ -93,7 +93,7 @@ function arrowIcon() {
 }
 
 function postUrl(post) {
-  return post.staticArticle ? `/blogg/${post.slug}/` : `/blogg/${post.slug}`;
+  return `/blogg/${post.slug}/`;
 }
 
 function authorLabel(post) {
@@ -592,7 +592,7 @@ function renderRoute(pathname = window.location.pathname) {
   const post = getPostBySlug(slug);
   if (post) {
     if (window.location.search.includes('post=')) {
-      window.history.replaceState({}, '', `/blogg/${post.slug}`);
+      window.history.replaceState({}, '', `/blogg/${post.slug}/`);
     }
     renderPost(post);
   } else {
