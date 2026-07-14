@@ -474,7 +474,7 @@ function renderRelatedPosts(post) {
 function renderPost(post) {
   resetArticleEvents();
 
-  if (post.staticArticle) {
+  if (post) {
     window.location.replace(postUrl(post));
     return;
   }
@@ -589,6 +589,8 @@ document.addEventListener('click', (event) => {
 
   const url = new URL(link.href);
   if (url.origin !== window.location.origin) return;
+
+  if (getSlugFromPath(url.pathname) !== '') return;
 
   event.preventDefault();
   window.history.pushState({}, '', url.pathname);
