@@ -162,6 +162,61 @@
     });
   }
 
+  function setupArticleReadingTools() {
+    const article = document.querySelector('.blog-post--guide');
+    const fill = document.getElementById('readFill');
+    const pct = document.getElementById('readPct');
+    const headings = Array.from(document.querySelectorAll('.article-body h2[id]'));
+    const tocLinks = Array.from(document.querySelectorAll('.toc-list a[href^="#"]'));
+    if (!article || !fill || !pct || article.dataset.readingToolsReady === 'true') return;
+
+    article.dataset.readingToolsReady = 'true';
+
+    const getScrollTop = () => {
+      const scrollingElement = document.scrollingElement || document.documentElement;
+      return Math.max(window.scrollY || 0, scrollingElement?.scrollTop || 0, document.body?.scrollTop || 0);
+    };
+
+    const updateProgress = () => {
+      const scrollTop = getScrollTop();
+      const articleTop = article.getBoundingClientRect().top + scrollTop;
+      const start = Math.max(0, articleTop - window.innerHeight * 0.2);
+      const end = Math.max(start + 1, articleTop + article.offsetHeight - window.innerHeight * 0.7);
+      const read = Math.min(Math.max(scrollTop - start, 0), end - start);
+      const scrollable = end - start;
+      const progress = Math.round((read / scrollable) * 100);
+      fill.style.width = `${progress}%`;
+      pct.textContent = `${progress}% klart`;
+
+      if (headings.length && tocLinks.length) {
+        const activeHeading = headings
+          .map((heading) => ({ heading, top: heading.getBoundingClientRect().top }))
+          .filter((item) => item.top <= window.innerHeight * 0.35)
+          .sort((a, b) => b.top - a.top)[0] || { heading: headings[0] };
+        tocLinks.forEach((link) => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${activeHeading.heading.id}`);
+        });
+      }
+    };
+
+    if (headings.length && 'IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          tocLinks.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+          });
+        });
+      }, { rootMargin: '-20% 0px -65% 0px', threshold: 0.01 });
+
+      headings.forEach((heading) => observer.observe(heading));
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  }
+
   function setupNavigation() {
     const toggle = document.querySelector('header[role="banner"] .nav-hamburger');
     const links = document.querySelector('header[role="banner"] .nav-links');
@@ -186,10 +241,12 @@
   removeQuizLinks();
   normalizeBreadcrumb();
   enhanceSeoDropdown();
+  setupArticleReadingTools();
   const observer = new MutationObserver(() => {
     removeQuizLinks();
     normalizeBreadcrumb();
     enhanceSeoDropdown();
+    setupArticleReadingTools();
   });
   observer.observe(document.documentElement, { childList: true, subtree: true });
   window.setTimeout(() => observer.disconnect(), 4500);

@@ -831,7 +831,7 @@ footer .container {
 }
 
 .article-page--static .blog-post--guide .article-title {
-  font-size: clamp(2rem, 3.2vw, 3rem);
+  font-size: clamp(1.9rem, 2.7vw, 2.55rem);
   line-height: 1.08;
   text-wrap: balance;
 }
@@ -859,6 +859,77 @@ footer .container {
   position: sticky;
   top: 84px;
   min-width: 0;
+}
+
+.article-page--static .sidebar-progress,
+.article-page--static .sidebar-toc {
+  background: #fff;
+  border: 1px solid var(--mint);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 18px 45px rgba(20, 60, 35, 0.06);
+  margin-bottom: 1.5rem;
+  padding: 1.35rem;
+}
+
+.article-page--static .sidebar-progress h3,
+.article-page--static .sidebar-toc h3 {
+  color: rgba(20, 60, 35, 0.72);
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.article-page--static .read-bar {
+  background: rgba(187, 224, 200, 0.6);
+  border-radius: 999px;
+  height: 5px;
+  margin-bottom: 0.8rem;
+  overflow: hidden;
+}
+
+.article-page--static .read-fill {
+  background: var(--forest);
+  border-radius: inherit;
+  height: 100%;
+  transition: width 180ms ease;
+  width: 0;
+}
+
+.article-page--static .read-pct {
+  color: rgba(20, 60, 35, 0.72);
+  font-size: 0.85rem;
+}
+
+.article-page--static .toc-list {
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.article-page--static .toc-list a {
+  align-items: flex-start;
+  color: var(--text);
+  display: grid;
+  font-size: 0.88rem;
+  gap: 0.65rem;
+  grid-template-columns: auto 1fr;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.article-page--static .toc-list a:hover,
+.article-page--static .toc-list a.active {
+  color: var(--forest);
+}
+
+.article-page--static .toc-num {
+  color: var(--sage);
+  font-weight: 800;
 }
 
 .article-page--static .sidebar-cta {
@@ -912,7 +983,7 @@ footer .container {
   }
 
   .article-page--static .blog-post--guide .article-title {
-    font-size: clamp(2rem, 9vw, 2.65rem);
+    font-size: clamp(1.85rem, 7vw, 2.25rem);
     line-height: 1.08;
   }
 
