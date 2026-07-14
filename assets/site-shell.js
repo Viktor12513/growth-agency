@@ -3,13 +3,24 @@
     while (element.firstChild) element.removeChild(element.firstChild);
   }
 
-  function createBreadcrumbList(label) {
+  function createBreadcrumbList(label, options = {}) {
+    const includeBlog = Boolean(options.includeBlog);
     const list = document.createElement('ol');
     const homeItem = document.createElement('li');
     const homeLink = document.createElement('a');
     homeLink.href = '/';
     homeLink.textContent = 'Startsida';
     homeItem.appendChild(homeLink);
+    list.appendChild(homeItem);
+
+    if (includeBlog) {
+      const blogItem = document.createElement('li');
+      const blogLink = document.createElement('a');
+      blogLink.href = '/blogg/';
+      blogLink.textContent = 'Blogg';
+      blogItem.appendChild(blogLink);
+      list.appendChild(blogItem);
+    }
 
     const currentItem = document.createElement('li');
     const current = document.createElement('span');
@@ -17,7 +28,7 @@
     current.textContent = label;
     currentItem.appendChild(current);
 
-    list.append(homeItem, currentItem);
+    list.appendChild(currentItem);
     return list;
   }
 
@@ -79,10 +90,6 @@
     const allBreadcrumbs = Array.from(document.querySelectorAll('body .breadcrumb'));
     const path = window.location.pathname.replace(/\/+$/, '') || '/';
     const isBlogPage = path === '/blogg' || path.startsWith('/blogg/');
-    if (isBlogPage) {
-      allBreadcrumbs.forEach((item) => item.remove());
-      return;
-    }
 
     let breadcrumb = allBreadcrumbs.find((item) => item.closest('main.article-page'))
       || allBreadcrumbs.find((item) => item.querySelector('a[href="/blogg/"], a[href="/blogg"]'))
@@ -92,7 +99,7 @@
       breadcrumb = document.createElement('nav');
       breadcrumb.className = 'breadcrumb';
       breadcrumb.setAttribute('aria-label', 'Brödsmulor');
-      breadcrumb.appendChild(createBreadcrumbList(''));
+      breadcrumb.appendChild(createBreadcrumbList('', { includeBlog: isBlogPage && path !== '/blogg' }));
       header.insertAdjacentElement('afterend', breadcrumb);
     }
 
@@ -105,16 +112,17 @@
     }
 
     const label = getPageLabel();
+    const normalizedKey = `${isBlogPage ? 'blog' : 'page'}:${label}`;
     let list = breadcrumb.querySelector('ol, .breadcrumb-list, .breadcrumb-inner');
     if (!list) {
       clearElement(breadcrumb);
-      list = createBreadcrumbList(label);
+      list = createBreadcrumbList(label, { includeBlog: isBlogPage && path !== '/blogg' });
       breadcrumb.appendChild(list);
     }
-    if (breadcrumb.dataset.normalizedLabel === label) return;
+    if (breadcrumb.dataset.normalizedLabel === normalizedKey) return;
     clearElement(breadcrumb);
-    breadcrumb.appendChild(createBreadcrumbList(label));
-    breadcrumb.dataset.normalizedLabel = label;
+    breadcrumb.appendChild(createBreadcrumbList(label, { includeBlog: isBlogPage && path !== '/blogg' }));
+    breadcrumb.dataset.normalizedLabel = normalizedKey;
   }
 
   function enhanceSeoDropdown() {
@@ -125,7 +133,7 @@
 
     const links = [
       { href: '/seo/', title: 'SEO – sökmotoroptimering', text: 'Så hjälper vi företag att synas organiskt på Google.' },
-      { href: '/seo-pris/', title: 'SEO pris', text: 'Vad SEO kostar och hur du väljer rätt nivå.' },
+      { href: '/seo-pris/', title: 'SEO-priser', text: 'Vad SEO kostar och hur du väljer rätt nivå.' },
       { href: '/lokal-seo/', title: 'Lokal SEO', text: 'Syns i Google Maps och i sökningar nära kunden.' },
       { href: '/seo-byra-smaforetag/', title: 'SEO byrå för småföretag', text: 'Praktisk SEO-hjälp för mindre företag.' },
       { href: '/internationell-seo/', title: 'Internationell SEO', text: 'Strategi för språk, länder och hreflang.' },
