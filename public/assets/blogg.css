@@ -796,3 +796,127 @@ footer .container {
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { align-items: flex-start; flex-direction: column; }
 }
+
+/* Blog article readability alignment
+   Static blog pages use article-page--static while the richer article rules
+   originally targeted only article-page--dynamic. Keep every article on the
+   same comfortable reading width instead of letting sections span the viewport. */
+.article-page--static {
+  background: var(--warm-white);
+}
+
+.article-page--static .article-wrap {
+  width: min(100% - 48px, 1120px);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(4rem, 7vw, 6rem);
+  display: grid;
+  grid-template-columns: minmax(0, 820px) minmax(220px, 280px);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.article-page--static .blog-post--guide,
+.article-page--static .article-header,
+.article-page--static .article-body {
+  min-width: 0;
+  max-width: 820px;
+}
+
+.article-page--static .blog-post--guide .article-title,
+.article-page--static .blog-post--guide .featured-answer,
+.article-page--static .blog-post--guide .article-lead,
+.article-page--static .blog-post--guide .article-meta {
+  max-width: 820px;
+}
+
+.article-page--static .blog-post--guide .article-title {
+  font-size: clamp(2.2rem, 4.2vw, 3.65rem);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.article-page--static .blog-post--guide .featured-answer,
+.article-page--static .blog-post--guide .article-section {
+  border-radius: 18px;
+}
+
+.article-page--static .blog-post--guide .article-section {
+  padding: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.article-page--static .blog-post--guide .article-section h2 {
+  max-width: 760px;
+}
+
+.article-page--static .blog-post--guide .article-section p,
+.article-page--static .blog-post--guide .article-section li {
+  font-size: clamp(1rem, 0.96rem + 0.15vw, 1.07rem);
+  line-height: 1.78;
+}
+
+.article-page--static .article-sidebar {
+  position: sticky;
+  top: 84px;
+  min-width: 0;
+}
+
+.article-page--static .sidebar-cta {
+  background: var(--forest);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem 1.35rem;
+  color: #fff;
+  text-align: center;
+}
+
+.article-page--static .sidebar-cta h3 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.12rem;
+  line-height: 1.25;
+  margin-bottom: 0.55rem;
+}
+
+.article-page--static .sidebar-cta p {
+  color: rgba(255,255,255,0.78);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  margin-bottom: 1.2rem;
+}
+
+.article-page--static .sidebar-cta a {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  border-radius: var(--radius);
+  background: var(--gold);
+  color: #fff;
+  font-weight: 800;
+  padding: 0.75rem 1rem;
+}
+
+@media (max-width: 1060px) {
+  .article-page--static .article-wrap {
+    grid-template-columns: 1fr;
+    width: min(100% - 40px, 860px);
+  }
+
+  .article-page--static .article-sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .article-page--static .article-wrap {
+    width: min(100% - 28px, 860px);
+    padding-top: 2rem;
+  }
+
+  .article-page--static .blog-post--guide .article-title {
+    font-size: clamp(2rem, 9vw, 2.65rem);
+    line-height: 1.08;
+  }
+
+  .article-page--static .blog-post--guide .article-section {
+    padding: 1.15rem;
+  }
+}
