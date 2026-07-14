@@ -108,7 +108,7 @@ export const blogPostsSeoCluster2026 = [
         heading: "Börja med sökintentionen",
         body: [
           "Sökintention betyder varför någon söker. Vill personen lära sig, jämföra, köpa, hitta en lokal aktör eller lösa ett akut problem? Om sidan inte matchar intentionen kan den ha bra text men ändå prestera dåligt. Därför ska varje viktig sida ha en tydlig uppgift innan du skriver.",
-          "För ett tjänsteföretag kan strukturen se ut så här: tjänstesidor för köpintention, bloggartiklar för informationssökningar, prissidor för jämförelse och lokala sidor för geografiska sökningar. En artikel om “hur fungerar SEO” ska inte låtsas vara en offert-sida. En sida om “SEO pris” ska inte gömma prisfrågan längst ner. Google och kunderna uppskattar samma sak här: tydlighet."
+          "För ett tjänsteföretag kan strukturen se ut så här: tjänstesidor för köpintention, bloggartiklar för informationssökningar, prissidor för jämförelse och lokala sidor för geografiska sökningar. En artikel om “hur fungerar SEO” ska inte låtsas vara en offert-sida. En sida om “SEO-priser” ska inte gömma prisfrågan längst ner. Google och kunderna uppskattar samma sak här: tydlighet."
         ]
       },
       {
