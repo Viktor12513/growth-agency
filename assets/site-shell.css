@@ -12,6 +12,21 @@ body{margin:0}
   color:#fff!important;
   font:700 .85rem/1 "DM Sans",Arial,sans-serif!important;
 }
+
+/* Breadcrumb hardening:
+   keep one generated separator for normal lists, but do not add an extra
+   separator before explicit separator nodes used by static article pages. */
+body .breadcrumb li+li::before{
+  content:"\203A"!important;
+}
+
+body .breadcrumb li.sep::before,
+body .breadcrumb .breadcrumb-separator::before,
+body .breadcrumb .breadcrumb-sep::before{
+  content:none!important;
+  display:none!important;
+  margin:0!important;
+}
 .skip-link:focus{top:0!important}
 .language-switch,#google_translate_element,.goog-te-banner-frame,.goog-te-gadget{display:none!important}
 body{top:0!important}
@@ -370,3 +385,9 @@ body .breadcrumb .breadcrumb-sep{
 body .breadcrumb li+li::before{
   content:"›"!important;
 }
+
+
+
+/* Final breadcrumb separator override */
+body .breadcrumb li+li::before{content:"\203A"!important;}
+body .breadcrumb li.sep::before,body .breadcrumb .breadcrumb-separator::before,body .breadcrumb .breadcrumb-sep::before{content:none!important;display:none!important;margin:0!important;}
