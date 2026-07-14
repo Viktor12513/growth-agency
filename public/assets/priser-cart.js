@@ -1,4 +1,4 @@
-﻿(function() {
+(function() {
   // ---- State ----
   const cart = []; // { id, name, category, price, monthly, qty }
 
@@ -6,36 +6,36 @@
   const products = [
     // Hemsidor
     { id:'web-start',     category:'Hemsida',    name:'Start',         price:0, monthly:834,  termMonths:24, contractValue:19999, webKey:'start' },
-    { id:'web-tillvaxt',  category:'Hemsida',    name:'TillvÃ¤xt',      price:0, monthly:1250, termMonths:24, contractValue:29999, webKey:'tillvaxt' },
+    { id:'web-tillvaxt',  category:'Hemsida',    name:'Tillväxt',      price:0, monthly:1250, termMonths:24, contractValue:29999, webKey:'tillvaxt' },
     { id:'web-premium',   category:'Hemsida',    name:'Premium',       price:0, monthly:1667, termMonths:24, contractValue:39999, webKey:'premium' },
-    { id:'web-offert',    category:'Hemsida',    name:'Hemsida Offert', price:0, monthly:0, offert:true, description:'SkrÃ¤ddarsytt hemsideprojekt efter behovsanalys och kravspecifikation.' },
+    { id:'web-offert',    category:'Hemsida',    name:'Hemsida Offert', price:0, monthly:0, offert:true, description:'Skräddarsytt hemsideprojekt efter behovsanalys och kravspecifikation.' },
     // Google Ads
     { id:'ads-bas',       category:'Google Ads', name:'Ads Bas',       price:0,     monthly:2995 },
-    { id:'ads-tillvaxt',  category:'Google Ads', name:'Ads TillvÃ¤xt',  price:0,     monthly:5995 },
+    { id:'ads-tillvaxt',  category:'Google Ads', name:'Ads Tillväxt',  price:0,     monthly:5995 },
     { id:'ads-dominant',  category:'Google Ads', name:'Ads Dominant',  price:0,     monthly:0,  offert:true },
     // SEO
-    { id:'seo-lite',      category:'SEO',        name:'GrundlÃ¤ggande SEO', price:0, monthly:999 },
+    { id:'seo-lite',      category:'SEO',        name:'Grundläggande SEO', price:0, monthly:999 },
     { id:'seo-lokal',     category:'SEO',        name:'SEO Lokal',     price:0,     monthly:1799 },
     { id:'seo-regional',  category:'SEO',        name:'SEO Regional',  price:0,     monthly:2999 },
     { id:'seo-nationell', category:'SEO',        name:'SEO Nationell', price:0,     monthly:6999 },
-    { id:'seo-offert',    category:'SEO',        name:'SEO Offert',    price:0,     monthly:0, offert:true, description:'SkrÃ¤ddarsytt SEO-upplÃ¤gg efter webbplatsens mÃ¥l och omfattning.' },
+    { id:'seo-offert',    category:'SEO',        name:'SEO Offert',    price:0,     monthly:0, offert:true, description:'Skräddarsytt SEO-upplägg efter webbplatsens mål och omfattning.' },
   ];
 
   // ---- Wire up buttons ----
   function wireButtons() {
-    // Cards â€“ match by text content of .c-btn
+    // Cards – match by text content of .c-btn
     const btnMap = {
-      'VÃ¤lj Start':'web-start', 'VÃ¤lj TillvÃ¤xt':'web-tillvaxt', 'VÃ¤lj Premium':'web-premium',
-      'VÃ¤lj Bas':'ads-bas', 'BegÃ¤r offert':'ads-dominant',
-      'VÃ¤lj GrundlÃ¤ggande':'seo-lite', 'VÃ¤lj Lokal':'seo-lokal',
-      'VÃ¤lj Regional':'seo-regional', 'VÃ¤lj Nationell':'seo-nationell',
+      'Välj Start':'web-start', 'Välj Tillväxt':'web-tillvaxt', 'Välj Premium':'web-premium',
+      'Välj Bas':'ads-bas', 'Begär offert':'ads-dominant',
+      'Välj Grundläggande':'seo-lite', 'Välj Lokal':'seo-lokal',
+      'Välj Regional':'seo-regional', 'Välj Nationell':'seo-nationell',
     };
-    // Special: multiple "VÃ¤lj TillvÃ¤xt" buttons â€“ distinguish by section
+    // Special: multiple "Välj Tillväxt" buttons – distinguish by section
     document.querySelectorAll('.c-btn').forEach(btn => {
       const txt = btn.textContent.trim();
       let prodId = btn.dataset.prodId || null;
 
-      if (!prodId && txt === 'VÃ¤lj TillvÃ¤xt') {
+      if (!prodId && txt === 'Välj Tillväxt') {
         // Find parent card, then section
         const section = btn.closest('.cards-grid');
         const prevLabel = section ? section.previousElementSibling : null;
@@ -67,7 +67,7 @@
 
   // ---- Cart logic ----
   function addToCart(prod, btn) {
-    if (prod.offert) { showToast('ðŸ“‹ Kontakta oss fÃ¶r skrÃ¤ddarsytt prisfÃ¶rslag'); return; }
+    if (prod.offert) { showToast('📋 Kontakta oss för skräddarsytt prisförslag'); return; }
     const existing = cart.find(i => i.id === prod.id);
     if (existing) {
       existing.qty++;
@@ -79,7 +79,7 @@
     if (btn) {
       btn.classList.add('added');
       const orig = btn.textContent;
-      btn.textContent = 'âœ“ Tillagd';
+      btn.textContent = '✓ Tillagd';
       setTimeout(() => { btn.textContent = orig; btn.classList.remove('added'); }, 1500);
     }
     // Badge pop
@@ -87,7 +87,7 @@
     badge.classList.remove('pop');
     void badge.offsetWidth;
     badge.classList.add('pop');
-    showToast('ðŸ›’ ' + prod.name + ' lades till i korgen');
+    showToast('🛒 ' + prod.name + ' lades till i korgen');
   }
 
   function removeFromCart(id) {
@@ -121,8 +121,8 @@
     if (cart.length === 0) {
       container.innerHTML = `
         <div class="cart-empty">
-          <div class="empty-icon">ðŸ›’</div>
-          <p>Din korg Ã¤r tom.<br>Klicka pÃ¥ ett paket fÃ¶r att lÃ¤gga till det.</p>
+          <div class="empty-icon">🛒</div>
+          <p>Din korg är tom.<br>Klicka på ett paket för att lägga till det.</p>
         </div>`;
       footer.style.display = 'none';
       return;
@@ -139,11 +139,11 @@
         const div = document.createElement('div');
         div.className = 'cart-item';
         const priceStr = item.monthly > 0
-          ? (item.price > 0 ? fmtKr(item.price) + ' + ' : '') + fmtKr(item.monthly) + '/mÃ¥n'
+          ? (item.price > 0 ? fmtKr(item.price) + ' + ' : '') + fmtKr(item.monthly) + '/mån'
           : fmtKr(item.price);
         const termText = item.termMonths
-          ? `${item.termMonths} mÃ¥n avbetalning${item.contractValue ? ' Â· totalt ' + fmtKr(item.contractValue) : ''}`
-          : 'LÃ¶pande abonnemang â€“ avtal krÃ¤vs';
+          ? `${item.termMonths} mån avbetalning${item.contractValue ? ' · totalt ' + fmtKr(item.contractValue) : ''}`
+          : 'Löpande abonnemang – avtal krävs';
         div.innerHTML = `
           <div class="ci-info">
             <div class="ci-category">${item.category}</div>
@@ -151,12 +151,12 @@
             <div class="ci-price">${priceStr}</div>
             ${item.monthly > 0 ? `<div class="cart-note" style="font-size:10px;padding:5px 9px;">${termText}</div>` : ''}
             <div class="ci-qty">
-              <button onclick="window._cartChangeQty('${item.id}',-1)">âˆ’</button>
+              <button onclick="window._cartChangeQty('${item.id}',-1)">−</button>
               <span>${item.qty}</span>
               <button onclick="window._cartChangeQty('${item.id}',1)">+</button>
             </div>
           </div>
-          <button class="ci-remove" title="Ta bort" onclick="window._cartRemove('${item.id}')">âœ•</button>
+          <button class="ci-remove" title="Ta bort" onclick="window._cartRemove('${item.id}')">✕</button>
         `;
         container.appendChild(div);
       });
@@ -167,7 +167,7 @@
     const sumMon = cart.reduce((s, i) => s + i.monthly * i.qty, 0);
     const sumContract = cart.reduce((s, i) => s + (i.contractValue || (i.price + i.monthly * (i.termMonths || 1))) * i.qty, 0);
     document.getElementById('sumOnce').textContent = fmtKr(sumOnce);
-    document.getElementById('sumMonthly').textContent = fmtKr(sumMon) + '/mÃ¥n';
+    document.getElementById('sumMonthly').textContent = fmtKr(sumMon) + '/mån';
     document.getElementById('sumTotal').textContent = fmtKr(sumOnce + sumMon);
     document.getElementById('sumContract').textContent = fmtKr(sumContract);
   }
@@ -208,9 +208,9 @@
   // ---- Checkout ----
   /*
   function goCheckout() {
-    const lines = cart.map(i => `â€¢ ${i.name} (Ã—${i.qty})`).join('%0A');
-    const subject = encodeURIComponent('IntresseanmÃ¤lan â€“ Plasma MEDIA AB');
-    const body = encodeURIComponent('Hej!\n\nJag Ã¤r intresserad av fÃ¶ljande paket:\n\n' + cart.map(i => `â€¢ ${i.name} Ã—${i.qty}`).join('\n') + '\n\nKontakta mig gÃ¤rna.\n\nMed vÃ¤nliga hÃ¤lsningar,');
+    const lines = cart.map(i => `• ${i.name} (×${i.qty})`).join('%0A');
+    const subject = encodeURIComponent('Intresseanmälan – Plasma MEDIA AB');
+    const body = encodeURIComponent('Hej!\n\nJag är intresserad av följande paket:\n\n' + cart.map(i => `• ${i.name} ×${i.qty}`).join('\n') + '\n\nKontakta mig gärna.\n\nMed vänliga hälsningar,');
     window.location.href = '/kontakt/#contact-form';
   }
   */
@@ -218,7 +218,7 @@
   function goCheckout() {
     if (!cart.length) {
       openCart();
-      showToast('LÃ¤gg fÃ¶rst till ett paket i kundkorgen.');
+      showToast('Lägg först till ett paket i kundkorgen.');
       return;
     }
 
@@ -236,24 +236,24 @@
     const itemLines = cart.map((item) => {
       const priceParts = [];
       if (item.price > 0) priceParts.push(fmtKr(item.price));
-      if (item.monthly > 0) priceParts.push(`${fmtKr(item.monthly)}/mÃ¥n`);
-      if (item.termMonths) priceParts.push(`${item.termMonths} mÃ¥n`);
+      if (item.monthly > 0) priceParts.push(`${fmtKr(item.monthly)}/mån`);
+      if (item.termMonths) priceParts.push(`${item.termMonths} mån`);
       if (item.contractValue) priceParts.push(`totalt ${fmtKr(item.contractValue)}`);
-      const priceText = priceParts.length ? ` â€“ ${priceParts.join(' + ')}` : '';
-      return `â€¢ ${item.category}: ${item.name} Ã—${item.qty}${priceText}`;
+      const priceText = priceParts.length ? ` – ${priceParts.join(' + ')}` : '';
+      return `• ${item.category}: ${item.name} ×${item.qty}${priceText}`;
     }).join('\n');
 
     const message = [
-      'FÃ¶rfrÃ¥gan frÃ¥n prissidan:',
+      'Förfrågan från prissidan:',
       '',
       itemLines,
       '',
       `Startkostnad: ${fmtKr(sumOnce)}`,
-      `LÃ¶pande per mÃ¥nad: ${fmtKr(sumMonthly)}/mÃ¥n`,
-      `Totalt mÃ¥nad 1: ${fmtKr(sumOnce + sumMonthly)} ex. moms`,
-      `Totalt avtalsvÃ¤rde: ${fmtKr(sumContract)} ex. moms`,
+      `Löpande per månad: ${fmtKr(sumMonthly)}/mån`,
+      `Totalt månad 1: ${fmtKr(sumOnce + sumMonthly)} ex. moms`,
+      `Totalt avtalsvärde: ${fmtKr(sumContract)} ex. moms`,
       '',
-      'Jag vill gÃ¤rna bli kontaktad med nÃ¤sta steg och en tydlig rekommendation.'
+      'Jag vill gärna bli kontaktad med nästa steg och en tydlig rekommendation.'
     ].join('\n');
 
     try {
@@ -265,7 +265,7 @@
         createdAt: new Date().toISOString()
       }));
     } catch (error) {
-      console.warn('Kunde inte spara kundkorg infÃ¶r kontaktformulÃ¤r.', error);
+      console.warn('Kunde inte spara kundkorg inför kontaktformulär.', error);
     }
 
     const params = new URLSearchParams({ cart: '1', service });

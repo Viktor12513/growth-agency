@@ -76,7 +76,13 @@
     const header = document.querySelector('header[role="banner"]');
     if (!header) return;
 
-    let breadcrumb = document.querySelector('body .breadcrumb');
+    const allBreadcrumbs = Array.from(document.querySelectorAll('body .breadcrumb'));
+    const path = window.location.pathname.replace(/\/+$/, '') || '/';
+    const isBlogArticle = /^\/blogg\/[^/]+$/.test(path);
+    let breadcrumb = allBreadcrumbs.find((item) => item.closest('main.article-page'))
+      || allBreadcrumbs.find((item) => item.querySelector('a[href="/blogg/"], a[href="/blogg"]'))
+      || allBreadcrumbs[0];
+
     if (!breadcrumb) {
       breadcrumb = document.createElement('nav');
       breadcrumb.className = 'breadcrumb';
@@ -85,8 +91,17 @@
       header.insertAdjacentElement('afterend', breadcrumb);
     }
 
+    allBreadcrumbs.forEach((item) => {
+      if (item !== breadcrumb) item.remove();
+    });
+
     if (breadcrumb.parentElement !== document.body || breadcrumb.previousElementSibling !== header) {
       header.insertAdjacentElement('afterend', breadcrumb);
+    }
+
+    if (isBlogArticle && breadcrumb.querySelector('a[href="/blogg/"], a[href="/blogg"]')) {
+      breadcrumb.dataset.normalizedLabel = 'article';
+      return;
     }
 
     const label = getPageLabel();

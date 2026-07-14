@@ -903,7 +903,7 @@ footer .container {
 
 .blog-post--guide .article-title {
   font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  font-size: clamp(2rem, 3.2vw, 3rem);
   line-height: 1.18;
   color: var(--forest);
   letter-spacing: -0.025em;

@@ -1,8 +1,8 @@
-﻿function setTerm(type, months, btn) {
+function setTerm(type, months, btn) {
   document.getElementById(type+'-toggle').querySelectorAll('button').forEach(b=>b.classList.remove('on'));
   btn.classList.add('on');
-  const extra = type==='ads' ? ' Â· annonsbudget tillkommer' : '';
-  const note = (months===12 ? 'Minst 12 mÃ¥n avtal' : months+' mÃ¥n avtal')+' Â· ex. moms'+extra;
+  const extra = type==='ads' ? ' · annonsbudget tillkommer' : '';
+  const note = (months===12 ? 'Minst 12 mån avtal' : months+' mån avtal')+' · ex. moms'+extra;
   const keys = type==='ads' ? ['bas','tillvaxt'] : ['lite','lokal','regional','nationell'];
   keys.forEach(k=>{
     const n=document.getElementById(type+'-'+k+'-note');
@@ -46,9 +46,9 @@ function setWebTerm(months, btn) {
     const price = document.getElementById(`web-${key}-price`);
     const note = document.getElementById(`web-${key}-note`);
     const total = document.getElementById(`web-${key}-total`);
-    if (price) price.textContent = `${fmtWebKr(state.monthly)}/mÃ¥n`;
-    if (note) note.textContent = `${state.termMonths} mÃ¥n avbetalning Â· ex. moms`;
-    if (total) total.textContent = `Totalt avtalsvÃ¤rde: ${fmtWebKr(state.contractValue)}`;
+    if (price) price.textContent = `${fmtWebKr(state.monthly)}/mån`;
+    if (note) note.textContent = `${state.termMonths} mån avbetalning · ex. moms`;
+    if (total) total.textContent = `Totalt avtalsvärde: ${fmtWebKr(state.contractValue)}`;
   });
 
   if (typeof products !== 'undefined') {

@@ -831,7 +831,7 @@ footer .container {
 }
 
 .article-page--static .blog-post--guide .article-title {
-  font-size: clamp(2.2rem, 4.2vw, 3.65rem);
+  font-size: clamp(2rem, 3.2vw, 3rem);
   line-height: 1.08;
   text-wrap: balance;
 }
