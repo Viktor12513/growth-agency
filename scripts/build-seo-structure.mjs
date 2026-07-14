@@ -69,7 +69,7 @@ function head({ title, description, canonical, css = ['/assets/cluster.css'], ty
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 ${css.map((href) => `<link rel="stylesheet" href="${href}">`).join('\n')}
 <link rel="stylesheet" href="/assets/footer-areas.css">
-<link rel="stylesheet" href="/assets/site-shell.css">
+<link rel="stylesheet" href="/assets/site-shell.css?v=20260714b">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="alternate icon" type="image/png" href="/favicon.png">
 <!-- Google tag (gtag.js) -->
@@ -140,7 +140,7 @@ function footer() {
     <div class="footer-bottom"><p>&copy; 2026 Plasma MEDIA AB. Org.nr: 559565-4277</p><p><a href="/integritetspolicy/" class="footer-legal-link">Integritetspolicy</a></p></div>
   </div>
 </footer>
-<script src="/assets/site-shell.js" defer></script>
+<script src="/assets/site-shell.js?v=20260714b" defer></script>
 </body>
 </html>`;
 }
@@ -245,7 +245,7 @@ function renderBlogPost(post) {
     title: `${strip(post.title)} | Plasma MEDIA AB`,
     description: post.excerpt,
     canonical,
-    css: ['/assets/blog.css', '/assets/blogg.css'],
+    css: ['/assets/blog.css?v=20260714b', '/assets/blogg.css?v=20260714b'],
     type: 'article',
     schema,
   })}
