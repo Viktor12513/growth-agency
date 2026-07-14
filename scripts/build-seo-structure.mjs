@@ -140,7 +140,7 @@ function footer() {
     <div class="footer-bottom"><p>&copy; 2026 Plasma MEDIA AB. Org.nr: 559565-4277</p><p><a href="/integritetspolicy/" class="footer-legal-link">Integritetspolicy</a></p></div>
   </div>
 </footer>
-<script src="/assets/site-shell.js?v=20260714d" defer></script>
+<script src="/assets/site-shell.js?v=20260714h" defer></script>
 </body>
 </html>`;
 }
@@ -208,6 +208,16 @@ function articleFaqs(post) {
   return faqs.slice(0, 6);
 }
 
+function sectionIdFor(section, index) {
+  const base = strip(section?.heading || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+  return base || `sektion-${index + 1}`;
+}
+
 function renderBlogPost(post) {
   const canonical = `${site}/blogg/${post.slug}/`;
   const faqs = articleFaqs(post);
@@ -234,18 +244,28 @@ function renderBlogPost(post) {
     ...(faqs.length ? [faqSchema(faqs)] : []),
   ];
 
-  const sections = (post.contentSections || []).map((section) => `
+  const articleSections = (post.contentSections || []).map((section, index) => ({
+    section,
+    index,
+    id: sectionIdFor(section, index),
+  }));
+
+  const sections = articleSections.map(({ section, id }) => `
     <section class="article-section">
-      <h2>${section.heading}</h2>
+      <h2 id="${id}">${section.heading}</h2>
       ${(section.body || []).map((paragraph) => `<p>${paragraph}</p>`).join('\n')}
       ${section.bullets ? `<ul class="guide-list">${section.bullets.map((item) => `<li>${item}</li>`).join('')}</ul>` : ''}
     </section>`).join('\n');
+
+  const tocItems = articleSections.slice(0, 10).map(({ section, id }, index) =>
+    `<li><a href="#${id}"><span class="toc-num">${String(index + 1).padStart(2, '0')}</span>${strip(section.heading)}</a></li>`
+  ).join('\n          ');
 
   return `${head({
     title: `${strip(post.title)} | Plasma MEDIA AB`,
     description: post.excerpt,
     canonical,
-    css: ['/assets/blog.css?v=20260714c', '/assets/blogg.css?v=20260714c'],
+    css: ['/assets/blog.css?v=20260714c', '/assets/blogg.css?v=20260714d'],
     type: 'article',
     schema,
   })}
@@ -269,8 +289,19 @@ ${header()}
         </section>
       </div>
     </article>
-    <aside class="article-sidebar">
-      <div class="sidebar-cta"><h3>Behöver du hjälp?</h3><p>Vi prioriterar SEO och hemsida där det ger bäst effekt.</p><a href="/kontakt/#contact-form">Kontakta oss</a></div>
+    <aside class="article-sidebar" aria-label="Artikelverktyg">
+      <div class="sidebar-progress" aria-label="Din l&auml;sning">
+        <h3>Din l&auml;sning</h3>
+        <div class="read-bar"><div class="read-fill" id="readFill"></div></div>
+        <div class="read-pct" id="readPct">0% klart</div>
+      </div>
+      <div class="sidebar-toc">
+        <h3>Inneh&aring;ll</h3>
+        <ol class="toc-list">
+          ${tocItems}
+        </ol>
+      </div>
+      <div class="sidebar-cta"><h3>Vill du g&ouml;ra detta praktiskt?</h3><p>Vi tittar p&aring; din situation och visar vad som ger mest effekt f&ouml;rst.</p><a href="/kontakt/#contact-form">Boka gratis samtal</a></div>
     </aside>
   </div>
 </main>
