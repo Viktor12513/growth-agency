@@ -157,21 +157,6 @@ function visualClass(post) {
   return customPostImages[post.slug] ? ' post-thumb--custom-image' : '';
 }
 
-function renderBreadcrumb(currentLabel, includeBlogLink = false) {
-  const blogCrumb = includeBlogLink
-    ? '<li><a href="/blogg/">Blogg</a></li><li class="sep" aria-hidden="true">&rsaquo;</li>'
-    : '';
-
-  return `<nav class="breadcrumb" aria-label="breadcrumb">
-    <ol>
-      <li><a href="/">Startsida</a></li>
-      <li class="sep" aria-hidden="true">&rsaquo;</li>
-      ${blogCrumb}
-      <li><span>${currentLabel}</span></li>
-    </ol>
-  </nav>`;
-}
-
 function renderHero() {
   return `<div class="page-hero">
     <div class="page-hero-inner">
@@ -303,7 +288,7 @@ function renderListing() {
   });
   clearArticleStructuredData();
 
-  app.innerHTML = `${renderBreadcrumb('Blogg')}${renderHero()}${renderFilters()}
+  app.innerHTML = `${renderHero()}${renderFilters()}
     <section class="blog-section" aria-labelledby="blog-heading">
       <div class="container">
         <h2 id="blog-heading" class="screen-reader-only">Blogginl&auml;gg</h2>
@@ -501,8 +486,7 @@ function renderPost(post) {
   });
   setArticleStructuredData(post);
 
-  app.innerHTML = `${renderBreadcrumb(post.title, true)}
-    <main class="article-page article-page--dynamic">
+  app.innerHTML = `<main class="article-page article-page--dynamic">
       <div class="article-wrap">
         <article class="blog-post blog-post--guide" itemscope itemtype="https://schema.org/BlogPosting">
           <meta itemprop="datePublished" content="${toIsoDate(post.date)}">
@@ -570,8 +554,7 @@ function renderNotFound() {
   });
   clearArticleStructuredData();
 
-  app.innerHTML = `${renderBreadcrumb('404', true)}
-    <section class="not-found-section">
+  app.innerHTML = `<section class="not-found-section">
       <div class="container not-found-card">
         <span class="section-tag">404</span>
         <h1>Artikeln hittades inte</h1>

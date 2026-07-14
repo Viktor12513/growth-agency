@@ -78,7 +78,12 @@
 
     const allBreadcrumbs = Array.from(document.querySelectorAll('body .breadcrumb'));
     const path = window.location.pathname.replace(/\/+$/, '') || '/';
-    const isBlogArticle = /^\/blogg\/[^/]+$/.test(path);
+    const isBlogPage = path === '/blogg' || path.startsWith('/blogg/');
+    if (isBlogPage) {
+      allBreadcrumbs.forEach((item) => item.remove());
+      return;
+    }
+
     let breadcrumb = allBreadcrumbs.find((item) => item.closest('main.article-page'))
       || allBreadcrumbs.find((item) => item.querySelector('a[href="/blogg/"], a[href="/blogg"]'))
       || allBreadcrumbs[0];
@@ -97,11 +102,6 @@
 
     if (breadcrumb.parentElement !== document.body || breadcrumb.previousElementSibling !== header) {
       header.insertAdjacentElement('afterend', breadcrumb);
-    }
-
-    if (isBlogArticle && breadcrumb.querySelector('a[href="/blogg/"], a[href="/blogg"]')) {
-      breadcrumb.dataset.normalizedLabel = 'article';
-      return;
     }
 
     const label = getPageLabel();
