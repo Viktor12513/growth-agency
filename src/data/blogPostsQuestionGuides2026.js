@@ -300,7 +300,7 @@ export const blogPostsQuestionGuides2026 = [
         heading: "3. Visa förtroende tidigt",
         body: [
           "Besökare frågar tyst: går det här företaget att lita på? Därför bör hemsidan visa bevis tidigt. Det kan vara kundcase, antal nöjda kunder, recensioner, exempel på projekt, certifieringar eller tydliga kontaktuppgifter. Förtroende är särskilt viktigt när tjänsten är dyr, komplex eller påverkar kundens egna affärer.",
-          "Förtroende ska vara konkret. “Vi är bäst” säger lite. “19 nöjda kunder”, “genomsnittlig tid till mätbara resultat: 3 månader” eller ett verkligt kundcase säger mer. Använd bara uppgifter som stämmer och som ni kan stå för. Äkta bevis slår generella superlativer."
+          "Förtroende ska vara konkret. “Vi är bäst” säger lite. “20 nöjda kunder”, “genomsnittlig tid till mätbara resultat: 3 månader” eller ett verkligt kundcase säger mer. Använd bara uppgifter som stämmer och som ni kan stå för. Äkta bevis slår generella superlativer."
         ]
       },
       {
