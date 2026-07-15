@@ -78,8 +78,19 @@ function escapeHtml(value) {
     .replace(/'/g, '&#039;');
 }
 
-function getProviderMessage(providerError) {
+function extractProviderMessage(providerError) {
   const detail = clean(providerError);
+
+  try {
+    const parsed = JSON.parse(detail);
+    return clean(parsed.message || parsed.error?.message || parsed.error || detail);
+  } catch {
+    return detail;
+  }
+}
+
+function getProviderMessage(providerError) {
+  const detail = extractProviderMessage(providerError);
   const lower = detail.toLowerCase();
 
   if (lower.includes('api key') || lower.includes('invalid_token') || lower.includes('unauthorized')) {
@@ -94,7 +105,15 @@ function getProviderMessage(providerError) {
     return 'Resend-testläget tillåter bara utskick till kontots verifierade e-postadress.';
   }
 
-  return 'Resend nekade utskicket. Kontrollera Vercel Function Logs och Resend Logs för exakt orsak.';
+  if (lower.includes('sender') || lower.includes('from') || lower.includes('onboarding@resend.dev')) {
+    return `Resend nekade avsändaren: ${detail}`;
+  }
+
+  if (detail) {
+    return `Resend svarade: ${detail}`;
+  }
+
+  return 'Resend nekade utskicket utan detaljer. Kontrollera Vercel Function Logs och Resend Logs för exakt orsak.';
 }
 
 function buildEmailHtml(data) {
