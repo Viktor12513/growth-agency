@@ -512,7 +512,7 @@ ${header()}
   </div></section>
   <section class="cluster-section"><div class="container cluster-split">
     <div><h2>Uppdraget</h2><p>Vi skapade en hemsida med fokus på tydliga tjänstesidor, lokal trovärdighet och enkel kontakt. Besökaren ska snabbt förstå om Arborist Roslagen hjälper med trädfällning, beskärning, riskträd eller rådgivning.</p><p>Strukturen är byggd för lokala sökningar och för att minska friktion: tydliga CTA-knappar, serviceområden, förtroendeskapande text och en kontaktväg som fungerar på mobil.</p></div>
-    <div class="mini-stats"><div class="mini-stat"><strong>19</strong><span>nöjda kunder totalt</span></div><div class="mini-stat"><strong>3 mån</strong><span>genomsnitt till mätbara resultat</span></div><div class="mini-stat"><strong>SEO + webb</strong><span>struktur från start</span></div></div>
+    <div class="mini-stats"><div class="mini-stat"><strong>20</strong><span>nöjda kunder totalt</span></div><div class="mini-stat"><strong>3 mån</strong><span>genomsnitt till mätbara resultat</span></div><div class="mini-stat"><strong>SEO + webb</strong><span>struktur från start</span></div></div>
   </div></section>
   <section class="cluster-section cluster-section--cream"><div class="container cluster-wide">
     <h2>Vad vi tog med oss</h2><p>Lokala tjänsteföretag behöver ofta mindre “flash” och mer tydlighet. När kunden har ett trädproblem vill de snabbt veta om företaget arbetar i området, vilka tjänster som finns, hur processen går till och hur man får offert.</p>
