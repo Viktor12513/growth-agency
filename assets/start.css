@@ -309,8 +309,8 @@
   /* ─── TESTIMONIALS ─── */
   .testimonials { background: var(--warm-white); }
   .testimonials-header { text-align: center; margin-bottom: 3.5rem; }
-  .testimonials-header .section-lead { margin: 0 auto; }
-  .testimonials-case-link { margin-top: 1.4rem; }
+  .testimonials-header .section-lead { margin: 0 auto 1.6rem; }
+  .testimonials-case-link { display: inline-flex; align-items: center; justify-content: center; margin-top: 0; }
   .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   .testimonial-card {
     background: white; border: 1px solid var(--mint); border-radius: var(--radius-lg);
