@@ -78,6 +78,25 @@ function escapeHtml(value) {
     .replace(/'/g, '&#039;');
 }
 
+function getProviderMessage(providerError) {
+  const detail = clean(providerError);
+  const lower = detail.toLowerCase();
+
+  if (lower.includes('api key') || lower.includes('invalid_token') || lower.includes('unauthorized')) {
+    return 'Resend API-nyckeln verkar vara fel eller saknar behörighet.';
+  }
+
+  if (lower.includes('domain') && (lower.includes('verified') || lower.includes('verify'))) {
+    return 'Resend kräver verifierad domän för den avsändaradressen. Använd onboarding@resend.dev eller verifiera plasmamedia.se.';
+  }
+
+  if (lower.includes('own email') || lower.includes('testing emails') || lower.includes('only send')) {
+    return 'Resend-testläget tillåter bara utskick till kontots verifierade e-postadress.';
+  }
+
+  return 'Resend nekade utskicket. Kontrollera Vercel Function Logs och Resend Logs för exakt orsak.';
+}
+
 function buildEmailHtml(data) {
   const rows = [
     ['Namn', data.name],
@@ -218,7 +237,10 @@ export default async function handler(req, res) {
   if (!response.ok) {
     const providerError = await response.text().catch(() => '');
     console.error('Resend failed:', providerError);
-    return res.status(502).json({ ok: false, error: 'Email provider failed' });
+    return res.status(502).json({
+      ok: false,
+      error: getProviderMessage(providerError),
+    });
   }
 
   return res.status(200).json({ ok: true });
