@@ -41,8 +41,8 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Vad kostar en hemsida hos Plasma MEDIA AB?", "acceptedAnswer": { "@type": "Answer", "text": "Hemsidor kan betalas månadsvis över 12, 24 eller 36 månader. Start börjar från 556 kr per månad exklusive moms vid 36 månader, med totalt avtalsvärde 19 999 kr. Större lösningar och specialprojekt offereras utifrån omfattning, antal sidor, innehåll och funktioner." } },
-        { "@type": "Question", "name": "Vad kostar SEO per månad?", "acceptedAnswer": { "@type": "Answer", "text": "SEO-paketen börjar från 999 kr per månad för grundläggande SEO och går upp till lokala, regionala och nationella upplägg beroende på konkurrens och mål." } },
+        { "@type": "Question", "name": "Vad kostar en hemsida hos Plasma MEDIA AB?", "acceptedAnswer": { "@type": "Answer", "text": "Hemsidor kan betalas månadsvis över 12, 24 eller 36 månader. Start börjar från 556 kr per månad exklusive moms vid 36 månader, med totalt avtalsvärde 19 999 kr. Tillväxt och Premium har fasta avtalsvärden som uppdateras efter vald avbetalningstid." } },
+        { "@type": "Question", "name": "Vad kostar SEO per månad?", "acceptedAnswer": { "@type": "Answer", "text": "SEO börjar från 999 kr per månad för grundläggande SEO. Lokala, regionala och nationella SEO-upplägg offereras eftersom priset baseras på konkurrens, antal orter, sökord, sidstruktur, innehållsbehov och mål." } },
         { "@type": "Question", "name": "Hur lång bindningstid gäller?", "acceptedAnswer": { "@type": "Answer", "text": "Hemsidor kan delas upp på 12, 24 eller 36 månader. För SEO och Google Ads är minsta bindningstid 12 månader. För långsiktigt SEO-arbete rekommenderas ofta 24 månader och i vissa fall 36 månader." } },
         { "@type": "Question", "name": "Kan man få offert på ett större projekt?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Projekt med e-handel, medlemsportaler, flera språk, integrationer eller större sidstruktur offereras separat." } }
       ]
@@ -109,7 +109,7 @@
 
   .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
   .cards-grid.seo-cards-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-  .cards-grid.web-cards-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .cards-grid.web-cards-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .card{background:#fff;border:1.5px solid var(--border2);border-radius:var(--r);padding:26px 22px;position:relative;transition:border-color 0.2s,transform 0.2s;display:flex;flex-direction:column;height:100%}
   .card:hover{border-color:var(--green3);transform:translateY(-2px)}
   .card.feat{border-color:var(--green3);border-width:1.5px}
@@ -143,6 +143,11 @@
   .card > .offert-tag{position:absolute;top:-11px;left:50%;transform:translateX(-50%);margin:0;white-space:nowrap}
   .web-cards-grid .c-desc{min-height:72px}
   .web-cards-grid .c-price-box{min-height:88px}
+  .ads-cards-grid .card{min-height:575px}
+  .ads-cards-grid .c-desc{min-height:58px}
+  .ads-cards-grid .c-price-box{min-height:88px}
+  .ads-cards-grid .feats{flex:1 1 auto}
+  .ads-cards-grid .c-btn{margin-top:auto}
   .seo-cards-grid .c-name{min-height:48px;display:flex;align-items:flex-start}
   .seo-cards-grid .c-desc{min-height:84px}
   .seo-cards-grid .c-price-box{min-height:92px}
@@ -190,12 +195,14 @@
     .nav-cta { font-size: 12px !important; }
     .cards-grid.seo-cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .cards-grid.web-cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cards-grid.ads-cards-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   }
 
   @media (max-width: 760px) {
     .cards-grid,
     .cards-grid.seo-cards-grid,
-    .cards-grid.web-cards-grid { grid-template-columns: 1fr; }
+    .cards-grid.web-cards-grid,
+    .cards-grid.ads-cards-grid { grid-template-columns: 1fr; }
   }
 
   /* Unified inline layout and chrome */
@@ -488,42 +495,15 @@ footer .footer-logo .logo-domain {
       </ul>
       <button class="c-btn">Välj Premium</button>
     </div>
-    <div class="card">
-      <div class="offert-tag">Anpassat pris</div>
-      <div class="c-lbl">Skräddarsytt projekt</div>
-      <div class="c-name">Hemsida Offert</div>
-      <div class="c-desc">För e-handel, medlemsportaler, flera språk, specialintegrationer eller projekt med fler än 15 sidor.</div>
-      <div class="c-price-box">
-        <div class="price-main">Offert</div>
-        <div class="price-note">Pris efter behovsanalys · ex. moms</div>
-        <div class="price-free"></div>
-      </div>
-      <ul class="feats">
-        <li>Gemensam workshop och kravspecifikation</li>
-        <li>Anpassad design, teknik och sidstruktur</li>
-        <li>E-handel eller specialfunktioner vid behov</li>
-        <li>Integrationer enligt kravspecifikation</li>
-        <li>Plan för innehåll, SEO och migrering</li>
-        <li>Tidsplan och support enligt offert</li>
-      </ul>
-      <button class="c-btn" data-prod-id="web-offert">Begär offert</button>
-    </div>
   </div>
 
   <hr class="sec-divider">
 
   <!-- GOOGLE ADS -->
-  <div class="sec-label gold">Google Ads – löpande abonnemang</div>
-  <div class="sec-title">Syns direkt på Google</div>
-  <div class="sec-sub">Betala bara när någon klickar. Vi sköter kampanjerna – du fokuserar på ditt företag.</div>
-  <div class="toggle-wrap">
-    <div class="toggle-pill" id="ads-toggle">
-      <button class="on" data-term-type="ads" data-term-months="12">12 månader</button>
-      <button data-term-type="ads" data-term-months="24">24 månader <span class="bp gold">Rekommenderas</span></button>
-      <button data-term-type="ads" data-term-months="36">36 månader</button>
-    </div>
-  </div>
-  <div class="cards-grid">
+  <div class="sec-label gold">Google Ads – löpande annonsering</div>
+  <div class="sec-title">Välj Google Ads-upplägg</div>
+  <div class="sec-sub">För företag som vill få trafik och förfrågningar snabbare. Annonsbudget till Google tillkommer och sätts efter mål, ort och konkurrens.</div>
+  <div class="cards-grid ads-cards-grid">
     <div class="card">
       <div class="c-lbl">Kom igång</div>
       <div class="c-name">Ads Bas</div>
@@ -598,7 +578,7 @@ footer .footer-logo .logo-domain {
   <!-- SEO -->
   <div class="sec-label g3">SEO – löpande abonnemang</div>
   <div class="sec-title">Bygg organisk synlighet</div>
-  <div class="sec-sub">Minsta avtalstid är 12 månader. Vi rekommenderar 24 månader för stabil utveckling, och erbjuder även 36 månader.</div>
+  <div class="sec-sub">Grundläggande SEO har ett fast instegspris. Lokal, regional och nationell SEO offereras eftersom priset baseras på konkurrens, antal orter, sökord, sidstruktur, innehållsbehov och hur snabbt ni vill växa. Minsta avtalstid är 12 månader, men vi rekommenderar 24 månader för stabil utveckling.</div>
   <div class="toggle-wrap">
     <div class="toggle-pill" id="seo-toggle">
       <button class="on" data-term-type="seo" data-term-months="12">12 månader</button>
@@ -632,9 +612,9 @@ footer .footer-logo .logo-domain {
       <div class="c-name">SEO Lokal</div>
       <div class="c-desc">För lokala tjänsteföretag som vill synas i en stad eller kommun och stärka sin närvaro i Google Maps.</div>
       <div class="c-price-box">
-        <div class="price-main">1 799 kr<span class="price-sfx">/mån</span></div>
-        <div class="price-note" id="seo-lokal-note">Minst 12 mån avtal · ex. moms</div>
-        <div class="price-free" id="seo-lokal-free"></div>
+        <div class="price-main">Offert</div>
+        <div class="price-note">Pris efter lokal konkurrensanalys · minst 12 mån · ex. moms</div>
+        <div class="price-free">För företag som vill synas i sitt närområde</div>
       </div>
       <ul class="feats">
         <li>Allt i Grundläggande SEO</li>
@@ -644,16 +624,16 @@ footer .footer-logo .logo-domain {
         <li>En lokal landningssida eller större uppdatering per kvartal</li>
         <li>Månadsrapport</li>
       </ul>
-      <button class="c-btn">Välj Lokal</button>
+      <button class="c-btn" data-prod-id="seo-lokal">Begär offert</button>
     </div>
     <div class="card">
       <div class="c-lbl">Större geografiskt område</div>
       <div class="c-name">SEO Regional</div>
       <div class="c-desc">För företag som vill synas i flera kommuner eller inom ett helt län med en sammanhängande lokal strategi.</div>
       <div class="c-price-box">
-        <div class="price-main">2 999 kr<span class="price-sfx">/mån</span></div>
-        <div class="price-note" id="seo-regional-note">Minst 12 mån avtal · ex. moms</div>
-        <div class="price-free" id="seo-regional-free"></div>
+        <div class="price-main">Offert</div>
+        <div class="price-note">Pris efter regional behovsanalys · minst 12 mån · ex. moms</div>
+        <div class="price-free">För flera kommuner, län eller större lokala satsningar</div>
       </div>
       <ul class="feats">
         <li>Allt i SEO Lokal</li>
@@ -663,16 +643,16 @@ footer .footer-logo .logo-domain {
         <li>Regional internlänkning och sidstruktur</li>
         <li>Konkurrent- och resultatuppföljning varje månad</li>
       </ul>
-      <button class="c-btn">Välj Regional</button>
+      <button class="c-btn" data-prod-id="seo-regional">Begär offert</button>
     </div>
     <div class="card">
       <div class="c-lbl">Hela Sverige</div>
       <div class="c-name">SEO Nationell</div>
       <div class="c-desc">För företag som konkurrerar nationellt och behöver löpande innehåll, teknisk utveckling och auktoritetsarbete.</div>
       <div class="c-price-box">
-        <div class="price-main">6 999 kr<span class="price-sfx">/mån</span></div>
-        <div class="price-note" id="seo-nationell-note">Minst 12 mån avtal · ex. moms</div>
-        <div class="price-free" id="seo-nationell-free"></div>
+        <div class="price-main">Offert</div>
+        <div class="price-note">Pris efter strategi- och konkurrensanalys · minst 12 mån · ex. moms</div>
+        <div class="price-free">För nationell konkurrens och löpande innehållsarbete</div>
       </div>
       <ul class="feats">
         <li>Nationell sök- och innehållsstrategi</li>
@@ -682,27 +662,9 @@ footer .footer-logo .logo-domain {
         <li>Digital PR- och auktoritetsplan</li>
         <li>Månadsrapport och kvartalsvis strategimöte</li>
       </ul>
-      <button class="c-btn">Välj Nationell</button>
+      <button class="c-btn" data-prod-id="seo-nationell">Begär offert</button>
     </div>
-    <div class="card">
-      <div class="offert-tag">Anpassad omfattning</div>
-      <div class="c-lbl">Skräddarsytt upplägg</div>
-      <div class="c-name">SEO Offert</div>
-      <div class="c-desc">För e-handel, internationell SEO, större webbplatser eller verksamheter med särskilda tekniska och redaktionella behov.</div>
-      <div class="c-price-box">
-        <div class="price-main">Offert</div>
-        <div class="price-note">Pris efter analys · minst 12 mån · ex. moms</div>
-        <div class="price-free"></div>
-      </div>
-      <ul class="feats">
-        <li>Teknisk och kommersiell behovsanalys</li>
-        <li>Anpassad SEO- och innehållsplan</li>
-        <li>Resurser efter webbplatsens omfattning</li>
-        <li>Integration med utveckling och redaktion</li>
-        <li>Rapportering och mötesplan enligt offert</li>
-      </ul>
-      <button class="c-btn" data-prod-id="seo-offert">Begär offert</button>
-    </div>
+
   </div>
 
   <hr class="sec-divider">
@@ -715,6 +677,7 @@ footer .footer-logo .logo-domain {
     <div class="faq-item"><h3>Kan jag dela upp betalningen för en hemsida?</h3><p>Ja. Våra hemsidepaket kan betalas månadsvis över 12, 24 eller 36 månader. På prissidan väljer du period och ser månadsbeloppet direkt tillsammans med det totala avtalsvärdet exklusive moms, så du ser både månadskostnad och total kostnad innan du skickar en förfrågan.</p></div>
     <div class="faq-item"><h3>Hur lång är leveranstiden?</h3><p>Leverans sker normalt inom 1–3 veckor från godkänd offert och mottaget material. Om projektet är mer komplext får du en tydlig tidsplan innan start.</p></div>
     <div class="faq-item"><h3>Kan jag uppdatera hemsidan själv efteråt?</h3><p>Ja. Tillväxt och Premium byggs med ett användarvänligt CMS (WordPress) som gör det enkelt att redigera texter, lägga till bilder och publicera blogginlägg – utan teknisk kunskap.</p></div>
+    <div class="faq-item"><h3>Varför är vissa SEO-paket offert?</h3><p>Större SEO-upplägg varierar mycket i omfattning. Priset baseras på konkurrens, antal orter, sökord, befintlig sidstruktur, tekniska behov, innehållsproduktion och hur snabbt företaget vill växa. Därför har Grundläggande SEO ett fast instegspris, medan lokal, regional och nationell SEO offereras efter analys.</p></div>
     <div class="faq-item"><h3>Hur lång är avtalstiden för SEO och Google Ads?</h3><p>Minsta avtalstid är 12 månader. Vi rekommenderar 24 månader för att hinna samla data, genomföra förbättringar och bygga stabila resultat över tid. För företag som vill arbeta ännu mer långsiktigt erbjuder vi även 36 månader.</p></div>
     <div class="faq-item"><h3>Hur snabbt ser jag SEO-resultat?</h3><p>De flesta kunder ser tydliga förbättringar i rankingen inom 3–6 månader. SEO bygger auktoritet över tid – desto längre vi jobbar ihop, desto starkare blir resultaten.</p></div>
     <div class="faq-item"><h3>Kan jag kombinera hemsida + SEO eller Google Ads?</h3><p>Absolut. Kontakta oss så sätter vi ihop ett sammanhängande upplägg där webbplats, sökmotoroptimering och annonsering arbetar mot samma mål.</p></div>
