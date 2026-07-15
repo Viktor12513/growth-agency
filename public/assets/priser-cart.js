@@ -8,17 +8,15 @@
     { id:'web-start',     category:'Hemsida',    name:'Start',         price:0, monthly:834,  termMonths:24, contractValue:19999, webKey:'start' },
     { id:'web-tillvaxt',  category:'Hemsida',    name:'Tillväxt',      price:0, monthly:1250, termMonths:24, contractValue:29999, webKey:'tillvaxt' },
     { id:'web-premium',   category:'Hemsida',    name:'Premium',       price:0, monthly:1667, termMonths:24, contractValue:39999, webKey:'premium' },
-    { id:'web-offert',    category:'Hemsida',    name:'Hemsida Offert', price:0, monthly:0, offert:true, description:'Skräddarsytt hemsideprojekt efter behovsanalys och kravspecifikation.' },
     // Google Ads
     { id:'ads-bas',       category:'Google Ads', name:'Ads Bas',       price:0,     monthly:2995 },
     { id:'ads-tillvaxt',  category:'Google Ads', name:'Ads Tillväxt',  price:0,     monthly:5995 },
     { id:'ads-dominant',  category:'Google Ads', name:'Ads Dominant',  price:0,     monthly:0,  offert:true },
     // SEO
     { id:'seo-lite',      category:'SEO',        name:'Grundläggande SEO', price:0, monthly:999 },
-    { id:'seo-lokal',     category:'SEO',        name:'SEO Lokal',     price:0,     monthly:1799 },
-    { id:'seo-regional',  category:'SEO',        name:'SEO Regional',  price:0,     monthly:2999 },
-    { id:'seo-nationell', category:'SEO',        name:'SEO Nationell', price:0,     monthly:6999 },
-    { id:'seo-offert',    category:'SEO',        name:'SEO Offert',    price:0,     monthly:0, offert:true, description:'Skräddarsytt SEO-upplägg efter webbplatsens mål och omfattning.' },
+    { id:'seo-lokal',     category:'SEO',        name:'SEO Lokal',     price:0,     monthly:0, offert:true, description:'SEO Lokal offereras efter lokal konkurrensanalys och geografiskt fokus.' },
+    { id:'seo-regional',  category:'SEO',        name:'SEO Regional',  price:0,     monthly:0, offert:true, description:'SEO Regional offereras efter behovsanalys för kommuner, län och sökteman.' },
+    { id:'seo-nationell', category:'SEO',        name:'SEO Nationell', price:0,     monthly:0, offert:true, description:'SEO Nationell offereras efter strategi- och konkurrensanalys.' },
   ];
 
   // ---- Wire up buttons ----
