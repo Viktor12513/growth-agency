@@ -177,6 +177,15 @@ function setupContactApiSubmit(form) {
       window.location.href = '/tack/';
     } catch (error) {
       console.error(error);
+      if (error.message && error.message !== 'Email service is not configured') {
+        setSubmitError(form, error.message);
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.removeAttribute('aria-busy');
+          submitButton.innerHTML = originalSubmitText;
+        }
+        return;
+      }
       setSubmitError(form, error.message === 'Email service is not configured'
         ? 'Mailtjänsten är inte konfigurerad ännu. Lägg till RESEND_API_KEY i Vercel.'
         : 'Meddelandet kunde inte skickas just nu. Prova igen eller maila albin@plasmamedia.se.'
