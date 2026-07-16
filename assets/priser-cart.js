@@ -7,7 +7,7 @@
     // Hemsidor
     { id:'web-start',     category:'Hemsida',    name:'Start',         price:0, monthly:834,  termMonths:24, contractValue:19999, webKey:'start' },
     { id:'web-tillvaxt',  category:'Hemsida',    name:'Tillväxt',      price:0, monthly:1250, termMonths:24, contractValue:29999, webKey:'tillvaxt' },
-    { id:'web-premium',   category:'Hemsida',    name:'Premium',       price:0, monthly:1667, termMonths:24, contractValue:39999, webKey:'premium' },
+    { id:'web-premium',   category:'Hemsida',    name:'Premium',       price:0, monthly:0, offert:true, description:'Premium offereras efter projektets omfattning, funktioner, integrationer och innehållsbehov.' },
     // Google Ads
     { id:'ads-bas',       category:'Google Ads', name:'Ads Bas',       price:0,     monthly:2995 },
     { id:'ads-tillvaxt',  category:'Google Ads', name:'Ads Tillväxt',  price:0,     monthly:5995 },
@@ -23,7 +23,7 @@
   function wireButtons() {
     // Cards – match by text content of .c-btn
     const btnMap = {
-      'Välj Start':'web-start', 'Välj Tillväxt':'web-tillvaxt', 'Välj Premium':'web-premium',
+      'Välj Start':'web-start', 'Välj Tillväxt':'web-tillvaxt', 'Begär Premium-offert':'web-premium',
       'Välj Bas':'ads-bas', 'Begär offert':'ads-dominant',
       'Välj Grundläggande':'seo-lite', 'Välj Lokal':'seo-lokal',
       'Välj Regional':'seo-regional', 'Välj Nationell':'seo-nationell',

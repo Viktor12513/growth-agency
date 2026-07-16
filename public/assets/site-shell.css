@@ -1,5 +1,5 @@
 /* Shared site chrome: identical dimensions and behavior on every page. */
-html{scrollbar-gutter:stable}
+html{scrollbar-gutter:stable;scroll-behavior:auto!important}
 body{margin:0}
 .skip-link{
   position:absolute!important;
@@ -71,8 +71,8 @@ header[role="banner"] .nav-cta{
 }
 header[role="banner"] .nav-dropdown-menu{
   position:absolute!important;top:68px!important;left:50%!important;z-index:1010!important;
-  width:350px!important;padding:10px!important;border:1px solid rgba(20,58,31,.12)!important;
-  border-radius:14px!important;background:#fff!important;box-shadow:0 18px 50px rgba(20,58,31,.16)!important;
+  width:min(940px,calc(100vw - 32px))!important;padding:14px!important;border:1px solid rgba(20,58,31,.12)!important;
+  border-radius:18px!important;background:#fff!important;box-shadow:0 24px 70px rgba(20,58,31,.18)!important;
   opacity:0!important;visibility:hidden!important;pointer-events:none!important;
   transform:translate(-50%,8px)!important;transition:opacity .16s,transform .16s!important
 }
@@ -89,6 +89,15 @@ header[role="banner"] .nav-dropdown-menu strong,
 header[role="banner"] .nav-dropdown-menu span{display:block!important}
 header[role="banner"] .nav-dropdown-menu strong{font:700 .9rem/1.3 "DM Sans",Arial,sans-serif!important}
 header[role="banner"] .nav-dropdown-menu span{margin-top:3px!important;color:#617066!important;font:400 .78rem/1.4 "DM Sans",Arial,sans-serif!important}
+header[role="banner"] .seo-menu-intro{grid-column:1/-1!important;display:flex!important;align-items:baseline!important;justify-content:space-between!important;gap:16px!important;padding:6px 10px 14px!important;border-bottom:1px solid #e7eee8!important}
+header[role="banner"] .seo-menu-intro strong{color:#183a22!important;font:700 1.02rem/1.3 "DM Sans",Arial,sans-serif!important}
+header[role="banner"] .seo-menu-intro span{color:#617066!important;font:400 .8rem/1.4 "DM Sans",Arial,sans-serif!important}
+header[role="banner"] .seo-menu-group{min-width:0!important;padding:8px!important;border-radius:12px!important}
+header[role="banner"] .seo-menu-group:nth-child(3){background:#faf7f0!important}
+header[role="banner"] .seo-menu-group-title{margin:0!important;color:#183a22!important;font:700 .76rem/1.3 "DM Sans",Arial,sans-serif!important;letter-spacing:.09em!important;text-transform:uppercase!important}
+header[role="banner"] .seo-menu-group-description{min-height:2.35em!important;margin:4px 0 8px!important;color:#6b746d!important;font:400 .76rem/1.45 "DM Sans",Arial,sans-serif!important}
+header[role="banner"] .seo-menu-group>a{border-top:1px solid #edf1ed!important;border-radius:0!important;padding:10px 4px!important}
+header[role="banner"] .seo-menu-group>a:hover{padding-left:10px!important;border-radius:8px!important}
 header[role="banner"] .nav-hamburger{display:none!important}
 footer[role="contentinfo"]{
   position:relative!important;width:100%!important;margin:0!important;padding:64px 24px 24px!important;
@@ -153,7 +162,7 @@ body>header[role="banner"] .nav-logo{
   font-weight:700!important;
   line-height:1!important;
   letter-spacing:-.35px!important;
-  transform:translateX(-70px)!important;
+  transform:none!important;
 }
 body>header[role="banner"] .nav-logo span{
   font-family:inherit!important;
@@ -391,3 +400,56 @@ body .breadcrumb li+li::before{
 /* Final breadcrumb separator override */
 body .breadcrumb li+li::before{content:"\203A"!important;}
 body .breadcrumb li.sep::before,body .breadcrumb .breadcrumb-separator::before,body .breadcrumb .breadcrumb-sep::before{content:none!important;display:none!important;margin:0!important;}
+
+/* Final dropdown layout lock: the shared three-column SEO menu overrides old
+   page-specific dropdown rules and stays identical on every desktop route. */
+body>header[role="banner"] .nav-links .nav-dropdown{position:static!important}
+body>header[role="banner"] .nav-links .nav-dropdown .nav-dropdown-menu{
+  position:absolute!important;
+  top:76px!important;
+  left:50%!important;
+  width:min(940px,calc(100vw - 32px))!important;
+  padding:14px!important;
+  border:1px solid rgba(20,58,31,.12)!important;
+  border-radius:18px!important;
+  background:#fff!important;
+  box-shadow:0 24px 70px rgba(20,58,31,.18)!important;
+  max-height:calc(100vh - 88px)!important;
+  overflow-y:auto!important;
+  overscroll-behavior:contain!important;
+  opacity:0!important;
+  visibility:hidden!important;
+  pointer-events:none!important;
+  transform:translate(-50%,8px)!important;
+  display:grid!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:8px!important;
+}
+body>header[role="banner"] .nav-links .nav-dropdown:hover .nav-dropdown-menu,
+body>header[role="banner"] .nav-links .nav-dropdown:focus-within .nav-dropdown-menu{
+  opacity:1!important;
+  visibility:visible!important;
+  pointer-events:auto!important;
+  transform:translate(-50%,0)!important;
+}
+body>header[role="banner"] .nav-links .nav-dropdown .nav-dropdown-menu a{
+  min-width:0!important;
+  max-width:100%!important;
+}
+body>header[role="banner"] .nav-links .nav-dropdown .seo-menu-group>a{
+  padding:7px 4px!important;
+}
+body>header[role="banner"] .nav-links .nav-dropdown .seo-menu-group>a>strong{
+  font-size:.84rem!important;
+}
+body>header[role="banner"] .nav-links .nav-dropdown .seo-menu-group>a>span{
+  margin-top:2px!important;
+  font-size:.7rem!important;
+  line-height:1.32!important;
+}
+@media(max-width:1100px) and (min-width:981px){
+  header[role="banner"] .nav-dropdown-menu{width:min(820px,calc(100vw - 24px))!important}
+  header[role="banner"] .seo-menu-group-description{min-height:3.7em!important}
+  header[role="banner"] .nav-dropdown-menu a{padding:8px 3px!important}
+  header[role="banner"] .nav-dropdown-menu span{font-size:.73rem!important}
+}

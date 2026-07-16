@@ -8,8 +8,8 @@ const agreementDiscounts = {
 
 const productCatalog = {
   'website-start': { name: 'Hemsida Start', description: 'Upp till 5 sidor med mobilanpassning, SEO-grund och kontaktformul\u00e4r.', priceType: 'one-time', price: 14999 },
-  'website-growth': { name: 'Hemsida Tillv\u00e4xt', description: 'Komplett hemsida upp till 10 sidor med CMS, blogg och SEO-grund.', priceType: 'one-time', price: 24999 },
-  'website-premium': { name: 'Hemsida Premium', description: 'Skr\u00e4ddarsydd l\u00f6sning f\u00f6r st\u00f6rre sajt, webshop eller varum\u00e4rkesplattform.', priceType: 'one-time', price: 39999, prefix: 'Fr\u00e5n ' },
+  'website-growth': { name: 'Hemsida Tillv\u00e4xt', description: 'Komplett hemsida upp till 10 sidor med blogg, inneh\u00e5llshj\u00e4lp och SEO-grund.', priceType: 'one-time', price: 24999 },
+  'website-premium': { name: 'Hemsida Premium', description: 'Skr\u00e4ddarsydd l\u00f6sning f\u00f6r st\u00f6rre sajt, webshop eller varum\u00e4rkesplattform.', priceType: 'quote', price: 0 },
   'addon-webshop': { name: 'Webshop (WooCommerce)', description: 'Upp till 50 produkter, betalning via Klarna/kort och orderhantering.', priceType: 'one-time', price: 9999 },
   'addon-booking': { name: 'Bokningssystem', description: 'Integrerat bokningsfl\u00f6de med kalender och bekr\u00e4ftelsemejl.', priceType: 'one-time', price: 4999 },
   'addon-language': { name: 'Flerspr\u00e5kig sajt', description: 'L\u00e4gg till engelska eller ytterligare ett spr\u00e5k p\u00e5 hela sajten.', priceType: 'one-time', price: 999 },

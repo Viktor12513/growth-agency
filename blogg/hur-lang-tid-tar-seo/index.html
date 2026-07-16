@@ -439,80 +439,6 @@ footer { background:var(--forest); color:rgba(255,255,255,.65); padding:3.5rem 5
   .case-box { padding:1.2rem; }
 }
 
-/* SEO dropdown on this static article */
-.nav-dropdown { position: relative; display: flex; align-items: center; }
-.nav-dropdown-trigger::after { content: none !important; }
-.nav-dropdown-menu {
-  position: absolute !important;
-  top: 100% !important;
-  left: 0 !important;
-  transform: translateY(6px) !important;
-  width: min(760px, calc(100vw - 48px)) !important;
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(260px, 1fr)) !important;
-  gap: .75rem !important;
-  padding: .85rem !important;
-  border: 1px solid var(--mint) !important;
-  border-radius: 14px !important;
-  background: var(--warm-white) !important;
-  box-shadow: 0 24px 70px rgba(20,58,31,.16) !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  z-index: 500 !important;
-}
-.nav-dropdown-menu::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -14px;
-  height: 14px;
-}
-.nav-dropdown:hover .nav-dropdown-menu,
-.nav-dropdown:focus-within .nav-dropdown-menu {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-  transform: translateY(0) !important;
-}
-.nav-dropdown-menu a {
-  display: block !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  padding: .85rem .95rem !important;
-  border-radius: 10px !important;
-  color: var(--ink) !important;
-  line-height: 1.35 !important;
-  white-space: normal !important;
-  box-sizing: border-box !important;
-}
-.nav-dropdown-menu a:hover,
-.nav-dropdown-menu a:focus-visible { background: var(--cream) !important; color: var(--forest) !important; outline: none; }
-.nav-dropdown-menu strong { display: block; color: var(--forest); font-size: .92rem; line-height: 1.25; margin-bottom: .2rem; white-space: normal; }
-.nav-dropdown-menu span { display: block; color: var(--ink-light); font-size: .78rem; line-height: 1.35; white-space: normal; }
-@media(max-width:1120px){
-  .nav-links:not(.is-open) .nav-dropdown-menu { display: none !important; }
-  .nav-links.is-open .nav-dropdown-menu {
-    position: static !important;
-    width: 100% !important;
-    transform: none !important;
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    padding: 0 0 .35rem .75rem !important;
-    margin: -.15rem 0 .4rem !important;
-    border: 0 !important;
-    border-left: 2px solid var(--mint) !important;
-    border-radius: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
-  .nav-links.is-open .nav-dropdown-menu a { padding: .45rem 0 !important; }
-}
-
 </style>
 <style id="plasmamedia-brand-overrides">
 .nav-logo .logo-domain,
@@ -533,7 +459,7 @@ footer .footer-logo .logo-domain {
 </style>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="alternate icon" type="image/png" href="/favicon.png">
-<link rel="stylesheet" href="/assets/site-shell.css?v=20260714c">
+<link rel="stylesheet" href="/assets/site-shell.css?v=20260716e">
 </head>
 <body>
 
@@ -547,35 +473,18 @@ footer .footer-logo .logo-domain {
     <li class="nav-dropdown">
       <a href="/seo/" class="nav-dropdown-trigger" aria-haspopup="true">SEO</a>
       <div class="nav-dropdown-menu" aria-label="SEO undermeny">
-        <a href="/seo/">
-          <strong>SEO – sökmotoroptimering</strong>
-          <span>Så hjälper vi företag att synas organiskt på Google.</span>
-        </a>
-        <a href="/seo-pris/">
-          <strong>SEO-priser</strong>
-          <span>Vad SEO kostar och hur du väljer rätt nivå.</span>
-        </a>
-        <a href="/lokal-seo/">
-          <strong>Lokal SEO</strong>
-          <span>Syns i Google Maps och i sökningar nära kunden.</span>
-        </a>
-        <a href="/seo-byra-smaforetag/">
-          <strong>SEO byrå för småföretag</strong>
-          <span>Praktisk SEO-hjälp för mindre företag.</span>
-        </a>
-        <a href="/internationell-seo/">
-          <strong>Internationell SEO</strong>
-          <span>Strategi för språk, länder och hreflang.</span>
-        </a>
-        <a href="/blogg/hur-lang-tid-tar-seo/">
-          <strong>Hur lång tid tar SEO?</strong>
-          <span>Guide med realistisk tidslinje och vanliga misstag.</span>
-        </a>
+        <a href="/seo/"><strong>SEO – sökmotoroptimering</strong><span>Huvudsida för organisk synlighet.</span></a>
+        <a href="/teknisk-seo/"><strong>Teknisk SEO</strong><span>Indexering, hastighet, crawl och struktur.</span></a>
+        <a href="/on-page-seo/"><strong>On-page SEO</strong><span>Rubriker, innehåll, sökintention och internlänkar.</span></a>
+        <a href="/off-page-seo/"><strong>Off-page SEO</strong><span>Länkar, auktoritet och digitalt förtroende.</span></a>
+        <a href="/ai-seo/"><strong>AI SEO</strong><span>Synlighet i AI-sök och moderna sökresultat.</span></a>
+        <a href="/lokal-seo/"><strong>Lokal SEO</strong><span>Google Maps och lokala sökningar.</span></a>
+        <a href="/seo-pris/"><strong>SEO-priser</strong><span>Vad SEO kostar och hur nivåerna skiljer sig.</span></a>
       </div>
     </li>
     <li><a href="/google-ads/">Google Ads</a></li>
     <li><a href="/priser/">Priser</a></li>
-<li><a href="/blogg/">Blogg</a></li>
+    <li><a href="/blogg/">Blogg</a></li>
     <li><a href="/faq/">FAQ</a></li>
     <li><a href="/om-oss/">Om oss</a></li>
   </ul>
@@ -1465,6 +1374,6 @@ const observer = new IntersectionObserver(entries => {
 headings.forEach(h => observer.observe(h));
 </script>
 
-<script src="/assets/site-shell.js?v=20260714h" defer></script>
+<script src="/assets/site-shell.js?v=20260716e" defer></script>
 </body>
 </html>

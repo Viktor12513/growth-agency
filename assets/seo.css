@@ -267,7 +267,7 @@
   .seo-clusters { background: #fff; padding: 5rem 5vw; }
   .seo-clusters-inner { max-width: 1180px; margin: 0 auto; }
   .seo-clusters-head { max-width: 760px; margin-bottom: 2.5rem; }
-  .seo-cluster-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.1rem; }
+  .seo-cluster-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; }
   .seo-cluster-card {
     background: var(--cream);
     border: 1px solid var(--mint);
