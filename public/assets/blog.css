@@ -1437,3 +1437,24 @@ footer .container {
 @media (max-width: 760px) {
   .authority-box { grid-template-columns: 1fr; padding: 1.25rem; }
 }
+
+/* 2026 editorial polish: a richer but still lightweight reading experience. */
+.post-card{position:relative;isolation:isolate;border-color:rgba(138,184,154,.52)}
+.post-card::after{content:"";position:absolute;z-index:-1;width:9rem;height:9rem;right:-5rem;bottom:-6rem;border-radius:50%;background:rgba(138,184,154,.14);pointer-events:none}
+.post-card:nth-child(3n+2){background:linear-gradient(155deg,#fff 62%,#fbf4e5)}
+.post-card:nth-child(3n+3){background:linear-gradient(155deg,#fff 62%,#edf7f0)}
+.post-card:hover{box-shadow:0 22px 54px rgba(26,58,31,.12)}
+.post-card-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 48%,rgba(255,255,255,.14));pointer-events:none}
+.article-page--dynamic .article-header,.article-page--static .article-header{position:relative;isolation:isolate}
+.article-page--dynamic .article-header::after,.article-page--static .article-header::after{content:"";position:absolute;z-index:-1;width:14rem;height:14rem;right:-4rem;top:-4rem;border-radius:50%;background:radial-gradient(circle,rgba(138,184,154,.13),transparent 70%);pointer-events:none}
+.blog-post--guide .article-body{counter-reset:pm-article-section}
+.blog-post--guide .article-section:not(.article-section--service){counter-increment:pm-article-section;position:relative;overflow:clip;background:linear-gradient(155deg,#fff 70%,#f5faf6);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.blog-post--guide .article-section:not(.article-section--service)::after{content:counter(pm-article-section,decimal-leading-zero);position:absolute;right:1.2rem;top:.7rem;color:rgba(74,124,89,.10);font-family:'DM Serif Display',Georgia,serif;font-size:3.4rem;line-height:1;pointer-events:none}
+.blog-post--guide .article-section:not(.article-section--service):nth-of-type(even){background:linear-gradient(155deg,#fff 68%,#fdf8ee)}
+.blog-post--guide .article-section:not(.article-section--service):hover{transform:translateY(-2px);border-color:var(--sage);box-shadow:0 20px 48px rgba(26,58,31,.09)}
+.blog-post--guide .article-section--service{position:relative;overflow:clip;background:linear-gradient(135deg,#183a22,#2d5c35 72%,#3d7450)}
+.blog-post--guide .article-section--service::after{content:"";position:absolute;width:16rem;height:16rem;right:-8rem;top:-9rem;border-radius:50%;border:1px solid rgba(255,255,255,.16);pointer-events:none}
+.article-page--dynamic .sidebar-toc,.article-page--dynamic .sidebar-progress,.article-page--static .sidebar-toc,.article-page--static .sidebar-progress{box-shadow:0 18px 45px rgba(20,60,35,.07)}
+.article-page--dynamic .toc-list a,.article-page--static .toc-list a{border-radius:7px;transition:color .16s ease,background .16s ease,padding .16s ease}
+.article-page--dynamic .toc-list a:hover,.article-page--dynamic .toc-list a.active,.article-page--static .toc-list a:hover,.article-page--static .toc-list a.active{background:rgba(200,230,208,.34)}
+@media(prefers-reduced-motion:reduce){.blog-post--guide .article-section:not(.article-section--service),.post-card{transition:none}.blog-post--guide .article-section:not(.article-section--service):hover,.post-card:hover{transform:none}}

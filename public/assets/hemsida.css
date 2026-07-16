@@ -147,6 +147,9 @@
   }
   .principle-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,58,31,0.08); }
   .principle-card:hover::before { transform: scaleX(1); }
+  .principle-card:nth-child(3n+1) { background: linear-gradient(145deg,#fff 55%,#eef7f0); }
+  .principle-card:nth-child(3n+2) { background: linear-gradient(145deg,#fff 55%,#fbf4e5); }
+  .principle-card:nth-child(3n) { background: linear-gradient(145deg,#fff 55%,#f1f5ee); }
   .principle-number {
     font-family: 'DM Serif Display', serif;
     font-size: 3rem; color: var(--mint); line-height: 1;
@@ -202,7 +205,9 @@
     display: flex; gap: 14px; align-items: flex-start;
     padding: 1.5rem; background: white;
     border: 1px solid var(--mint); border-radius: var(--radius-lg);
+    transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s, border-color .28s;
   }
+  .feature-item:hover { transform: translateY(-5px); border-color: var(--sage); box-shadow: 0 16px 38px rgba(26,58,31,.1); }
   .feature-check {
     width: 24px; height: 24px; border-radius: 50%;
     background: var(--mint); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
@@ -214,7 +219,8 @@
   /* SHOWCASE / EXAMPLES */
   .showcase { background: var(--cream); }
   .showcase-header { margin-bottom: 3rem; }
-  .showcase-case-link { margin-top: 1.3rem; }
+  .showcase-header .section-lead { margin: 0; }
+  .showcase-case-link { display: inline-flex; align-items: center; justify-content: center; margin-top: 1.5rem; position: relative; z-index: 1; }
   .showcase-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
   .tab-btn {
     font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 500;
@@ -239,7 +245,9 @@
     border-radius: var(--radius-lg); overflow: hidden;
     box-shadow: 0 8px 40px rgba(26,58,31,0.08);
     aspect-ratio: 4/3; position: relative;
+    transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s, border-color .35s;
   }
+  .showcase-card:hover .showcase-mockup { transform: translateY(-7px) rotate(-.5deg); box-shadow: 0 22px 56px rgba(26,58,31,.14); border-color: var(--sage); }
   .mockup-bar {
     background: var(--cream); border-bottom: 1px solid var(--mint);
     padding: 10px 14px; display: flex; align-items: center; gap: 8px;

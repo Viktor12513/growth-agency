@@ -131,33 +131,82 @@
       return (trigger?.textContent || '').trim().toLowerCase() === 'seo';
     }).map((dropdown) => dropdown.querySelector('.nav-dropdown-menu')).filter(Boolean);
 
-    const links = [
-      { href: '/seo/', title: 'SEO – sökmotoroptimering', text: 'Så hjälper vi företag att synas organiskt på Google.' },
-      { href: '/seo-pris/', title: 'SEO-priser', text: 'Vad SEO kostar och hur du väljer rätt nivå.' },
-      { href: '/lokal-seo/', title: 'Lokal SEO', text: 'Syns i Google Maps och i sökningar nära kunden.' },
-      { href: '/seo-byra-smaforetag/', title: 'SEO byrå för småföretag', text: 'Praktisk SEO-hjälp för mindre företag.' },
-      { href: '/internationell-seo/', title: 'Internationell SEO', text: 'Strategi för språk, länder och hreflang.' },
-      { href: '/blogg/hur-lang-tid-tar-seo/', title: 'Hur lång tid tar SEO?', text: 'Guide med realistisk tidslinje och vanliga misstag.' },
-      { href: '/teknisk-seo/', title: 'Teknisk SEO', text: 'Indexering, hastighet, struktur och Core Web Vitals.' },
-      { href: '/on-page-seo/', title: 'On-page SEO', text: 'Rubriker, innehåll, sökintention och interna länkar.' },
-      { href: '/off-page-seo/', title: 'Off-page SEO', text: 'Länkar, lokal auktoritet och digitalt förtroende.' },
-      { href: '/ai-seo/', title: 'AI SEO', text: 'Synlighet i AI-sök, ChatGPT och moderna sökresultat.' }
+    const groups = [
+      {
+        title: 'Strategi & marknad',
+        text: 'SEO-upplägg för olika affärer, marknader och tillväxtmål.',
+        links: [
+          { href: '/seo/', title: 'SEO – sökmotoroptimering', text: 'Översikt, arbetssätt och vägen till fler relevanta besök.' },
+          { href: '/seo-pris/', title: 'SEO-priser', text: 'Prisfaktorer, omfattning och vad som bör ingå.' },
+          { href: '/seo-byra-smaforetag/', title: 'SEO-byrå för småföretag', text: 'Praktisk SEO för företag som vill växa stegvis.' },
+          { href: '/casino-seo/', title: 'Casino SEO', text: 'Teknik, innehåll och förtroende i en reglerad bransch.' },
+          { href: '/shopify-seo/', title: 'Shopify SEO', text: 'Kategorier, produkter, indexering och konvertering.' },
+          { href: '/skalbar-lokal-seo/', title: 'Skalbar lokal SEO', text: 'Kvalitativa ortssidor och lokal struktur i större skala.' },
+          { href: '/internationell-seo/', title: 'Internationell SEO', text: 'Språk, marknader, URL-struktur och hreflang.' }
+        ]
+      },
+      {
+        title: 'Teknik & innehåll',
+        text: 'Starka sidor som går att hitta, förstå och välja.',
+        links: [
+          { href: '/teknisk-seo/', title: 'Teknisk SEO', text: 'Indexering, hastighet, struktur och Core Web Vitals.' },
+          { href: '/on-page-seo/', title: 'On-page SEO', text: 'Sökintention, innehåll, rubriker och internlänkar.' },
+          { href: '/innehallsanalys-seo/', title: 'Innehållsanalys SEO', text: 'Innehållsgap, kannibalisering och uppdateringsbehov.' },
+          { href: '/seo-anpassade-texter/', title: 'SEO-anpassade texter', text: 'Texter som svarar på sökintention och leder vidare.' },
+          { href: '/sitemigrering-seo/', title: 'Byt hemsida – sitemigrering', text: 'Behåll synlighet vid byte av CMS, domän eller struktur.' },
+          { href: '/lokal-seo/', title: 'Lokal SEO', text: 'Google Maps och synlighet där kunderna söker.' },
+          { href: '/blogg/hur-lang-tid-tar-seo/', title: 'Guide: Hur lång tid tar SEO?', text: 'Realistisk tidslinje från första åtgärd till resultat.' }
+        ]
+      },
+      {
+        title: 'Auktoritet & AI-sök',
+        text: 'Förtroendesignaler för Google, AI-tjänster och kunder.',
+        links: [
+          { href: '/off-page-seo/', title: 'Off-page SEO', text: 'Länkstrategi, digital PR och relevanta omnämnanden.' },
+          { href: '/lankstrategi/', title: 'Länkstrategi', text: 'Relevanta länkar, outreach, digital PR och riskkontroll.' },
+          { href: '/youtube-seo/', title: 'YouTube SEO', text: 'Videotitlar, retention, thumbnails och kanalstruktur.' },
+          { href: '/app-store-optimering/', title: 'App Store-optimering', text: 'Synlighet och konvertering i App Store och Google Play.' },
+          { href: '/ai-seo/', title: 'AI SEO', text: 'Synlighet i AI-sök, ChatGPT och moderna sökresultat.' },
+          { href: '/blogg/hur-syns-man-i-chatgpt/', title: 'Guide: Synas i ChatGPT', text: 'Så görs information tydligare och mer citerbar.' },
+          { href: '/kundcases/arborist-roslagen/', title: 'Kundcase: Arborist Roslagen', text: 'Se hur strategi, webb och lokal synlighet hänger ihop.' }
+        ]
+      }
     ];
+
+    const links = groups.flatMap((group) => group.links);
 
     seoDropdowns.forEach((menu) => {
       const current = Array.from(menu.querySelectorAll('a')).map((link) => link.getAttribute('href')).join('|');
       const expected = links.map((item) => item.href).join('|');
       if (current === expected) return;
       clearElement(menu);
-      links.forEach((item) => {
-        const link = document.createElement('a');
-        const title = document.createElement('strong');
-        const text = document.createElement('span');
-        link.href = item.href;
-        title.textContent = item.title;
-        text.textContent = item.text;
-        link.append(title, text);
-        menu.appendChild(link);
+      const intro = document.createElement('div');
+      intro.className = 'seo-menu-intro';
+      intro.innerHTML = '<strong>SEO-tjänster för hållbar synlighet</strong><span>Välj område eller börja med vår SEO-översikt.</span>';
+      menu.appendChild(intro);
+
+      groups.forEach((group) => {
+        const section = document.createElement('div');
+        const heading = document.createElement('p');
+        const description = document.createElement('span');
+        section.className = 'seo-menu-group';
+        heading.className = 'seo-menu-group-title';
+        heading.textContent = group.title;
+        description.className = 'seo-menu-group-description';
+        description.textContent = group.text;
+        section.append(heading, description);
+
+        group.links.forEach((item) => {
+          const link = document.createElement('a');
+          const title = document.createElement('strong');
+          const text = document.createElement('span');
+          link.href = item.href;
+          title.textContent = item.title;
+          text.textContent = item.text;
+          link.append(title, text);
+          section.appendChild(link);
+        });
+        menu.appendChild(section);
       });
     });
   }

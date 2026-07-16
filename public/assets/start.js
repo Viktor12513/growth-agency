@@ -26,3 +26,21 @@
       document.body.style.overflow = '';
     });
   });
+
+  // Lightweight scroll reveals for the more editorial sections.
+  // Content remains fully visible when JavaScript is unavailable.
+  const revealItems = document.querySelectorAll('.reveal-on-scroll');
+  if (revealItems.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('has-js');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+    revealItems.forEach(item => revealObserver.observe(item));
+  } else {
+    revealItems.forEach(item => item.classList.add('is-visible'));
+  }

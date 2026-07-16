@@ -23,10 +23,6 @@ function filterCases(cat, btn) {
 
 const caseDetails = [
   {
-    summary: 'Vi b&ouml;rjade med att bygga om strukturen p&aring; hemsidan s&aring; att varje viktig tj&auml;nst och stadsdel fick en tydlig landningssida. D&auml;refter kopplade vi Google Ads till de mest akuta s&ouml;kningarna och f&ouml;ljde upp vilka s&ouml;kord som faktiskt skapade samtal.',
-    points: ['Tydliga tj&auml;nstesidor f&ouml;r VVS, r&ouml;rstopp och jour&auml;renden', 'Lokal SEO mot prioriterade stadsdelar i Stockholm', 'Google Ads-kampanjer med fokus p&aring; akuta leads']
-  },
-  {
     summary: 'Arborist Roslagen beh&ouml;vde en sida som k&auml;ndes seri&ouml;s direkt och gjorde det enkelt f&ouml;r lokala kunder att f&ouml;rst&aring; tj&auml;nsterna. Vi tog fram en ren struktur, tydliga tj&auml;nstesektioner och kontaktv&auml;gar som fungerar bra p&aring; mobil.',
     points: ['Tydlig hemsida f&ouml;r tr&auml;df&auml;llning, besk&auml;rning och tr&auml;dv&aring;rd', 'Lokal SEO-grund f&ouml;r Roslagen och n&auml;rliggande orter', 'F&ouml;rtroendeskapande design med enkel v&auml;g till offertf&ouml;rfr&aringgan']
   },

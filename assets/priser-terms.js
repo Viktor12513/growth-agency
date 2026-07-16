@@ -16,7 +16,6 @@ let webTermMonths = 24;
 const webPackageTotals = {
   start: 19999,
   tillvaxt: 29999,
-  premium: 39999,
 };
 
 function calcWebMonthly(total, months) {

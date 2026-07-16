@@ -991,3 +991,18 @@ footer .container {
     padding: 1.15rem;
   }
 }
+
+/* Keep static article files visually aligned with the richer guide layout. */
+.article-page--static .article-header{position:relative;isolation:isolate}
+.article-page--static .article-header::after{content:"";position:absolute;z-index:-1;width:14rem;height:14rem;right:-4rem;top:-4rem;border-radius:50%;background:radial-gradient(circle,rgba(138,184,154,.13),transparent 70%);pointer-events:none}
+.article-page--static .blog-post--guide .article-body{counter-reset:pm-static-section}
+.article-page--static .blog-post--guide .article-section:not(.article-section--service){counter-increment:pm-static-section;position:relative;overflow:clip;background:linear-gradient(155deg,#fff 70%,#f5faf6);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.article-page--static .blog-post--guide .article-section:not(.article-section--service)::after{content:counter(pm-static-section,decimal-leading-zero);position:absolute;right:1.2rem;top:.7rem;color:rgba(74,124,89,.10);font-family:'DM Serif Display',Georgia,serif;font-size:3.4rem;line-height:1;pointer-events:none}
+.article-page--static .blog-post--guide .article-section:not(.article-section--service):nth-of-type(even){background:linear-gradient(155deg,#fff 68%,#fdf8ee)}
+.article-page--static .blog-post--guide .article-section:not(.article-section--service):hover{transform:translateY(-2px);border-color:var(--sage);box-shadow:0 20px 48px rgba(26,58,31,.09)}
+.article-page--static .blog-post--guide .article-section--service{position:relative;overflow:clip;background:linear-gradient(135deg,#183a22,#2d5c35 72%,#3d7450)}
+.article-page--static .blog-post--guide .article-section--service::after{content:"";position:absolute;width:16rem;height:16rem;right:-8rem;top:-9rem;border-radius:50%;border:1px solid rgba(255,255,255,.16);pointer-events:none}
+.article-page--static .sidebar-toc,.article-page--static .sidebar-progress{box-shadow:0 18px 45px rgba(20,60,35,.07)}
+.article-page--static .toc-list a{border-radius:7px;transition:color .16s ease,background .16s ease,padding .16s ease}
+.article-page--static .toc-list a:hover,.article-page--static .toc-list a.active{background:rgba(200,230,208,.34);padding:.35rem .45rem}
+@media(prefers-reduced-motion:reduce){.article-page--static .blog-post--guide .article-section:not(.article-section--service){transition:none}.article-page--static .blog-post--guide .article-section:not(.article-section--service):hover{transform:none}}
