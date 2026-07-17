@@ -359,7 +359,7 @@ const seoPages = [
       ['Lokal auktoritet', 'För lokala företag är Google Business Profile, konsekventa företagsuppgifter och riktiga recensioner viktiga delar av förtroendet online.'],
       ['Digital PR i liten skala', 'Kundcase, guider, samarbeten och användbara resurser kan skapa naturliga omnämnanden. Det är långsammare än länkpaket, men betydligt tryggare.'],
     ],
-    links: [['/seo/', 'SEO'], ['/lokal-seo/', 'Lokal SEO'], ['/kundcases/arborist-roslagen/', 'Kundcase']],
+    links: [['/seo/', 'SEO'], ['/lokal-seo/', 'Lokal SEO'], ['/kundcases/', 'Kundcase']],
     faqs: [
       ['Är länkbygge riskabelt?', 'Det kan vara riskabelt om det bygger på köpta lågkvalitetslänkar. En trygg strategi prioriterar relevans, relationer och verkligt värde.'],
       ['Hur många länkar behöver man?', 'Det beror på konkurrens och marknad. För lokala företag räcker ofta färre men mer relevanta signaler.'],
@@ -485,43 +485,6 @@ function renderCountyPage([route, title, h1, lead]) {
   });
 }
 
-function renderCasePage() {
-  const canonical = `${site}/kundcases/arborist-roslagen/`;
-  const schema = [
-    orgSchema(),
-    breadcrumbSchema([
-      { name: 'Startsida', url: `${site}/` },
-      { name: 'Kundcase', url: `${site}/kundcases/` },
-      { name: 'Arborist Roslagen', url: canonical },
-    ]),
-  ];
-  return `${head({
-    title: 'Kundcase: Arborist Roslagen | Hemsida för arborist',
-    description: 'Kundcase om Arborist Roslagen: en tydlig hemsida för trädvård, trädfällning, beskärning och lokala sökningar i Roslagen.',
-    canonical,
-    css: ['/assets/kundcases.css', '/assets/cluster.css'],
-    schema,
-  })}
-${header()}
-<main id="main-content">
-  <section class="cluster-hero"><div class="container">
-    <span class="cluster-kicker">Kundcase</span>
-    <h1>Arborist Roslagen – hemsida som gör trädvård enkel att förstå</h1>
-    <p class="cluster-lead">Arborist Roslagen behövde en professionell webbplats som tydligt visar tjänster, geografiskt område och kontaktväg för kunder i Norrtälje och Roslagen.</p>
-    <div class="cluster-actions"><a class="cluster-btn" href="https://www.arboristroslagen.se/" target="_blank" rel="noopener">Besök hemsidan</a><a class="cluster-btn cluster-btn--ghost" href="/kontakt/#contact-form">Vill du ha liknande?</a></div>
-  </div></section>
-  <section class="cluster-section"><div class="container cluster-split">
-    <div><h2>Uppdraget</h2><p>Vi skapade en hemsida med fokus på tydliga tjänstesidor, lokal trovärdighet och enkel kontakt. Besökaren ska snabbt förstå om Arborist Roslagen hjälper med trädfällning, beskärning, riskträd eller rådgivning.</p><p>Strukturen är byggd för lokala sökningar och för att minska friktion: tydliga CTA-knappar, serviceområden, förtroendeskapande text och en kontaktväg som fungerar på mobil.</p></div>
-    <div class="mini-stats"><div class="mini-stat"><strong>20</strong><span>nöjda kunder totalt</span></div><div class="mini-stat"><strong>3 mån</strong><span>genomsnitt till mätbara resultat</span></div><div class="mini-stat"><strong>SEO + webb</strong><span>struktur från start</span></div></div>
-  </div></section>
-  <section class="cluster-section cluster-section--cream"><div class="container cluster-wide">
-    <h2>Vad vi tog med oss</h2><p>Lokala tjänsteföretag behöver ofta mindre “flash” och mer tydlighet. När kunden har ett trädproblem vill de snabbt veta om företaget arbetar i området, vilka tjänster som finns, hur processen går till och hur man får offert.</p>
-    <div class="cluster-link-grid"><a class="cluster-link-card" href="/hemsida/">Hemsidor<span>Så bygger vi</span></a><a class="cluster-link-card" href="/lokal-seo/">Lokal SEO<span>Syns i närområdet</span></a><a class="cluster-link-card" href="/kundcases/">Fler kundcase<span>Se översikt</span></a></div>
-  </div></section>
-</main>
-${footer()}`;
-}
-
 async function renderRedirectBlog() {
   await writePage('blog', `<!DOCTYPE html><html lang="sv"><head><meta charset="UTF-8"><meta name="robots" content="noindex, follow"><link rel="canonical" href="${site}/blogg/"><meta http-equiv="refresh" content="0; url=/blogg/"><title>Bloggen har flyttat | Plasma MEDIA AB</title><script>location.replace('/blogg/');</script></head><body><p>Bloggen har flyttat till <a href="/blogg/">/blogg/</a>.</p></body></html>`);
 }
@@ -540,7 +503,6 @@ async function buildPages() {
   for (const page of countyPages) {
     await writePage(page[0], renderCountyPage(page));
   }
-  await writePage(path.join('kundcases', 'arborist-roslagen'), renderCasePage());
   await renderRedirectBlog();
 }
 

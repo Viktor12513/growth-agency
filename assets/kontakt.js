@@ -259,6 +259,71 @@ function applyCartRequestToContactForm() {
 
 applyCartRequestToContactForm();
 
+function applyHomeQuizRequestToContactForm() {
+  if (!contactForm) return;
+
+  const params = new URLSearchParams(window.location.search);
+  if (!params.has('homequiz')) return;
+
+  let quizRequest = null;
+  try {
+    const savedRequest = sessionStorage.getItem('plasma_home_quiz');
+    if (savedRequest) quizRequest = JSON.parse(savedRequest);
+  } catch (error) {
+    console.warn('Kunde inte läsa sparad behovsanalys.', error);
+  }
+
+  if (!quizRequest?.recommendation) return;
+
+  const recommendation = quizRequest.recommendation;
+  const serviceField = contactForm.elements.service;
+  const messageField = contactForm.elements.message;
+  const quizResultField = contactForm.elements.quiz_result;
+  const quizRecommendationField = contactForm.elements.quiz_recommendation;
+  const contactData = quizRequest.contact || {};
+  const answers = quizRequest.answers || {};
+  const readable = [
+    `Situation: ${answers.situation?.label || quizRequest.problem}`,
+    `Identifierat behov: ${answers.need?.label || quizRequest.priority}`,
+    `Viktigaste målsättning: ${answers.goal?.label || quizRequest.timeline}`,
+    `Rekommenderad tjänst: ${recommendation.title}`,
+  ].join('\n');
+
+  if (serviceField) serviceField.value = recommendation.service || 'hemsida';
+  if (contactForm.elements.name && contactData.name) contactForm.elements.name.value = contactData.name;
+  if (contactForm.elements.company && contactData.company) contactForm.elements.company.value = contactData.company;
+  if (contactForm.elements.email && contactData.email) contactForm.elements.email.value = contactData.email;
+  if (contactForm.elements.phone && contactData.phone) contactForm.elements.phone.value = contactData.phone;
+  if (quizResultField) quizResultField.value = readable;
+  if (quizRecommendationField) quizRecommendationField.value = `${recommendation.title}\n${recommendation.text}`;
+  if (messageField) {
+    messageField.value = [
+      'Behovsanalys från startsidan:',
+      '',
+      readable,
+      '',
+      recommendation.text,
+      recommendation.reason || '',
+      contactData.url ? `Företagets webbadress: ${contactData.url}` : '',
+      contactData.message ? `Besökarens meddelande: ${contactData.message}` : '',
+      '',
+      'Jag vill gärna få hjälp med nästa steg.',
+    ].filter(Boolean).join('\n');
+    messageField.dispatchEvent(new Event('input', { bubbles: true }));
+  }
+
+  const heading = document.querySelector('.form-header p');
+  if (heading) heading.textContent = 'Din rekommendation från startsidan är infogad. Fyll i kontaktuppgifterna så återkommer vi med nästa steg.';
+
+  try {
+    sessionStorage.removeItem('plasma_home_quiz');
+  } catch (error) {
+    console.warn('Kunde inte rensa sparad behovsanalys.', error);
+  }
+}
+
+applyHomeQuizRequestToContactForm();
+
 const contactQuizQuestions = [
   {
     question: 'Vad behöver du mest hjälp med just nu?',

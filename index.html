@@ -86,7 +86,7 @@
 </script>
 
 <link rel="preload" href="/assets/fonts.css" as="style">
-<link rel="preload" href="/assets/start.css" as="style">
+<link rel="preload" href="/assets/start.css?v=20260717g" as="style">
 <link rel="preload" href="/assets/fonts/dm-sans-300.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-400.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="/assets/fonts/dm-sans-500.ttf" as="font" type="font/ttf" crossorigin>
@@ -96,7 +96,7 @@
 <style id="critical-start">
 *{box-sizing:border-box}body{margin:0;background:#fdfbf6;color:#1a1a18;font-family:"DM Sans",Arial,sans-serif}a{color:inherit;text-decoration:none}.skip-link{position:absolute;left:-999px;top:auto}.skip-link:focus{left:12px;top:12px;z-index:9999;background:#fff;padding:10px 14px;border-radius:8px}header{position:sticky;top:0;z-index:100;background:rgba(253,251,246,.96);border-bottom:1px solid #e8e3d8}nav{max-width:1120px;margin:0 auto;height:78px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}.nav-logo{font-family:"DM Serif Display",Georgia,serif;font-size:1.45rem;color:#1a3a1f;white-space:nowrap}.nav-logo span{color:#8a641f}.nav-links{display:flex;gap:1.1rem;align-items:center;list-style:none;margin:0;padding:0}.nav-links a{font-size:.92rem;font-weight:600;color:#17341c}.nav-cta{background:#123d1f!important;color:#fff!important;padding:.8rem 1.25rem;border-radius:8px}.nav-hamburger{display:none}main#main-content{min-height:900px}.hero{min-height:calc(100vh - 78px);padding:5.5rem 20px 3rem;display:flex;align-items:center;contain-intrinsic-size:900px 700px}.hero-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,1fr);gap:3rem;align-items:center;min-height:560px}.hero-left{min-height:430px}.hero-pill{display:inline-flex;align-items:center;gap:6px;background:#f5e6c8;color:#6f4b08;border:1px solid #8f6510;font-size:.8rem;font-weight:600;letter-spacing:.05em;padding:5px 14px;border-radius:100px;margin-bottom:1.5rem;text-transform:uppercase}.hero h1{font-family:"DM Serif Display",Georgia,serif;font-size:clamp(3rem,6.5vw,6.25rem);line-height:.92;margin:0 0 1.5rem;color:#1a3a1f;letter-spacing:-.04em;min-height:2.8em}.hero h1 em{color:#7a5418;font-style:italic}.hero p{font-size:1.15rem;line-height:1.75;color:#30302c;max-width:580px;min-height:6.1em}.hero-visual{min-height:440px;aspect-ratio:1/0.82}@media(max-width:900px){nav{height:68px}.nav-links{display:none}.nav-hamburger{display:block}main#main-content{min-height:760px}.hero{min-height:auto;padding-top:4rem;contain-intrinsic-size:760px 820px}.hero-inner{grid-template-columns:1fr;min-height:0}.hero-left{min-height:520px}.hero-visual{min-height:280px}.hero h1{font-size:clamp(2.8rem,14vw,4.5rem)}} 
 </style>
-<link rel="stylesheet" href="/assets/start.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="/assets/start.css?v=20260717g" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="/assets/footer-areas.css" media="print" onload="this.media='all'">
 <style id="plasmamedia-brand-overrides">
 .nav-logo .logo-domain,
@@ -118,7 +118,7 @@ footer .footer-logo .logo-domain {
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="alternate icon" type="image/png" href="/favicon.png">
 <link rel="stylesheet" href="/assets/site-shell.css?v=20260716e" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/start.css"><link rel="stylesheet" href="/assets/footer-areas.css"><link rel="stylesheet" href="/assets/site-shell.css?v=20260716e"></noscript>
+<noscript><link rel="stylesheet" href="/assets/fonts.css"><link rel="stylesheet" href="/assets/start.css?v=20260717g"><link rel="stylesheet" href="/assets/footer-areas.css"><link rel="stylesheet" href="/assets/site-shell.css?v=20260716e"></noscript>
 </head>
 <body>
 
@@ -187,10 +187,6 @@ footer .footer-logo .logo-domain {
       <h1 id="hero-heading">Digital marknadsföring<br> <em>som skapar fler kunder</em></h1>
       <p class="lead">Vi hjälper svenska småföretag att få fler förfrågningar genom konverterande hemsidor, SEO, Google Ads och innehåll – med en tydlig strategi och en kontakt genom hela arbetet.</p>
       <div class="hero-btns">
-        <a href="#kundcase-start" class="btn-secondary hero-case-link">
-          Se ett riktigt kundcase
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
         <a href="/kontakt/#contact-form" class="btn-primary">
           Boka gratis genomgång
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -286,6 +282,101 @@ footer .footer-logo .logo-domain {
   </div>
 </div>
 
+<!-- HOMEPAGE NEEDS ANALYSIS -->
+<section class="home-quiz-section" id="behovsanalys" aria-labelledby="home-quiz-heading">
+  <div class="container home-quiz-shell">
+    <form class="home-quiz-panel" id="home-quiz-form" novalidate>
+      <header class="home-quiz-header">
+        <span class="home-quiz-eyebrow">Kostnadsfri första behovsanalys</span>
+        <h2 id="home-quiz-heading">Vad behöver ditt företag?</h2>
+        <p>Tre korta frågor hjälper oss att rekommendera ett rimligt första steg.</p>
+        <div class="home-quiz-meta"><strong id="home-quiz-question-count">Fråga 1 av 3</strong><span>Tar cirka 60 sekunder</span></div>
+      </header>
+
+      <ol class="home-quiz-progress" aria-label="Quizets steg">
+        <li class="is-active" data-progress-step="1" aria-current="step"><span>01</span><strong>Situation</strong></li>
+        <li data-progress-step="2"><span>02</span><strong>Behov</strong></li>
+        <li data-progress-step="3"><span>03</span><strong>Målsättning</strong></li>
+      </ol>
+
+      <div class="home-quiz-body">
+        <div class="home-quiz-main">
+          <section class="home-quiz-question is-active" id="home-quiz-question-1" data-question-step="1" aria-labelledby="home-quiz-q1-title">
+            <span class="home-quiz-question-label">Situation</span>
+            <h3 id="home-quiz-q1-title">Vilken situation stämmer bäst in på ditt företag?</h3>
+            <div class="home-quiz-answer-grid" role="group" aria-label="Välj företagets situation">
+              <button class="home-quiz-answer" type="button" data-answer="new-site" aria-pressed="false"><span class="home-quiz-answer-number">01</span><span><strong>Vi behöver en helt ny hemsida</strong><small>Företaget saknar hemsida eller ska lansera något nytt</small></span><span class="home-quiz-answer-arrow" aria-hidden="true">→</span></button>
+              <button class="home-quiz-answer" type="button" data-answer="redesign" aria-pressed="false"><span class="home-quiz-answer-number">02</span><span><strong>Vår nuvarande hemsida behöver göras om</strong><small>Designen, innehållet eller tekniken känns föråldrad</small></span><span class="home-quiz-answer-arrow" aria-hidden="true">→</span></button>
+              <button class="home-quiz-answer" type="button" data-answer="seo" aria-pressed="false"><span class="home-quiz-answer-number">03</span><span><strong>Vi vill synas högre på Google</strong><small>Fler relevanta kunder behöver hitta företaget</small></span><span class="home-quiz-answer-arrow" aria-hidden="true">→</span></button>
+              <button class="home-quiz-answer" type="button" data-answer="combined" aria-pressed="false"><span class="home-quiz-answer-number">04</span><span><strong>Vi behöver både hemsida och SEO</strong><small>En komplett grund för fler förfrågningar online</small></span><span class="home-quiz-answer-arrow" aria-hidden="true">→</span></button>
+              <button class="home-quiz-answer" type="button" data-answer="conversion" aria-pressed="false"><span class="home-quiz-answer-number">05</span><span><strong>Vi får trafik men för få förfrågningar</strong><small>Besökare kommer in men kontaktar inte företaget</small></span><span class="home-quiz-answer-arrow" aria-hidden="true">→</span></button>
+              <button class="home-quiz-answer" type="button" data-answer="unsure" aria-pressed="false"><span class="home-quiz-answer-number">06</span><span><strong>Vi vet inte riktigt vad vi behöver</strong><small>Vi vill få hjälp att identifiera rätt första steg</small></span><span class="home-quiz-answer-arrow" aria-hidden="true">→</span></button>
+            </div>
+          </section>
+
+          <section class="home-quiz-question" id="home-quiz-question-2" data-question-step="2" aria-labelledby="home-quiz-q2-title" hidden>
+            <span class="home-quiz-question-label">Behov</span>
+            <h3 id="home-quiz-q2-title"></h3>
+            <div class="home-quiz-answer-grid" id="home-quiz-q2-options" role="group" aria-label="Välj företagets främsta behov"></div>
+          </section>
+
+          <section class="home-quiz-question" id="home-quiz-question-3" data-question-step="3" aria-labelledby="home-quiz-q3-title" hidden>
+            <span class="home-quiz-question-label">Målsättning</span>
+            <h3 id="home-quiz-q3-title"></h3>
+            <div class="home-quiz-answer-grid" id="home-quiz-q3-options" role="group" aria-label="Välj företagets viktigaste målsättning"></div>
+          </section>
+
+          <section class="home-quiz-result" id="home-quiz-result" aria-live="polite" hidden>
+            <span class="home-quiz-eyebrow home-quiz-eyebrow--light">Er rekommenderade väg framåt</span>
+            <h3 id="home-quiz-result-title"></h3>
+            <p class="home-quiz-result-lead" id="home-quiz-result-text"></p>
+            <p class="home-quiz-result-reason" id="home-quiz-result-reason"></p>
+            <div class="home-quiz-priorities"><strong>Tre rekommenderade prioriteringar</strong><ul id="home-quiz-result-steps"></ul></div>
+            <div class="home-quiz-next-step"><span>Nästa steg</span><p id="home-quiz-result-next"></p></div>
+
+            <div class="home-quiz-mini-contact" aria-labelledby="home-quiz-contact-title">
+              <h4 id="home-quiz-contact-title">Ta med analysen till ett kostnadsfritt samtal</h4>
+              <p>Fyll i det viktigaste här. Du får kontrollera och redigera allt på kontaktsidan innan något skickas.</p>
+              <div class="home-quiz-contact-grid">
+                <label><span>Namn *</span><input type="text" id="home-quiz-contact-name" name="quiz_contact_name" autocomplete="name" maxlength="120"></label>
+                <label><span>Företag *</span><input type="text" id="home-quiz-contact-company" name="quiz_contact_company" autocomplete="organization" maxlength="140"></label>
+                <label><span>E-post *</span><input type="email" id="home-quiz-contact-email" name="quiz_contact_email" autocomplete="email" maxlength="160"></label>
+                <label><span>Telefon <small>(valfritt)</small></span><input type="tel" id="home-quiz-contact-phone" name="quiz_contact_phone" autocomplete="tel" maxlength="60"></label>
+                <label class="home-quiz-contact-wide"><span>Företagets webbadress <small>(valfritt)</small></span><input type="url" id="home-quiz-contact-url" name="quiz_contact_url" autocomplete="url" maxlength="240" placeholder="https://"></label>
+                <label class="home-quiz-contact-wide"><span>Kort meddelande <small>(valfritt)</small></span><textarea id="home-quiz-contact-message" name="quiz_contact_message" rows="3" maxlength="1000"></textarea></label>
+              </div>
+              <p class="home-quiz-contact-error" id="home-quiz-contact-error" role="alert"></p>
+              <div class="home-quiz-result-actions">
+                <button class="home-quiz-result-cta" id="home-quiz-book" type="button">Boka kostnadsfri genomgång</button>
+                <a class="home-quiz-result-more" id="home-quiz-send" href="/kontakt/?homequiz=1#contact-form">Skicka en förfrågan</a>
+              </div>
+            </div>
+            <button type="button" class="home-quiz-restart home-quiz-restart--light" data-quiz-reset>Börja om</button>
+          </section>
+
+          <p class="home-quiz-error" id="home-quiz-error" role="alert"></p>
+          <div class="home-quiz-navigation" id="home-quiz-navigation">
+            <button type="button" class="home-quiz-back" id="home-quiz-prev" hidden>← Föregående fråga</button>
+            <button type="button" class="home-quiz-primary" id="home-quiz-next" disabled>Fortsätt <span aria-hidden="true">→</span></button>
+            <button type="button" class="home-quiz-restart" data-quiz-reset>Börja om</button>
+          </div>
+        </div>
+
+        <aside class="home-quiz-summary" aria-label="Sammanfattning av era svar" aria-live="polite">
+          <span class="home-quiz-summary-label">Er analys hittills</span>
+          <h3>Sammanfattning</h3>
+          <dl>
+            <div><dt>01 Situation</dt><dd id="home-quiz-summary-1">Inte valt ännu</dd></div>
+            <div><dt>02 Behov</dt><dd id="home-quiz-summary-2">Inte valt ännu</dd></div>
+            <div><dt>03 Målsättning</dt><dd id="home-quiz-summary-3">Inte valt ännu</dd></div>
+          </dl>
+          <p>Rekommendationen är vägledande och bygger på era svar. Vi lovar inga fasta resultat eller placeringar.</p>
+        </aside>
+      </div>
+    </form>
+  </div>
+</section>
+
 <!-- RESULTS -->
 <section class="results-section" aria-labelledby="results-heading">
   <div class="container">
@@ -316,39 +407,6 @@ footer .footer-logo .logo-domain {
         <p>Google Ads passar när du vill testa erbjudanden, få klick från köpklara sökningar och mäta kostnad per lead utan långa startsträckor.</p>
         <a href="/google-ads/">Läs om annonsering</a>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- CUSTOMER CASE SPOTLIGHT -->
-<section class="case-spotlight" id="kundcase-start" aria-labelledby="case-spotlight-heading">
-  <div class="container case-spotlight-grid">
-    <div class="case-spotlight-copy reveal-on-scroll">
-      <span class="section-tag">Från idé till färdig webbplats</span>
-      <p class="case-eyebrow">Kundcase · Arborist Roslagen</p>
-      <h2 class="section-title" id="case-spotlight-heading">En hemsida som gör det enkelt att välja rätt hjälp.</h2>
-      <p class="section-lead">Arborist Roslagen behövde samla sina tjänster i en tydlig, professionell webbplats. Vi byggde en mobilanpassad helhet där besökaren snabbt förstår vad företaget gör, var de arbetar och hur man tar nästa steg.</p>
-      <ul class="case-proof-list" aria-label="Det här skapade vi">
-        <li><span>01</span>Tydlig struktur för trädvård och trädfällning</li>
-        <li><span>02</span>Lokal SEO-grund för Roslagen</li>
-        <li><span>03</span>Kontaktvägar anpassade för mobil</li>
-      </ul>
-      <div class="case-actions">
-        <a href="/kundcases/arborist-roslagen/" class="btn-primary">Läs kundcaset <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        <a href="https://www.arboristroslagen.se/" class="case-external" target="_blank" rel="noopener">Besök webbplatsen <span aria-hidden="true">↗</span></a>
-      </div>
-    </div>
-    <div class="case-browser-wrap reveal-on-scroll" aria-hidden="true">
-      <div class="case-browser-glow"></div>
-      <div class="case-browser">
-        <div class="case-browser-bar">
-          <div class="browser-dots"><i></i><i></i><i></i></div>
-          <span>arboristroslagen.se</span>
-        </div>
-        <img class="case-browser-image" src="/images/arborist-roslagen-startsida.png" width="1280" height="720" loading="lazy" decoding="async" alt="">
-      </div>
-      <div class="case-float-card case-float-card--top"><strong>Mobil först</strong><span>Enkelt att kontakta</span></div>
-      <div class="case-float-card case-float-card--bottom"><strong>Lokal SEO</strong><span>Byggd för Roslagen</span></div>
     </div>
   </div>
 </section>
@@ -522,83 +580,6 @@ footer .footer-logo .logo-domain {
           </a>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials" id="omdomen" aria-labelledby="testimonials-heading">
-  <div class="container">
-    <div class="testimonials-header">
-      <span class="section-tag">Vad kunderna säger</span>
-      <h2 class="section-title" id="testimonials-heading">Resultaten talar för sig själva</h2>
-      <p class="section-lead">Vi mäts på hur väl våra kunders verksamheter växer – inte på hur snygga presentationerna är.</p>
-      <a href="/kundcases/" class="btn-secondary testimonials-case-link">Se våra kundcase</a>
-    </div>
-    <div class="testimonials-grid">
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="testimonial-quote">Innan Plasma MEDIA AB hittade ingen oss på Google. Nu får vi 4–6 offertförfrågningar i veckan direkt från hemsidan. Investeringen betalade sig på tre månader.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">MJ</div>
-          <div>
-            <div class="testimonial-name">Magnus Johansson</div>
-            <div class="testimonial-company">Johanssons Måleri AB, Stockholm</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="testimonial-quote">De förstår vad vi behöver utan att vi behöver förklara allt. Hemsidan är professionell, lätt att uppdatera och vi rankar nu på förstasidan för våra viktigaste sökord.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">SL</div>
-          <div>
-            <div class="testimonial-name">Sara Lindström</div>
-            <div class="testimonial-company">Lindströms Redovisning, Solna</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card">
-        <div class="testimonial-stars">
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
-        <p class="testimonial-quote">Plasma MEDIA AB sköter vår Google Ads. Trafiken har tredubblats och vi spenderar faktiskt mindre på annonser än innan, tack vare bättre optimering.</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">EK</div>
-          <div>
-            <div class="testimonial-name">Erik Karlsson</div>
-            <div class="testimonial-company">Studio Forma, Kungsholmen</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="testimonials-logos" aria-hidden="true">
-      <div class="logo-placeholder" style="width:90px"></div>
-      <div class="logo-placeholder" style="width:110px"></div>
-      <div class="logo-placeholder" style="width:80px"></div>
-      <div class="logo-placeholder" style="width:120px"></div>
-      <div class="logo-placeholder" style="width:95px"></div>
-      <div class="logo-placeholder" style="width:75px"></div>
     </div>
   </div>
 </section>
@@ -796,7 +777,7 @@ footer .footer-logo .logo-domain {
   </div>
 </footer>
 
-<script src="/assets/start.js" defer></script>
+<script src="/assets/start.js?v=20260717c" defer></script>
 <script src="/assets/site-shell.js?v=20260716e" defer></script>
 <script src="/assets/analytics.js" defer></script>
 </body>
