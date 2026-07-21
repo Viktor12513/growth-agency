@@ -167,8 +167,7 @@
           { href: '/youtube-seo/', title: 'YouTube SEO', text: 'Videotitlar, retention, thumbnails och kanalstruktur.' },
           { href: '/app-store-optimering/', title: 'App Store-optimering', text: 'Synlighet och konvertering i App Store och Google Play.' },
           { href: '/ai-seo/', title: 'AI SEO', text: 'Synlighet i AI-sök, ChatGPT och moderna sökresultat.' },
-          { href: '/blogg/hur-syns-man-i-chatgpt/', title: 'Guide: Synas i ChatGPT', text: 'Så görs information tydligare och mer citerbar.' },
-          { href: '/kundcases/arborist-roslagen/', title: 'Kundcase: Arborist Roslagen', text: 'Se hur strategi, webb och lokal synlighet hänger ihop.' }
+          { href: '/blogg/hur-syns-man-i-chatgpt/', title: 'Guide: Synas i ChatGPT', text: 'Så görs information tydligare och mer citerbar.' }
         ]
       }
     ];

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Priser för hemsida, SEO och Google Ads | Plasma MEDIA AB</title>
-<meta name="description" content="Se aktuella priser för hemsidor, SEO, Google Ads och digital marknadsföring hos Plasma MEDIA AB.">
+<title>Pris för hemsida och offert för SEO &amp; Ads | Plasma MEDIA AB</title>
+<meta name="description" content="Hemsida Start kostar 19 999 kr exkl. moms och kan delas upp på 12, 24 eller 36 månader. Större webbprojekt, SEO och Google Ads offereras efter behov.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.plasmamedia.se/priser/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.plasmamedia.se/priser/">
-<meta property="og:title" content="Priser | Plasma MEDIA AB">
-<meta property="og:description" content="Transparenta priser för hemsidor, SEO och Google Ads för svenska företag.">
+<meta property="og:title" content="Pris och offert | Plasma MEDIA AB">
+<meta property="og:description" content="Ett tydligt startpris för hemsida. Större webbprojekt, SEO och Google Ads offereras efter behov.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,9 +41,9 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Vad kostar en hemsida hos Plasma MEDIA AB?", "acceptedAnswer": { "@type": "Answer", "text": "Hemsidor kan betalas månadsvis över 12, 24 eller 36 månader. Start börjar från 556 kr per månad exklusive moms vid 36 månader, med totalt avtalsvärde 19 999 kr. Tillväxt har ett fast avtalsvärde som uppdateras efter vald avbetalningstid. Premium offereras efter projektets omfattning, funktioner, integrationer och innehållsbehov." } },
-        { "@type": "Question", "name": "Vad kostar SEO per månad?", "acceptedAnswer": { "@type": "Answer", "text": "SEO börjar från 999 kr per månad för grundläggande SEO. Lokala, regionala och nationella SEO-upplägg offereras eftersom priset baseras på konkurrens, antal orter, sökord, sidstruktur, innehållsbehov och mål." } },
-        { "@type": "Question", "name": "Hur lång bindningstid gäller?", "acceptedAnswer": { "@type": "Answer", "text": "Hemsidor kan delas upp på 12, 24 eller 36 månader. För SEO och Google Ads är minsta bindningstid 12 månader. För långsiktigt SEO-arbete rekommenderas ofta 24 månader och i vissa fall 36 månader." } },
+        { "@type": "Question", "name": "Vad kostar en hemsida hos Plasma MEDIA AB?", "acceptedAnswer": { "@type": "Answer", "text": "Hemsida Start kostar 19 999 kronor exklusive moms och kan betalas direkt eller delas upp på 12, 24 eller 36 månader. Större webbplatser offereras efter antal sidor, designnivå, funktioner, integrationer och innehållsbehov." } },
+        { "@type": "Question", "name": "Vad kostar SEO?", "acceptedAnswer": { "@type": "Answer", "text": "SEO offereras efter en behovs- och konkurrensanalys. Priset påverkas bland annat av konkurrens, antal orter, prioriterade sökord, befintlig sidstruktur, tekniskt nuläge, innehållsbehov och önskat tempo." } },
+        { "@type": "Question", "name": "Hur lång avtalstid gäller?", "acceptedAnswer": { "@type": "Answer", "text": "Hemsida Start kan delas upp på 12, 24 eller 36 månader. För löpande SEO och Google Ads anges avtalstid, uppsägning och återkommande kostnader tydligt i den individuella offerten innan start." } },
         { "@type": "Question", "name": "Kan man få offert på ett större projekt?", "acceptedAnswer": { "@type": "Answer", "text": "Ja. Projekt med e-handel, medlemsportaler, flera språk, integrationer eller större sidstruktur offereras separat." } }
       ]
     }
@@ -333,6 +333,125 @@ footer .container {
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { align-items: flex-start; flex-direction: column; }
 }
+
+/* Pricing model: one public starting price, tailored quotes thereafter */
+.pricing-model { padding-bottom: 10px; }
+.pricing-model-head,
+.quote-section-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+.pricing-model-head .sec-label { margin-bottom: 14px; }
+.pricing-model-head .sec-title { max-width: 640px; margin: 0; font-size: clamp(30px, 4vw, 48px); line-height: 1.08; }
+.pricing-model-head > p,
+.quote-section-head > p { color: var(--text2); font-size: 15px; line-height: 1.7; }
+.pricing-lead-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.75fr);
+  gap: 20px;
+  align-items: stretch;
+}
+.pricing-start-card,
+.pricing-principles,
+.pricing-quote-card {
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  background: #fff;
+}
+.pricing-start-card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(26px, 4vw, 44px);
+  background: linear-gradient(145deg, #fff 0%, #f7f3e8 100%);
+  border-color: #b7cba5;
+  box-shadow: 0 22px 55px rgba(30,58,15,.08);
+}
+.pricing-start-card::before {
+  content: '';
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  right: -110px;
+  top: -130px;
+  background: rgba(184,134,11,.12);
+}
+.pricing-start-top { position: relative; display: flex; justify-content: space-between; gap: 24px; align-items: flex-start; }
+.pricing-eyebrow { display: block; color: var(--green3); font-size: 11px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; margin-bottom: 8px; }
+.pricing-start-top h3,
+.pricing-principles h3,
+.quote-section-head h2,
+.pricing-quote-card h3 { font-family: 'Playfair Display', serif; color: var(--green); }
+.pricing-start-top h3 { font-size: clamp(28px, 4vw, 42px); line-height: 1.1; margin-bottom: 10px; }
+.pricing-start-top p { max-width: 560px; color: var(--text2); font-size: 15px; }
+.pricing-choice { flex: 0 0 auto; border-radius: 999px; background: var(--green); color: #fff; padding: 7px 13px; font-size: 11px; font-weight: 700; }
+.start-price-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin: 30px 0 22px; border: 1px solid var(--border2); border-radius: 14px; background: var(--border2); overflow: hidden; }
+.start-price,
+.start-installment { display: flex; flex-direction: column; background: rgba(255,255,255,.82); padding: 22px; }
+.start-price-label { color: var(--text3); font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.start-price strong,
+.start-installment strong { color: var(--text); font-size: clamp(25px, 3.2vw, 34px); line-height: 1.15; margin: 6px 0 3px; letter-spacing: -.03em; }
+.start-price > span:last-child,
+.start-installment > span:last-child { color: var(--text3); font-size: 12px; }
+.pricing-start-card .toggle-wrap { justify-content: flex-start; margin-bottom: 24px; }
+.pricing-start-features { display: grid; grid-template-columns: 1fr 1fr; gap: 9px 24px; list-style: none; margin: 0 0 28px; }
+.pricing-start-features li { position: relative; padding-left: 21px; color: var(--text2); font-size: 13px; }
+.pricing-start-features li::before { content: '✓'; position: absolute; left: 0; color: var(--green3); font-weight: 800; }
+.pricing-primary-btn { display: inline-flex; justify-content: center; align-items: center; min-height: 48px; padding: 12px 22px; border-radius: 10px; background: var(--green); color: #fff; text-decoration: none; font-weight: 700; transition: transform .2s, background .2s; }
+.pricing-primary-btn:hover { background: var(--green2); transform: translateY(-2px); }
+.pricing-principles { padding: clamp(25px, 3vw, 34px); background: var(--green); color: #fff; }
+.pricing-principles .pricing-eyebrow { color: #e7c76f; }
+.pricing-principles h3 { color: #fff; font-size: 25px; line-height: 1.25; margin-bottom: 13px; }
+.pricing-principles > p { color: rgba(255,255,255,.76); font-size: 13px; }
+.pricing-principles ol { list-style: none; counter-reset: steps; margin: 24px 0; }
+.pricing-principles li { counter-increment: steps; position: relative; padding: 0 0 20px 42px; border-left: 1px solid rgba(255,255,255,.2); margin-left: 13px; }
+.pricing-principles li:last-child { padding-bottom: 0; border-left-color: transparent; }
+.pricing-principles li::before { content: counter(steps, decimal-leading-zero); position: absolute; left: -14px; top: 0; width: 27px; height: 27px; display: grid; place-items: center; border-radius: 50%; background: #fff; color: var(--green); font-size: 10px; font-weight: 800; }
+.pricing-principles li strong,
+.pricing-principles li span { display: block; }
+.pricing-principles li strong { font-size: 13px; margin-bottom: 2px; }
+.pricing-principles li span { color: rgba(255,255,255,.7); font-size: 12px; line-height: 1.45; }
+.pricing-text-link { color: #fff; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.45); padding-bottom: 3px; }
+.quote-section-head { align-items: end; margin-top: 56px; }
+.quote-section-head h2 { font-size: clamp(28px, 3vw, 38px); line-height: 1.15; }
+.pricing-quote-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.pricing-quote-card { position: relative; display: flex; flex-direction: column; padding: 28px 24px 24px; transition: transform .2s, border-color .2s, box-shadow .2s; }
+.pricing-quote-card:hover { transform: translateY(-4px); border-color: #a5bd92; box-shadow: 0 16px 38px rgba(30,58,15,.08); }
+.pricing-quote-card.featured { background: #f3f7ee; border-color: #a5bd92; }
+.quote-number { position: absolute; top: 22px; right: 22px; color: #a0aa98; font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.quote-icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 20px; background: var(--green-light); color: var(--green); font-size: 23px; font-weight: 700; }
+.pricing-quote-card h3 { font-size: 24px; margin-bottom: 8px; }
+.pricing-quote-card > p { min-height: 72px; color: var(--text2); font-size: 13px; }
+.pricing-quote-card h4 { margin: 20px 0 8px; color: var(--green); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
+.pricing-quote-card ul { list-style: none; flex: 1; margin-bottom: 22px; }
+.pricing-quote-card li { position: relative; padding: 6px 0 6px 17px; border-bottom: 1px solid var(--border2); color: var(--text2); font-size: 12px; }
+.pricing-quote-card li::before { content: '•'; position: absolute; left: 0; color: var(--gold2); }
+.pricing-quote-card a { color: var(--green); font-weight: 700; text-decoration: none; }
+.pricing-note { display: flex; gap: 10px; align-items: flex-start; margin-top: 20px; border: 1px solid var(--border2); border-radius: 12px; background: rgba(255,255,255,.55); padding: 16px 18px; color: var(--text2); font-size: 12px; }
+.pricing-note strong { color: var(--green); white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .pricing-model-head,
+  .quote-section-head,
+  .pricing-lead-grid { grid-template-columns: 1fr; gap: 20px; }
+  .pricing-quote-grid { grid-template-columns: 1fr 1fr; }
+  .pricing-quote-card:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 620px) {
+  .pricing-start-top { display: block; }
+  .pricing-choice { display: inline-block; margin-top: 15px; }
+  .start-price-layout,
+  .pricing-start-features,
+  .pricing-quote-grid { grid-template-columns: 1fr; }
+  .pricing-quote-card:last-child { grid-column: auto; }
+  .pricing-start-card .toggle-pill { width: 100%; }
+  .pricing-start-card .toggle-pill button { flex: 1; padding: 8px 7px; }
+  .pricing-note { display: block; }
+  .pricing-note strong { display: block; margin-bottom: 4px; }
+}
 </style>
   <link rel="stylesheet" href="/assets/footer-areas.css" media="print" onload="this.media='all'">
 <style id="plasmamedia-brand-overrides">
@@ -412,260 +531,136 @@ footer .footer-logo .logo-domain {
   <div class="breadcrumb"><a href="/">Startsida</a> › Priser</div>
 
   <div class="hero">
-    <h1>Inga överraskningar.<br> <em>Bara resultat.</em></h1>
-    <p>Transparenta priser utan dolda avgifter. Du vet exakt vad du betalar och vad du får – redan innan du skriver på något.</p>
+    <h1>Ett tydligt startpris.<br> <em>En lösning som passar.</em></h1>
+    <p>Se priset för Hemsida Start direkt. För större webbprojekt, SEO och Google Ads får du en tydlig offert anpassad efter målet.</p>
   </div>
 
-  <!-- HEMSIDOR -->
-  <div class="sec-label g">Hemsidor – avbetalning</div>
-  <div class="sec-title">Hitta rätt hemsidepaket</div>
-  <div class="sec-sub">Alla hemsidepaket kan delas upp på 12, 24 eller 36 månader. Mobilanpassning, teknisk SEO-grund, säker lansering och 1 års support ingår.</div>
-  <div class="toggle-wrap web-term-wrap">
-    <div class="toggle-pill" id="web-toggle">
-      <button data-web-term="12">12 månader</button>
-      <button class="on" data-web-term="24">24 månader <span class="bp gold">Standard</span></button>
-      <button data-web-term="36">36 månader</button>
-    </div>
-  </div>
-  <div class="cards-grid web-cards-grid">
-    <div class="card">
-      <div class="c-lbl">Kom igång</div>
-      <div class="c-name">Start</div>
-      <div class="c-desc">En professionell företagshemsida för ett tydligt erbjudande och en enkel väg till kontakt.</div>
-      <div class="c-price-box">
-        <div class="price-main" id="web-start-price">834 kr/mån</div>
-        <div class="price-note" id="web-start-note">24 mån avbetalning · ex. moms</div>
-        <div class="price-free" id="web-start-total">Totalt avtalsvärde: 19 999 kr</div>
+  <!-- NY PRISMODELL -->
+  <section class="pricing-model" aria-labelledby="pricing-model-title">
+    <div class="pricing-model-head">
+      <div>
+        <div class="sec-label g">Enkel och transparent prismodell</div>
+        <h2 class="sec-title" id="pricing-model-title">Ett tydligt startpris. Resten anpassas efter målet.</h2>
       </div>
-      <ul class="feats">
-        <li>Upp till 5 innehållssidor</li>
-        <li>Design anpassad efter ert varumärke</li>
-        <li>Mobil-, surfplatte- och desktopanpassning</li>
-        <li>Teknisk SEO-grund och metadata</li>
-        <li>Kontaktformulär och tydliga CTA:er</li>
-        <li>Analytics och Search Console</li>
-        <li>Cookiebanner och grundläggande GDPR-stöd</li>
-        <li class="no">Blogg / nyhetssektion</li>
-        <li class="no">Webshop / e-handel</li>
-      </ul>
-      <button class="c-btn">Välj Start</button>
-    </div>
-    <div class="card feat">
-      <div class="c-badge g">Mest vald</div>
-      <div class="c-lbl">För tillväxt</div>
-      <div class="c-name">Tillväxt</div>
-      <div class="c-desc">För företag som behöver fler landningssidor, löpande innehåll och tydlig konverteringsmätning.</div>
-      <div class="c-price-box">
-        <div class="price-main" id="web-tillvaxt-price">1 250 kr/mån</div>
-        <div class="price-note" id="web-tillvaxt-note">24 mån avbetalning · ex. moms</div>
-        <div class="price-free" id="web-tillvaxt-total">Totalt avtalsvärde: 29 999 kr</div>
-      </div>
-      <ul class="feats">
-        <li>Upp till 10 innehållssidor</li>
-        <li>Skräddarsydd design och sidmallar</li>
-        <li>Allt i Start-paketet</li>
-        <li>Blogg / nyhetssektion</li>
-        <li>Konverteringsspårning för formulär och samtal</li>
-        <li>Innehållshjälp och support efter lansering</li>
-        <li>Grundläggande text- och bildstöd</li>
-        <li>Prestanda- och tillgänglighetskontroll</li>
-        <li class="no">Webshop / e-handel</li>
-      </ul>
-      <button class="c-btn">Välj Tillväxt</button>
-    </div>
-    <div class="card">
-      <div class="c-lbl">Fullständig lösning</div>
-      <div class="c-name">Premium</div>
-      <div class="c-desc">En skräddarsydd webbplats med avancerad struktur, integrationer och stöd genom hela innehållsarbetet.</div>
-      <div class="c-price-box">
-        <div class="price-main" id="web-premium-price">Offert</div>
-        <div class="price-note" id="web-premium-note">Pris efter behovsanalys · ex. moms</div>
-        <div class="price-free" id="web-premium-total">Omfattning och pris anpassas efter projektet</div>
-      </div>
-      <ul class="feats">
-        <li>Upp till 15 innehållssidor</li>
-        <li>Unik design och komponentbibliotek</li>
-        <li>Allt i Tillväxt-paketet</li>
-        <li>Avancerad informations- och SEO-struktur</li>
-        <li>En standardintegration, exempelvis bokning eller CRM</li>
-        <li>Utökat stöd för texter och innehåll</li>
-        <li>Utbildning och dokumentation</li>
-        <li>Dedikerad projektledare</li>
-        <li>1 års support efter lansering</li>
-      </ul>
-      <button class="c-btn">Begär Premium-offert</button>
-    </div>
-  </div>
-
-  <hr class="sec-divider">
-
-  <!-- GOOGLE ADS -->
-  <div class="sec-label gold">Google Ads – löpande annonsering</div>
-  <div class="sec-title">Välj Google Ads-upplägg</div>
-  <div class="sec-sub">För företag som vill få trafik och förfrågningar snabbare. Annonsbudget till Google tillkommer och sätts efter mål, ort och konkurrens.</div>
-  <div class="cards-grid ads-cards-grid">
-    <div class="card">
-      <div class="c-lbl">Kom igång</div>
-      <div class="c-name">Ads Bas</div>
-      <div class="c-desc">Testa Google Ads och synas lokalt med en effektiv sökkampanj.</div>
-      <div class="c-price-box">
-        <div class="price-main">2 995 kr<span class="price-sfx">/mån</span></div>
-        <div class="price-note" id="ads-bas-note">Minst 12 mån avtal · ex. moms · annonsbudget tillkommer</div>
-        <div class="price-free" id="ads-bas-free"></div>
-      </div>
-      <ul class="feats">
-        <li>1 aktiv kampanj</li>
-        <li>Söknätverkskampanj</li>
-        <li>Nyckelordsanalys & urval</li>
-        <li>Annonstext (2 varianter)</li>
-        <li>Månadsrapport</li>
-        <li>Löpande optimering</li>
-        <li class="no">Shopping-kampanj</li>
-        <li class="no">Remarketing</li>
-        <li class="no">Dedikerad strateg</li>
-      </ul>
-      <button class="c-btn gold-btn">Välj Bas</button>
-    </div>
-    <div class="card feat">
-      <div class="c-badge gold">Mest vald</div>
-      <div class="c-lbl">Tillväxt</div>
-      <div class="c-name">Ads Tillväxt</div>
-      <div class="c-desc">Skala trafiken och driv fler leads med optimerade flerkampanjer.</div>
-      <div class="c-price-box">
-        <div class="price-main">5 995 kr<span class="price-sfx">/mån</span></div>
-        <div class="price-note" id="ads-tillvaxt-note">Minst 12 mån avtal · ex. moms · annonsbudget tillkommer</div>
-        <div class="price-free" id="ads-tillvaxt-free"></div>
-      </div>
-      <ul class="feats">
-        <li>Upp till 3 aktiva kampanjer</li>
-        <li>Sök- och displaykampanjer</li>
-        <li>Remarketing</li>
-        <li>A/B-testning av annonser</li>
-        <li>Konverteringsspårning</li>
-        <li>Detaljerad månadsrapport</li>
-        <li>Kvartalsvisa strategimöten</li>
-        <li class="no">Shopping-kampanj</li>
-        <li class="no">Dedikerad strateg</li>
-      </ul>
-      <button class="c-btn" style="background:var(--gold2);border-color:var(--gold2);color:#fff">Välj Tillväxt</button>
-    </div>
-    <div class="card">
-      <div class="c-lbl">Marknadsledare</div>
-      <div class="c-name">Ads Dominant</div>
-      <div class="c-desc">Full kontroll och maximal synlighet. Pris sätts efter era mål och kampanjvolym.</div>
-      <div class="c-price-box">
-        <div class="offert-tag">Prisförslag på begäran</div>
-        <div class="price-note" style="margin-top:8px">Skräddarsytt upplägg · ex. moms</div>
-        <div class="price-free"></div>
-      </div>
-      <ul class="feats">
-        <li>Obegränsat antal kampanjer</li>
-        <li>Sök, display & shopping</li>
-        <li>Avancerad remarketing</li>
-        <li>Performance Max-kampanjer</li>
-        <li>Konkurrentanalys & bevakning</li>
-        <li>Löpande A/B-testning</li>
-        <li>Dedikerad Ads-strateg</li>
-        <li>Månatliga strategimöten</li>
-        <li>Prioriterad support</li>
-      </ul>
-      <button class="c-btn gold-btn">Begär offert</button>
-    </div>
-  </div>
-
-  <hr class="sec-divider">
-
-  <!-- SEO -->
-  <div class="sec-label g3">SEO – löpande abonnemang</div>
-  <div class="sec-title">Bygg organisk synlighet</div>
-  <div class="sec-sub">Grundläggande SEO har ett fast instegspris. Lokal, regional och nationell SEO offereras eftersom priset baseras på konkurrens, antal orter, sökord, sidstruktur, innehållsbehov och hur snabbt ni vill växa. Minsta avtalstid är 12 månader, men vi rekommenderar 24 månader för stabil utveckling.</div>
-  <div class="toggle-wrap">
-    <div class="toggle-pill" id="seo-toggle">
-      <button class="on" data-term-type="seo" data-term-months="12">12 månader</button>
-      <button data-term-type="seo" data-term-months="24">24 månader <span class="bp gold">Rekommenderas</span></button>
-      <button data-term-type="seo" data-term-months="36">36 månader</button>
-    </div>
-  </div>
-  <div class="cards-grid seo-cards-grid">
-    <div class="card">
-      <div class="c-lbl">Kom igång</div>
-      <div class="c-name">Grundläggande SEO</div>
-      <div class="c-desc">För mindre webbplatser som behöver en stabil teknisk grund och löpande förbättring av de viktigaste sidorna.</div>
-      <div class="c-price-box">
-        <div class="price-main">999 kr<span class="price-sfx">/mån</span></div>
-        <div class="price-note" id="seo-lite-note">Minst 12 mån avtal · ex. moms</div>
-        <div class="price-free" id="seo-lite-free"></div>
-      </div>
-      <ul class="feats">
-        <li>Teknisk grundkontroll vid start</li>
-        <li>Optimering av upp till 3 prioriterade sidor</li>
-        <li>Metadata och internlänkning</li>
-        <li>Kontroll av indexering och sitemap</li>
-        <li>Kvartalsvis uppföljning</li>
-        <li>E-postsupport</li>
-      </ul>
-      <button class="c-btn">Välj Grundläggande</button>
-    </div>
-    <div class="card feat">
-      <div class="c-badge g">Mest vald</div>
-      <div class="c-lbl">Lokal synlighet</div>
-      <div class="c-name">SEO Lokal</div>
-      <div class="c-desc">För lokala tjänsteföretag som vill synas i en stad eller kommun och stärka sin närvaro i Google Maps.</div>
-      <div class="c-price-box">
-        <div class="price-main">Offert</div>
-        <div class="price-note">Pris efter lokal konkurrensanalys · minst 12 mån · ex. moms</div>
-        <div class="price-free">För företag som vill synas i sitt närområde</div>
-      </div>
-      <ul class="feats">
-        <li>Allt i Grundläggande SEO</li>
-        <li>Optimering för en stad eller kommun</li>
-        <li>Google Business Profile-optimering</li>
-        <li>Upp till 5 prioriterade sökteman</li>
-        <li>En lokal landningssida eller större uppdatering per kvartal</li>
-        <li>Månadsrapport</li>
-      </ul>
-      <button class="c-btn" data-prod-id="seo-lokal">Begär offert</button>
-    </div>
-    <div class="card">
-      <div class="c-lbl">Större geografiskt område</div>
-      <div class="c-name">SEO Regional</div>
-      <div class="c-desc">För företag som vill synas i flera kommuner eller inom ett helt län med en sammanhängande lokal strategi.</div>
-      <div class="c-price-box">
-        <div class="price-main">Offert</div>
-        <div class="price-note">Pris efter regional behovsanalys · minst 12 mån · ex. moms</div>
-        <div class="price-free">För flera kommuner, län eller större lokala satsningar</div>
-      </div>
-      <ul class="feats">
-        <li>Allt i SEO Lokal</li>
-        <li>Strategi för flera kommuner eller ett län</li>
-        <li>Upp till 10 prioriterade sökteman</li>
-        <li>Två innehållsinsatser per kvartal</li>
-        <li>Regional internlänkning och sidstruktur</li>
-        <li>Konkurrent- och resultatuppföljning varje månad</li>
-      </ul>
-      <button class="c-btn" data-prod-id="seo-regional">Begär offert</button>
-    </div>
-    <div class="card">
-      <div class="c-lbl">Hela Sverige</div>
-      <div class="c-name">SEO Nationell</div>
-      <div class="c-desc">För företag som konkurrerar nationellt och behöver löpande innehåll, teknisk utveckling och auktoritetsarbete.</div>
-      <div class="c-price-box">
-        <div class="price-main">Offert</div>
-        <div class="price-note">Pris efter strategi- och konkurrensanalys · minst 12 mån · ex. moms</div>
-        <div class="price-free">För nationell konkurrens och löpande innehållsarbete</div>
-      </div>
-      <ul class="feats">
-        <li>Nationell sök- och innehållsstrategi</li>
-        <li>Upp till 20 prioriterade sökteman</li>
-        <li>Två större innehållsinsatser per månad</li>
-        <li>Löpande teknisk SEO och internlänkning</li>
-        <li>Digital PR- och auktoritetsplan</li>
-        <li>Månadsrapport och kvartalsvis strategimöte</li>
-      </ul>
-      <button class="c-btn" data-prod-id="seo-nationell">Begär offert</button>
+      <p>Start är vårt standardiserade hemsidepaket med fast pris. När omfattningen, konkurrensen eller funktionerna varierar gör vi först en kostnadsfri behovsanalys och lämnar därefter en tydlig offert.</p>
     </div>
 
-  </div>
+    <div class="pricing-lead-grid">
+      <article class="pricing-start-card">
+        <div class="pricing-start-top">
+          <div>
+            <span class="pricing-eyebrow">Fast pris</span>
+            <h3>Hemsida Start</h3>
+            <p>En professionell företagshemsida för ett tydligt erbjudande, starkt första intryck och en enkel väg till kontakt.</p>
+          </div>
+          <span class="pricing-choice">Tydligast val</span>
+        </div>
+
+        <div class="start-price-layout">
+          <div class="start-price">
+            <span class="start-price-label">Totalt pris</span>
+            <strong id="web-start-total">19 999 kr</strong>
+            <span>ex. moms</span>
+          </div>
+          <div class="start-installment">
+            <span class="start-price-label">Eller avbetalning</span>
+            <strong id="web-start-price">834 kr/mån</strong>
+            <span id="web-start-note">i 24 månader · ex. moms</span>
+          </div>
+        </div>
+
+        <div class="toggle-wrap web-term-wrap">
+          <div class="toggle-pill" id="web-toggle" aria-label="Välj avbetalningstid">
+            <button type="button" data-web-term="12">12 mån</button>
+            <button type="button" class="on" data-web-term="24">24 mån <span class="bp gold">Standard</span></button>
+            <button type="button" data-web-term="36">36 mån</button>
+          </div>
+        </div>
+
+        <ul class="pricing-start-features">
+          <li>Upp till 5 genomarbetade innehållssidor</li>
+          <li>Unik design anpassad efter ert varumärke</li>
+          <li>Mobil-, surfplatte- och desktopanpassning</li>
+          <li>Teknisk SEO-grund, metadata och indexering</li>
+          <li>Kontaktformulär, Analytics och Search Console</li>
+          <li>Cookiebanner och grundläggande GDPR-stöd</li>
+          <li>Domän ingår de första 12 månaderna</li>
+          <li>Säker lansering och 1 års support</li>
+        </ul>
+
+        <a class="pricing-primary-btn" id="pricing-start-link" href="/kontakt/?service=hemsida&amp;package=start&amp;term=24#contact-form">Välj Hemsida Start</a>
+      </article>
+
+      <aside class="pricing-principles" aria-label="Så fungerar vår prissättning">
+        <span class="pricing-eyebrow">Varför offert?</span>
+        <h3>Ni betalar för rätt omfattning – inte för ett för stort standardpaket.</h3>
+        <p>Större uppdrag kan skilja mycket i innehåll, teknik, konkurrens och tempo. Därför sätter vi priset först när vi vet vad som faktiskt krävs för att nå ert mål.</p>
+        <ol>
+          <li><strong>Kostnadsfri behovsanalys</strong><span>Vi går igenom nuläge, mål och prioriteringar.</span></li>
+          <li><strong>Tydligt förslag</strong><span>Ni får omfattning, leveranser, tidsplan och pris i samma offert.</span></li>
+          <li><strong>Inga dolda tillägg</strong><span>Ändringar utanför offerten godkänns alltid innan arbete startar.</span></li>
+        </ol>
+        <a href="/kontakt/#contact-form" class="pricing-text-link">Boka en kostnadsfri genomgång <span aria-hidden="true">→</span></a>
+      </aside>
+    </div>
+
+    <div class="quote-section-head">
+      <div>
+        <span class="pricing-eyebrow">Offert efter behov</span>
+        <h2>Tre spår för nästa steg</h2>
+      </div>
+      <p>Välj det område som ligger närmast ert behov. Ni behöver inte känna till exakt paket eller lösning innan samtalet.</p>
+    </div>
+
+    <div class="pricing-quote-grid">
+      <article class="pricing-quote-card">
+        <span class="quote-number">01</span>
+        <div class="quote-icon" aria-hidden="true">↗</div>
+        <h3>Större webbplats</h3>
+        <p>För fler sidor, skräddarsydda funktioner, bokning, flerspråkighet, e-handel eller integrationer.</p>
+        <h4>Priset påverkas av</h4>
+        <ul>
+          <li>Antal sidor och innehållsbehov</li>
+          <li>Designnivå och specialfunktioner</li>
+          <li>Integrationer, språk och e-handel</li>
+        </ul>
+        <a href="/kontakt/?service=hemsida&amp;package=offert#contact-form">Begär webboffert <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="pricing-quote-card featured">
+        <span class="quote-number">02</span>
+        <div class="quote-icon" aria-hidden="true">⌕</div>
+        <h3>SEO</h3>
+        <p>För företag som vill öka sin organiska synlighet lokalt, regionalt eller nationellt med ett långsiktigt upplägg.</p>
+        <h4>Priset påverkas av</h4>
+        <ul>
+          <li>Konkurrens och antal orter</li>
+          <li>Sökord, landningssidor och innehåll</li>
+          <li>Tekniskt nuläge och önskat tempo</li>
+        </ul>
+        <a href="/kontakt/?service=seo#contact-form">Begär SEO-offert <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="pricing-quote-card">
+        <span class="quote-number">03</span>
+        <div class="quote-icon" aria-hidden="true">◎</div>
+        <h3>Google Ads</h3>
+        <p>För företag som vill nå kunder med tydliga kampanjer, kontrollerad budget och mätbar konverteringsspårning.</p>
+        <h4>Priset påverkas av</h4>
+        <ul>
+          <li>Antal kampanjer och marknader</li>
+          <li>Sökord, konkurrens och annonsbudget</li>
+          <li>Spårning, landningssidor och optimering</li>
+        </ul>
+        <a href="/kontakt/?service=google-ads#contact-form">Begär Ads-offert <span aria-hidden="true">→</span></a>
+      </article>
+    </div>
+
+    <div class="pricing-note">
+      <strong>Bra att veta:</strong>
+      <span>Annonsbudget till Google ingår inte i vår offert för Google Ads. För löpande SEO och annonsering framgår avtalstid, uppsägning och alla återkommande kostnader alltid tydligt innan start.</span>
+    </div>
+  </section>
 
   <hr class="sec-divider">
 
@@ -674,12 +669,12 @@ footer .footer-logo .logo-domain {
   <div class="sec-title">Svar på det du undrar</div>
   <div class="faq-list">
     <div class="faq-item"><h3>Vad händer om jag inte är nöjd?</h3><p>Vi jobbar inte klart förrän du är nöjd. För hemsidor ingår 2 revideringsrundor. Om vi inte kan hitta en lösning som du är helt nöjd med betalar du inget.</p></div>
-    <div class="faq-item"><h3>Kan jag dela upp betalningen för en hemsida?</h3><p>Ja. Våra hemsidepaket kan betalas månadsvis över 12, 24 eller 36 månader. På prissidan väljer du period och ser månadsbeloppet direkt tillsammans med det totala avtalsvärdet exklusive moms, så du ser både månadskostnad och total kostnad innan du skickar en förfrågan.</p></div>
+    <div class="faq-item"><h3>Kan jag dela upp betalningen för Hemsida Start?</h3><p>Ja. Hemsida Start kan betalas direkt eller delas upp på 12, 24 eller 36 månader. När du väljer period uppdateras månadsbeloppet direkt, medan totalpriset alltid är 19 999 kr exklusive moms.</p></div>
     <div class="faq-item"><h3>Hur lång är leveranstiden?</h3><p>Leverans sker normalt inom 1–3 veckor från godkänd offert och mottaget material. Om projektet är mer komplext får du en tydlig tidsplan innan start.</p></div>
     <div class="faq-item"><h3>Kan ni hjälpa till med ändringar efter lansering?</h3><p>Ja. Vi kan hjälpa till med textändringar, nya bilder, innehåll och tekniska justeringar efter lansering. Omfattning och svarstid anpassas efter vilket supportupplägg som passar företaget.</p></div>
-    <div class="faq-item"><h3>Varför är vissa SEO-paket offert?</h3><p>Större SEO-upplägg varierar mycket i omfattning. Priset baseras på konkurrens, antal orter, sökord, befintlig sidstruktur, tekniska behov, innehållsproduktion och hur snabbt företaget vill växa. Därför har Grundläggande SEO ett fast instegspris, medan lokal, regional och nationell SEO offereras efter analys.</p></div>
-    <div class="faq-item"><h3>Hur lång är avtalstiden för SEO och Google Ads?</h3><p>Minsta avtalstid är 12 månader. Vi rekommenderar 24 månader för att hinna samla data, genomföra förbättringar och bygga stabila resultat över tid. För företag som vill arbeta ännu mer långsiktigt erbjuder vi även 36 månader.</p></div>
-    <div class="faq-item"><h3>Hur snabbt ser jag SEO-resultat?</h3><p>De flesta kunder ser tydliga förbättringar i rankingen inom 3–6 månader. SEO bygger auktoritet över tid – desto längre vi jobbar ihop, desto starkare blir resultaten.</p></div>
+    <div class="faq-item"><h3>Varför offereras SEO och Google Ads?</h3><p>Omfattningen varierar med konkurrens, antal orter eller marknader, sökord, kampanjvolym, befintlig webbplats, innehållsbehov och önskat tempo. Efter en kostnadsfri behovsanalys får du därför ett upplägg där leveranser, avtalstid och kostnader är tydligt specificerade.</p></div>
+    <div class="faq-item"><h3>Hur lång är avtalstiden för SEO och Google Ads?</h3><p>Avtalstiden anpassas efter satsningens mål och omfattning och framgår alltid i offerten. SEO behöver normalt ett längre perspektiv än en enskild kampanj, medan Google Ads kan planeras efter marknad, datamängd och säsong.</p></div>
+    <div class="faq-item"><h3>Hur snabbt ser jag SEO-resultat?</h3><p>Många företag börjar se mätbara förbättringar efter ungefär tre månader, men tidplanen påverkas av konkurrens, webbplatsens nuläge och hur omfattande arbetet är. Vi sätter realistiska förväntningar i offerten.</p></div>
     <div class="faq-item"><h3>Kan jag kombinera hemsida + SEO eller Google Ads?</h3><p>Absolut. Kontakta oss så sätter vi ihop ett sammanhängande upplägg där webbplats, sökmotoroptimering och annonsering arbetar mot samma mål.</p></div>
   </div>
 
@@ -688,9 +683,9 @@ footer .footer-logo .logo-domain {
 <section class="seo-intent-section" aria-labelledby="seo-intent-priser">
   <div class="seo-intent-inner">
     <div class="seo-intent-head">
-      <span class="seo-intent-kicker">Priser för hemsida, SEO och annonser</span>
-      <h2 class="seo-intent-title" id="seo-intent-priser">Jämför hemsida design pris, SEO tjänster pris och Google Ads pris</h2>
-      <p class="seo-intent-lead">Vi vill att det ska vara enkelt att förstå vad digital marknadsföring kostar. Därför samlar vi hemsida till företag pris, löpande SEO, Google Ads och offertbaserade lösningar på samma plats.</p>
+      <span class="seo-intent-kicker">Pris för hemsida och offert för marknadsföring</span>
+      <h2 class="seo-intent-title" id="seo-intent-priser">Så bedömer vi priset för hemsida, SEO och Google Ads</h2>
+      <p class="seo-intent-lead">Hemsida Start har ett fast pris. Större webbplatser, SEO och Google Ads offereras efter en behovsanalys så att omfattning, leveranser och kostnad motsvarar företagets verkliga mål.</p>
     </div>
     <div class="seo-intent-grid">
       <article class="seo-intent-card">
@@ -775,327 +770,7 @@ footer .footer-logo .logo-domain {
 
 <script src="/assets/priser-terms.js?v=20260716f" defer></script>
 
-<!-- =========================================================
-     KUNDKORG – byggs ovanpå befintlig HTML utan ändringar
-     ========================================================= -->
 <style>
-/* ---- Cart button in header ---- */
-.cart-trigger {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  z-index: 1000;
-  background: var(--green);
-  color: #fff;
-  border: none;
-  border-radius: 50px;
-  padding: 13px 20px 13px 16px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 4px 20px rgba(30,58,15,0.35);
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-}
-.cart-trigger:hover { background: var(--green2); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,58,15,0.4); }
-.cart-trigger .ct-icon { font-size: 18px; line-height:1; }
-.cart-trigger .ct-label { white-space: nowrap; }
-.cart-badge {
-  background: var(--gold3);
-  color: #fff;
-  font-size: 11px;
-  font-weight: 600;
-  min-width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 5px;
-  transition: transform 0.2s;
-}
-.cart-badge.pop { animation: badge-pop 0.3s ease; }
-@keyframes badge-pop { 0%{transform:scale(1)} 50%{transform:scale(1.5)} 100%{transform:scale(1)} }
-
-/* ---- Overlay ---- */
-.cart-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(10,20,5,0.45);
-  z-index: 1100;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
-}
-.cart-overlay.open { opacity: 1; pointer-events: all; }
-
-/* ---- Drawer ---- */
-.cart-drawer {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: 420px;
-  max-width: 100vw;
-  background: var(--cream);
-  z-index: 1200;
-  display: flex;
-  flex-direction: column;
-  transform: translateX(110%);
-  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
-  box-shadow: -8px 0 40px rgba(0,0,0,0.18);
-}
-.cart-drawer.open { transform: translateX(0); }
-
-.cart-drawer-head {
-  background: var(--green);
-  color: #fff;
-  padding: 22px 24px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-shrink: 0;
-}
-.cart-drawer-head h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.cart-drawer-head .cart-count-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  opacity: 0.65;
-}
-.cart-close {
-  background: rgba(255,255,255,0.12);
-  border: none;
-  color: #fff;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.18s;
-}
-.cart-close:hover { background: rgba(255,255,255,0.25); }
-
-/* ---- Items list ---- */
-.cart-items {
-  flex: 1;
-  overflow-y: auto;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.cart-items::-webkit-scrollbar { width: 4px; }
-.cart-items::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-
-.cart-empty {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: var(--text3);
-  text-align: center;
-  padding: 40px 24px;
-}
-.cart-empty .empty-icon { font-size: 48px; opacity: 0.35; }
-.cart-empty p { font-size: 13px; line-height: 1.5; max-width: 220px; }
-
-.cart-item {
-  background: #fff;
-  border: 1.5px solid var(--border2);
-  border-radius: var(--r-sm);
-  padding: 14px 16px;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  animation: item-in 0.25s ease;
-}
-@keyframes item-in { from { opacity:0; transform: translateY(-8px); } to { opacity:1; transform:none; } }
-.ci-info { flex: 1; min-width: 0; }
-.ci-category {
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  color: var(--text3);
-  margin-bottom: 2px;
-}
-.ci-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--green);
-  margin-bottom: 4px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.ci-price {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text);
-}
-.ci-period {
-  font-size: 11px;
-  color: var(--text3);
-  font-weight: 400;
-}
-.ci-qty {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 8px;
-}
-.ci-qty button {
-  width: 26px;
-  height: 26px;
-  border-radius: 6px;
-  border: 1.5px solid var(--border);
-  background: var(--cream2);
-  color: var(--text);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.15s;
-  font-family: 'DM Sans', sans-serif;
-}
-.ci-qty button:hover { background: var(--green); border-color: var(--green); color: #fff; }
-.ci-qty span { font-size: 13px; font-weight: 500; min-width: 18px; text-align: center; color: var(--text); }
-.ci-remove {
-  background: transparent;
-  border: none;
-  color: var(--text3);
-  cursor: pointer;
-  font-size: 16px;
-  line-height: 1;
-  padding: 2px;
-  border-radius: 4px;
-  transition: color 0.15s, background 0.15s;
-  flex-shrink: 0;
-}
-.ci-remove:hover { color: #c0392b; background: #fef2f2; }
-
-/* ---- Divider note in cart ---- */
-.cart-note {
-  margin: 4px 0 0;
-  padding: 10px 14px;
-  background: var(--green-light);
-  border-radius: 6px;
-  font-size: 11px;
-  color: var(--green2);
-  line-height: 1.5;
-}
-
-/* ---- Footer / summary ---- */
-.cart-footer {
-  border-top: 1.5px solid var(--border2);
-  padding: 18px 20px 24px;
-  background: #fff;
-  flex-shrink: 0;
-}
-.cart-summary-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  color: var(--text2);
-  padding: 4px 0;
-}
-.cart-summary-row.total {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--text);
-  border-top: 1px solid var(--border2);
-  margin-top: 8px;
-  padding-top: 10px;
-}
-.cart-summary-row .sum-label { }
-.cart-summary-row .sum-val { font-weight: 500; }
-.cart-moms-note {
-  font-size: 10px;
-  color: var(--text3);
-  text-align: right;
-  margin-top: 3px;
-  margin-bottom: 12px;
-}
-.cart-cta-btn {
-  width: 100%;
-  background: var(--green);
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  padding: 14px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-  margin-top: 10px;
-}
-.cart-cta-btn:hover { background: var(--green2); transform: translateY(-1px); }
-.cart-clear-btn {
-  width: 100%;
-  background: transparent;
-  color: var(--text3);
-  border: 1.5px solid var(--border2);
-  border-radius: 10px;
-  padding: 10px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  cursor: pointer;
-  margin-top: 8px;
-  transition: all 0.15s;
-}
-.cart-clear-btn:hover { border-color: #c0392b; color: #c0392b; background: #fef2f2; }
-
-/* ---- Add-to-cart ripple on cards ---- */
-.c-btn.added {
-  background: var(--green3) !important;
-  border-color: var(--green3) !important;
-  color: #fff !important;
-}
-
-/* ---- Confirmation toast ---- */
-.cart-toast {
-  position: fixed;
-  bottom: 100px;
-  right: 32px;
-  z-index: 2000;
-  background: var(--green);
-  color: #fff;
-  padding: 10px 18px;
-  border-radius: 30px;
-  font-size: 13px;
-  font-weight: 500;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.2s, transform 0.2s;
-  pointer-events: none;
-}
-.cart-toast.show { opacity: 1; transform: translateY(0); }
-
   /* Responsive navigation fit */
   header nav,
   .quiz-site-nav { min-width: 0; overflow: visible; }
@@ -1148,38 +823,6 @@ footer .footer-logo .logo-domain {
 }
 </style>
 
-<!-- Floating cart button -->
-<button class="cart-trigger" id="cartTrigger">
-  <span class="ct-icon">🛒</span>
-  <span class="ct-label">Kundkorg</span>
-  <span class="cart-badge" id="cartBadge">0</span>
-</button>
-
-<!-- Overlay -->
-<div class="cart-overlay" id="cartOverlay"></div>
-
-<!-- Drawer -->
-<div class="cart-drawer" id="cartDrawer">
-  <div class="cart-drawer-head">
-    <h2>🛒 Kundkorg <span class="cart-count-label" id="cartCountLabel"></span></h2>
-    <button class="cart-close" id="cartClose" type="button">✕</button>
-  </div>
-  <div class="cart-items" id="cartItems"></div>
-  <div class="cart-footer" id="cartFooter" style="display:none">
-    <div class="cart-summary-row"><span class="sum-label">Startkostnad</span><span class="sum-val" id="sumOnce">0 kr</span></div>
-    <div class="cart-summary-row"><span class="sum-label">Löpande /mån</span><span class="sum-val" id="sumMonthly">0 kr</span></div>
-    <div class="cart-summary-row total"><span class="sum-label">Totalt (månad 1)</span><span class="sum-val" id="sumTotal">0 kr</span></div>
-    <div class="cart-summary-row"><span class="sum-label">Avtalsvärde</span><span class="sum-val" id="sumContract">0 kr</span></div>
-    <div class="cart-moms-note">Alla priser ex. moms</div>
-    <button class="cart-cta-btn" id="cartCheckout" type="button">Skicka förfrågan →</button>
-    <button class="cart-clear-btn" id="cartClear" type="button">Rensa kundkorg</button>
-  </div>
-</div>
-
-<!-- Toast -->
-<div class="cart-toast" id="cartToast"></div>
-
-<script src="/assets/priser-cart.js?v=20260716f" defer></script>
 <script src="/assets/site-shell.js?v=20260716e" defer></script>
 <script src="/assets/analytics.js" defer></script>
 </body>
