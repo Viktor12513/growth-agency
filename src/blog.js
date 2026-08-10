@@ -482,7 +482,7 @@ function renderPost(post) {
   setMeta({
     title: `${post.title} | Plasma MEDIA AB`,
     description: post.excerpt,
-    canonical: `${origin}/blogg/${post.slug}`,
+    canonical: `${origin}/blogg/${post.slug}/`,
   });
   setArticleStructuredData(post);
 
