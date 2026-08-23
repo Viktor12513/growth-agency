@@ -453,3 +453,455 @@ body>header[role="banner"] .nav-links .nav-dropdown .seo-menu-group>a>span{
   header[role="banner"] .nav-dropdown-menu a{padding:8px 3px!important}
   header[role="banner"] .nav-dropdown-menu span{font-size:.73rem!important}
 }
+
+/* --------------------------------------------------------------------------
+   Plasma Media 2026 — shared visual refresh
+   This layer deliberately changes presentation only. URLs, headings, schema,
+   canonicals and editorial copy remain untouched so existing organic signals
+   stay intact while every route receives the same modern design language.
+   -------------------------------------------------------------------------- */
+:root{
+  --pm-ink:#123527;
+  --pm-ink-soft:#295442;
+  --pm-gold:#c38d2f;
+  --pm-gold-pale:#f7e7c5;
+  --pm-mint:#dceee1;
+  --pm-canvas:#f7f5ef;
+  --pm-surface:#fffefb;
+  --pm-line:rgba(18,53,39,.14);
+  --pm-shadow:0 20px 52px rgba(18,53,39,.09);
+  --pm-shadow-hover:0 26px 64px rgba(18,53,39,.16);
+  --pm-radius:22px;
+}
+
+body{
+  background:var(--pm-canvas)!important;
+  color:#28372f!important;
+}
+main{
+  position:relative;
+  isolation:isolate;
+  overflow:clip;
+}
+main::before{
+  content:"";
+  position:absolute;
+  z-index:-1;
+  inset:0 0 auto;
+  height:560px;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 86% 8%,rgba(195,141,47,.14),transparent 26rem),
+    radial-gradient(circle at 8% 24%,rgba(110,170,129,.13),transparent 23rem);
+}
+
+/* Stable shared chrome, intentionally compact so it does not compete with
+   service/page headlines. */
+body>header[role="banner"]{
+  background:rgba(255,254,251,.96)!important;
+  border-bottom-color:rgba(18,53,39,.12)!important;
+  box-shadow:0 1px 0 rgba(18,53,39,.03)!important;
+}
+body>header[role="banner"]>nav{
+  width:min(1200px,calc(100% - 48px))!important;
+  max-width:1200px!important;
+}
+body>header[role="banner"] .nav-links>li>a{
+  position:relative!important;
+  color:var(--pm-ink)!important;
+}
+body>header[role="banner"] .nav-links>li>a::after{
+  content:"";
+  position:absolute;
+  right:0;
+  bottom:20px;
+  left:0;
+  height:2px;
+  border-radius:999px;
+  background:var(--pm-gold);
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform .18s ease;
+}
+body>header[role="banner"] .nav-links>li>a:hover::after,
+body>header[role="banner"] .nav-links>li>a.is-active::after,
+body>header[role="banner"] .nav-links>li>a.active::after{transform:scaleX(1)}
+body>header[role="banner"] .nav-cta{
+  min-height:46px!important;
+  padding-inline:21px!important;
+  border:1px solid rgba(18,53,39,.14)!important;
+  border-radius:14px!important;
+  background:var(--pm-ink)!important;
+  box-shadow:0 8px 18px rgba(18,53,39,.14)!important;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease!important;
+}
+body>header[role="banner"] .nav-cta:hover{
+  background:#204b36!important;
+  box-shadow:0 12px 24px rgba(18,53,39,.2)!important;
+  transform:translateY(-1px)!important;
+}
+
+body .breadcrumb{
+  min-height:50px!important;
+  display:flex!important;
+  align-items:center!important;
+  padding-block:0!important;
+  background:rgba(247,244,235,.88)!important;
+  border-bottom:1px solid var(--pm-line)!important;
+}
+body .breadcrumb ol,
+body .breadcrumb .container,
+body .breadcrumb .breadcrumb-inner{
+  width:min(1200px,calc(100% - 48px))!important;
+  max-width:1200px!important;
+}
+
+/* Site-wide editorial rhythm */
+main :is(.section-title,.page-title,h2.section-title){
+  color:var(--pm-ink)!important;
+  letter-spacing:-.035em!important;
+  line-height:1.06!important;
+  text-wrap:balance;
+}
+main :is(.section-tag,.eyebrow,.kicker){
+  color:#3f7656!important;
+  font-weight:800!important;
+  letter-spacing:.12em!important;
+}
+main :is(.section-lead,.page-lead,.lead,.hero-sub){
+  color:#516158!important;
+}
+
+/* Hero shells are deliberately identical in tone but preserve each page's
+   own content and visual component. */
+main>:is(.hero,.page-hero,.contact-hero){
+  position:relative;
+  overflow:hidden;
+  background:
+    linear-gradient(116deg,rgba(250,248,241,.98) 0%,rgba(255,254,250,.95) 54%,rgba(232,243,234,.8) 100%)!important;
+  border-bottom:1px solid var(--pm-line)!important;
+}
+main>:is(.hero,.page-hero,.contact-hero)::before{
+  width:38rem!important;
+  height:38rem!important;
+  top:-18rem!important;
+  right:-14rem!important;
+  opacity:.72!important;
+  background:radial-gradient(circle,rgba(113,180,137,.36),rgba(113,180,137,0) 68%)!important;
+}
+main>:is(.hero,.page-hero,.contact-hero)::after{
+  content:"";
+  position:absolute;
+  left:6%;
+  bottom:-13rem;
+  width:25rem;
+  height:25rem;
+  border:1px solid rgba(195,141,47,.22);
+  border-radius:50%;
+  pointer-events:none;
+}
+main :is(.hero-inner,.page-hero-inner){
+  max-width:1200px!important;
+}
+main .hero-pill{
+  gap:8px!important;
+  padding:7px 13px!important;
+  color:#765210!important;
+  border-color:rgba(195,141,47,.58)!important;
+  background:var(--pm-gold-pale)!important;
+  box-shadow:0 5px 14px rgba(195,141,47,.09);
+}
+main .hero h1,
+main .page-hero h1,
+main .contact-hero h1{
+  color:var(--pm-ink)!important;
+  letter-spacing:-.05em!important;
+  line-height:1.025!important;
+  text-wrap:balance;
+}
+main .hero h1 em,
+main .page-hero h1 em,
+main .contact-hero h1 em{color:var(--pm-gold)!important}
+
+/* More tactile cards, shared by services, pricing, local pages and cases. */
+main :is(
+  .hero-card,.service-card,.pillar-card,.seo-cluster-card,.feature-card,
+  .feature-item,.principle-card,.process-step,.delivery-card,.playbook-card,
+  .forwhom-card,.case-card,.testimonial-card,.post-card,.pricing-start-card,
+  .pricing-quote-card,.contact-card,.faq-item,.local-card,.benefit-card
+){
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--pm-line)!important;
+  border-radius:var(--pm-radius)!important;
+  background:rgba(255,254,251,.94)!important;
+  box-shadow:0 10px 28px rgba(18,53,39,.035)!important;
+}
+main :is(
+  .hero-card,.service-card,.pillar-card,.seo-cluster-card,.feature-card,
+  .feature-item,.principle-card,.process-step,.delivery-card,.playbook-card,
+  .forwhom-card,.case-card,.testimonial-card,.post-card,.pricing-start-card,
+  .pricing-quote-card,.contact-card,.faq-item,.local-card,.benefit-card
+)::before{
+  content:"";
+  position:absolute;
+  inset:0 auto auto 0;
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg,var(--pm-ink) 0%,var(--pm-gold) 48%,transparent 76%);
+  opacity:.88;
+}
+@media(hover:hover){
+  main :is(
+    .hero-card,.service-card,.pillar-card,.seo-cluster-card,.feature-card,
+    .feature-item,.principle-card,.process-step,.delivery-card,.playbook-card,
+    .forwhom-card,.case-card,.testimonial-card,.post-card,.pricing-start-card,
+    .pricing-quote-card,.contact-card,.faq-item,.local-card,.benefit-card
+  ){
+    transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+  }
+  main :is(
+    .hero-card,.service-card,.pillar-card,.seo-cluster-card,.feature-card,
+    .feature-item,.principle-card,.process-step,.delivery-card,.playbook-card,
+    .forwhom-card,.case-card,.testimonial-card,.post-card,.pricing-start-card,
+    .pricing-quote-card,.contact-card,.faq-item,.local-card,.benefit-card
+  ):hover{
+    transform:translateY(-5px)!important;
+    border-color:rgba(18,53,39,.29)!important;
+    box-shadow:var(--pm-shadow-hover)!important;
+  }
+}
+main :is(.hero-card,.service-card,.pillar-card,.seo-cluster-card) :is(h2,h3,h4){color:var(--pm-ink)!important}
+
+/* Primary actions become a recognisable conversion component across routes. */
+main :is(.btn-primary,.btn-cta,.cta-button,.button-primary,.form-submit,.quiz-next,.quiz-submit){
+  border:1px solid transparent!important;
+  border-radius:14px!important;
+  background:var(--pm-ink)!important;
+  color:#fff!important;
+  box-shadow:0 9px 18px rgba(18,53,39,.14)!important;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease!important;
+}
+main :is(.btn-primary,.btn-cta,.cta-button,.button-primary,.form-submit,.quiz-next,.quiz-submit):hover{
+  background:#25573f!important;
+  transform:translateY(-2px)!important;
+  box-shadow:0 14px 26px rgba(18,53,39,.19)!important;
+}
+main :is(.btn-secondary,.button-secondary,.outline-button){
+  border:1px solid rgba(18,53,39,.4)!important;
+  border-radius:14px!important;
+  background:rgba(255,254,251,.8)!important;
+  color:var(--pm-ink)!important;
+}
+
+/* Homepage: keep the established message but give the service choices a new,
+   editorial product-board expression. */
+body:has(.hero-cards-grid) main>.hero .hero-inner{
+  grid-template-columns:minmax(0,1.08fr) minmax(390px,.92fr)!important;
+  gap:clamp(2rem,5vw,5.5rem)!important;
+}
+body:has(.hero-cards-grid) main>.hero .hero-left{min-height:0!important}
+body:has(.hero-cards-grid) main>.hero .hero-visual{
+  min-height:auto!important;
+  padding:14px!important;
+  border:1px solid rgba(18,53,39,.12);
+  border-radius:28px;
+  background:linear-gradient(145deg,#17412d,#2c6648)!important;
+  box-shadow:0 28px 70px rgba(18,53,39,.2);
+}
+body:has(.hero-cards-grid) main>.hero .hero-cards-grid{gap:12px!important}
+body:has(.hero-cards-grid) main>.hero .hero-card{
+  min-height:178px;
+  padding:1.4rem!important;
+  background:rgba(255,255,255,.96)!important;
+  transform:none!important;
+}
+body:has(.hero-cards-grid) main>.hero .hero-card:nth-child(2),
+body:has(.hero-cards-grid) main>.hero .hero-card:nth-child(3){background:#f6f0e3!important}
+body:has(.hero-cards-grid) main>.hero .hero-card-icon{
+  border-radius:13px!important;
+  background:var(--pm-mint)!important;
+}
+body:has(.hero-cards-grid) main>.hero .hero-badge{
+  left:auto!important;
+  right:-22px!important;
+  bottom:-20px!important;
+  border:1px solid rgba(255,255,255,.22);
+  border-radius:16px!important;
+  background:#173d29!important;
+}
+
+/* Service and local pages: a clear visual spine makes the long-form pages
+   feel designed rather than like isolated information blocks. */
+main :is(.services-grid,.pillars-grid,.features-grid,.process-grid,.cases-grid,.pricing-grid,.posts-grid){gap:clamp(16px,2vw,26px)!important}
+main :is(.trust-strip,.stats-band,.results-band){
+  background:linear-gradient(100deg,#123527,#275e41)!important;
+  color:#fff!important;
+}
+main :is(.trust-strip,.stats-band,.results-band) :is(h2,h3,p,span,strong){color:inherit!important}
+main :is(.cta-band,.cta-section,.contact-cta,.local-cta){
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(118deg,#143b29,#275d42 62%,#8b682c)!important;
+  border-top:1px solid rgba(255,255,255,.12);
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+main :is(.cta-band,.cta-section,.contact-cta,.local-cta)::after{
+  content:"";
+  position:absolute;
+  width:24rem;
+  height:24rem;
+  right:-9rem;
+  bottom:-14rem;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:50%;
+}
+
+/* Blog index and articles retain their SEO content but gain the same visual
+   rhythm as service pages. */
+main .post-featured{
+  border:1px solid var(--pm-line)!important;
+  border-radius:var(--pm-radius)!important;
+  box-shadow:var(--pm-shadow)!important;
+}
+main .post-featured-img{
+  background:linear-gradient(145deg,#123527,#276043 72%,#b9822d 150%)!important;
+}
+main .post-featured-body{background:var(--pm-surface)!important}
+main .post-card-thumb{
+  height:196px!important;
+  background-image:linear-gradient(135deg,rgba(18,53,39,.18),rgba(195,141,47,.12))!important;
+}
+main .article-page{background:var(--pm-canvas)}
+main .article-page .article-wrap{max-width:1200px!important}
+main .article-page .article-header{
+  position:relative;
+  padding:clamp(1.6rem,4vw,3rem)!important;
+  border:1px solid var(--pm-line);
+  border-radius:var(--pm-radius);
+  background:linear-gradient(135deg,#fffefb,#f6f1e6)!important;
+  box-shadow:var(--pm-shadow);
+}
+main .article-page .article-title{
+  max-width:850px;
+  color:var(--pm-ink)!important;
+  font-size:clamp(2.15rem,4.15vw,4rem)!important;
+  line-height:1.04!important;
+  letter-spacing:-.045em!important;
+  text-wrap:balance;
+}
+main .article-page .article-body .article-section{
+  border:1px solid var(--pm-line)!important;
+  border-radius:20px!important;
+  background:var(--pm-surface)!important;
+  box-shadow:0 8px 20px rgba(18,53,39,.025);
+}
+main .article-page :is(.article-sidebar .sidebar-progress,.article-sidebar .sidebar-toc){
+  border:1px solid var(--pm-line)!important;
+  border-radius:18px!important;
+  background:rgba(255,254,251,.94)!important;
+  box-shadow:0 10px 24px rgba(18,53,39,.04);
+}
+main .article-page .sidebar-cta{
+  border-radius:18px!important;
+  background:linear-gradient(145deg,#143b29,#23563b)!important;
+  box-shadow:var(--pm-shadow);
+}
+
+/* Conversion surfaces and form controls */
+main :is(input,select,textarea){
+  border-color:rgba(18,53,39,.2)!important;
+  border-radius:12px!important;
+  background:#fffefb!important;
+}
+main :is(input,select,textarea):focus{
+  outline:3px solid rgba(195,141,47,.2)!important;
+  outline-offset:1px;
+  border-color:var(--pm-gold)!important;
+}
+footer[role="contentinfo"]{
+  background:linear-gradient(145deg,#0c2619,#153c28 64%,#28583f)!important;
+}
+footer[role="contentinfo"] .footer-bottom{border-top-color:rgba(255,255,255,.18)!important}
+
+@media(max-width:980px){
+  body>header[role="banner"]>nav{width:calc(100% - 32px)!important}
+  body .breadcrumb ol,
+  body .breadcrumb .container,
+  body .breadcrumb .breadcrumb-inner{width:calc(100% - 32px)!important}
+  body:has(.hero-cards-grid) main>.hero .hero-inner{grid-template-columns:1fr!important}
+  body:has(.hero-cards-grid) main>.hero .hero-visual{max-width:620px;width:100%;margin-inline:auto}
+  main .article-page .article-header{border-radius:18px}
+}
+@media(max-width:620px){
+  main>:is(.hero,.page-hero,.contact-hero){padding-inline:20px!important}
+  body .breadcrumb{min-height:46px!important}
+  body:has(.hero-cards-grid) main>.hero .hero-visual{padding:10px!important;border-radius:20px}
+  body:has(.hero-cards-grid) main>.hero .hero-card{min-height:0;padding:1rem!important}
+  body:has(.hero-cards-grid) main>.hero .hero-badge{position:relative!important;right:auto!important;bottom:auto!important;margin:12px 0 0 8px!important}
+  main .article-page .article-header{padding:1.35rem!important}
+  main .article-page .article-title{font-size:clamp(2rem,10vw,2.65rem)!important}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
+
+/* One responsive header breakpoint for every page. Some older page stylesheets
+   switched to the compact menu at 1280px; this lock keeps the shared header
+   desktop until 980px and prevents route-dependent navigation. */
+@media(min-width:981px) and (max-width:1280px){
+  body>header[role="banner"]>nav,
+  header[role="banner"]>nav{
+    height:82px!important;
+    min-height:82px!important;
+    padding-top:0!important;
+    padding-bottom:0!important;
+    flex-wrap:nowrap!important;
+    justify-content:space-between!important;
+  }
+  body>header[role="banner"] .nav-links:not(.is-open):not(.open),
+  header[role="banner"] .nav-links:not(.is-open):not(.open){
+    position:static!important;
+    display:flex!important;
+    width:auto!important;
+    padding:0!important;
+    margin:0!important;
+    border:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    flex:1 1 auto!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:center!important;
+    gap:clamp(10px,1.45vw,18px)!important;
+    order:0!important;
+  }
+  body>header[role="banner"] .nav-right,
+  header[role="banner"] .nav-right{order:0!important}
+  body>header[role="banner"] .nav-links>li>a,
+  header[role="banner"] .nav-links>li>a{
+    height:82px!important;
+    padding:0!important;
+    font-size:13px!important;
+  }
+  body>header[role="banner"] .nav-hamburger,
+  body>header[role="banner"] .mobile-nav-toggle,
+  header[role="banner"] .nav-hamburger,
+  header[role="banner"] .mobile-nav-toggle{display:none!important}
+  body>header[role="banner"] .nav-links:not(.is-open):not(.open) .nav-dropdown-menu,
+  header[role="banner"] .nav-links:not(.is-open):not(.open) .nav-dropdown-menu{
+    display:grid!important;
+    position:absolute!important;
+    width:min(900px,calc(100vw - 32px))!important;
+    padding:14px!important;
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+  }
+  body>header[role="banner"] .nav-links .nav-dropdown:hover .nav-dropdown-menu,
+  body>header[role="banner"] .nav-links .nav-dropdown:focus-within .nav-dropdown-menu{
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+  }
+}

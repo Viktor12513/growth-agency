@@ -75,7 +75,8 @@
     };
     if (labels[path]) return labels[path];
     const heading = document.querySelector('main h1, h1');
-    return (heading?.textContent || document.title || 'Sida')
+    const headingLabel = heading ? (heading.innerText || heading.textContent) : '';
+    return (headingLabel || document.title || 'Sida')
       .replace(/\s+/g, ' ')
       .replace(/\s*\|.*$/, '')
       .trim();
