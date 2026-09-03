@@ -27,3 +27,71 @@
 .cluster-wide>h3{padding-left:1rem;border-left:3px solid var(--gold)}
 @media(prefers-reduced-motion:reduce){.cluster-card,.cluster-feature,.cluster-step,.cluster-toc a,.cluster-link-card,.mini-stat,.faq-item{transition:none}.cluster-card:hover,.cluster-feature:hover,.cluster-step:hover,.cluster-toc a:hover,.cluster-link-card:hover,.mini-stat:hover,.faq-item:hover{transform:none}}
 @media(max-width:620px){.cluster-wide>h2{padding-left:0;padding-top:3.25rem}.cluster-wide>h2::before{width:2.45rem;height:2.45rem}}
+
+/* Cluster pages use a content navigation inside the hero. Some of the legacy
+   page styles target every <nav>, which previously gave this grid a fixed
+   64px height and clipped its labels. Keep it an ordinary in-flow grid. */
+.cluster-hero .cluster-toc{
+  position:static!important;
+  z-index:auto!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  align-items:stretch!important;
+  justify-content:initial!important;
+  width:100%!important;
+  min-height:0!important;
+  height:auto!important;
+  margin:2rem 0 0!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  backdrop-filter:none!important;
+}
+.cluster-hero .cluster-toc>a{
+  display:block!important;
+  min-width:0!important;
+  min-height:9.25rem!important;
+  height:auto!important;
+  padding:1rem!important;
+}
+@media(max-width:860px){
+  .cluster-hero .cluster-toc{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:520px){
+  .cluster-hero .cluster-toc{grid-template-columns:1fr!important}
+  .cluster-hero .cluster-toc>a{min-height:0!important}
+}
+
+/* Cluster pages use a content navigation inside the hero. Some of the legacy
+   page styles target every <nav>, which previously gave this grid a fixed
+   64px height and clipped its labels. Keep it an ordinary in-flow grid. */
+.cluster-hero .cluster-toc{
+  position:static!important;
+  z-index:auto!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  align-items:stretch!important;
+  justify-content:initial!important;
+  width:100%!important;
+  min-height:0!important;
+  height:auto!important;
+  margin:2rem 0 0!important;
+  padding:0!important;
+  background:transparent!important;
+  border:0!important;
+  backdrop-filter:none!important;
+}
+.cluster-hero .cluster-toc>a{
+  display:block!important;
+  min-width:0!important;
+  min-height:9.25rem!important;
+  height:auto!important;
+  padding:1rem!important;
+}
+@media(max-width:860px){
+  .cluster-hero .cluster-toc{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:520px){
+  .cluster-hero .cluster-toc{grid-template-columns:1fr!important}
+  .cluster-hero .cluster-toc>a{min-height:0!important}
+}
